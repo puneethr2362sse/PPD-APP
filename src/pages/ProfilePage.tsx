@@ -12,10 +12,7 @@ import {
   AlertTriangle, 
   Calendar,
   Lock,
-  Sparkles,
-  FileSpreadsheet,
-  Download,
-  ExternalLink
+  Sparkles
 } from 'lucide-react';
 
 export const ProfilePage: React.FC = () => {
@@ -45,7 +42,7 @@ export const ProfilePage: React.FC = () => {
           Account Profile & Security
         </h1>
         <p className="text-xs sm:text-sm text-slate-400">
-          Manage your verified credentials, test reports, and investigation metrics.
+          Manage your verified credentials and investigation metrics.
         </p>
       </div>
 
@@ -156,52 +153,7 @@ export const ProfilePage: React.FC = () => {
         </div>
       </div>
 
-      {/* Quality Assurance & Test Reports Section (Excel Sheet Download) */}
-      <div className="glass-card rounded-3xl p-6 border border-cyan-500/30 bg-gradient-to-br from-cyan-950/30 via-slate-900 to-brand-950/30 space-y-4">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div className="space-y-1">
-            <div className="flex items-center gap-2">
-              <FileSpreadsheet className="w-5 h-5 text-emerald-400" />
-              <h3 className="font-display text-lg font-bold text-white">
-                305 Automated Tests Matrix (Excel Sheet)
-              </h3>
-            </div>
-            <p className="text-xs text-slate-300">
-              Download the complete structured report of all 305 tests (Web, Mobile, Load, Security) with 100% pass verification.
-            </p>
-          </div>
-
-          <a
-            href="/VerifyAI_Test_Results_305.xlsx"
-            download="VerifyAI_Test_Results_305.xlsx"
-            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs shadow-lg shadow-emerald-500/20 transition-all hover:scale-105 active:scale-95 shrink-0"
-          >
-            <Download className="w-4 h-4" />
-            <span>Download .XLSX</span>
-          </a>
-        </div>
-
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
-          <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
-            <div className="text-emerald-400 font-mono text-lg font-black">80/80</div>
-            <div className="text-[10px] text-slate-400 font-semibold uppercase">Selenium Web</div>
-          </div>
-          <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
-            <div className="text-cyan-400 font-mono text-lg font-black">75/75</div>
-            <div className="text-[10px] text-slate-400 font-semibold uppercase">Appium Mobile</div>
-          </div>
-          <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
-            <div className="text-brand-400 font-mono text-lg font-black">75/75</div>
-            <div className="text-[10px] text-slate-400 font-semibold uppercase">Load & Stress</div>
-          </div>
-          <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
-            <div className="text-indigo-400 font-mono text-lg font-black">75/75</div>
-            <div className="text-[10px] text-slate-400 font-semibold uppercase">Security Audit</div>
-          </div>
-        </div>
-      </div>
-
-      {/* Security & Passwordless Overview */}
+      {/* Security & Password Authentication Overview */}
       <div className="glass-card rounded-3xl p-6 border border-slate-800 space-y-4">
         <h3 className="font-display text-lg font-bold text-white flex items-center gap-2">
           <Lock className="w-5 h-5 text-cyan-400" />
@@ -212,20 +164,20 @@ export const ProfilePage: React.FC = () => {
           <div className="p-4 rounded-2xl bg-slate-900/70 border border-slate-800 space-y-1.5">
             <div className="font-bold text-xs text-slate-200 font-mono flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              <span>Passwordless OTP Protocol</span>
+              <span>Password Authentication</span>
             </div>
             <p className="text-xs text-slate-400 leading-relaxed">
-              Your account utilizes cryptographic One-Time Passwords (OTP). There are zero static passwords to leak or compromise.
+              Your account is secured with direct password sign-in. First-time registration is verified via cryptographic OTP.
             </p>
           </div>
 
           <div className="p-4 rounded-2xl bg-slate-900/70 border border-slate-800 space-y-1.5">
             <div className="font-bold text-xs text-slate-200 font-mono flex items-center gap-2">
               <History className="w-4 h-4 text-brand-400" />
-              <span>Persistent User History Isolation</span>
+              <span>Persistent History Isolation</span>
             </div>
             <p className="text-xs text-slate-400 leading-relaxed">
-              Your scan records are private and attached specifically to <span className="text-slate-300 font-mono">{email}</span>. Logging out preserves your scan history.
+              Your scan records are private and attached specifically to <span className="text-slate-300 font-mono">{email}</span> in Firebase.
             </p>
           </div>
         </div>
@@ -238,7 +190,7 @@ export const ProfilePage: React.FC = () => {
             End Active Session
           </div>
           <p className="text-xs text-slate-400 max-w-md">
-            Logging out clears your active local token. Your profile and scan history will remain securely preserved for your next OTP login.
+            Logging out clears your active session. Your profile and scan history will remain securely preserved in Firestore.
           </p>
         </div>
 
