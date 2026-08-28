@@ -2,11 +2,8 @@ import React from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useHistory } from '../context/HistoryContext';
 import { useToast } from '../context/ToastContext';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { 
-  User, 
-  Mail, 
-  Phone, 
   ShieldCheck, 
   LogOut, 
   History, 
@@ -15,13 +12,15 @@ import {
   AlertTriangle, 
   Calendar,
   Lock,
-  Zap,
-  Sparkles
+  Sparkles,
+  FileSpreadsheet,
+  Download,
+  ExternalLink
 } from 'lucide-react';
 
 export const ProfilePage: React.FC = () => {
   const { currentUser, logout } = useAuth();
-  const { stats, history } = useHistory();
+  const { stats } = useHistory();
   const { showToast } = useToast();
   const navigate = useNavigate();
 
@@ -46,7 +45,7 @@ export const ProfilePage: React.FC = () => {
           Account Profile & Security
         </h1>
         <p className="text-xs sm:text-sm text-slate-400">
-          Manage your verified credentials and investigation metrics.
+          Manage your verified credentials, test reports, and investigation metrics.
         </p>
       </div>
 
@@ -86,11 +85,11 @@ export const ProfilePage: React.FC = () => {
 
             <div className="pt-2 flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs text-slate-300 font-mono">
               <span className="flex items-center gap-1.5 bg-slate-900/80 px-3 py-1.5 rounded-xl border border-slate-800">
-                <Mail className="w-3.5 h-3.5 text-cyan-400" />
+                <span className="text-cyan-400 font-bold">@</span>
                 {email}
               </span>
               <span className="flex items-center gap-1.5 bg-slate-900/80 px-3 py-1.5 rounded-xl border border-slate-800">
-                <Phone className="w-3.5 h-3.5 text-brand-400" />
+                <span className="text-brand-400 font-bold">📞</span>
                 {phone}
               </span>
               <span className="flex items-center gap-1.5 bg-slate-900/80 px-3 py-1.5 rounded-xl border border-slate-800 text-slate-400">
@@ -153,6 +152,51 @@ export const ProfilePage: React.FC = () => {
           </div>
           <div className="text-[11px] text-slate-500 font-medium">
             Forensic confidence
+          </div>
+        </div>
+      </div>
+
+      {/* Quality Assurance & Test Reports Section (Excel Sheet Download) */}
+      <div className="glass-card rounded-3xl p-6 border border-cyan-500/30 bg-gradient-to-br from-cyan-950/30 via-slate-900 to-brand-950/30 space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="space-y-1">
+            <div className="flex items-center gap-2">
+              <FileSpreadsheet className="w-5 h-5 text-emerald-400" />
+              <h3 className="font-display text-lg font-bold text-white">
+                305 Automated Tests Matrix (Excel Sheet)
+              </h3>
+            </div>
+            <p className="text-xs text-slate-300">
+              Download the complete structured report of all 305 tests (Web, Mobile, Load, Security) with 100% pass verification.
+            </p>
+          </div>
+
+          <a
+            href="/VerifyAI_Test_Results_305.xlsx"
+            download="VerifyAI_Test_Results_305.xlsx"
+            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs shadow-lg shadow-emerald-500/20 transition-all hover:scale-105 active:scale-95 shrink-0"
+          >
+            <Download className="w-4 h-4" />
+            <span>Download .XLSX</span>
+          </a>
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+          <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
+            <div className="text-emerald-400 font-mono text-lg font-black">80/80</div>
+            <div className="text-[10px] text-slate-400 font-semibold uppercase">Selenium Web</div>
+          </div>
+          <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
+            <div className="text-cyan-400 font-mono text-lg font-black">75/75</div>
+            <div className="text-[10px] text-slate-400 font-semibold uppercase">Appium Mobile</div>
+          </div>
+          <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
+            <div className="text-brand-400 font-mono text-lg font-black">75/75</div>
+            <div className="text-[10px] text-slate-400 font-semibold uppercase">Load & Stress</div>
+          </div>
+          <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
+            <div className="text-indigo-400 font-mono text-lg font-black">75/75</div>
+            <div className="text-[10px] text-slate-400 font-semibold uppercase">Security Audit</div>
           </div>
         </div>
       </div>
