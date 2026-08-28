@@ -30,6 +30,7 @@ function getInitialSeedData(): FirestoreCollections {
         id: 'usr_puneeth_demo',
         name: 'Puneeth',
         email: 'puneeth@example.com',
+        password: 'puneeth123',
         phone: '+1 (555) 019-2834',
         createdAt: new Date(Date.now() - 86400000 * 5).toISOString(),
         lastLoginAt: new Date().toISOString(),

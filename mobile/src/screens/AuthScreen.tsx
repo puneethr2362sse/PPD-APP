@@ -19,16 +19,48 @@ import { useAuth } from '../context/AuthContext';
 export const AuthScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [activeTab, setActiveTab] = useState<'login' | 'register'>('login');
   
+  // Registration fields
   const [name, setName] = useState('');
   const [registerEmail, setRegisterEmail] = useState('');
+  const [registerPassword, setRegisterPassword] = useState('');
   const [phone, setPhone] = useState('');
+  const [showRegisterPassword, setShowRegisterPassword] = useState(false);
 
+  // Login fields
   const [loginEmail, setLoginEmail] = useState('');
+  const [loginPassword, setLoginPassword] = useState('');
+  const [showLoginPassword, setShowLoginPassword] = useState(false);
+
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const { startRegister, startLogin } = useAuth();
+  const { loginWithPassword, startRegister } = useAuth();
 
+  // Direct login with password
+  const handleLogin = async () => {
+    setError('');
+    if (!loginEmail.trim()) {
+      setError('Please enter your registered email address.');
+      return;
+    }
+    if (!loginPassword) {
+      setError('Please enter your password.');
+      return;
+    }
+
+    setLoading(true);
+    const res = await loginWithPassword(loginEmail, loginPassword);
+    setLoading(false);
+
+    if (!res.success) {
+      setError(res.error || 'Login failed.');
+      return;
+    }
+
+    // React Navigation will automatically switch to MainTabs based on isAuthenticated state!
+  };
+
+  // Initial registration with OTP confirmation
   const handleRegister = async () => {
     setError('');
     if (!name.trim()) {
@@ -39,9 +71,13 @@ export const AuthScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
       setError('Please enter a valid email address.');
       return;
     }
+    if (!registerPassword || registerPassword.length < 6) {
+      setError('Password must be at least 6 characters.');
+      return;
+    }
 
     setLoading(true);
-    const res = await startRegister(name, registerEmail, phone);
+    const res = await startRegister(name, registerEmail, registerPassword, phone);
     setLoading(false);
 
     if (!res.success) {
@@ -52,28 +88,10 @@ export const AuthScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
     navigation.navigate('OtpScreen', { email: registerEmail.trim().toLowerCase(), purpose: 'register' });
   };
 
-  const handleLogin = async () => {
-    setError('');
-    if (!loginEmail.trim()) {
-      setError('Please enter your registered email address.');
-      return;
-    }
-
-    setLoading(true);
-    const res = await startLogin(loginEmail);
-    setLoading(false);
-
-    if (!res.success) {
-      setError(res.error || 'Login failed.');
-      return;
-    }
-
-    navigation.navigate('OtpScreen', { email: loginEmail.trim().toLowerCase(), purpose: 'login' });
-  };
-
   const autofillDemo = () => {
     setActiveTab('login');
     setLoginEmail('puneeth@example.com');
+    setLoginPassword('puneeth123');
     setError('');
   };
 
@@ -88,8 +106,8 @@ export const AuthScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
           <View style={styles.header}>
             <Logo size="lg" showTagline={true} />
             <View style={styles.passwordlessPill}>
-              <Ionicons name="key" size={14} color="#06b6d4" />
-              <Text style={styles.passwordlessText}>100% Passwordless Authentication</Text>
+              <Ionicons name="lock-closed" size={14} color="#06b6d4" />
+              <Text style={styles.passwordlessText}>Secure Password Authentication • Firebase</Text>
             </View>
           </View>
 
@@ -105,7 +123,7 @@ export const AuthScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
                 }}
               >
                 <Text style={[styles.tabText, activeTab === 'login' && styles.tabTextActive]}>
-                  Login
+                  Sign In
                 </Text>
               </TouchableOpacity>
 
@@ -130,11 +148,11 @@ export const AuthScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
               </View>
             )}
 
-            {/* LOGIN FORM */}
+            {/* 1. LOGIN FORM (Email + Password) */}
             {activeTab === 'login' && (
               <View style={styles.form}>
                 <View style={styles.inputGroup}>
-                  <Text style={styles.label}>Registered Email Address</Text>
+                  <Text style={styles.label}>Email Address</Text>
                   <View style={styles.inputWrapper}>
                     <Ionicons name="mail-outline" size={18} color="#64748b" style={styles.inputIcon} />
                     <TextInput
@@ -150,10 +168,28 @@ export const AuthScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
                   </View>
                 </View>
 
+                <View style={styles.inputGroup}>
+                  <Text style={styles.label}>Password</Text>
+                  <View style={styles.inputWrapper}>
+                    <Ionicons name="lock-closed-outline" size={18} color="#64748b" style={styles.inputIcon} />
+                    <TextInput
+                      style={styles.input}
+                      placeholder="Enter your password"
+                      placeholderTextColor="#475569"
+                      value={loginPassword}
+                      onChangeText={setLoginPassword}
+                      secureTextEntry={!showLoginPassword}
+                    />
+                    <TouchableOpacity onPress={() => setShowLoginPassword(!showLoginPassword)} style={{ padding: 6 }}>
+                      <Ionicons name={showLoginPassword ? 'eye-off-outline' : 'eye-outline'} size={18} color="#64748b" />
+                    </TouchableOpacity>
+                  </View>
+                </View>
+
                 {/* Demo Helper Box */}
                 <View style={styles.demoHelper}>
                   <Text style={styles.demoText}>
-                    Demo account: <Text style={styles.demoEmail}>puneeth@example.com</Text>
+                    Demo: <Text style={styles.demoEmail}>puneeth@example.com</Text>
                   </Text>
                   <TouchableOpacity onPress={autofillDemo}>
                     <Text style={styles.autofillBtn}>Autofill</Text>
@@ -166,18 +202,18 @@ export const AuthScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
                   disabled={loading}
                 >
                   {loading ? (
-                    <ActivityIndicator color="#FFFFFF" size="small" />
+                    <ActivityIndicator color="#090D16" size="small" />
                   ) : (
                     <>
-                      <Text style={styles.submitButtonText}>Send OTP & Login</Text>
-                      <Ionicons name="arrow-forward" size={16} color="#FFFFFF" />
+                      <Text style={styles.submitButtonText}>Sign In</Text>
+                      <Ionicons name="arrow-forward" size={16} color="#090D16" />
                     </>
                   )}
                 </TouchableOpacity>
               </View>
             )}
 
-            {/* REGISTER FORM */}
+            {/* 2. REGISTER FORM (First-time OTP confirmation) */}
             {activeTab === 'register' && (
               <View style={styles.form}>
                 <View style={styles.inputGroup}>
@@ -212,6 +248,24 @@ export const AuthScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
                 </View>
 
                 <View style={styles.inputGroup}>
+                  <Text style={styles.label}>Create Password <Text style={styles.req}>*</Text></Text>
+                  <View style={styles.inputWrapper}>
+                    <Ionicons name="lock-closed-outline" size={18} color="#64748b" style={styles.inputIcon} />
+                    <TextInput
+                      style={styles.input}
+                      placeholder="Minimum 6 characters"
+                      placeholderTextColor="#475569"
+                      value={registerPassword}
+                      onChangeText={setRegisterPassword}
+                      secureTextEntry={!showRegisterPassword}
+                    />
+                    <TouchableOpacity onPress={() => setShowRegisterPassword(!showRegisterPassword)} style={{ padding: 6 }}>
+                      <Ionicons name={showRegisterPassword ? 'eye-off-outline' : 'eye-outline'} size={18} color="#64748b" />
+                    </TouchableOpacity>
+                  </View>
+                </View>
+
+                <View style={styles.inputGroup}>
                   <Text style={styles.label}>Phone Number (Optional)</Text>
                   <View style={styles.inputWrapper}>
                     <Ionicons name="call-outline" size={18} color="#64748b" style={styles.inputIcon} />
@@ -226,17 +280,24 @@ export const AuthScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
                   </View>
                 </View>
 
+                <View style={styles.otpNoticeBox}>
+                  <Ionicons name="checkmark-circle" size={14} color="#06b6d4" />
+                  <Text style={styles.otpNoticeText}>
+                    First-time registration sends a 4-digit OTP to confirm your email, then your password is saved for direct login.
+                  </Text>
+                </View>
+
                 <TouchableOpacity
                   style={[styles.submitButton, loading && styles.buttonDisabled]}
                   onPress={handleRegister}
                   disabled={loading}
                 >
                   {loading ? (
-                    <ActivityIndicator color="#FFFFFF" size="small" />
+                    <ActivityIndicator color="#090D16" size="small" />
                   ) : (
                     <>
-                      <Text style={styles.submitButtonText}>Continue to Verification</Text>
-                      <Ionicons name="arrow-forward" size={16} color="#FFFFFF" />
+                      <Text style={styles.submitButtonText}>Create Account & Verify OTP</Text>
+                      <Ionicons name="arrow-forward" size={16} color="#090D16" />
                     </>
                   )}
                 </TouchableOpacity>
@@ -247,7 +308,7 @@ export const AuthScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
           {/* Footer badge */}
           <View style={styles.footer}>
             <Ionicons name="shield-checkmark" size={14} color="#10b981" />
-            <Text style={styles.footerText}>Encrypted Session • Zero Passwords • Firebase</Text>
+            <Text style={styles.footerText}>Encrypted Password Auth • Firebase Firestore Database</Text>
           </View>
         </ScrollView>
       </KeyboardAvoidingView>
@@ -393,6 +454,22 @@ const styles = StyleSheet.create({
     fontSize: 11,
     fontWeight: '800',
     textDecorationLine: 'underline',
+  },
+  otpNoticeBox: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+    backgroundColor: 'rgba(6, 182, 212, 0.1)',
+    borderRadius: 12,
+    padding: 10,
+    borderWidth: 1,
+    borderColor: 'rgba(6, 182, 212, 0.25)',
+  },
+  otpNoticeText: {
+    fontSize: 10,
+    color: '#38bdf8',
+    flex: 1,
+    lineHeight: 14,
   },
   submitButton: {
     flexDirection: 'row',

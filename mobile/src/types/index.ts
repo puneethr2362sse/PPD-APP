@@ -13,6 +13,7 @@ export interface OTPState {
   expiresAt: number;
   purpose: 'login' | 'register';
   tempName?: string;
+  tempPassword?: string;
   tempPhone?: string;
 }
 

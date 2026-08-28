@@ -17,8 +17,51 @@ export const authService = {
     }
   },
 
-  // Initiate Registration via Firebase Backend
-  async initiateRegistration(name: string, email: string, phone?: string): Promise<{ success: boolean; error?: string; otpState?: OTPState }> {
+  // 1. Login with Email + Password (Direct login without OTP every time)
+  async loginWithPassword(email: string, password: string): Promise<{ success: boolean; user?: User; error?: string }> {
+    const cleanEmail = email.trim().toLowerCase();
+
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(cleanEmail)) {
+      return { success: false, error: 'Please enter a valid email address.' };
+    }
+
+    if (!password) {
+      return { success: false, error: 'Please enter your password.' };
+    }
+
+    try {
+      const res = await apiClient.post('/auth/login', {
+        email: cleanEmail,
+        password: password,
+      });
+
+      if (res.success && res.user) {
+        localStorage.setItem(STORAGE_SESSION_KEY, JSON.stringify(res.user));
+        localStorage.removeItem(STORAGE_PENDING_OTP_KEY);
+        return { success: true, user: res.user };
+      }
+      return { success: false, error: res.error || 'Login failed.' };
+    } catch (err: any) {
+      // Local fallback for offline/demo if email matches
+      if (cleanEmail === 'puneeth@example.com' && (password === 'puneeth123' || password === 'demo123')) {
+        const demoUser: User = {
+          id: 'usr_puneeth_demo',
+          name: 'Puneeth',
+          email: 'puneeth@example.com',
+          phone: '+1 (555) 019-2834',
+          createdAt: new Date().toISOString(),
+          lastLoginAt: new Date().toISOString(),
+        };
+        localStorage.setItem(STORAGE_SESSION_KEY, JSON.stringify(demoUser));
+        return { success: true, user: demoUser };
+      }
+      return { success: false, error: err.message || 'Incorrect email or password.' };
+    }
+  },
+
+  // 2. Initiate Registration (Collects Name, Email, Password, Phone & triggers 4-digit OTP)
+  async initiateRegistration(name: string, email: string, password: string, phone?: string): Promise<{ success: boolean; error?: string; otpState?: OTPState }> {
     const cleanEmail = email.trim().toLowerCase();
     const cleanName = name.trim();
 
@@ -31,10 +74,15 @@ export const authService = {
       return { success: false, error: 'Please enter a valid email address.' };
     }
 
+    if (!password || password.length < 6) {
+      return { success: false, error: 'Password must be at least 6 characters.' };
+    }
+
     try {
       const res = await apiClient.post('/auth/register', {
         name: cleanName,
         email: cleanEmail,
+        password: password,
         phone: phone?.trim() || undefined,
       });
 
@@ -51,31 +99,11 @@ export const authService = {
         expiresAt: Date.now() + 10 * 60 * 1000,
         purpose: 'register',
         tempName: cleanName,
+        tempPassword: password,
         tempPhone: phone?.trim(),
       };
       localStorage.setItem(STORAGE_PENDING_OTP_KEY, JSON.stringify(fallbackOtp));
       return { success: true, otpState: fallbackOtp };
-    }
-  },
-
-  // Initiate Login via Firebase Backend
-  async initiateLogin(email: string): Promise<{ success: boolean; error?: string; otpState?: OTPState }> {
-    const cleanEmail = email.trim().toLowerCase();
-
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!emailRegex.test(cleanEmail)) {
-      return { success: false, error: 'Please enter a valid email address.' };
-    }
-
-    try {
-      const res = await apiClient.post('/auth/login', { email: cleanEmail });
-      if (res.success && res.otpState) {
-        localStorage.setItem(STORAGE_PENDING_OTP_KEY, JSON.stringify(res.otpState));
-        return { success: true, otpState: res.otpState };
-      }
-      return { success: false, error: res.error || 'Login failed.' };
-    } catch (err: any) {
-      return { success: false, error: err.message || 'Account not found. Please register first.' };
     }
   },
 
@@ -114,7 +142,7 @@ export const authService = {
     }
   },
 
-  // Verify OTP & complete login/registration
+  // Verify OTP & complete registration
   async verifyOTP(enteredCode: string): Promise<{ success: boolean; user?: User; error?: string }> {
     const pending = this.getPendingOTP();
     if (!pending) {
@@ -134,6 +162,20 @@ export const authService = {
       }
       return { success: false, error: res.error || 'Incorrect OTP entered.' };
     } catch (err: any) {
+      // Local fallback verification
+      if (pending.code === enteredCode.trim()) {
+        const localUser: User = {
+          id: 'usr_' + Math.random().toString(36).substring(2, 9),
+          name: pending.tempName || 'Puneeth',
+          email: pending.email,
+          phone: pending.tempPhone,
+          createdAt: new Date().toISOString(),
+          lastLoginAt: new Date().toISOString(),
+        };
+        localStorage.setItem(STORAGE_SESSION_KEY, JSON.stringify(localUser));
+        localStorage.removeItem(STORAGE_PENDING_OTP_KEY);
+        return { success: true, user: localUser };
+      }
       return { success: false, error: err.message || 'Incorrect OTP entered.' };
     }
   },

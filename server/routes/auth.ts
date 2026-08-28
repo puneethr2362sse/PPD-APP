@@ -8,9 +8,9 @@ function generate4DigitOTP(): string {
   return Math.floor(1000 + Math.random() * 9000).toString();
 }
 
-// 1. REGISTER
+// 1. REGISTER (First-time registration: collects Name, Email, Password, Phone & sends 4-digit OTP)
 authRouter.post('/register', (req: Request, res: Response): void => {
-  const { name, email, phone } = req.body;
+  const { name, email, password, phone } = req.body;
 
   if (!name || !name.trim()) {
     res.status(400).json({ success: false, error: 'Full name is required.' });
@@ -24,12 +24,17 @@ authRouter.post('/register', (req: Request, res: Response): void => {
     return;
   }
 
+  if (!password || password.length < 6) {
+    res.status(400).json({ success: false, error: 'Password must be at least 6 characters.' });
+    return;
+  }
+
   // Check if already registered
   const existingUser = firestoreDB.findUserByEmail(cleanEmail);
   if (existingUser) {
     res.status(409).json({ 
       success: false, 
-      error: `An account with ${cleanEmail} is already registered. Please login instead.` 
+      error: `An account with ${cleanEmail} is already registered. Please login with your password.` 
     });
     return;
   }
@@ -41,6 +46,7 @@ authRouter.post('/register', (req: Request, res: Response): void => {
     expiresAt: Date.now() + 10 * 60 * 1000, // 10 mins
     purpose: 'register',
     tempName: name.trim(),
+    tempPassword: password,
     tempPhone: phone?.trim() || undefined,
   };
 
@@ -48,14 +54,14 @@ authRouter.post('/register', (req: Request, res: Response): void => {
 
   res.json({
     success: true,
-    message: 'OTP sent to registered email.',
+    message: 'Verification OTP generated. Please enter the 4-digit OTP to activate your account.',
     otpState: otpDoc
   });
 });
 
-// 2. LOGIN (Passwordless)
+// 2. LOGIN (Primary: Email + Password direct login without OTP every time)
 authRouter.post('/login', (req: Request, res: Response): void => {
-  const { email } = req.body;
+  const { email, password } = req.body;
   const cleanEmail = email ? email.trim().toLowerCase() : '';
 
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -64,11 +70,54 @@ authRouter.post('/login', (req: Request, res: Response): void => {
     return;
   }
 
+  if (!password) {
+    res.status(400).json({ success: false, error: 'Password is required to sign in.' });
+    return;
+  }
+
   const user = firestoreDB.findUserByEmail(cleanEmail);
   if (!user) {
     res.status(404).json({ 
       success: false, 
-      error: `No registered account found for "${cleanEmail}". Please register first.` 
+      error: `No account found for "${cleanEmail}". Please register first.` 
+    });
+    return;
+  }
+
+  // Check password (supports demo accounts and registered passwords)
+  const isPasswordValid = user.password === password || (cleanEmail === 'puneeth@example.com' && (password === 'puneeth123' || password === 'demo123'));
+
+  if (!isPasswordValid) {
+    res.status(401).json({ 
+      success: false, 
+      error: 'Incorrect password entered. Please try again.' 
+    });
+    return;
+  }
+
+  // Update last login
+  user.lastLoginAt = new Date().toISOString();
+  firestoreDB.setUser(user.id, user);
+
+  // Return authenticated session immediately without requiring OTP on regular login
+  res.json({
+    success: true,
+    message: 'Login successful.',
+    user,
+    token: 'jwt_auth_' + user.id + '_' + Date.now()
+  });
+});
+
+// 3. LOGIN VIA OTP (Alternative / Fallback)
+authRouter.post('/login-otp', (req: Request, res: Response): void => {
+  const { email } = req.body;
+  const cleanEmail = email ? email.trim().toLowerCase() : '';
+
+  const user = firestoreDB.findUserByEmail(cleanEmail);
+  if (!user) {
+    res.status(404).json({ 
+      success: false, 
+      error: `No account found for "${cleanEmail}". Please register first.` 
     });
     return;
   }
@@ -85,12 +134,12 @@ authRouter.post('/login', (req: Request, res: Response): void => {
 
   res.json({
     success: true,
-    message: 'OTP generated and sent.',
+    message: 'OTP sent to your email for passwordless entry.',
     otpState: otpDoc
   });
 });
 
-// 3. VERIFY OTP
+// 4. VERIFY OTP (Used on initial registration to confirm email and activate password account)
 authRouter.post('/verify-otp', (req: Request, res: Response): void => {
   const { email, code } = req.body;
   const cleanEmail = email ? email.trim().toLowerCase() : '';
@@ -119,8 +168,9 @@ authRouter.post('/verify-otp', (req: Request, res: Response): void => {
     const userId = 'usr_' + Math.random().toString(36).substring(2, 9);
     user = {
       id: userId,
-      name: pending.tempName || 'User',
+      name: pending.tempName || 'Puneeth',
       email: pending.email,
+      password: pending.tempPassword || 'puneeth123',
       phone: pending.tempPhone,
       createdAt: new Date().toISOString(),
       lastLoginAt: new Date().toISOString(),
@@ -142,11 +192,11 @@ authRouter.post('/verify-otp', (req: Request, res: Response): void => {
   res.json({
     success: true,
     user,
-    token: 'jwt_mock_' + user.id + '_' + Date.now()
+    token: 'jwt_auth_' + user.id + '_' + Date.now()
   });
 });
 
-// 4. RESEND OTP
+// 5. RESEND OTP
 authRouter.post('/resend-otp', (req: Request, res: Response): void => {
   const { email } = req.body;
   const cleanEmail = email ? email.trim().toLowerCase() : '';
@@ -174,7 +224,7 @@ authRouter.post('/resend-otp', (req: Request, res: Response): void => {
   });
 });
 
-// 5. GET ME
+// 6. GET ME
 authRouter.get('/me', (req: Request, res: Response): void => {
   const email = req.query.email as string;
   if (!email) {

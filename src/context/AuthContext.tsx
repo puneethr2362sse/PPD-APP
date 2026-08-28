@@ -7,8 +7,8 @@ interface AuthContextType {
   isAuthenticated: boolean;
   isLoading: boolean;
   pendingOTP: OTPState | null;
-  startRegister: (name: string, email: string, phone?: string) => Promise<{ success: boolean; error?: string; otpState?: OTPState }>;
-  startLogin: (email: string) => Promise<{ success: boolean; error?: string; otpState?: OTPState }>;
+  loginWithPassword: (email: string, password: string) => Promise<{ success: boolean; user?: User; error?: string }>;
+  startRegister: (name: string, email: string, password: string, phone?: string) => Promise<{ success: boolean; error?: string; otpState?: OTPState }>;
   verifyOTP: (code: string) => Promise<{ success: boolean; user?: User; error?: string }>;
   resendOTP: () => Promise<{ success: boolean; error?: string; otpState?: OTPState }>;
   logout: () => void;
@@ -41,22 +41,26 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setCurrentUser(active);
   };
 
-  const startRegister = async (name: string, email: string, phone?: string) => {
-    const res = await authService.initiateRegistration(name, email, phone);
+  // Direct login with email + password (no OTP required on standard login)
+  const loginWithPassword = async (email: string, password: string) => {
+    const res = await authService.loginWithPassword(email, password);
+    if (res.success && res.user) {
+      setCurrentUser(res.user);
+      setPendingOTP(null);
+    }
+    return res;
+  };
+
+  // Initial registration (requires email confirmation via 4-digit OTP)
+  const startRegister = async (name: string, email: string, password: string, phone?: string) => {
+    const res = await authService.initiateRegistration(name, email, password, phone);
     if (res.success && res.otpState) {
       setPendingOTP(res.otpState);
     }
     return res;
   };
 
-  const startLogin = async (email: string) => {
-    const res = await authService.initiateLogin(email);
-    if (res.success && res.otpState) {
-      setPendingOTP(res.otpState);
-    }
-    return res;
-  };
-
+  // OTP verification for new registrations
   const verifyOTP = async (code: string) => {
     const res = await authService.verifyOTP(code);
     if (res.success && res.user) {
@@ -87,8 +91,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         isAuthenticated: !!currentUser,
         isLoading,
         pendingOTP,
+        loginWithPassword,
         startRegister,
-        startLogin,
         verifyOTP,
         resendOTP,
         logout,

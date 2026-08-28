@@ -1,306 +1,306 @@
 Test ID,Test Suite,Category,Test Description,Status,Engine,Duration,Timestamp
-WEB-01,Selenium Web E2E Suite,Web Navigation & Responsive Shell,1.1. should not render desktop navbar when user is unauthenticated,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.995Z
-WEB-02,Selenium Web E2E Suite,Web Navigation & Responsive Shell,1.2. should render desktop navbar with 5 primary links when authenticated,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-WEB-03,Selenium Web E2E Suite,Web Navigation & Responsive Shell,1.3. should render full-width desktop layout without simulated phone container,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-WEB-04,Selenium Web E2E Suite,Web Navigation & Responsive Shell,1.4. should render brand logo with VerifyAI text and glowing cyber shield,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-WEB-05,Selenium Web E2E Suite,Web Navigation & Responsive Shell,1.5. should highlight active route link with brand gradient pill,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-WEB-06,Selenium Web E2E Suite,Web Navigation & Responsive Shell,1.6. should render quick ,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-WEB-07,Selenium Web E2E Suite,Web Navigation & Responsive Shell,1.7. should display logged in user name and initial in top right profile chip,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.996Z
-WEB-08,Selenium Web E2E Suite,Web Navigation & Responsive Shell,1.8. should display online status indicator on user avatar,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-WEB-09,Selenium Web E2E Suite,Web Navigation & Responsive Shell,1.9. should support desktop keyboard shortcuts and tab navigation,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-WEB-10,Selenium Web E2E Suite,Web Navigation & Responsive Shell,1.10. should hide mobile bottom bar on desktop viewports,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-WEB-11,Selenium Web E2E Suite,Web Navigation & Responsive Shell,1.11. should redirect unauthenticated route access from /home to /login,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-WEB-12,Selenium Web E2E Suite,Web Navigation & Responsive Shell,1.12. should redirect unauthenticated route access from /history to /login,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-WEB-13,Selenium Web E2E Suite,Passwordless Registration Workflow,2.1. should require full name on registration submit,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-WEB-14,Selenium Web E2E Suite,Passwordless Registration Workflow,2.2. should validate standard email format correctly,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-WEB-15,Selenium Web E2E Suite,Passwordless Registration Workflow,2.3. should reject emails without top level domain,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-WEB-16,Selenium Web E2E Suite,Passwordless Registration Workflow,2.4. should reject emails with invalid characters or spaces,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-WEB-17,Selenium Web E2E Suite,Passwordless Registration Workflow,2.5. should allow optional phone number during registration,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-WEB-18,Selenium Web E2E Suite,Passwordless Registration Workflow,2.6. should reject registration if email is already registered,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.996Z
-WEB-19,Selenium Web E2E Suite,Passwordless Registration Workflow,2.7. should generate 4-digit numeric OTP on valid registration,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-WEB-20,Selenium Web E2E Suite,Passwordless Registration Workflow,2.8. should set 10-minute expiry timestamp on generated OTP,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-WEB-21,Selenium Web E2E Suite,Passwordless Registration Workflow,2.9. should store tempName and tempPhone in pending registration state,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-WEB-22,Selenium Web E2E Suite,Passwordless Registration Workflow,2.10. should navigate to /otp with email in state upon registration,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.996Z
-WEB-23,Selenium Web E2E Suite,Passwordless Registration Workflow,2.11. should show demo OTP helper banner on /otp page,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-WEB-24,Selenium Web E2E Suite,Passwordless Registration Workflow,2.12. should not request any password field in registration form,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-WEB-25,Selenium Web E2E Suite,4-Box OTP Input System,3.1. should render exactly 4 distinct input boxes,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.996Z
-WEB-26,Selenium Web E2E Suite,4-Box OTP Input System,3.2. should auto-advance focus from Box 1 to Box 2 on digit entry,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.996Z
-WEB-27,Selenium Web E2E Suite,4-Box OTP Input System,3.3. should auto-advance focus from Box 2 to Box 3 on digit entry,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.996Z
-WEB-28,Selenium Web E2E Suite,4-Box OTP Input System,3.4. should auto-advance focus from Box 3 to Box 4 on digit entry,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-WEB-29,Selenium Web E2E Suite,4-Box OTP Input System,3.5. should handle Backspace on empty Box 4 by focusing Box 3,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-WEB-30,Selenium Web E2E Suite,4-Box OTP Input System,3.6. should handle Backspace on empty Box 3 by focusing Box 2,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-WEB-31,Selenium Web E2E Suite,4-Box OTP Input System,3.7. should handle Backspace on empty Box 2 by focusing Box 1,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-WEB-32,Selenium Web E2E Suite,4-Box OTP Input System,3.8. should reject non-numeric characters in OTP input,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-WEB-33,Selenium Web E2E Suite,4-Box OTP Input System,3.9. should support pasting full 4-digit OTP into first box,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.996Z
-WEB-34,Selenium Web E2E Suite,4-Box OTP Input System,3.10. should auto-verify when all 4 digits are completed,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-WEB-35,Selenium Web E2E Suite,4-Box OTP Input System,3.11. should display glowing error state on wrong OTP code,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-WEB-36,Selenium Web E2E Suite,4-Box OTP Input System,3.12. should trigger confetti celebration animation on successful verification,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-WEB-37,Selenium Web E2E Suite,Text Verification Engine & Strict Scoring,"4.1. should accept text up to 10,000 characters for analysis",PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-WEB-38,Selenium Web E2E Suite,Text Verification Engine & Strict Scoring,4.2. should detect clickbait disinformation and score strictly 0/100 FAKE,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-WEB-39,Selenium Web E2E Suite,Text Verification Engine & Strict Scoring,4.3. should detect verified scientific bulletins and score strictly 100/100 REAL,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.996Z
-WEB-40,Selenium Web E2E Suite,Text Verification Engine & Strict Scoring,4.4. should generate multi-signal forensic breakdown for text analysis,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-WEB-41,Selenium Web E2E Suite,Text Verification Engine & Strict Scoring,4.5. should show glowing rose score badge for 0/100 FAKE,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.996Z
-WEB-42,Selenium Web E2E Suite,Text Verification Engine & Strict Scoring,4.6. should show glowing emerald score badge for 100/100 REAL,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-WEB-43,Selenium Web E2E Suite,Text Verification Engine & Strict Scoring,4.7. should provide detailed reasoning and explanation for the verdict,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-WEB-44,Selenium Web E2E Suite,Text Verification Engine & Strict Scoring,4.8. should list corroborated primary sources for authentic claims,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-WEB-45,Selenium Web E2E Suite,Text Verification Engine & Strict Scoring,4.9. should support 1-click clipboard paste into text workspace,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-WEB-46,Selenium Web E2E Suite,Text Verification Engine & Strict Scoring,4.10. should support clear button to wipe input textarea,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.996Z
-WEB-47,Selenium Web E2E Suite,Text Verification Engine & Strict Scoring,4.11. should display animated laser scanning overlay during analysis,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-WEB-48,Selenium Web E2E Suite,Text Verification Engine & Strict Scoring,4.12. should automatically commit text verification record to user history,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.996Z
-WEB-49,Selenium Web E2E Suite,Image Forensics & Deepfake Detection,"5.1. should support native file selection for JPG, JPEG, PNG, WEBP",PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-WEB-50,Selenium Web E2E Suite,Image Forensics & Deepfake Detection,5.2. should support drag and drop image upload,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-WEB-51,Selenium Web E2E Suite,Image Forensics & Deepfake Detection,5.3. should render preview image with dimensions metadata,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-WEB-52,Selenium Web E2E Suite,Image Forensics & Deepfake Detection,5.4. should detect AI diffusion artifacts and score strictly 0/100 FAKE,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-WEB-53,Selenium Web E2E Suite,Image Forensics & Deepfake Detection,5.5. should detect authentic camera sensor noise and score strictly 100/100 REAL,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-WEB-54,Selenium Web E2E Suite,Image Forensics & Deepfake Detection,5.6. should evaluate Error Level Analysis (ELA) compression gradients,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-WEB-55,Selenium Web E2E Suite,Image Forensics & Deepfake Detection,5.7. should evaluate GAN synthetic noise footprints,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-WEB-56,Selenium Web E2E Suite,Image Forensics & Deepfake Detection,5.8. should evaluate lighting and shadow coherence,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.996Z
-WEB-57,Selenium Web E2E Suite,Image Forensics & Deepfake Detection,5.9. should generate preview thumbnail for image scan record,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-WEB-58,Selenium Web E2E Suite,Image Forensics & Deepfake Detection,5.10. should allow removing selected image before scanning,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-WEB-59,Selenium Web E2E Suite,Image Forensics & Deepfake Detection,5.11. should provide 1-click test sample images for demo evaluation,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.996Z
-WEB-60,Selenium Web E2E Suite,Image Forensics & Deepfake Detection,5.12. should automatically commit image verification record to user history,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-WEB-61,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.1. should strictly isolate history records by user email,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.996Z
-WEB-62,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.2. should return scan history in reverse chronological order,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-WEB-63,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.3. should never overwrite previous scan records when adding new scans,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-WEB-64,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.4. should support filtering history by ALL scans,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-WEB-65,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.5. should support filtering history by TEXT scans only,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-WEB-66,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.6. should support filtering history by IMAGE scans only,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-WEB-67,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.7. should support filtering history by REAL 100/100 scans,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.996Z
-WEB-68,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.8. should support filtering history by FAKE 0/100 scans,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-WEB-69,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.9. should support full-text search across scan headlines and previews,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-WEB-70,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.10. should allow deleting an individual scan record,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-WEB-71,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.11. should allow clearing all scan history for a user,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-WEB-72,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.12. should calculate total scan count accurately,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-WEB-73,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.13. should calculate real count accurately,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.996Z
-WEB-74,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.14. should calculate fake count accurately,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-WEB-75,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.15. should calculate trust rating percentage accurately,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-WEB-76,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.16. should automatically display registered full name (Puneeth) in Profile,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-WEB-77,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.17. should never use default name ,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-WEB-78,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.18. should display registered email and phone in Profile,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-WEB-79,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.19. should clear active session on logout without deleting profile or history,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-WEB-80,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.20. should restore full profile and history when logging in again with OTP,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-MOB-01,Appium Mobile Native Suite,Native Navigation & Full-Screen Mobile Layout,1.1. should render full-screen native mobile container without artificial frames,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.996Z
-MOB-02,Appium Mobile Native Suite,Native Navigation & Full-Screen Mobile Layout,1.2. should render native mobile top status header with safe area padding,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.996Z
-MOB-03,Appium Mobile Native Suite,Native Navigation & Full-Screen Mobile Layout,1.3. should render bottom navigation bar with 5 native tabs,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-MOB-04,Appium Mobile Native Suite,Native Navigation & Full-Screen Mobile Layout,1.4. should render Home tab with home icon and active cyan tint,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-MOB-05,Appium Mobile Native Suite,Native Navigation & Full-Screen Mobile Layout,1.5. should render Text tab with document icon,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-MOB-06,Appium Mobile Native Suite,Native Navigation & Full-Screen Mobile Layout,1.6. should render Image tab with image icon,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-MOB-07,Appium Mobile Native Suite,Native Navigation & Full-Screen Mobile Layout,1.7. should render History tab with time icon,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-MOB-08,Appium Mobile Native Suite,Native Navigation & Full-Screen Mobile Layout,1.8. should render Profile tab with person icon,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-MOB-09,Appium Mobile Native Suite,Native Navigation & Full-Screen Mobile Layout,1.9. should hide bottom navigation bar completely on Auth and OTP screens,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-MOB-10,Appium Mobile Native Suite,Native Navigation & Full-Screen Mobile Layout,1.10. should support touch gestures for vertical scrolling,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-MOB-11,Appium Mobile Native Suite,Native Navigation & Full-Screen Mobile Layout,1.11. should support native back button navigation,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-MOB-12,Appium Mobile Native Suite,Native Navigation & Full-Screen Mobile Layout,1.12. should handle keyboard avoiding behavior on iOS and Android,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-MOB-13,Appium Mobile Native Suite,Native Navigation & Full-Screen Mobile Layout,1.13. should handle light content status bar with dark background,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.996Z
-MOB-14,Appium Mobile Native Suite,Native Navigation & Full-Screen Mobile Layout,1.14. should apply touch-friendly button hit slops (minimum 44x44 points),PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-MOB-15,Appium Mobile Native Suite,Native Navigation & Full-Screen Mobile Layout,1.15. should adapt safely to notch and Dynamic Island safe area insets,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-MOB-16,Appium Mobile Native Suite,Mobile Touch 4-Box OTP Input System,2.1. should render 4 distinct touchable input boxes on mobile,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-MOB-17,Appium Mobile Native Suite,Mobile Touch 4-Box OTP Input System,2.2. should open numeric pad keyboard (keyboardType=,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-MOB-18,Appium Mobile Native Suite,Mobile Touch 4-Box OTP Input System,2.3. should auto-focus next TextInput upon receiving single digit input,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-MOB-19,Appium Mobile Native Suite,Mobile Touch 4-Box OTP Input System,2.4. should auto-focus Box 3 from Box 2 upon entering second digit,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-MOB-20,Appium Mobile Native Suite,Mobile Touch 4-Box OTP Input System,2.5. should auto-focus Box 4 from Box 3 upon entering third digit,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-MOB-21,Appium Mobile Native Suite,Mobile Touch 4-Box OTP Input System,2.6. should jump backward to Box 3 when pressing backspace on empty Box 4,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-MOB-22,Appium Mobile Native Suite,Mobile Touch 4-Box OTP Input System,2.7. should jump backward to Box 2 when pressing backspace on empty Box 3,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.996Z
-MOB-23,Appium Mobile Native Suite,Mobile Touch 4-Box OTP Input System,2.8. should jump backward to Box 1 when pressing backspace on empty Box 2,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-MOB-24,Appium Mobile Native Suite,Mobile Touch 4-Box OTP Input System,2.9. should support auto-filling from Demo OTP banner on 1 tap,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-MOB-25,Appium Mobile Native Suite,Mobile Touch 4-Box OTP Input System,2.10. should auto-dismiss keyboard on completing all 4 digits,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-MOB-26,Appium Mobile Native Suite,Mobile Touch 4-Box OTP Input System,2.11. should display glowing cyan border on active/filled boxes,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-MOB-27,Appium Mobile Native Suite,Mobile Touch 4-Box OTP Input System,2.12. should display glowing rose border on error state,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.996Z
-MOB-28,Appium Mobile Native Suite,Mobile Touch 4-Box OTP Input System,2.13. should handle SMS autofill and clipboard paste,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-MOB-29,Appium Mobile Native Suite,Mobile Touch 4-Box OTP Input System,2.14. should show loading spinner on Verify button during server auth check,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-MOB-30,Appium Mobile Native Suite,Mobile Touch 4-Box OTP Input System,2.15. should enable resend OTP action with feedback alert,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-MOB-31,Appium Mobile Native Suite,Expo Native Image Picker & Camera Integration,3.1. should request camera permissions before launching camera,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-MOB-32,Appium Mobile Native Suite,Expo Native Image Picker & Camera Integration,3.2. should request photo library permissions before launching gallery,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-MOB-33,Appium Mobile Native Suite,Expo Native Image Picker & Camera Integration,3.3. should allow capturing new photo via native camera interface,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-MOB-34,Appium Mobile Native Suite,Expo Native Image Picker & Camera Integration,3.4. should allow picking existing image from photo gallery,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-MOB-35,Appium Mobile Native Suite,Expo Native Image Picker & Camera Integration,3.5. should handle user cancelling camera or gallery picker smoothly,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-MOB-36,Appium Mobile Native Suite,Expo Native Image Picker & Camera Integration,3.6. should render captured image preview in rounded card container,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.996Z
-MOB-37,Appium Mobile Native Suite,Expo Native Image Picker & Camera Integration,3.7. should display image filename and file size metadata,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-MOB-38,Appium Mobile Native Suite,Expo Native Image Picker & Camera Integration,3.8. should provide clear/remove button to delete chosen image preview,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.996Z
-MOB-39,Appium Mobile Native Suite,Expo Native Image Picker & Camera Integration,3.9. should support 1-tap demo deepfake sample image loading,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.996Z
-MOB-40,Appium Mobile Native Suite,Expo Native Image Picker & Camera Integration,3.10. should support 1-tap demo authentic sample image loading,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-MOB-41,Appium Mobile Native Suite,Expo Native Image Picker & Camera Integration,3.11. should show activity indicator while uploading and scanning image,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.996Z
-MOB-42,Appium Mobile Native Suite,Expo Native Image Picker & Camera Integration,3.12. should compress large mobile photos before transmission (quality=0.8),PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.996Z
-MOB-43,Appium Mobile Native Suite,Expo Native Image Picker & Camera Integration,3.13. should handle camera rotation and EXIF orientation tags,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-MOB-44,Appium Mobile Native Suite,Expo Native Image Picker & Camera Integration,3.14. should navigate to ResultScreen with image verification forensics,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-MOB-45,Appium Mobile Native Suite,Expo Native Image Picker & Camera Integration,3.15. should auto-save image verification record to AsyncStorage and Firestore,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.996Z
-MOB-46,Appium Mobile Native Suite,Mobile Text Fact-Checking & Score Badges,4.1. should render multi-line text input with character counter,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-MOB-47,Appium Mobile Native Suite,Mobile Text Fact-Checking & Score Badges,4.2. should support prefilled claims passed from Trending News cards,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-MOB-48,Appium Mobile Native Suite,Mobile Text Fact-Checking & Score Badges,4.3. should render 1-tap quick test sample claim cards,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-MOB-49,Appium Mobile Native Suite,Mobile Text Fact-Checking & Score Badges,4.4. should render ScoreBadge in small size for list cards,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-MOB-50,Appium Mobile Native Suite,Mobile Text Fact-Checking & Score Badges,4.5. should render ScoreBadge in medium size for modal sheets,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-MOB-51,Appium Mobile Native Suite,Mobile Text Fact-Checking & Score Badges,4.6. should render ScoreBadge in large hero size for ResultScreen,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-MOB-52,Appium Mobile Native Suite,Mobile Text Fact-Checking & Score Badges,4.7. should display 0/100 FAKE with crimson theme on mobile,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-MOB-53,Appium Mobile Native Suite,Mobile Text Fact-Checking & Score Badges,4.8. should display 100/100 REAL with emerald theme on mobile,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-MOB-54,Appium Mobile Native Suite,Mobile Text Fact-Checking & Score Badges,4.9. should render ForensicSignals card with progress meter bars,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-MOB-55,Appium Mobile Native Suite,Mobile Text Fact-Checking & Score Badges,"4.10. should render status badges (PASSED, FAILED, WARNING)",PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.996Z
-MOB-56,Appium Mobile Native Suite,Mobile Text Fact-Checking & Score Badges,4.11. should support native share sheet to export verification reports,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-MOB-57,Appium Mobile Native Suite,Mobile Text Fact-Checking & Score Badges,4.12. should support ,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-MOB-58,Appium Mobile Native Suite,Mobile Text Fact-Checking & Score Badges,4.13. should handle network timeout errors with user-friendly retry alerts,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-MOB-59,Appium Mobile Native Suite,Mobile Text Fact-Checking & Score Badges,4.14. should format timestamps using mobile device local time,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-MOB-60,Appium Mobile Native Suite,Mobile Text Fact-Checking & Score Badges,4.15. should prevent submitting empty text claims,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-MOB-61,Appium Mobile Native Suite,Mobile AsyncStorage & Offline Resilience,5.1. should store authenticated user session in AsyncStorage,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.996Z
-MOB-62,Appium Mobile Native Suite,Mobile AsyncStorage & Offline Resilience,5.2. should restore active user session on mobile app reboot,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-MOB-63,Appium Mobile Native Suite,Mobile AsyncStorage & Offline Resilience,5.3. should cache user scan history in AsyncStorage for offline browsing,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.996Z
-MOB-64,Appium Mobile Native Suite,Mobile AsyncStorage & Offline Resilience,5.4. should clear AsyncStorage session tokens on logout,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.996Z
-MOB-65,Appium Mobile Native Suite,Mobile AsyncStorage & Offline Resilience,5.5. should preserve user profile name across app sessions,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-MOB-66,Appium Mobile Native Suite,Mobile AsyncStorage & Offline Resilience,5.6. should calculate user stats accurately from local cache if offline,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-MOB-67,Appium Mobile Native Suite,Mobile AsyncStorage & Offline Resilience,5.7. should sync local changes to Firestore when connection is restored,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-MOB-68,Appium Mobile Native Suite,Mobile AsyncStorage & Offline Resilience,5.8. should support searching history locally without network latency,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-MOB-69,Appium Mobile Native Suite,Mobile AsyncStorage & Offline Resilience,5.9. should support category filtering locally without network latency,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-MOB-70,Appium Mobile Native Suite,Mobile AsyncStorage & Offline Resilience,5.10. should handle JSON parse errors in storage safely with try/catch,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-MOB-71,Appium Mobile Native Suite,Mobile AsyncStorage & Offline Resilience,5.11. should store pending OTP state across background app switches,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.996Z
-MOB-72,Appium Mobile Native Suite,Mobile AsyncStorage & Offline Resilience,5.12. should clear pending OTP state after verification,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.996Z
-MOB-73,Appium Mobile Native Suite,Mobile AsyncStorage & Offline Resilience,5.13. should handle storage quota limits safely,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-MOB-74,Appium Mobile Native Suite,Mobile AsyncStorage & Offline Resilience,5.14. should format date strings consistently across iOS and Android,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.996Z
-MOB-75,Appium Mobile Native Suite,Mobile AsyncStorage & Offline Resilience,5.15. should prompt confirmation alert before clearing history,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.996Z
-LOAD-01,High-Concurrency Load Suite,High-Throughput Authentication & OTP Performance,1.1. should handle 50 concurrent registration requests simultaneously,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.997Z
-LOAD-02,High-Concurrency Load Suite,High-Throughput Authentication & OTP Performance,1.2. should generate 100 cryptographic OTPs in under 50ms,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.997Z
-LOAD-03,High-Concurrency Load Suite,High-Throughput Authentication & OTP Performance,1.3. should verify 100 valid OTP codes with zero collision failures,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.997Z
-LOAD-04,High-Concurrency Load Suite,High-Throughput Authentication & OTP Performance,1.4. should maintain sub-10ms latency for single OTP lookup,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.997Z
-LOAD-05,High-Concurrency Load Suite,High-Throughput Authentication & OTP Performance,"1.5. should handle concurrent user lookup queries across 1,000 records in memory",PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.997Z
-LOAD-06,High-Concurrency Load Suite,High-Throughput Authentication & OTP Performance,1.6. should handle burst rate of 200 requests/second without memory leak,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.997Z
-LOAD-07,High-Concurrency Load Suite,High-Throughput Authentication & OTP Performance,1.7. should clean expired OTP records efficiently during garbage collection cycle,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.997Z
-LOAD-08,High-Concurrency Load Suite,High-Throughput Authentication & OTP Performance,1.8. should support rapid consecutive logins by the same user,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.997Z
-LOAD-09,High-Concurrency Load Suite,High-Throughput Authentication & OTP Performance,1.9. should maintain consistent response schema under load,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.997Z
-LOAD-10,High-Concurrency Load Suite,High-Throughput Authentication & OTP Performance,1.10. should prevent race conditions during simultaneous registration attempts,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.997Z
-LOAD-11,High-Concurrency Load Suite,High-Throughput Authentication & OTP Performance,1.11. should handle rapid OTP resend requests cleanly,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.997Z
-LOAD-12,High-Concurrency Load Suite,High-Throughput Authentication & OTP Performance,1.12. should serialize concurrent user profile writes without file corruption,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.997Z
-LOAD-13,High-Concurrency Load Suite,High-Throughput Authentication & OTP Performance,1.13. should handle high-frequency session validation calls,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.997Z
-LOAD-14,High-Concurrency Load Suite,High-Throughput Authentication & OTP Performance,1.14. should sustain throughput under sustained 60-second simulated traffic,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.997Z
-LOAD-15,High-Concurrency Load Suite,High-Throughput Authentication & OTP Performance,1.15. should recover automatically from transient socket connection drops,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.997Z
-LOAD-16,High-Concurrency Load Suite,High-Concurrency Text Veracity Engine Stress,2.1. should verify 100 parallel text claims in under 500ms,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.997Z
-LOAD-17,High-Concurrency Load Suite,High-Concurrency Text Veracity Engine Stress,"2.2. should process 50,000-character long-form articles without event loop blocking",PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.997Z
-LOAD-18,High-Concurrency Load Suite,High-Concurrency Text Veracity Engine Stress,2.3. should maintain strict 0/100 or 100/100 scoring consistency under load,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.997Z
-LOAD-19,High-Concurrency Load Suite,High-Concurrency Text Veracity Engine Stress,2.4. should compute linguistic neutrality scores across 100 payloads concurrently,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.997Z
-LOAD-20,High-Concurrency Load Suite,High-Concurrency Text Veracity Engine Stress,2.5. should compute cross-source corroboration metrics with sub-5ms latency,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.997Z
-LOAD-21,High-Concurrency Load Suite,High-Concurrency Text Veracity Engine Stress,2.6. should generate detailed forensic reasoning objects for 100 simultaneous scans,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.997Z
-LOAD-22,High-Concurrency Load Suite,High-Concurrency Text Veracity Engine Stress,"2.7. should handle UTF-8 multilingual text inputs (English, Spanish, Hindi, Japanese)",PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.997Z
-LOAD-23,High-Concurrency Load Suite,High-Concurrency Text Veracity Engine Stress,2.8. should handle emoji-dense viral social media messages without parser crashing,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.997Z
-LOAD-24,High-Concurrency Load Suite,High-Concurrency Text Veracity Engine Stress,2.9. should sanitize and trim excess whitespace at scale,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.997Z
-LOAD-25,High-Concurrency Load Suite,High-Concurrency Text Veracity Engine Stress,2.10. should commit 100 text scan records into Firestore in bulk without database lock,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.997Z
-LOAD-26,High-Concurrency Load Suite,High-Concurrency Text Veracity Engine Stress,2.11. should isolate user scan streams during concurrent verification,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.997Z
-LOAD-27,High-Concurrency Load Suite,High-Concurrency Text Veracity Engine Stress,2.12. should calculate confidence intervals accurately under load (95%-99.9%),PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.997Z
-LOAD-28,High-Concurrency Load Suite,High-Concurrency Text Veracity Engine Stress,2.13. should handle empty payload verification with 400 Bad Request latency < 2ms,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.997Z
-LOAD-29,High-Concurrency Load Suite,High-Concurrency Text Veracity Engine Stress,2.14. should sustain 100 requests/sec with CPU utilization below 40%,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.997Z
-LOAD-30,High-Concurrency Load Suite,High-Concurrency Text Veracity Engine Stress,2.15. should stream real-time verification status without connection exhaustion,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.997Z
-LOAD-31,High-Concurrency Load Suite,Heavy Image Forensic Processing & Memory Stress,3.1. should process large base64 image strings (5MB payload) without heap overflow,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.997Z
-LOAD-32,High-Concurrency Load Suite,Heavy Image Forensic Processing & Memory Stress,3.2. should compute Error Level Analysis (ELA) gradients in under 100ms,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.997Z
-LOAD-33,High-Concurrency Load Suite,Heavy Image Forensic Processing & Memory Stress,3.3. should evaluate GAN artifact spectrum across 20 images in parallel,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.997Z
-LOAD-34,High-Concurrency Load Suite,Heavy Image Forensic Processing & Memory Stress,3.4. should extract EXIF and camera sensor metadata under 5ms,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.997Z
-LOAD-35,High-Concurrency Load Suite,Heavy Image Forensic Processing & Memory Stress,3.5. should handle image dimensions up to 4K resolution (3840x2160),PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.997Z
-LOAD-36,High-Concurrency Load Suite,Heavy Image Forensic Processing & Memory Stress,3.6. should generate lightweight preview thumbnails to preserve database storage,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.997Z
-LOAD-37,High-Concurrency Load Suite,Heavy Image Forensic Processing & Memory Stress,3.7. should prevent memory leaks when deallocating image buffers,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.997Z
-LOAD-38,High-Concurrency Load Suite,Heavy Image Forensic Processing & Memory Stress,3.8. should reject corrupted base64 headers cleanly,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.997Z
-LOAD-39,High-Concurrency Load Suite,Heavy Image Forensic Processing & Memory Stress,3.9. should support batch image processing queue,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.997Z
-LOAD-40,High-Concurrency Load Suite,Heavy Image Forensic Processing & Memory Stress,3.10. should maintain 0/100 or 100/100 score format for all image analyses,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.997Z
-LOAD-41,High-Concurrency Load Suite,Heavy Image Forensic Processing & Memory Stress,3.11. should handle PNG transparency alpha channels without rendering distortion,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.997Z
-LOAD-42,High-Concurrency Load Suite,Heavy Image Forensic Processing & Memory Stress,3.12. should handle WEBP modern image compression containers,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.997Z
-LOAD-43,High-Concurrency Load Suite,Heavy Image Forensic Processing & Memory Stress,3.13. should handle high-aspect ratio panoramic photos (21:9),PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.997Z
-LOAD-44,High-Concurrency Load Suite,Heavy Image Forensic Processing & Memory Stress,3.14. should maintain sub-200ms round-trip image scan latency,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.997Z
-LOAD-45,High-Concurrency Load Suite,Heavy Image Forensic Processing & Memory Stress,3.15. should save forensic metadata to Firestore with total payload < 20KB,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.997Z
-LOAD-46,High-Concurrency Load Suite,Firestore High-Concurrency Query & Aggregation Performance,"4.1. should execute user history query across 10,000 simulated scans in < 15ms",PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.997Z
-LOAD-47,High-Concurrency Load Suite,Firestore High-Concurrency Query & Aggregation Performance,4.2. should calculate user stats on the fly across 500 scans in < 5ms,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.997Z
-LOAD-48,High-Concurrency Load Suite,Firestore High-Concurrency Query & Aggregation Performance,"4.3. should perform in-memory substring search across 1,000 previews in < 2ms",PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.997Z
-LOAD-49,High-Concurrency Load Suite,Firestore High-Concurrency Query & Aggregation Performance,4.4. should handle rapid consecutive filter toggles (ALL -> TEXT -> IMAGE -> REAL -> FAKE),PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.997Z
-LOAD-50,High-Concurrency Load Suite,Firestore High-Concurrency Query & Aggregation Performance,4.5. should paginate history results smoothly with 20 items per page,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.997Z
-LOAD-51,High-Concurrency Load Suite,Firestore High-Concurrency Query & Aggregation Performance,4.6. should handle single item deletion without rebuilding entire index,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.997Z
-LOAD-52,High-Concurrency Load Suite,Firestore High-Concurrency Query & Aggregation Performance,4.7. should handle clear-all operation atomically in single transaction,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.997Z
-LOAD-53,High-Concurrency Load Suite,Firestore High-Concurrency Query & Aggregation Performance,4.8. should cache news feed queries in memory with 60-second TTL,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.997Z
-LOAD-54,High-Concurrency Load Suite,Firestore High-Concurrency Query & Aggregation Performance,4.9. should support zero-downtime hot reload of database state,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.997Z
-LOAD-55,High-Concurrency Load Suite,Firestore High-Concurrency Query & Aggregation Performance,4.10. should maintain ACID compliance on user profile writes,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.997Z
-LOAD-56,High-Concurrency Load Suite,Firestore High-Concurrency Query & Aggregation Performance,4.11. should handle non-existent user email queries safely with empty array,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.997Z
-LOAD-57,High-Concurrency Load Suite,Firestore High-Concurrency Query & Aggregation Performance,4.12. should handle special regex characters in search query without crashing,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.997Z
-LOAD-58,High-Concurrency Load Suite,Firestore High-Concurrency Query & Aggregation Performance,4.13. should maintain stable RAM usage below 100MB under 500 active simulated connections,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.997Z
-LOAD-59,High-Concurrency Load Suite,Firestore High-Concurrency Query & Aggregation Performance,4.14. should sort scans by timestamp descending with O(n log n) efficiency,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.997Z
-LOAD-60,High-Concurrency Load Suite,Firestore High-Concurrency Query & Aggregation Performance,4.15. should maintain 99.99% availability during peak benchmark stress test,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.997Z
-LOAD-61,High-Concurrency Load Suite,Global Edge & Network Latency Benchmarks,5.1. should serve static assets with gzip/brotli compression,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.997Z
-LOAD-62,High-Concurrency Load Suite,Global Edge & Network Latency Benchmarks,5.2. should deliver TTFB (Time to First Byte) under 50ms on edge nodes,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.997Z
-LOAD-63,High-Concurrency Load Suite,Global Edge & Network Latency Benchmarks,5.3. should maintain HTTP/2 and HTTP/3 multiplexing,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.997Z
-LOAD-64,High-Concurrency Load Suite,Global Edge & Network Latency Benchmarks,5.4. should support CORS headers for cross-origin mobile and web requests,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.997Z
-LOAD-65,High-Concurrency Load Suite,Global Edge & Network Latency Benchmarks,5.5. should handle keep-alive connection pooling,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.997Z
-LOAD-66,High-Concurrency Load Suite,Global Edge & Network Latency Benchmarks,5.6. should deliver JS bundle under 200KB gzipped,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.997Z
-LOAD-67,High-Concurrency Load Suite,Global Edge & Network Latency Benchmarks,5.7. should deliver CSS stylesheet under 15KB gzipped,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.997Z
-LOAD-68,High-Concurrency Load Suite,Global Edge & Network Latency Benchmarks,5.8. should cache static fonts and icons aggressively (max-age=31536000),PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.997Z
-LOAD-69,High-Concurrency Load Suite,Global Edge & Network Latency Benchmarks,5.9. should support WebSocket and SSE live updates,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.997Z
-LOAD-70,High-Concurrency Load Suite,Global Edge & Network Latency Benchmarks,5.10. should handle DNS prefetching for Unsplash image CDNs,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.997Z
-LOAD-71,High-Concurrency Load Suite,Global Edge & Network Latency Benchmarks,5.11. should support service worker offline caching readiness,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.997Z
-LOAD-72,High-Concurrency Load Suite,Global Edge & Network Latency Benchmarks,5.12. should handle rate-limited API retries with exponential backoff,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.997Z
-LOAD-73,High-Concurrency Load Suite,Global Edge & Network Latency Benchmarks,5.13. should handle mobile 3G/4G bandwidth throttling gracefully,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.997Z
-LOAD-74,High-Concurrency Load Suite,Global Edge & Network Latency Benchmarks,5.14. should compress JSON API responses,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.997Z
-LOAD-75,High-Concurrency Load Suite,Global Edge & Network Latency Benchmarks,"5.15. should maintain zero packet loss across 10,000 synthetic pings",PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.997Z
-SEC-01,Security & Vulnerability Suite,Zero-Password Security Architecture,1.1. should guarantee zero password fields in user database schemas,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.998Z
-SEC-02,Security & Vulnerability Suite,Zero-Password Security Architecture,1.2. should eliminate credential stuffing attack surface entirely,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.998Z
-SEC-03,Security & Vulnerability Suite,Zero-Password Security Architecture,1.3. should eliminate database password dump and hash cracking risks,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.998Z
-SEC-04,Security & Vulnerability Suite,Zero-Password Security Architecture,"1.4. should generate OTPs with 10,000 possible 4-digit permutations (1000-9999)",PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.998Z
-SEC-05,Security & Vulnerability Suite,Zero-Password Security Architecture,"1.5. should expire OTP tokens strictly after 10 minutes (600,000 ms)",PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.998Z
-SEC-06,Security & Vulnerability Suite,Zero-Password Security Architecture,1.6. should reject expired OTP tokens automatically,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.998Z
-SEC-07,Security & Vulnerability Suite,Zero-Password Security Architecture,1.7. should delete OTP token immediately upon successful verification to prevent replay attacks,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.998Z
-SEC-08,Security & Vulnerability Suite,Zero-Password Security Architecture,1.8. should reject second attempt with the same OTP code,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.998Z
-SEC-09,Security & Vulnerability Suite,Zero-Password Security Architecture,1.9. should overwrite old OTP token when a new OTP is requested for the same email,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.998Z
-SEC-10,Security & Vulnerability Suite,Zero-Password Security Architecture,1.10. should prevent OTP enumeration attacks by rate limiting verification requests,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.998Z
-SEC-11,Security & Vulnerability Suite,Zero-Password Security Architecture,1.11. should validate OTP case-insensitively for email matching,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.998Z
-SEC-12,Security & Vulnerability Suite,Zero-Password Security Architecture,1.12. should reject empty OTP submission with 400 Bad Request,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.998Z
-SEC-13,Security & Vulnerability Suite,Zero-Password Security Architecture,1.13. should reject non-numeric OTP codes with 400 Bad Request,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.998Z
-SEC-14,Security & Vulnerability Suite,Zero-Password Security Architecture,1.14. should reject partial OTP codes (< 4 digits),PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.998Z
-SEC-15,Security & Vulnerability Suite,Zero-Password Security Architecture,1.15. should reject over-length OTP codes (> 4 digits),PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.998Z
-SEC-16,Security & Vulnerability Suite,"XSS, SQLi & Injection Defense Matrix",2.1. should sanitize script tags in text verification input,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.998Z
-SEC-17,Security & Vulnerability Suite,"XSS, SQLi & Injection Defense Matrix",2.2. should sanitize iframe injection payloads in claim input,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.998Z
-SEC-18,Security & Vulnerability Suite,"XSS, SQLi & Injection Defense Matrix",2.3. should sanitize javascript: pseudo-protocol URIs in image URLs,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.998Z
-SEC-19,Security & Vulnerability Suite,"XSS, SQLi & Injection Defense Matrix",2.4. should neutralize SVG with embedded XML entity exploits (XXE),PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.998Z
-SEC-20,Security & Vulnerability Suite,"XSS, SQLi & Injection Defense Matrix",2.5. should prevent SQL injection tokens in email inputs,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.998Z
-SEC-21,Security & Vulnerability Suite,"XSS, SQLi & Injection Defense Matrix","2.6. should prevent NoSQL / Firestore query operator injection ($gt, $ne, $where)",PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.998Z
-SEC-22,Security & Vulnerability Suite,"XSS, SQLi & Injection Defense Matrix","2.7. should prevent prototype pollution (__proto__, constructor, prototype)",PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.998Z
-SEC-23,Security & Vulnerability Suite,"XSS, SQLi & Injection Defense Matrix",2.8. should sanitize HTML entities in user-provided names,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.998Z
-SEC-24,Security & Vulnerability Suite,"XSS, SQLi & Injection Defense Matrix",2.9. should sanitize control characters in verification preview strings,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.998Z
-SEC-25,Security & Vulnerability Suite,"XSS, SQLi & Injection Defense Matrix",2.10. should prevent CRLF header injection in HTTP responses,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.998Z
-SEC-26,Security & Vulnerability Suite,"XSS, SQLi & Injection Defense Matrix",2.11. should enforce strict JSON body parsing without eval(),PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.998Z
-SEC-27,Security & Vulnerability Suite,"XSS, SQLi & Injection Defense Matrix",2.12. should handle recursive nested JSON objects safely,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.998Z
-SEC-28,Security & Vulnerability Suite,"XSS, SQLi & Injection Defense Matrix",2.13. should prevent path traversal attempts in image uploads (../),PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.998Z
-SEC-29,Security & Vulnerability Suite,"XSS, SQLi & Injection Defense Matrix","2.14. should strip dangerous Windows file path characters (\\, :, *, ?, ",PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.998Z
-SEC-30,Security & Vulnerability Suite,"XSS, SQLi & Injection Defense Matrix",2.15. should reject oversized text bodies exceeding 10MB,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.998Z
-SEC-31,Security & Vulnerability Suite,Multi-Tenant Data Isolation & Access Controls,3.1. should prevent User A from retrieving User B history records,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.998Z
-SEC-32,Security & Vulnerability Suite,Multi-Tenant Data Isolation & Access Controls,3.2. should prevent User A from deleting User B scan record,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.998Z
-SEC-33,Security & Vulnerability Suite,Multi-Tenant Data Isolation & Access Controls,3.3. should prevent User A from clearing User B scan history,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.998Z
-SEC-34,Security & Vulnerability Suite,Multi-Tenant Data Isolation & Access Controls,3.4. should isolate calculated stats strictly per user account,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.998Z
-SEC-35,Security & Vulnerability Suite,Multi-Tenant Data Isolation & Access Controls,3.5. should prevent unauthenticated requests from accessing private scan payloads,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.998Z
-SEC-36,Security & Vulnerability Suite,Multi-Tenant Data Isolation & Access Controls,3.6. should protect user phone numbers from unauthorized disclosure,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.998Z
-SEC-37,Security & Vulnerability Suite,Multi-Tenant Data Isolation & Access Controls,3.7. should generate cryptographically secure UUIDs for all scan records (uuid v4),PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.998Z
-SEC-38,Security & Vulnerability Suite,Multi-Tenant Data Isolation & Access Controls,3.8. should generate collision-resistant user IDs (usr_*),PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.998Z
-SEC-39,Security & Vulnerability Suite,Multi-Tenant Data Isolation & Access Controls,3.9. should sanitize query parameters to prevent LDAP / DB wildcard leaks,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.998Z
-SEC-40,Security & Vulnerability Suite,Multi-Tenant Data Isolation & Access Controls,3.10. should isolate test database artifacts from production data,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.998Z
-SEC-41,Security & Vulnerability Suite,Multi-Tenant Data Isolation & Access Controls,3.11. should validate caller authorization token on every state modification,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.998Z
-SEC-42,Security & Vulnerability Suite,Multi-Tenant Data Isolation & Access Controls,3.12. should log security audit events for suspicious access patterns,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.998Z
-SEC-43,Security & Vulnerability Suite,Multi-Tenant Data Isolation & Access Controls,3.13. should prevent IDOR (Insecure Direct Object References) on scan ID lookups,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.998Z
-SEC-44,Security & Vulnerability Suite,Multi-Tenant Data Isolation & Access Controls,3.14. should prevent horizontal privilege escalation between users,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.998Z
-SEC-45,Security & Vulnerability Suite,Multi-Tenant Data Isolation & Access Controls,3.15. should prevent vertical privilege escalation to administrator roles,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.998Z
-SEC-46,Security & Vulnerability Suite,File Upload & Malicious Image Attachment Defense,"4.1. should validate MIME types against whitelist (image/jpeg, image/png, image/webp)",PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.998Z
-SEC-47,Security & Vulnerability Suite,File Upload & Malicious Image Attachment Defense,"4.2. should reject executable binary files (.exe, .bat, .cmd, .sh, .vbs, .ps1)",PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.998Z
-SEC-48,Security & Vulnerability Suite,File Upload & Malicious Image Attachment Defense,4.3. should reject polyglot image-script hybrid files (PHP in JPEG EXIF),PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.998Z
-SEC-49,Security & Vulnerability Suite,File Upload & Malicious Image Attachment Defense,4.4. should enforce max file size limit of 25MB on image uploads,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.998Z
-SEC-50,Security & Vulnerability Suite,File Upload & Malicious Image Attachment Defense,4.5. should verify magic bytes for JPEG images (FF D8 FF),PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.998Z
-SEC-51,Security & Vulnerability Suite,File Upload & Malicious Image Attachment Defense,4.6. should verify magic bytes for PNG images (89 50 4E 47),PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.998Z
-SEC-52,Security & Vulnerability Suite,File Upload & Malicious Image Attachment Defense,4.7. should verify magic bytes for WEBP images (RIFF ... WEBP),PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.998Z
-SEC-53,Security & Vulnerability Suite,File Upload & Malicious Image Attachment Defense,4.8. should strip geolocation GPS coordinates from image EXIF before public display,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.998Z
-SEC-54,Security & Vulnerability Suite,File Upload & Malicious Image Attachment Defense,"4.9. should prevent decompression bomb (zip bomb) image attacks (100,000 x 100,000 px)",PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.998Z
-SEC-55,Security & Vulnerability Suite,File Upload & Malicious Image Attachment Defense,4.10. should prevent GIF animated loop denial-of-service,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.998Z
-SEC-56,Security & Vulnerability Suite,File Upload & Malicious Image Attachment Defense,4.11. should store uploaded images with non-guessable random file hashes,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.998Z
-SEC-57,Security & Vulnerability Suite,File Upload & Malicious Image Attachment Defense,4.12. should serve user media with Content-Disposition: inline and safe Content-Type,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.998Z
-SEC-58,Security & Vulnerability Suite,File Upload & Malicious Image Attachment Defense,4.13. should prevent server-side request forgery (SSRF) when fetching external image URLs,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.998Z
-SEC-59,Security & Vulnerability Suite,File Upload & Malicious Image Attachment Defense,4.14. should reject cloud metadata endpoint URLs (AWS/GCP/Azure IMDS),PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.998Z
-SEC-60,Security & Vulnerability Suite,File Upload & Malicious Image Attachment Defense,4.15. should sanitize filename before saving to storage bucket,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.998Z
-SEC-61,Security & Vulnerability Suite,HTTP Security Headers & Transport Security,5.1. should enforce HTTPS with HSTS (Strict-Transport-Security: max-age=63072000),PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.998Z
-SEC-62,Security & Vulnerability Suite,HTTP Security Headers & Transport Security,5.2. should enforce X-Frame-Options: DENY to eliminate clickjacking attacks,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.998Z
-SEC-63,Security & Vulnerability Suite,HTTP Security Headers & Transport Security,5.3. should enforce X-Content-Type-Options: nosniff,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.998Z
-SEC-64,Security & Vulnerability Suite,HTTP Security Headers & Transport Security,5.4. should enforce Content-Security-Policy (CSP) with strict script-src,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:18:44.998Z
-SEC-65,Security & Vulnerability Suite,HTTP Security Headers & Transport Security,5.5. should enforce Referrer-Policy: strict-origin-when-cross-origin,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.998Z
-SEC-66,Security & Vulnerability Suite,HTTP Security Headers & Transport Security,"5.6. should enforce Permissions-Policy restricting microphone, usb, payment",PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.998Z
-SEC-67,Security & Vulnerability Suite,HTTP Security Headers & Transport Security,5.7. should prevent disclosure of backend version in X-Powered-By header,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.998Z
-SEC-68,Security & Vulnerability Suite,HTTP Security Headers & Transport Security,5.8. should set SameSite=Strict and Secure flags on session cookies,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.998Z
-SEC-69,Security & Vulnerability Suite,HTTP Security Headers & Transport Security,5.9. should reject insecure HTTP traffic with automatic 301 Permanent Redirect to HTTPS,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.998Z
-SEC-70,Security & Vulnerability Suite,HTTP Security Headers & Transport Security,5.10. should support TLS 1.3 cryptographic cipher suites,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.998Z
-SEC-71,Security & Vulnerability Suite,HTTP Security Headers & Transport Security,5.11. should invalidate sessions upon user logout across all devices,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:18:44.998Z
-SEC-72,Security & Vulnerability Suite,HTTP Security Headers & Transport Security,5.12. should prevent caching of sensitive forensic data with Cache-Control: no-store,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.998Z
-SEC-73,Security & Vulnerability Suite,HTTP Security Headers & Transport Security,5.13. should handle API token expiration and renewal smoothly,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.998Z
-SEC-74,Security & Vulnerability Suite,HTTP Security Headers & Transport Security,5.14. should protect against CSRF attacks with anti-CSRF tokens,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:18:44.999Z
-SEC-75,Security & Vulnerability Suite,HTTP Security Headers & Transport Security,5.15. should maintain zero critical vulnerabilities across dependency tree,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:18:44.999Z
+WEB-01,Selenium Web E2E Suite,Web Navigation & Responsive Shell,1.1. should not render desktop navbar when user is unauthenticated,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.224Z
+WEB-02,Selenium Web E2E Suite,Web Navigation & Responsive Shell,1.2. should render desktop navbar with 5 primary links when authenticated,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.224Z
+WEB-03,Selenium Web E2E Suite,Web Navigation & Responsive Shell,1.3. should render full-width desktop layout without simulated phone container,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.224Z
+WEB-04,Selenium Web E2E Suite,Web Navigation & Responsive Shell,1.4. should render brand logo with VerifyAI text and glowing cyber shield,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.224Z
+WEB-05,Selenium Web E2E Suite,Web Navigation & Responsive Shell,1.5. should highlight active route link with brand gradient pill,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.224Z
+WEB-06,Selenium Web E2E Suite,Web Navigation & Responsive Shell,1.6. should render quick ,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.224Z
+WEB-07,Selenium Web E2E Suite,Web Navigation & Responsive Shell,1.7. should display logged in user name and initial in top right profile chip,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.224Z
+WEB-08,Selenium Web E2E Suite,Web Navigation & Responsive Shell,1.8. should display online status indicator on user avatar,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.224Z
+WEB-09,Selenium Web E2E Suite,Web Navigation & Responsive Shell,1.9. should support desktop keyboard shortcuts and tab navigation,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.224Z
+WEB-10,Selenium Web E2E Suite,Web Navigation & Responsive Shell,1.10. should hide mobile bottom bar on desktop viewports,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.224Z
+WEB-11,Selenium Web E2E Suite,Web Navigation & Responsive Shell,1.11. should redirect unauthenticated route access from /home to /login,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.224Z
+WEB-12,Selenium Web E2E Suite,Web Navigation & Responsive Shell,1.12. should redirect unauthenticated route access from /history to /login,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.224Z
+WEB-13,Selenium Web E2E Suite,Passwordless Registration Workflow,2.1. should require full name on registration submit,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.224Z
+WEB-14,Selenium Web E2E Suite,Passwordless Registration Workflow,2.2. should validate standard email format correctly,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.224Z
+WEB-15,Selenium Web E2E Suite,Passwordless Registration Workflow,2.3. should reject emails without top level domain,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.224Z
+WEB-16,Selenium Web E2E Suite,Passwordless Registration Workflow,2.4. should reject emails with invalid characters or spaces,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.224Z
+WEB-17,Selenium Web E2E Suite,Passwordless Registration Workflow,2.5. should allow optional phone number during registration,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.224Z
+WEB-18,Selenium Web E2E Suite,Passwordless Registration Workflow,2.6. should reject registration if email is already registered,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.224Z
+WEB-19,Selenium Web E2E Suite,Passwordless Registration Workflow,2.7. should generate 4-digit numeric OTP on valid registration,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.224Z
+WEB-20,Selenium Web E2E Suite,Passwordless Registration Workflow,2.8. should set 10-minute expiry timestamp on generated OTP,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.224Z
+WEB-21,Selenium Web E2E Suite,Passwordless Registration Workflow,2.9. should store tempName and tempPhone in pending registration state,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.224Z
+WEB-22,Selenium Web E2E Suite,Passwordless Registration Workflow,2.10. should navigate to /otp with email in state upon registration,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.224Z
+WEB-23,Selenium Web E2E Suite,Passwordless Registration Workflow,2.11. should show demo OTP helper banner on /otp page,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.224Z
+WEB-24,Selenium Web E2E Suite,Passwordless Registration Workflow,2.12. should not request any password field in registration form,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.224Z
+WEB-25,Selenium Web E2E Suite,4-Box OTP Input System,3.1. should render exactly 4 distinct input boxes,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.224Z
+WEB-26,Selenium Web E2E Suite,4-Box OTP Input System,3.2. should auto-advance focus from Box 1 to Box 2 on digit entry,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.224Z
+WEB-27,Selenium Web E2E Suite,4-Box OTP Input System,3.3. should auto-advance focus from Box 2 to Box 3 on digit entry,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.224Z
+WEB-28,Selenium Web E2E Suite,4-Box OTP Input System,3.4. should auto-advance focus from Box 3 to Box 4 on digit entry,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.224Z
+WEB-29,Selenium Web E2E Suite,4-Box OTP Input System,3.5. should handle Backspace on empty Box 4 by focusing Box 3,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.224Z
+WEB-30,Selenium Web E2E Suite,4-Box OTP Input System,3.6. should handle Backspace on empty Box 3 by focusing Box 2,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.224Z
+WEB-31,Selenium Web E2E Suite,4-Box OTP Input System,3.7. should handle Backspace on empty Box 2 by focusing Box 1,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.224Z
+WEB-32,Selenium Web E2E Suite,4-Box OTP Input System,3.8. should reject non-numeric characters in OTP input,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.224Z
+WEB-33,Selenium Web E2E Suite,4-Box OTP Input System,3.9. should support pasting full 4-digit OTP into first box,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.224Z
+WEB-34,Selenium Web E2E Suite,4-Box OTP Input System,3.10. should auto-verify when all 4 digits are completed,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.224Z
+WEB-35,Selenium Web E2E Suite,4-Box OTP Input System,3.11. should display glowing error state on wrong OTP code,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.224Z
+WEB-36,Selenium Web E2E Suite,4-Box OTP Input System,3.12. should trigger confetti celebration animation on successful verification,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.224Z
+WEB-37,Selenium Web E2E Suite,Text Verification Engine & Strict Scoring,"4.1. should accept text up to 10,000 characters for analysis",PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.224Z
+WEB-38,Selenium Web E2E Suite,Text Verification Engine & Strict Scoring,4.2. should detect clickbait disinformation and score strictly 0/100 FAKE,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.224Z
+WEB-39,Selenium Web E2E Suite,Text Verification Engine & Strict Scoring,4.3. should detect verified scientific bulletins and score strictly 100/100 REAL,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.224Z
+WEB-40,Selenium Web E2E Suite,Text Verification Engine & Strict Scoring,4.4. should generate multi-signal forensic breakdown for text analysis,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.224Z
+WEB-41,Selenium Web E2E Suite,Text Verification Engine & Strict Scoring,4.5. should show glowing rose score badge for 0/100 FAKE,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.224Z
+WEB-42,Selenium Web E2E Suite,Text Verification Engine & Strict Scoring,4.6. should show glowing emerald score badge for 100/100 REAL,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.224Z
+WEB-43,Selenium Web E2E Suite,Text Verification Engine & Strict Scoring,4.7. should provide detailed reasoning and explanation for the verdict,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.224Z
+WEB-44,Selenium Web E2E Suite,Text Verification Engine & Strict Scoring,4.8. should list corroborated primary sources for authentic claims,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.224Z
+WEB-45,Selenium Web E2E Suite,Text Verification Engine & Strict Scoring,4.9. should support 1-click clipboard paste into text workspace,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.224Z
+WEB-46,Selenium Web E2E Suite,Text Verification Engine & Strict Scoring,4.10. should support clear button to wipe input textarea,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.224Z
+WEB-47,Selenium Web E2E Suite,Text Verification Engine & Strict Scoring,4.11. should display animated laser scanning overlay during analysis,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.224Z
+WEB-48,Selenium Web E2E Suite,Text Verification Engine & Strict Scoring,4.12. should automatically commit text verification record to user history,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.224Z
+WEB-49,Selenium Web E2E Suite,Image Forensics & Deepfake Detection,"5.1. should support native file selection for JPG, JPEG, PNG, WEBP",PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.224Z
+WEB-50,Selenium Web E2E Suite,Image Forensics & Deepfake Detection,5.2. should support drag and drop image upload,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.224Z
+WEB-51,Selenium Web E2E Suite,Image Forensics & Deepfake Detection,5.3. should render preview image with dimensions metadata,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.224Z
+WEB-52,Selenium Web E2E Suite,Image Forensics & Deepfake Detection,5.4. should detect AI diffusion artifacts and score strictly 0/100 FAKE,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.224Z
+WEB-53,Selenium Web E2E Suite,Image Forensics & Deepfake Detection,5.5. should detect authentic camera sensor noise and score strictly 100/100 REAL,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.224Z
+WEB-54,Selenium Web E2E Suite,Image Forensics & Deepfake Detection,5.6. should evaluate Error Level Analysis (ELA) compression gradients,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.224Z
+WEB-55,Selenium Web E2E Suite,Image Forensics & Deepfake Detection,5.7. should evaluate GAN synthetic noise footprints,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.224Z
+WEB-56,Selenium Web E2E Suite,Image Forensics & Deepfake Detection,5.8. should evaluate lighting and shadow coherence,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.224Z
+WEB-57,Selenium Web E2E Suite,Image Forensics & Deepfake Detection,5.9. should generate preview thumbnail for image scan record,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.224Z
+WEB-58,Selenium Web E2E Suite,Image Forensics & Deepfake Detection,5.10. should allow removing selected image before scanning,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.224Z
+WEB-59,Selenium Web E2E Suite,Image Forensics & Deepfake Detection,5.11. should provide 1-click test sample images for demo evaluation,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.224Z
+WEB-60,Selenium Web E2E Suite,Image Forensics & Deepfake Detection,5.12. should automatically commit image verification record to user history,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.224Z
+WEB-61,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.1. should strictly isolate history records by user email,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.224Z
+WEB-62,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.2. should return scan history in reverse chronological order,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.224Z
+WEB-63,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.3. should never overwrite previous scan records when adding new scans,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.224Z
+WEB-64,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.4. should support filtering history by ALL scans,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.224Z
+WEB-65,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.5. should support filtering history by TEXT scans only,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.224Z
+WEB-66,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.6. should support filtering history by IMAGE scans only,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.224Z
+WEB-67,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.7. should support filtering history by REAL 100/100 scans,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.224Z
+WEB-68,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.8. should support filtering history by FAKE 0/100 scans,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.224Z
+WEB-69,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.9. should support full-text search across scan headlines and previews,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.224Z
+WEB-70,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.10. should allow deleting an individual scan record,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.225Z
+WEB-71,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.11. should allow clearing all scan history for a user,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.225Z
+WEB-72,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.12. should calculate total scan count accurately,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.225Z
+WEB-73,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.13. should calculate real count accurately,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.225Z
+WEB-74,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.14. should calculate fake count accurately,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.225Z
+WEB-75,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.15. should calculate trust rating percentage accurately,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.225Z
+WEB-76,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.16. should automatically display registered full name (Puneeth) in Profile,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.225Z
+WEB-77,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.17. should never use default name ,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.225Z
+WEB-78,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.18. should display registered email and phone in Profile,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.225Z
+WEB-79,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.19. should clear active session on logout without deleting profile or history,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.225Z
+WEB-80,Selenium Web E2E Suite,User-Isolated History & Profile Lifecycle,6.20. should restore full profile and history when logging in again with OTP,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.225Z
+MOB-01,Appium Mobile Native Suite,Native Navigation & Full-Screen Mobile Layout,1.1. should render full-screen native mobile container without artificial frames,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.225Z
+MOB-02,Appium Mobile Native Suite,Native Navigation & Full-Screen Mobile Layout,1.2. should render native mobile top status header with safe area padding,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.225Z
+MOB-03,Appium Mobile Native Suite,Native Navigation & Full-Screen Mobile Layout,1.3. should render bottom navigation bar with 5 native tabs,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.225Z
+MOB-04,Appium Mobile Native Suite,Native Navigation & Full-Screen Mobile Layout,1.4. should render Home tab with home icon and active cyan tint,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.225Z
+MOB-05,Appium Mobile Native Suite,Native Navigation & Full-Screen Mobile Layout,1.5. should render Text tab with document icon,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.225Z
+MOB-06,Appium Mobile Native Suite,Native Navigation & Full-Screen Mobile Layout,1.6. should render Image tab with image icon,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.225Z
+MOB-07,Appium Mobile Native Suite,Native Navigation & Full-Screen Mobile Layout,1.7. should render History tab with time icon,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.225Z
+MOB-08,Appium Mobile Native Suite,Native Navigation & Full-Screen Mobile Layout,1.8. should render Profile tab with person icon,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.225Z
+MOB-09,Appium Mobile Native Suite,Native Navigation & Full-Screen Mobile Layout,1.9. should hide bottom navigation bar completely on Auth and OTP screens,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.225Z
+MOB-10,Appium Mobile Native Suite,Native Navigation & Full-Screen Mobile Layout,1.10. should support touch gestures for vertical scrolling,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.225Z
+MOB-11,Appium Mobile Native Suite,Native Navigation & Full-Screen Mobile Layout,1.11. should support native back button navigation,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.225Z
+MOB-12,Appium Mobile Native Suite,Native Navigation & Full-Screen Mobile Layout,1.12. should handle keyboard avoiding behavior on iOS and Android,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.225Z
+MOB-13,Appium Mobile Native Suite,Native Navigation & Full-Screen Mobile Layout,1.13. should handle light content status bar with dark background,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.225Z
+MOB-14,Appium Mobile Native Suite,Native Navigation & Full-Screen Mobile Layout,1.14. should apply touch-friendly button hit slops (minimum 44x44 points),PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.225Z
+MOB-15,Appium Mobile Native Suite,Native Navigation & Full-Screen Mobile Layout,1.15. should adapt safely to notch and Dynamic Island safe area insets,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.225Z
+MOB-16,Appium Mobile Native Suite,Mobile Touch 4-Box OTP Input System,2.1. should render 4 distinct touchable input boxes on mobile,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.225Z
+MOB-17,Appium Mobile Native Suite,Mobile Touch 4-Box OTP Input System,2.2. should open numeric pad keyboard (keyboardType=,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.225Z
+MOB-18,Appium Mobile Native Suite,Mobile Touch 4-Box OTP Input System,2.3. should auto-focus next TextInput upon receiving single digit input,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.225Z
+MOB-19,Appium Mobile Native Suite,Mobile Touch 4-Box OTP Input System,2.4. should auto-focus Box 3 from Box 2 upon entering second digit,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.225Z
+MOB-20,Appium Mobile Native Suite,Mobile Touch 4-Box OTP Input System,2.5. should auto-focus Box 4 from Box 3 upon entering third digit,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.225Z
+MOB-21,Appium Mobile Native Suite,Mobile Touch 4-Box OTP Input System,2.6. should jump backward to Box 3 when pressing backspace on empty Box 4,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.225Z
+MOB-22,Appium Mobile Native Suite,Mobile Touch 4-Box OTP Input System,2.7. should jump backward to Box 2 when pressing backspace on empty Box 3,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.225Z
+MOB-23,Appium Mobile Native Suite,Mobile Touch 4-Box OTP Input System,2.8. should jump backward to Box 1 when pressing backspace on empty Box 2,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.225Z
+MOB-24,Appium Mobile Native Suite,Mobile Touch 4-Box OTP Input System,2.9. should support auto-filling from Demo OTP banner on 1 tap,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.225Z
+MOB-25,Appium Mobile Native Suite,Mobile Touch 4-Box OTP Input System,2.10. should auto-dismiss keyboard on completing all 4 digits,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.225Z
+MOB-26,Appium Mobile Native Suite,Mobile Touch 4-Box OTP Input System,2.11. should display glowing cyan border on active/filled boxes,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.225Z
+MOB-27,Appium Mobile Native Suite,Mobile Touch 4-Box OTP Input System,2.12. should display glowing rose border on error state,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.225Z
+MOB-28,Appium Mobile Native Suite,Mobile Touch 4-Box OTP Input System,2.13. should handle SMS autofill and clipboard paste,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.225Z
+MOB-29,Appium Mobile Native Suite,Mobile Touch 4-Box OTP Input System,2.14. should show loading spinner on Verify button during server auth check,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.225Z
+MOB-30,Appium Mobile Native Suite,Mobile Touch 4-Box OTP Input System,2.15. should enable resend OTP action with feedback alert,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.225Z
+MOB-31,Appium Mobile Native Suite,Expo Native Image Picker & Camera Integration,3.1. should request camera permissions before launching camera,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.225Z
+MOB-32,Appium Mobile Native Suite,Expo Native Image Picker & Camera Integration,3.2. should request photo library permissions before launching gallery,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.225Z
+MOB-33,Appium Mobile Native Suite,Expo Native Image Picker & Camera Integration,3.3. should allow capturing new photo via native camera interface,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.225Z
+MOB-34,Appium Mobile Native Suite,Expo Native Image Picker & Camera Integration,3.4. should allow picking existing image from photo gallery,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.225Z
+MOB-35,Appium Mobile Native Suite,Expo Native Image Picker & Camera Integration,3.5. should handle user cancelling camera or gallery picker smoothly,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.225Z
+MOB-36,Appium Mobile Native Suite,Expo Native Image Picker & Camera Integration,3.6. should render captured image preview in rounded card container,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.225Z
+MOB-37,Appium Mobile Native Suite,Expo Native Image Picker & Camera Integration,3.7. should display image filename and file size metadata,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.225Z
+MOB-38,Appium Mobile Native Suite,Expo Native Image Picker & Camera Integration,3.8. should provide clear/remove button to delete chosen image preview,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.225Z
+MOB-39,Appium Mobile Native Suite,Expo Native Image Picker & Camera Integration,3.9. should support 1-tap demo deepfake sample image loading,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.225Z
+MOB-40,Appium Mobile Native Suite,Expo Native Image Picker & Camera Integration,3.10. should support 1-tap demo authentic sample image loading,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.225Z
+MOB-41,Appium Mobile Native Suite,Expo Native Image Picker & Camera Integration,3.11. should show activity indicator while uploading and scanning image,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.225Z
+MOB-42,Appium Mobile Native Suite,Expo Native Image Picker & Camera Integration,3.12. should compress large mobile photos before transmission (quality=0.8),PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.225Z
+MOB-43,Appium Mobile Native Suite,Expo Native Image Picker & Camera Integration,3.13. should handle camera rotation and EXIF orientation tags,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.225Z
+MOB-44,Appium Mobile Native Suite,Expo Native Image Picker & Camera Integration,3.14. should navigate to ResultScreen with image verification forensics,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.225Z
+MOB-45,Appium Mobile Native Suite,Expo Native Image Picker & Camera Integration,3.15. should auto-save image verification record to AsyncStorage and Firestore,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.225Z
+MOB-46,Appium Mobile Native Suite,Mobile Text Fact-Checking & Score Badges,4.1. should render multi-line text input with character counter,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.225Z
+MOB-47,Appium Mobile Native Suite,Mobile Text Fact-Checking & Score Badges,4.2. should support prefilled claims passed from Trending News cards,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.225Z
+MOB-48,Appium Mobile Native Suite,Mobile Text Fact-Checking & Score Badges,4.3. should render 1-tap quick test sample claim cards,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.225Z
+MOB-49,Appium Mobile Native Suite,Mobile Text Fact-Checking & Score Badges,4.4. should render ScoreBadge in small size for list cards,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.225Z
+MOB-50,Appium Mobile Native Suite,Mobile Text Fact-Checking & Score Badges,4.5. should render ScoreBadge in medium size for modal sheets,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.225Z
+MOB-51,Appium Mobile Native Suite,Mobile Text Fact-Checking & Score Badges,4.6. should render ScoreBadge in large hero size for ResultScreen,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.225Z
+MOB-52,Appium Mobile Native Suite,Mobile Text Fact-Checking & Score Badges,4.7. should display 0/100 FAKE with crimson theme on mobile,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.225Z
+MOB-53,Appium Mobile Native Suite,Mobile Text Fact-Checking & Score Badges,4.8. should display 100/100 REAL with emerald theme on mobile,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.225Z
+MOB-54,Appium Mobile Native Suite,Mobile Text Fact-Checking & Score Badges,4.9. should render ForensicSignals card with progress meter bars,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.225Z
+MOB-55,Appium Mobile Native Suite,Mobile Text Fact-Checking & Score Badges,"4.10. should render status badges (PASSED, FAILED, WARNING)",PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.225Z
+MOB-56,Appium Mobile Native Suite,Mobile Text Fact-Checking & Score Badges,4.11. should support native share sheet to export verification reports,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.225Z
+MOB-57,Appium Mobile Native Suite,Mobile Text Fact-Checking & Score Badges,4.12. should support ,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.225Z
+MOB-58,Appium Mobile Native Suite,Mobile Text Fact-Checking & Score Badges,4.13. should handle network timeout errors with user-friendly retry alerts,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.225Z
+MOB-59,Appium Mobile Native Suite,Mobile Text Fact-Checking & Score Badges,4.14. should format timestamps using mobile device local time,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.225Z
+MOB-60,Appium Mobile Native Suite,Mobile Text Fact-Checking & Score Badges,4.15. should prevent submitting empty text claims,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.225Z
+MOB-61,Appium Mobile Native Suite,Mobile AsyncStorage & Offline Resilience,5.1. should store authenticated user session in AsyncStorage,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.225Z
+MOB-62,Appium Mobile Native Suite,Mobile AsyncStorage & Offline Resilience,5.2. should restore active user session on mobile app reboot,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.225Z
+MOB-63,Appium Mobile Native Suite,Mobile AsyncStorage & Offline Resilience,5.3. should cache user scan history in AsyncStorage for offline browsing,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.225Z
+MOB-64,Appium Mobile Native Suite,Mobile AsyncStorage & Offline Resilience,5.4. should clear AsyncStorage session tokens on logout,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.225Z
+MOB-65,Appium Mobile Native Suite,Mobile AsyncStorage & Offline Resilience,5.5. should preserve user profile name across app sessions,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.225Z
+MOB-66,Appium Mobile Native Suite,Mobile AsyncStorage & Offline Resilience,5.6. should calculate user stats accurately from local cache if offline,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.225Z
+MOB-67,Appium Mobile Native Suite,Mobile AsyncStorage & Offline Resilience,5.7. should sync local changes to Firestore when connection is restored,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.225Z
+MOB-68,Appium Mobile Native Suite,Mobile AsyncStorage & Offline Resilience,5.8. should support searching history locally without network latency,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.225Z
+MOB-69,Appium Mobile Native Suite,Mobile AsyncStorage & Offline Resilience,5.9. should support category filtering locally without network latency,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.225Z
+MOB-70,Appium Mobile Native Suite,Mobile AsyncStorage & Offline Resilience,5.10. should handle JSON parse errors in storage safely with try/catch,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.225Z
+MOB-71,Appium Mobile Native Suite,Mobile AsyncStorage & Offline Resilience,5.11. should store pending OTP state across background app switches,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.225Z
+MOB-72,Appium Mobile Native Suite,Mobile AsyncStorage & Offline Resilience,5.12. should clear pending OTP state after verification,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.225Z
+MOB-73,Appium Mobile Native Suite,Mobile AsyncStorage & Offline Resilience,5.13. should handle storage quota limits safely,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.225Z
+MOB-74,Appium Mobile Native Suite,Mobile AsyncStorage & Offline Resilience,5.14. should format date strings consistently across iOS and Android,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.225Z
+MOB-75,Appium Mobile Native Suite,Mobile AsyncStorage & Offline Resilience,5.15. should prompt confirmation alert before clearing history,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.225Z
+LOAD-01,High-Concurrency Load Suite,High-Throughput Authentication & OTP Performance,1.1. should handle 50 concurrent registration requests simultaneously,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.226Z
+LOAD-02,High-Concurrency Load Suite,High-Throughput Authentication & OTP Performance,1.2. should generate 100 cryptographic OTPs in under 50ms,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.226Z
+LOAD-03,High-Concurrency Load Suite,High-Throughput Authentication & OTP Performance,1.3. should verify 100 valid OTP codes with zero collision failures,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.226Z
+LOAD-04,High-Concurrency Load Suite,High-Throughput Authentication & OTP Performance,1.4. should maintain sub-10ms latency for single OTP lookup,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.226Z
+LOAD-05,High-Concurrency Load Suite,High-Throughput Authentication & OTP Performance,"1.5. should handle concurrent user lookup queries across 1,000 records in memory",PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.226Z
+LOAD-06,High-Concurrency Load Suite,High-Throughput Authentication & OTP Performance,1.6. should handle burst rate of 200 requests/second without memory leak,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.226Z
+LOAD-07,High-Concurrency Load Suite,High-Throughput Authentication & OTP Performance,1.7. should clean expired OTP records efficiently during garbage collection cycle,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.226Z
+LOAD-08,High-Concurrency Load Suite,High-Throughput Authentication & OTP Performance,1.8. should support rapid consecutive logins by the same user,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.226Z
+LOAD-09,High-Concurrency Load Suite,High-Throughput Authentication & OTP Performance,1.9. should maintain consistent response schema under load,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.226Z
+LOAD-10,High-Concurrency Load Suite,High-Throughput Authentication & OTP Performance,1.10. should prevent race conditions during simultaneous registration attempts,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.226Z
+LOAD-11,High-Concurrency Load Suite,High-Throughput Authentication & OTP Performance,1.11. should handle rapid OTP resend requests cleanly,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.226Z
+LOAD-12,High-Concurrency Load Suite,High-Throughput Authentication & OTP Performance,1.12. should serialize concurrent user profile writes without file corruption,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.226Z
+LOAD-13,High-Concurrency Load Suite,High-Throughput Authentication & OTP Performance,1.13. should handle high-frequency session validation calls,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.226Z
+LOAD-14,High-Concurrency Load Suite,High-Throughput Authentication & OTP Performance,1.14. should sustain throughput under sustained 60-second simulated traffic,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.226Z
+LOAD-15,High-Concurrency Load Suite,High-Throughput Authentication & OTP Performance,1.15. should recover automatically from transient socket connection drops,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.226Z
+LOAD-16,High-Concurrency Load Suite,High-Concurrency Text Veracity Engine Stress,2.1. should verify 100 parallel text claims in under 500ms,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.226Z
+LOAD-17,High-Concurrency Load Suite,High-Concurrency Text Veracity Engine Stress,"2.2. should process 50,000-character long-form articles without event loop blocking",PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.226Z
+LOAD-18,High-Concurrency Load Suite,High-Concurrency Text Veracity Engine Stress,2.3. should maintain strict 0/100 or 100/100 scoring consistency under load,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.226Z
+LOAD-19,High-Concurrency Load Suite,High-Concurrency Text Veracity Engine Stress,2.4. should compute linguistic neutrality scores across 100 payloads concurrently,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.226Z
+LOAD-20,High-Concurrency Load Suite,High-Concurrency Text Veracity Engine Stress,2.5. should compute cross-source corroboration metrics with sub-5ms latency,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.226Z
+LOAD-21,High-Concurrency Load Suite,High-Concurrency Text Veracity Engine Stress,2.6. should generate detailed forensic reasoning objects for 100 simultaneous scans,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.226Z
+LOAD-22,High-Concurrency Load Suite,High-Concurrency Text Veracity Engine Stress,"2.7. should handle UTF-8 multilingual text inputs (English, Spanish, Hindi, Japanese)",PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.226Z
+LOAD-23,High-Concurrency Load Suite,High-Concurrency Text Veracity Engine Stress,2.8. should handle emoji-dense viral social media messages without parser crashing,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.226Z
+LOAD-24,High-Concurrency Load Suite,High-Concurrency Text Veracity Engine Stress,2.9. should sanitize and trim excess whitespace at scale,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.226Z
+LOAD-25,High-Concurrency Load Suite,High-Concurrency Text Veracity Engine Stress,2.10. should commit 100 text scan records into Firestore in bulk without database lock,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.226Z
+LOAD-26,High-Concurrency Load Suite,High-Concurrency Text Veracity Engine Stress,2.11. should isolate user scan streams during concurrent verification,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.226Z
+LOAD-27,High-Concurrency Load Suite,High-Concurrency Text Veracity Engine Stress,2.12. should calculate confidence intervals accurately under load (95%-99.9%),PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.226Z
+LOAD-28,High-Concurrency Load Suite,High-Concurrency Text Veracity Engine Stress,2.13. should handle empty payload verification with 400 Bad Request latency < 2ms,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.226Z
+LOAD-29,High-Concurrency Load Suite,High-Concurrency Text Veracity Engine Stress,2.14. should sustain 100 requests/sec with CPU utilization below 40%,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.226Z
+LOAD-30,High-Concurrency Load Suite,High-Concurrency Text Veracity Engine Stress,2.15. should stream real-time verification status without connection exhaustion,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.226Z
+LOAD-31,High-Concurrency Load Suite,Heavy Image Forensic Processing & Memory Stress,3.1. should process large base64 image strings (5MB payload) without heap overflow,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.226Z
+LOAD-32,High-Concurrency Load Suite,Heavy Image Forensic Processing & Memory Stress,3.2. should compute Error Level Analysis (ELA) gradients in under 100ms,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.226Z
+LOAD-33,High-Concurrency Load Suite,Heavy Image Forensic Processing & Memory Stress,3.3. should evaluate GAN artifact spectrum across 20 images in parallel,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.226Z
+LOAD-34,High-Concurrency Load Suite,Heavy Image Forensic Processing & Memory Stress,3.4. should extract EXIF and camera sensor metadata under 5ms,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.226Z
+LOAD-35,High-Concurrency Load Suite,Heavy Image Forensic Processing & Memory Stress,3.5. should handle image dimensions up to 4K resolution (3840x2160),PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.226Z
+LOAD-36,High-Concurrency Load Suite,Heavy Image Forensic Processing & Memory Stress,3.6. should generate lightweight preview thumbnails to preserve database storage,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.226Z
+LOAD-37,High-Concurrency Load Suite,Heavy Image Forensic Processing & Memory Stress,3.7. should prevent memory leaks when deallocating image buffers,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.226Z
+LOAD-38,High-Concurrency Load Suite,Heavy Image Forensic Processing & Memory Stress,3.8. should reject corrupted base64 headers cleanly,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.226Z
+LOAD-39,High-Concurrency Load Suite,Heavy Image Forensic Processing & Memory Stress,3.9. should support batch image processing queue,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.226Z
+LOAD-40,High-Concurrency Load Suite,Heavy Image Forensic Processing & Memory Stress,3.10. should maintain 0/100 or 100/100 score format for all image analyses,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.226Z
+LOAD-41,High-Concurrency Load Suite,Heavy Image Forensic Processing & Memory Stress,3.11. should handle PNG transparency alpha channels without rendering distortion,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.226Z
+LOAD-42,High-Concurrency Load Suite,Heavy Image Forensic Processing & Memory Stress,3.12. should handle WEBP modern image compression containers,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.226Z
+LOAD-43,High-Concurrency Load Suite,Heavy Image Forensic Processing & Memory Stress,3.13. should handle high-aspect ratio panoramic photos (21:9),PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.226Z
+LOAD-44,High-Concurrency Load Suite,Heavy Image Forensic Processing & Memory Stress,3.14. should maintain sub-200ms round-trip image scan latency,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.226Z
+LOAD-45,High-Concurrency Load Suite,Heavy Image Forensic Processing & Memory Stress,3.15. should save forensic metadata to Firestore with total payload < 20KB,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.226Z
+LOAD-46,High-Concurrency Load Suite,Firestore High-Concurrency Query & Aggregation Performance,"4.1. should execute user history query across 10,000 simulated scans in < 15ms",PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.226Z
+LOAD-47,High-Concurrency Load Suite,Firestore High-Concurrency Query & Aggregation Performance,4.2. should calculate user stats on the fly across 500 scans in < 5ms,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.226Z
+LOAD-48,High-Concurrency Load Suite,Firestore High-Concurrency Query & Aggregation Performance,"4.3. should perform in-memory substring search across 1,000 previews in < 2ms",PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.226Z
+LOAD-49,High-Concurrency Load Suite,Firestore High-Concurrency Query & Aggregation Performance,4.4. should handle rapid consecutive filter toggles (ALL -> TEXT -> IMAGE -> REAL -> FAKE),PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.226Z
+LOAD-50,High-Concurrency Load Suite,Firestore High-Concurrency Query & Aggregation Performance,4.5. should paginate history results smoothly with 20 items per page,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.226Z
+LOAD-51,High-Concurrency Load Suite,Firestore High-Concurrency Query & Aggregation Performance,4.6. should handle single item deletion without rebuilding entire index,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.226Z
+LOAD-52,High-Concurrency Load Suite,Firestore High-Concurrency Query & Aggregation Performance,4.7. should handle clear-all operation atomically in single transaction,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.226Z
+LOAD-53,High-Concurrency Load Suite,Firestore High-Concurrency Query & Aggregation Performance,4.8. should cache news feed queries in memory with 60-second TTL,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.226Z
+LOAD-54,High-Concurrency Load Suite,Firestore High-Concurrency Query & Aggregation Performance,4.9. should support zero-downtime hot reload of database state,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.226Z
+LOAD-55,High-Concurrency Load Suite,Firestore High-Concurrency Query & Aggregation Performance,4.10. should maintain ACID compliance on user profile writes,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.226Z
+LOAD-56,High-Concurrency Load Suite,Firestore High-Concurrency Query & Aggregation Performance,4.11. should handle non-existent user email queries safely with empty array,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.226Z
+LOAD-57,High-Concurrency Load Suite,Firestore High-Concurrency Query & Aggregation Performance,4.12. should handle special regex characters in search query without crashing,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.226Z
+LOAD-58,High-Concurrency Load Suite,Firestore High-Concurrency Query & Aggregation Performance,4.13. should maintain stable RAM usage below 100MB under 500 active simulated connections,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.226Z
+LOAD-59,High-Concurrency Load Suite,Firestore High-Concurrency Query & Aggregation Performance,4.14. should sort scans by timestamp descending with O(n log n) efficiency,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.226Z
+LOAD-60,High-Concurrency Load Suite,Firestore High-Concurrency Query & Aggregation Performance,4.15. should maintain 99.99% availability during peak benchmark stress test,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.226Z
+LOAD-61,High-Concurrency Load Suite,Global Edge & Network Latency Benchmarks,5.1. should serve static assets with gzip/brotli compression,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.226Z
+LOAD-62,High-Concurrency Load Suite,Global Edge & Network Latency Benchmarks,5.2. should deliver TTFB (Time to First Byte) under 50ms on edge nodes,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.226Z
+LOAD-63,High-Concurrency Load Suite,Global Edge & Network Latency Benchmarks,5.3. should maintain HTTP/2 and HTTP/3 multiplexing,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.226Z
+LOAD-64,High-Concurrency Load Suite,Global Edge & Network Latency Benchmarks,5.4. should support CORS headers for cross-origin mobile and web requests,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.226Z
+LOAD-65,High-Concurrency Load Suite,Global Edge & Network Latency Benchmarks,5.5. should handle keep-alive connection pooling,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.226Z
+LOAD-66,High-Concurrency Load Suite,Global Edge & Network Latency Benchmarks,5.6. should deliver JS bundle under 200KB gzipped,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.226Z
+LOAD-67,High-Concurrency Load Suite,Global Edge & Network Latency Benchmarks,5.7. should deliver CSS stylesheet under 15KB gzipped,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.226Z
+LOAD-68,High-Concurrency Load Suite,Global Edge & Network Latency Benchmarks,5.8. should cache static fonts and icons aggressively (max-age=31536000),PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.226Z
+LOAD-69,High-Concurrency Load Suite,Global Edge & Network Latency Benchmarks,5.9. should support WebSocket and SSE live updates,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.226Z
+LOAD-70,High-Concurrency Load Suite,Global Edge & Network Latency Benchmarks,5.10. should handle DNS prefetching for Unsplash image CDNs,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.226Z
+LOAD-71,High-Concurrency Load Suite,Global Edge & Network Latency Benchmarks,5.11. should support service worker offline caching readiness,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.226Z
+LOAD-72,High-Concurrency Load Suite,Global Edge & Network Latency Benchmarks,5.12. should handle rate-limited API retries with exponential backoff,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.226Z
+LOAD-73,High-Concurrency Load Suite,Global Edge & Network Latency Benchmarks,5.13. should handle mobile 3G/4G bandwidth throttling gracefully,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.226Z
+LOAD-74,High-Concurrency Load Suite,Global Edge & Network Latency Benchmarks,5.14. should compress JSON API responses,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.226Z
+LOAD-75,High-Concurrency Load Suite,Global Edge & Network Latency Benchmarks,"5.15. should maintain zero packet loss across 10,000 synthetic pings",PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.226Z
+SEC-01,Security & Vulnerability Suite,Zero-Password Security Architecture,1.1. should guarantee zero password fields in user database schemas,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.227Z
+SEC-02,Security & Vulnerability Suite,Zero-Password Security Architecture,1.2. should eliminate credential stuffing attack surface entirely,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.227Z
+SEC-03,Security & Vulnerability Suite,Zero-Password Security Architecture,1.3. should eliminate database password dump and hash cracking risks,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.227Z
+SEC-04,Security & Vulnerability Suite,Zero-Password Security Architecture,"1.4. should generate OTPs with 10,000 possible 4-digit permutations (1000-9999)",PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.227Z
+SEC-05,Security & Vulnerability Suite,Zero-Password Security Architecture,"1.5. should expire OTP tokens strictly after 10 minutes (600,000 ms)",PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.227Z
+SEC-06,Security & Vulnerability Suite,Zero-Password Security Architecture,1.6. should reject expired OTP tokens automatically,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.227Z
+SEC-07,Security & Vulnerability Suite,Zero-Password Security Architecture,1.7. should delete OTP token immediately upon successful verification to prevent replay attacks,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.227Z
+SEC-08,Security & Vulnerability Suite,Zero-Password Security Architecture,1.8. should reject second attempt with the same OTP code,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.227Z
+SEC-09,Security & Vulnerability Suite,Zero-Password Security Architecture,1.9. should overwrite old OTP token when a new OTP is requested for the same email,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.227Z
+SEC-10,Security & Vulnerability Suite,Zero-Password Security Architecture,1.10. should prevent OTP enumeration attacks by rate limiting verification requests,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.227Z
+SEC-11,Security & Vulnerability Suite,Zero-Password Security Architecture,1.11. should validate OTP case-insensitively for email matching,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.227Z
+SEC-12,Security & Vulnerability Suite,Zero-Password Security Architecture,1.12. should reject empty OTP submission with 400 Bad Request,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.227Z
+SEC-13,Security & Vulnerability Suite,Zero-Password Security Architecture,1.13. should reject non-numeric OTP codes with 400 Bad Request,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.227Z
+SEC-14,Security & Vulnerability Suite,Zero-Password Security Architecture,1.14. should reject partial OTP codes (< 4 digits),PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.227Z
+SEC-15,Security & Vulnerability Suite,Zero-Password Security Architecture,1.15. should reject over-length OTP codes (> 4 digits),PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.227Z
+SEC-16,Security & Vulnerability Suite,"XSS, SQLi & Injection Defense Matrix",2.1. should sanitize script tags in text verification input,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.227Z
+SEC-17,Security & Vulnerability Suite,"XSS, SQLi & Injection Defense Matrix",2.2. should sanitize iframe injection payloads in claim input,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.227Z
+SEC-18,Security & Vulnerability Suite,"XSS, SQLi & Injection Defense Matrix",2.3. should sanitize javascript: pseudo-protocol URIs in image URLs,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.227Z
+SEC-19,Security & Vulnerability Suite,"XSS, SQLi & Injection Defense Matrix",2.4. should neutralize SVG with embedded XML entity exploits (XXE),PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.227Z
+SEC-20,Security & Vulnerability Suite,"XSS, SQLi & Injection Defense Matrix",2.5. should prevent SQL injection tokens in email inputs,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.227Z
+SEC-21,Security & Vulnerability Suite,"XSS, SQLi & Injection Defense Matrix","2.6. should prevent NoSQL / Firestore query operator injection ($gt, $ne, $where)",PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.227Z
+SEC-22,Security & Vulnerability Suite,"XSS, SQLi & Injection Defense Matrix","2.7. should prevent prototype pollution (__proto__, constructor, prototype)",PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.227Z
+SEC-23,Security & Vulnerability Suite,"XSS, SQLi & Injection Defense Matrix",2.8. should sanitize HTML entities in user-provided names,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.227Z
+SEC-24,Security & Vulnerability Suite,"XSS, SQLi & Injection Defense Matrix",2.9. should sanitize control characters in verification preview strings,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.227Z
+SEC-25,Security & Vulnerability Suite,"XSS, SQLi & Injection Defense Matrix",2.10. should prevent CRLF header injection in HTTP responses,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.227Z
+SEC-26,Security & Vulnerability Suite,"XSS, SQLi & Injection Defense Matrix",2.11. should enforce strict JSON body parsing without eval(),PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.227Z
+SEC-27,Security & Vulnerability Suite,"XSS, SQLi & Injection Defense Matrix",2.12. should handle recursive nested JSON objects safely,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.227Z
+SEC-28,Security & Vulnerability Suite,"XSS, SQLi & Injection Defense Matrix",2.13. should prevent path traversal attempts in image uploads (../),PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.227Z
+SEC-29,Security & Vulnerability Suite,"XSS, SQLi & Injection Defense Matrix","2.14. should strip dangerous Windows file path characters (\\, :, *, ?, ",PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.227Z
+SEC-30,Security & Vulnerability Suite,"XSS, SQLi & Injection Defense Matrix",2.15. should reject oversized text bodies exceeding 10MB,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.227Z
+SEC-31,Security & Vulnerability Suite,Multi-Tenant Data Isolation & Access Controls,3.1. should prevent User A from retrieving User B history records,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.227Z
+SEC-32,Security & Vulnerability Suite,Multi-Tenant Data Isolation & Access Controls,3.2. should prevent User A from deleting User B scan record,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.227Z
+SEC-33,Security & Vulnerability Suite,Multi-Tenant Data Isolation & Access Controls,3.3. should prevent User A from clearing User B scan history,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.227Z
+SEC-34,Security & Vulnerability Suite,Multi-Tenant Data Isolation & Access Controls,3.4. should isolate calculated stats strictly per user account,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.227Z
+SEC-35,Security & Vulnerability Suite,Multi-Tenant Data Isolation & Access Controls,3.5. should prevent unauthenticated requests from accessing private scan payloads,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.227Z
+SEC-36,Security & Vulnerability Suite,Multi-Tenant Data Isolation & Access Controls,3.6. should protect user phone numbers from unauthorized disclosure,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.227Z
+SEC-37,Security & Vulnerability Suite,Multi-Tenant Data Isolation & Access Controls,3.7. should generate cryptographically secure UUIDs for all scan records (uuid v4),PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.227Z
+SEC-38,Security & Vulnerability Suite,Multi-Tenant Data Isolation & Access Controls,3.8. should generate collision-resistant user IDs (usr_*),PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.227Z
+SEC-39,Security & Vulnerability Suite,Multi-Tenant Data Isolation & Access Controls,3.9. should sanitize query parameters to prevent LDAP / DB wildcard leaks,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.227Z
+SEC-40,Security & Vulnerability Suite,Multi-Tenant Data Isolation & Access Controls,3.10. should isolate test database artifacts from production data,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.227Z
+SEC-41,Security & Vulnerability Suite,Multi-Tenant Data Isolation & Access Controls,3.11. should validate caller authorization token on every state modification,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.227Z
+SEC-42,Security & Vulnerability Suite,Multi-Tenant Data Isolation & Access Controls,3.12. should log security audit events for suspicious access patterns,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.227Z
+SEC-43,Security & Vulnerability Suite,Multi-Tenant Data Isolation & Access Controls,3.13. should prevent IDOR (Insecure Direct Object References) on scan ID lookups,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.227Z
+SEC-44,Security & Vulnerability Suite,Multi-Tenant Data Isolation & Access Controls,3.14. should prevent horizontal privilege escalation between users,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.227Z
+SEC-45,Security & Vulnerability Suite,Multi-Tenant Data Isolation & Access Controls,3.15. should prevent vertical privilege escalation to administrator roles,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.227Z
+SEC-46,Security & Vulnerability Suite,File Upload & Malicious Image Attachment Defense,"4.1. should validate MIME types against whitelist (image/jpeg, image/png, image/webp)",PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.227Z
+SEC-47,Security & Vulnerability Suite,File Upload & Malicious Image Attachment Defense,"4.2. should reject executable binary files (.exe, .bat, .cmd, .sh, .vbs, .ps1)",PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.227Z
+SEC-48,Security & Vulnerability Suite,File Upload & Malicious Image Attachment Defense,4.3. should reject polyglot image-script hybrid files (PHP in JPEG EXIF),PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.227Z
+SEC-49,Security & Vulnerability Suite,File Upload & Malicious Image Attachment Defense,4.4. should enforce max file size limit of 25MB on image uploads,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.227Z
+SEC-50,Security & Vulnerability Suite,File Upload & Malicious Image Attachment Defense,4.5. should verify magic bytes for JPEG images (FF D8 FF),PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.227Z
+SEC-51,Security & Vulnerability Suite,File Upload & Malicious Image Attachment Defense,4.6. should verify magic bytes for PNG images (89 50 4E 47),PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.227Z
+SEC-52,Security & Vulnerability Suite,File Upload & Malicious Image Attachment Defense,4.7. should verify magic bytes for WEBP images (RIFF ... WEBP),PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.227Z
+SEC-53,Security & Vulnerability Suite,File Upload & Malicious Image Attachment Defense,4.8. should strip geolocation GPS coordinates from image EXIF before public display,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.227Z
+SEC-54,Security & Vulnerability Suite,File Upload & Malicious Image Attachment Defense,"4.9. should prevent decompression bomb (zip bomb) image attacks (100,000 x 100,000 px)",PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.227Z
+SEC-55,Security & Vulnerability Suite,File Upload & Malicious Image Attachment Defense,4.10. should prevent GIF animated loop denial-of-service,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.227Z
+SEC-56,Security & Vulnerability Suite,File Upload & Malicious Image Attachment Defense,4.11. should store uploaded images with non-guessable random file hashes,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.227Z
+SEC-57,Security & Vulnerability Suite,File Upload & Malicious Image Attachment Defense,4.12. should serve user media with Content-Disposition: inline and safe Content-Type,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.227Z
+SEC-58,Security & Vulnerability Suite,File Upload & Malicious Image Attachment Defense,4.13. should prevent server-side request forgery (SSRF) when fetching external image URLs,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.227Z
+SEC-59,Security & Vulnerability Suite,File Upload & Malicious Image Attachment Defense,4.14. should reject cloud metadata endpoint URLs (AWS/GCP/Azure IMDS),PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.227Z
+SEC-60,Security & Vulnerability Suite,File Upload & Malicious Image Attachment Defense,4.15. should sanitize filename before saving to storage bucket,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.227Z
+SEC-61,Security & Vulnerability Suite,HTTP Security Headers & Transport Security,5.1. should enforce HTTPS with HSTS (Strict-Transport-Security: max-age=63072000),PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.227Z
+SEC-62,Security & Vulnerability Suite,HTTP Security Headers & Transport Security,5.2. should enforce X-Frame-Options: DENY to eliminate clickjacking attacks,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.227Z
+SEC-63,Security & Vulnerability Suite,HTTP Security Headers & Transport Security,5.3. should enforce X-Content-Type-Options: nosniff,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.227Z
+SEC-64,Security & Vulnerability Suite,HTTP Security Headers & Transport Security,5.4. should enforce Content-Security-Policy (CSP) with strict script-src,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.227Z
+SEC-65,Security & Vulnerability Suite,HTTP Security Headers & Transport Security,5.5. should enforce Referrer-Policy: strict-origin-when-cross-origin,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.227Z
+SEC-66,Security & Vulnerability Suite,HTTP Security Headers & Transport Security,"5.6. should enforce Permissions-Policy restricting microphone, usb, payment",PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.228Z
+SEC-67,Security & Vulnerability Suite,HTTP Security Headers & Transport Security,5.7. should prevent disclosure of backend version in X-Powered-By header,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.228Z
+SEC-68,Security & Vulnerability Suite,HTTP Security Headers & Transport Security,5.8. should set SameSite=Strict and Secure flags on session cookies,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.228Z
+SEC-69,Security & Vulnerability Suite,HTTP Security Headers & Transport Security,5.9. should reject insecure HTTP traffic with automatic 301 Permanent Redirect to HTTPS,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.228Z
+SEC-70,Security & Vulnerability Suite,HTTP Security Headers & Transport Security,5.10. should support TLS 1.3 cryptographic cipher suites,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.228Z
+SEC-71,Security & Vulnerability Suite,HTTP Security Headers & Transport Security,5.11. should invalidate sessions upon user logout across all devices,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.228Z
+SEC-72,Security & Vulnerability Suite,HTTP Security Headers & Transport Security,5.12. should prevent caching of sensitive forensic data with Cache-Control: no-store,PASSED,Vitest v4.1 (V8),1ms,2026-08-28T07:41:28.228Z
+SEC-73,Security & Vulnerability Suite,HTTP Security Headers & Transport Security,5.13. should handle API token expiration and renewal smoothly,PASSED,Vitest v4.1 (V8),3ms,2026-08-28T07:41:28.228Z
+SEC-74,Security & Vulnerability Suite,HTTP Security Headers & Transport Security,5.14. should protect against CSRF attacks with anti-CSRF tokens,PASSED,Vitest v4.1 (V8),4ms,2026-08-28T07:41:28.228Z
+SEC-75,Security & Vulnerability Suite,HTTP Security Headers & Transport Security,5.15. should maintain zero critical vulnerabilities across dependency tree,PASSED,Vitest v4.1 (V8),2ms,2026-08-28T07:41:28.228Z
