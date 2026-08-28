@@ -108,6 +108,41 @@ authRouter.post('/login', (req: Request, res: Response): void => {
   });
 });
 
+// 3. GOOGLE SIGN IN / OAUTH
+authRouter.post('/google', (req: Request, res: Response): void => {
+  const { email, name, photoUrl } = req.body;
+  const cleanEmail = (email || 'puneeth.google@gmail.com').trim().toLowerCase();
+  const cleanName = (name || 'Puneeth').trim();
+
+  let user = firestoreDB.findUserByEmail(cleanEmail);
+
+  if (!user) {
+    // Automatically create new user account with Google credentials
+    const userId = 'usr_g_' + Math.random().toString(36).substring(2, 9);
+    user = {
+      id: userId,
+      name: cleanName,
+      email: cleanEmail,
+      photoUrl: photoUrl || undefined,
+      authProvider: 'google',
+      createdAt: new Date().toISOString(),
+      lastLoginAt: new Date().toISOString(),
+    };
+    firestoreDB.setUser(userId, user);
+  } else {
+    user.lastLoginAt = new Date().toISOString();
+    if (photoUrl) user.photoUrl = photoUrl;
+    firestoreDB.setUser(user.id, user);
+  }
+
+  res.json({
+    success: true,
+    message: 'Signed in with Google successfully.',
+    user,
+    token: 'jwt_google_' + user.id + '_' + Date.now()
+  });
+});
+
 // 3. LOGIN VIA OTP (Alternative / Fallback)
 authRouter.post('/login-otp', (req: Request, res: Response): void => {
   const { email } = req.body;

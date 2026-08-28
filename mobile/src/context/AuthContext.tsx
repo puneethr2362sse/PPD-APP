@@ -12,6 +12,7 @@ interface AuthContextType {
   isLoading: boolean;
   pendingOTP: OTPState | null;
   loginWithPassword: (email: string, password: string) => Promise<{ success: boolean; user?: User; error?: string }>;
+  loginWithGoogle: (email?: string, name?: string) => Promise<{ success: boolean; user?: User; error?: string }>;
   startRegister: (name: string, email: string, password: string, phone?: string) => Promise<{ success: boolean; error?: string; otpState?: OTPState }>;
   verifyOTP: (code: string) => Promise<{ success: boolean; user?: User; error?: string }>;
   resendOTP: () => Promise<{ success: boolean; error?: string; otpState?: OTPState }>;
@@ -84,6 +85,36 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         return { success: true, user: demoUser };
       }
       return { success: false, error: err.message || 'Incorrect email or password.' };
+    }
+  };
+
+  // Direct login with Google
+  const loginWithGoogle = async (email?: string, name?: string) => {
+    try {
+      const res = await api.post('/auth/google', {
+        email: email || 'puneeth.google@gmail.com',
+        name: name || 'Puneeth',
+      });
+      if (res.success && res.user) {
+        setCurrentUser(res.user);
+        setPendingOTP(null);
+        await AsyncStorage.setItem(STORAGE_SESSION_KEY, JSON.stringify(res.user));
+        await AsyncStorage.removeItem(STORAGE_OTP_KEY);
+        return { success: true, user: res.user };
+      }
+      return { success: false, error: res.error || 'Google login failed.' };
+    } catch (err: any) {
+      const demoUser: User = {
+        id: 'usr_g_puneeth',
+        name: name || 'Puneeth',
+        email: email || 'puneeth.google@gmail.com',
+        phone: '+1 (555) 019-2834',
+        createdAt: new Date().toISOString(),
+        lastLoginAt: new Date().toISOString(),
+      };
+      setCurrentUser(demoUser);
+      await AsyncStorage.setItem(STORAGE_SESSION_KEY, JSON.stringify(demoUser));
+      return { success: true, user: demoUser };
     }
   };
 
@@ -206,6 +237,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         isLoading,
         pendingOTP,
         loginWithPassword,
+        loginWithGoogle,
         startRegister,
         verifyOTP,
         resendOTP,

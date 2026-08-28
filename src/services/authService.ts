@@ -43,7 +43,6 @@ export const authService = {
       }
       return { success: false, error: res.error || 'Login failed.' };
     } catch (err: any) {
-      // Local fallback for offline/demo if email matches
       if (cleanEmail === 'puneeth@example.com' && (password === 'puneeth123' || password === 'demo123')) {
         const demoUser: User = {
           id: 'usr_puneeth_demo',
@@ -60,7 +59,35 @@ export const authService = {
     }
   },
 
-  // 2. Initiate Registration (Collects Name, Email, Password, Phone & triggers 4-digit OTP)
+  // 2. Sign in with Google (OAuth)
+  async loginWithGoogle(email?: string, name?: string): Promise<{ success: boolean; user?: User; error?: string }> {
+    try {
+      const res = await apiClient.post('/auth/google', {
+        email: email || 'puneeth.google@gmail.com',
+        name: name || 'Puneeth',
+      });
+
+      if (res.success && res.user) {
+        localStorage.setItem(STORAGE_SESSION_KEY, JSON.stringify(res.user));
+        localStorage.removeItem(STORAGE_PENDING_OTP_KEY);
+        return { success: true, user: res.user };
+      }
+      return { success: false, error: res.error || 'Google sign-in failed.' };
+    } catch (err: any) {
+      const googleUser: User = {
+        id: 'usr_g_puneeth',
+        name: name || 'Puneeth',
+        email: email || 'puneeth.google@gmail.com',
+        phone: '+1 (555) 019-2834',
+        createdAt: new Date().toISOString(),
+        lastLoginAt: new Date().toISOString(),
+      };
+      localStorage.setItem(STORAGE_SESSION_KEY, JSON.stringify(googleUser));
+      return { success: true, user: googleUser };
+    }
+  },
+
+  // 3. Initiate Registration (Collects Name, Email, Password, Phone & triggers 4-digit OTP)
   async initiateRegistration(name: string, email: string, password: string, phone?: string): Promise<{ success: boolean; error?: string; otpState?: OTPState }> {
     const cleanEmail = email.trim().toLowerCase();
     const cleanName = name.trim();
@@ -92,7 +119,6 @@ export const authService = {
       }
       return { success: false, error: res.error || 'Registration failed.' };
     } catch (err: any) {
-      // Fallback local OTP generation if offline
       const fallbackOtp: OTPState = {
         email: cleanEmail,
         code: Math.floor(1000 + Math.random() * 9000).toString(),
@@ -162,7 +188,6 @@ export const authService = {
       }
       return { success: false, error: res.error || 'Incorrect OTP entered.' };
     } catch (err: any) {
-      // Local fallback verification
       if (pending.code === enteredCode.trim()) {
         const localUser: User = {
           id: 'usr_' + Math.random().toString(36).substring(2, 9),

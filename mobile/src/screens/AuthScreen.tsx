@@ -32,9 +32,10 @@ export const AuthScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [showLoginPassword, setShowLoginPassword] = useState(false);
 
   const [loading, setLoading] = useState(false);
+  const [googleLoading, setGoogleLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const { loginWithPassword, startRegister } = useAuth();
+  const { loginWithPassword, loginWithGoogle, startRegister } = useAuth();
 
   // Direct login with password
   const handleLogin = async () => {
@@ -56,8 +57,19 @@ export const AuthScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
       setError(res.error || 'Login failed.');
       return;
     }
+  };
 
-    // React Navigation will automatically switch to MainTabs based on isAuthenticated state!
+  // Sign in with Google
+  const handleGoogleSignIn = async () => {
+    setError('');
+    setGoogleLoading(true);
+    const res = await loginWithGoogle();
+    setGoogleLoading(false);
+
+    if (!res.success) {
+      setError(res.error || 'Google sign-in failed.');
+      return;
+    }
   };
 
   // Initial registration with OTP confirmation
@@ -88,13 +100,6 @@ export const AuthScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
     navigation.navigate('OtpScreen', { email: registerEmail.trim().toLowerCase(), purpose: 'register' });
   };
 
-  const autofillDemo = () => {
-    setActiveTab('login');
-    setLoginEmail('puneeth@example.com');
-    setLoginPassword('puneeth123');
-    setError('');
-  };
-
   return (
     <SafeAreaView style={styles.safeArea}>
       <KeyboardAvoidingView 
@@ -107,7 +112,7 @@ export const AuthScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
             <Logo size="lg" showTagline={true} />
             <View style={styles.passwordlessPill}>
               <Ionicons name="lock-closed" size={14} color="#06b6d4" />
-              <Text style={styles.passwordlessText}>Secure Password Authentication • Firebase</Text>
+              <Text style={styles.passwordlessText}>Secure Authentication • Firebase Cloud</Text>
             </View>
           </View>
 
@@ -148,6 +153,31 @@ export const AuthScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
               </View>
             )}
 
+            {/* GOOGLE SIGN IN BUTTON */}
+            <TouchableOpacity
+              style={styles.googleButton}
+              onPress={handleGoogleSignIn}
+              disabled={googleLoading || loading}
+            >
+              {googleLoading ? (
+                <ActivityIndicator size="small" color="#090D16" />
+              ) : (
+                <>
+                  <Ionicons name="logo-google" size={18} color="#EA4335" />
+                  <Text style={styles.googleButtonText}>
+                    {activeTab === 'login' ? 'Sign in with Google' : 'Sign up with Google'}
+                  </Text>
+                </>
+              )}
+            </TouchableOpacity>
+
+            {/* Divider */}
+            <View style={styles.dividerRow}>
+              <View style={styles.dividerLine} />
+              <Text style={styles.dividerText}>or continue with email</Text>
+              <View style={styles.dividerLine} />
+            </View>
+
             {/* 1. LOGIN FORM (Email + Password) */}
             {activeTab === 'login' && (
               <View style={styles.form}>
@@ -157,7 +187,7 @@ export const AuthScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
                     <Ionicons name="mail-outline" size={18} color="#64748b" style={styles.inputIcon} />
                     <TextInput
                       style={styles.input}
-                      placeholder="e.g. puneeth@example.com"
+                      placeholder="e.g. yourname@example.com"
                       placeholderTextColor="#475569"
                       value={loginEmail}
                       onChangeText={setLoginEmail}
@@ -186,20 +216,10 @@ export const AuthScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
                   </View>
                 </View>
 
-                {/* Demo Helper Box */}
-                <View style={styles.demoHelper}>
-                  <Text style={styles.demoText}>
-                    Demo: <Text style={styles.demoEmail}>puneeth@example.com</Text>
-                  </Text>
-                  <TouchableOpacity onPress={autofillDemo}>
-                    <Text style={styles.autofillBtn}>Autofill</Text>
-                  </TouchableOpacity>
-                </View>
-
                 <TouchableOpacity
                   style={[styles.submitButton, loading && styles.buttonDisabled]}
                   onPress={handleLogin}
-                  disabled={loading}
+                  disabled={loading || googleLoading}
                 >
                   {loading ? (
                     <ActivityIndicator color="#090D16" size="small" />
@@ -236,7 +256,7 @@ export const AuthScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
                     <Ionicons name="mail-outline" size={18} color="#64748b" style={styles.inputIcon} />
                     <TextInput
                       style={styles.input}
-                      placeholder="e.g. puneeth@example.com"
+                      placeholder="e.g. yourname@example.com"
                       placeholderTextColor="#475569"
                       value={registerEmail}
                       onChangeText={setRegisterEmail}
@@ -290,7 +310,7 @@ export const AuthScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
                 <TouchableOpacity
                   style={[styles.submitButton, loading && styles.buttonDisabled]}
                   onPress={handleRegister}
-                  disabled={loading}
+                  disabled={loading || googleLoading}
                 >
                   {loading ? (
                     <ActivityIndicator color="#090D16" size="small" />
@@ -308,7 +328,7 @@ export const AuthScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
           {/* Footer badge */}
           <View style={styles.footer}>
             <Ionicons name="shield-checkmark" size={14} color="#10b981" />
-            <Text style={styles.footerText}>Encrypted Password Auth • Firebase Firestore Database</Text>
+            <Text style={styles.footerText}>Encrypted Google OAuth & Password Security • Firebase</Text>
           </View>
         </ScrollView>
       </KeyboardAvoidingView>
@@ -363,7 +383,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#090D16',
     borderRadius: 16,
     padding: 4,
-    marginBottom: 20,
+    marginBottom: 16,
   },
   tabButton: {
     flex: 1,
@@ -398,8 +418,46 @@ const styles = StyleSheet.create({
     fontSize: 12,
     flex: 1,
   },
+  googleButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 10,
+    backgroundColor: '#FFFFFF',
+    height: 48,
+    borderRadius: 14,
+    marginBottom: 12,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2,
+  },
+  googleButtonText: {
+    fontSize: 13,
+    fontWeight: '700',
+    color: '#0F172A',
+  },
+  dividerRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginVertical: 12,
+  },
+  dividerLine: {
+    flex: 1,
+    height: 1,
+    backgroundColor: 'rgba(255, 255, 255, 0.08)',
+  },
+  dividerText: {
+    paddingHorizontal: 10,
+    fontSize: 10,
+    color: '#64748b',
+    textTransform: 'uppercase',
+    fontFamily: Platform.OS === 'ios' ? 'Menlo' : 'monospace',
+  },
   form: {
-    gap: 16,
+    gap: 14,
   },
   inputGroup: {
     gap: 6,
@@ -431,30 +489,6 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 14,
   },
-  demoHelper: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    backgroundColor: '#090D16',
-    borderRadius: 12,
-    padding: 10,
-    borderWidth: 1,
-    borderColor: 'rgba(255, 255, 255, 0.06)',
-  },
-  demoText: {
-    fontSize: 11,
-    color: '#94a3b8',
-  },
-  demoEmail: {
-    color: '#38bdf8',
-    fontWeight: '700',
-  },
-  autofillBtn: {
-    color: '#06b6d4',
-    fontSize: 11,
-    fontWeight: '800',
-    textDecorationLine: 'underline',
-  },
   otpNoticeBox: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -479,7 +513,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#06b6d4',
     height: 50,
     borderRadius: 16,
-    marginTop: 8,
+    marginTop: 4,
   },
   submitButtonText: {
     color: '#090D16',

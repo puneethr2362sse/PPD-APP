@@ -8,6 +8,7 @@ interface AuthContextType {
   isLoading: boolean;
   pendingOTP: OTPState | null;
   loginWithPassword: (email: string, password: string) => Promise<{ success: boolean; user?: User; error?: string }>;
+  loginWithGoogle: (email?: string, name?: string) => Promise<{ success: boolean; user?: User; error?: string }>;
   startRegister: (name: string, email: string, password: string, phone?: string) => Promise<{ success: boolean; error?: string; otpState?: OTPState }>;
   verifyOTP: (code: string) => Promise<{ success: boolean; user?: User; error?: string }>;
   resendOTP: () => Promise<{ success: boolean; error?: string; otpState?: OTPState }>;
@@ -44,6 +45,16 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   // Direct login with email + password (no OTP required on standard login)
   const loginWithPassword = async (email: string, password: string) => {
     const res = await authService.loginWithPassword(email, password);
+    if (res.success && res.user) {
+      setCurrentUser(res.user);
+      setPendingOTP(null);
+    }
+    return res;
+  };
+
+  // Direct sign in with Google
+  const loginWithGoogle = async (email?: string, name?: string) => {
+    const res = await authService.loginWithGoogle(email, name);
     if (res.success && res.user) {
       setCurrentUser(res.user);
       setPendingOTP(null);
@@ -92,6 +103,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         isLoading,
         pendingOTP,
         loginWithPassword,
+        loginWithGoogle,
         startRegister,
         verifyOTP,
         resendOTP,
