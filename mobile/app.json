@@ -1,0 +1,41 @@
+{
+  "expo": {
+    "name": "VerifyAI",
+    "slug": "verifyai",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "backgroundColor": "#090D16",
+      "resizeMode": "contain"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.verifyai.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "VerifyAI uses your camera to capture photos for AI fact-checking and deepfake forensics.",
+        "NSPhotoLibraryUsageDescription": "VerifyAI accesses your photo library to verify image veracity."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#090D16"
+      },
+      "package": "com.verifyai.app",
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow VerifyAI to access your photos for image verification."
+        }
+      ]
+    ]
+  }
+}

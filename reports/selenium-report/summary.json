@@ -1,0 +1,35 @@
+{
+  "suite": "selenium-report",
+  "title": "Selenium Web E2E & Component Test Report",
+  "total": 80,
+  "passed": 80,
+  "failed": 0,
+  "duration": "329ms",
+  "timestamp": "2026-08-28T07:11:24.732Z",
+  "categories": [
+    {
+      "name": "Web Navigation & Responsive Shell",
+      "count": 12
+    },
+    {
+      "name": "Passwordless Registration Workflow",
+      "count": 12
+    },
+    {
+      "name": "4-Box OTP Input System",
+      "count": 12
+    },
+    {
+      "name": "Text Verification Engine & Strict Scoring",
+      "count": 12
+    },
+    {
+      "name": "Image Forensics & Deepfake Detection",
+      "count": 12
+    },
+    {
+      "name": "User-Isolated History & Profile Lifecycle",
+      "count": 20
+    }
+  ]
+}
