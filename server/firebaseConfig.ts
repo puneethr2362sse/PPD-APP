@@ -1,18 +1,37 @@
 import fs from 'fs';
 import path from 'path';
+import os from 'os';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Data directory for local Firestore persistent sync
-const DATA_DIR = path.join(__dirname, 'data');
-const FIRESTORE_STORE_PATH = path.join(DATA_DIR, 'firestore_store.json');
-
-// Ensure data directory exists
-if (!fs.existsSync(DATA_DIR)) {
-  fs.mkdirSync(DATA_DIR, { recursive: true });
+// Data directory for local/serverless Firestore persistent sync
+function getStoragePath(): string {
+  try {
+    const localDir = path.join(__dirname, 'data');
+    if (!fs.existsSync(localDir)) {
+      fs.mkdirSync(localDir, { recursive: true });
+    }
+    // Test write permission
+    const testFile = path.join(localDir, '.write_test');
+    fs.writeFileSync(testFile, 'ok');
+    fs.unlinkSync(testFile);
+    return path.join(localDir, 'firestore_store.json');
+  } catch (_e) {
+    const tmpDir = path.join(os.tmpdir(), 'verifyai_data');
+    try {
+      if (!fs.existsSync(tmpDir)) {
+        fs.mkdirSync(tmpDir, { recursive: true });
+      }
+      return path.join(tmpDir, 'firestore_store.json');
+    } catch (_err) {
+      return path.join(os.tmpdir(), 'firestore_store.json');
+    }
+  }
 }
+
+const FIRESTORE_STORE_PATH = getStoragePath();
 
 // Collections interface
 export interface FirestoreCollections {
@@ -148,13 +167,15 @@ class FirestoreDatabase {
   }
 
   private loadData(): FirestoreCollections {
-    if (fs.existsSync(FIRESTORE_STORE_PATH)) {
-      try {
+    try {
+      if (fs.existsSync(FIRESTORE_STORE_PATH)) {
         const raw = fs.readFileSync(FIRESTORE_STORE_PATH, 'utf-8');
-        return JSON.parse(raw);
-      } catch (err) {
-        console.error('Error reading Firestore store, re-seeding:', err);
+        if (raw && raw.trim()) {
+          return JSON.parse(raw);
+        }
       }
+    } catch (_err) {
+      // In case of corrupt or incomplete concurrent write, safely fall back to seed
     }
     const seed = getInitialSeedData();
     this.persist(seed);
@@ -163,9 +184,16 @@ class FirestoreDatabase {
 
   private persist(dataToPersist: FirestoreCollections = this.data) {
     try {
-      fs.writeFileSync(FIRESTORE_STORE_PATH, JSON.stringify(dataToPersist, null, 2), 'utf-8');
-    } catch (err) {
-      console.error('Error writing to Firestore store:', err);
+      const jsonStr = JSON.stringify(dataToPersist, null, 2);
+      const tempPath = `${FIRESTORE_STORE_PATH}.${Date.now()}.${Math.random().toString(36).slice(2, 6)}.tmp`;
+      fs.writeFileSync(tempPath, jsonStr, 'utf-8');
+      fs.renameSync(tempPath, FIRESTORE_STORE_PATH);
+    } catch (_err) {
+      try {
+        fs.writeFileSync(FIRESTORE_STORE_PATH, JSON.stringify(dataToPersist, null, 2), 'utf-8');
+      } catch (_e) {
+        // In-memory data store remains fully operational if filesystem is read-only
+      }
     }
   }
 
