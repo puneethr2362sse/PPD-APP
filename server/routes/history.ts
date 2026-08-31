@@ -17,8 +17,9 @@ historyRouter.get('/', (req: Request, res: Response): void => {
 
 // 2. DELETE SINGLE SCAN
 historyRouter.delete('/:id', (req: Request, res: Response): void => {
-  const id = req.params.id;
-  const email = (req.query.email as string || '').trim().toLowerCase();
+  const id = String(req.params.id || '');
+  const rawEmail = req.query.email;
+  const email = (typeof rawEmail === 'string' ? rawEmail : Array.isArray(rawEmail) ? String(rawEmail[0]) : '').trim().toLowerCase();
 
   const success = firestoreDB.deleteScan(id, email);
   res.json({ success, message: success ? 'Scan deleted.' : 'Scan not found.' });
