@@ -11,6 +11,7 @@
     "share": "npx localtunnel --port 5173",
     "deploy": "npx vercel",
     "test": "vitest run",
+    "test:report": "tsx scripts/generateReport.ts",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview"
