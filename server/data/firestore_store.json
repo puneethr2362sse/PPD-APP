@@ -20102,6 +20102,108 @@
           "score": 50.85857142857143
         }
       ]
+    },
+    "scan_mth0998smby3": {
+      "id": "scan_mth0998smby3",
+      "userEmail": "puneethr736@gmail.com",
+      "type": "TEXT",
+      "timestamp": "2026-08-31T08:57:34.732Z",
+      "formattedDate": "Today, 2:27 PM",
+      "score": 0,
+      "verdict": "FALSE",
+      "verdictLabel": "NO, IT'S NOT TRUE",
+      "claim": "PRABHAS DEAD TODAY",
+      "originalClaim": "PRABHAS DEAD TODAY",
+      "preview": "PRABHAS DEAD TODAY",
+      "fullContent": "PRABHAS DEAD TODAY",
+      "explanation": "1. User Claim: The user claims that Prabhas is dead today. 2. Retrieved Live Evidence: The retrieved sources discuss ongoing film projects featuring Prabhas (such as 'Fauzi' and 'Kannappa'), articles celebrating his career milestones, and updates regarding his upcoming film schedules. 3. Factual Comparison & Verdict: The retrieved live evidence clearly establishes that Prabhas is alive and actively engaged in his acting career, directly contradicting the claim that he is dead. Therefore, the verdict is FALSE.",
+      "reasoning": "(1) Claimed: Prabhas is dead today. (2) Evidence states: Recent news articles and Wikipedia entries from 2025/2026 mention Prabhas participating in film shoots ('Fauzi', 'Kannappa') and being referenced as a pan-India superstar celebrating milestones. (3) Contradiction/Support: The live evidence directly contradicts the claim of his death by detailing his ongoing professional activities and recent film projects. (4) Verdict choice: FALSE because the core assertion of the claim is directly contradicted by reliable evidence showing he is alive and working.",
+      "confidence": 99,
+      "directAnswer": "No, this is not true: Available news and Wikipedia evidence indicates that actor Prabhas is alive, active in films such as 'Fauzi' and 'Kannappa', and celebrating milestones.",
+      "queryType": "claim",
+      "isLiveWebVerified": true,
+      "searchTimestamp": "2026-08-31T08:57:34.732Z",
+      "signals": [
+        {
+          "name": "Claim-to-Evidence Consistency",
+          "status": "failed",
+          "score": 8,
+          "detail": "(1) Claimed: Prabhas is dead today. (2) Evidence states: Recent news articles and Wikipedia entries from 2025/2026 mention Prabhas participating in film shoots ('Fauzi', 'Kannappa') and being referenced as a pan-India superstar celebrating milestones. (3) Contradiction/Support: The live evidence directly contradicts the claim of his death by detailing his ongoing professional activities and recent film projects. (4) Verdict choice: FALSE because the core assertion of the claim is directly contradicted by reliable evidence showing he is alive and working."
+        },
+        {
+          "name": "Primary & Official Registry Alignment",
+          "status": "passed",
+          "score": 96,
+          "detail": "Evidence cross-referenced against authoritative sources with readable page content (Rama Prabha - Wikipedia, Kannada Prabha - Wikipedia, Prabhas's Fauzi shoot paused after crew member dies in Hyderabad road accident - India Today)."
+        },
+        {
+          "name": "Real-Time Live Web Coverage",
+          "status": "passed",
+          "score": 98,
+          "detail": "Retrieved 5 ranked reference sources; verdict evidence uses readable content."
+        },
+        {
+          "name": "Fact & Entity Match Index",
+          "status": "failed",
+          "score": 12,
+          "detail": "Key factual contradiction detected between claim and verified evidence."
+        }
+      ],
+      "sources": [
+        {
+          "name": "Rama Prabha - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Rama_Prabha",
+          "domain": "en.wikipedia.org",
+          "snippet": "Rama Prabha claims her ex Sarath Babu cheated her\". India Today. 3 February 2019. Retrieved 6 July 2021. \"Tollywood senior actress Rama Prabha home tour\"",
+          "evidenceText": "Rama Prabha is an Indian actress who performs in Telugu, Tamil and Hindi films. She has acted in more than 1,400 films and is credited as a character artist who shared screen space with superstars across most generations of South Indian Cinema with a career spanning over six decades. She formed a noted pair on Telugu screen during the 1970s and 1980s with comedian Raja Babu. She acted opposite Nagesh in Shanti Nilayam and many other films from 1968 onwards. She acted in Hindi opposite Mehmood in the movie Do Phool. == Personal life == When she was one month old, her father's sister adopted her and they shifted to Ooty. Rama's childhood was spent there till the age of 14 years when they shifted to Chennai. She currently lives in Vayalpadu, near Madanapalle. She had adopted her sister's infant daughter, Vijaya Chamundeswari. Vijaya is married to film actor Rajendra prasad. == Filmography == === Telugu films === === Tamil films === === Other language films === === Television === Lady Detective (1996–1997) as Baby == Awards == She won Nandi Award for Best Female Comedian - Lahiri Lahiri Lahirilo (2002) == References == == External links == Rama Prabha at IMDb TELUGU ACTRESS ACTED IN MOST NUMBER OF FILMS | telugu book Actor's wife comes to court seeking divorce | Chennai News - Times of India Actor's wife comes to court seeking divorce | Chennai News - Times of India",
+          "reliability": 96,
+          "relevanceScore": 47.6,
+          "score": 67.352
+        },
+        {
+          "name": "Kannada Prabha - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Kannada_Prabha",
+          "domain": "en.wikipedia.org",
+          "snippet": "India Media in Karnataka Media of India \"Today Kannada Prabha Paper\". chanakyaloka.com/today-kannada-prabha-epaper-download/. \"Sakhi\". sakhiexpress.epapr",
+          "evidenceText": "Kannada Prabha is a morning daily jointly owned by Jupiter Capital a company founded by Rajeev Chandrasekhar who is Bharatiya Janata Party’s member of parliament and The New Indian Express Group, is a major Kannada newspaper in Karnataka. The tag line on its masthead is The Most Powerful Kannada Newspaper. It was founded by Ramnath Goenka. == History == Started on 4 November 1967 with one edition in Bengaluru, today this newspaper, headquartered in Bengaluru is spread across the state with 5 other publication centers viz. Gulbarga, Mangalore, Shivamogga, Hubballi, Belagavi and chithradurga Kalaburagi. Jupiter Capital, owned by Rajeev Chandrasekhar purchased a 51% stake in the newspaper in 2011. Ravi Hegde took charge as Editor in Chief in January 2017. Kannada Prabha has won the Karnataka Media Academy award for the Best Designed Newspaper successively, three times since the inception of the award in 2005. == Sister publications == The New Indian Express, an Indian English-language broadsheet daily newspaper Sakhi, a fortnightly Kannada language women's interest magazine Kannada Prabha paper, a daily news publication to help people throughout Karnataka, it features national & international news, current affairs, political news, sports, entertainment and the sharemarket == See also == List of Kannada-language newspapers List of Kannada-language magazines List of newspapers in India Media in Karnataka Media of India == References == == External links == Official website Kannada Prabha ePaper",
+          "reliability": 96,
+          "relevanceScore": 47.6,
+          "score": 67.352
+        },
+        {
+          "name": "Prabhas's Fauzi shoot paused after crew member dies in Hyderabad road accident - India Today",
+          "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNUjZUdEpxZ1VndUVBLVFyN0ZMcW5uSGgyUDFLMkU3dzVWN1EzeWRwbG96SU9FVTRWYWZFMWVFbFdIN2dia0U3MTBwWHRsTHFiMnpPX0VWXzlpVmVULW1VT1NubTA2UzJMTDNsUE5wbUxlWUI1REJtRzZFUmZsdHpnWGJJTmNRd2RBU3ZYOTQxMy04Y2tLZkFqZ3RHSFpfMk5rNzFnNC1FbGllVWdUVUl1TFpvcWVWT0tURDAxRVk5Z2xOYTgwdEw4ZjItMmpzbXB1bFI2UWFpQTUxYk96UHBxRFpHR1hMa3pO0gHuAUFVX3lxTE9TOWs0QWVPQWpENlJLNE5SRDJxMEFxVVRfMHdUanBxRUItTHhnNllwUEpYTHc1WWIzMHY2azVFNG12TzllWTJja0o1bDN1YU9ZMDRRcm4xNWc0V3ZhNjBHcVBRNUJueFdEcUVIOVZ6RFZ3VVEyM3l6N3RHZ3dZQlNOZmYwZVowYzh1SVh0bmlqelkya0g4cGdLN2tWMDdENUNBa0QwM0hKNkM5Y2ZhQzltTVMyNTEwNVR2QmlJcjh0OE5vdlVCdmozczBEOXJaQTVIVjZac0VCVnJkamwyV1NidGJXczNnemUzYXNDZ2c?oc=5",
+          "domain": "news.google.com",
+          "pubDate": "Wed, 06 May 2026 07:00:00 GMT",
+          "reliability": 85,
+          "snippet": "Prabhas's Fauzi shoot paused after crew member dies in Hyderabad road accident - India Today",
+          "evidenceText": "Prabhas's Fauzi shoot paused after crew member dies in Hyderabad road accident - India Today",
+          "relevanceScore": 56.5,
+          "score": 64.23
+        },
+        {
+          "name": "23 years of Prabhas: 23 films and countless milestones for the pan-India superstar - India Today",
+          "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPQlBkTF9GeEVuQVVCMlZyUllvSXFVVlFxVTQyNk9Gd1RSRkl6c29GWDQ5aGhHV2IwY1ZNeUlwZFl0MVp3UldVVy1acW8xM1h3YjBubEtTbUVTMVdmNllXWGx0OG9aMEFUNWRUdWZMMllRbTI5UjFUc0QtSlNaRkFxbEwwRERPX3U3eGZsMVVTX2oxaGUzOWVBRS04TGRlWTRraHlBMDVYRW4xUmkwY2ZNMGM0RjhZNXRKRTZRam9SMTMyYVVjekNiU0tXSWlpS2llWnNPVVhBQ3Z0TWpBS293aldNdk5JbEJTNzlV0gHwAUFVX3lxTE9tWVFFd1lxY3EtWjBsZTBjVkJ0MUpCV1B2TEJhYVU5cUpoQWpGTHo0allLcThhYVVvdTNlYmdnaG1xc2tVUDVmSTk2clFoVFYyWEdvNnhWeGlwT3ZNYTBQMGpVZDNCUTRWTlkzUThJUlEwM0pocERqT3pGdVR5Q1YtQ0R0RjFhbndDYVlHenhGV3dGSG1ZcUpUbnBtcTN5eTJnUEVCMHNQaXI0akQ2Q0pIU2JoQ2hpTGR2T253djdwZkRZMkRhRFBwS3g4Wk1UOGQ4U3V4ZnBwM3c4UTVMRkI5cjhZTkJvSlA3SmQwcE9LVw?oc=5",
+          "domain": "news.google.com",
+          "pubDate": "Wed, 12 Nov 2025 08:00:00 GMT",
+          "reliability": 85,
+          "snippet": "23 years of Prabhas: 23 films and countless milestones for the pan-India superstar - India Today",
+          "evidenceText": "23 years of Prabhas: 23 films and countless milestones for the pan-India superstar - India Today",
+          "relevanceScore": 56.5,
+          "score": 64.23
+        },
+        {
+          "name": "Prashanth Neel calls Prabhas a 'gentle giant' as he discusses 'Salaar' - India Today",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNZmFWWjgteWp2MkRsbGNDNHZBLW4yd24xeV9oNEU4ZmJhdWY2bUFYVWZiREZ2N0FFaEZaSF9ENWhmQVd3UnRsbkRhbGFpMnJOUlpBWGQ1c3lZUDN1dVZVUHFvMUJwUERFRnd4QU1WSlVFaWNSTkc5bU5HWm9DQ3N4MmVtSWUzWEFOUWtPRzNPcDZXckdxRHlGdzUxblY5YzVtWjdQZW9YSTRmMGFZalE2Ukp0SEYwb3FyQWfSAb8BQVVfeXFMTVNWVUNlWG00VWp0ZXZDc041dkFIYW5kWlhhckprRFI3WU5aaXZ2OC1wX2RHNzVCdUpZaUhJUDFtRU40bTdHeVhtREd5enI2RUprWG5EVE1rNXRhNE8yUVhLSWhFSkt1bkdMRGx2M3JDTUQtQ3gtdkNmQ08wY2h4MUpab2tUUW16MWtJVlpSLUg2RW5vRndibmlHQjhTZ2xtZGczWEhNemhKVTRzb0JKcUo3Sm16cTFvc0s3OEZvNXc?oc=5",
+          "domain": "news.google.com",
+          "pubDate": "Wed, 29 Nov 2023 08:00:00 GMT",
+          "reliability": 85,
+          "snippet": "Prashanth Neel calls Prabhas a 'gentle giant' as he discusses 'Salaar' - India Today",
+          "evidenceText": "Prashanth Neel calls Prabhas a 'gentle giant' as he discusses 'Salaar' - India Today",
+          "relevanceScore": 56.5,
+          "score": 64.23
+        }
+      ]
     }
   },
   "news": {
