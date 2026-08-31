@@ -8,10 +8,11 @@ interface AuthContextType {
   isLoading: boolean;
   pendingOTP: OTPState | null;
   loginWithPassword: (email: string, password: string) => Promise<{ success: boolean; user?: User; error?: string }>;
-  loginWithGoogle: (email?: string, name?: string) => Promise<{ success: boolean; user?: User; error?: string }>;
-  startRegister: (name: string, email: string, password: string, phone?: string) => Promise<{ success: boolean; error?: string; otpState?: OTPState }>;
+  loginWithGoogle: () => Promise<{ success: boolean; user?: User; error?: string; cancelled?: boolean }>;
+  startRegister: (name: string, userId: string, email: string, password: string, phone?: string) => Promise<{ success: boolean; error?: string; otpState?: OTPState }>;
   verifyOTP: (code: string) => Promise<{ success: boolean; user?: User; error?: string }>;
   resendOTP: () => Promise<{ success: boolean; error?: string; otpState?: OTPState }>;
+  updateProfile: (updates: { name?: string; phone?: string; photoUrl?: string }) => Promise<{ success: boolean; user?: User; error?: string }>;
   logout: () => void;
   refreshUser: () => void;
 }
@@ -53,8 +54,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   // Direct sign in with Google
-  const loginWithGoogle = async (email?: string, name?: string) => {
-    const res = await authService.loginWithGoogle(email, name);
+  const loginWithGoogle = async () => {
+    const res = await authService.loginWithGoogle();
     if (res.success && res.user) {
       setCurrentUser(res.user);
       setPendingOTP(null);
@@ -63,8 +64,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   // Initial registration (requires email confirmation via 4-digit OTP)
-  const startRegister = async (name: string, email: string, password: string, phone?: string) => {
-    const res = await authService.initiateRegistration(name, email, password, phone);
+  const startRegister = async (name: string, userId: string, email: string, password: string, phone?: string) => {
+    const res = await authService.initiateRegistration(name, userId, email, password, phone);
     if (res.success && res.otpState) {
       setPendingOTP(res.otpState);
     }
@@ -89,6 +90,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     return res;
   };
 
+  const updateProfile = async (updates: { name?: string; phone?: string; photoUrl?: string }) => {
+    const res = await authService.updateProfile(updates);
+    if (res.success && res.user) {
+      setCurrentUser(res.user);
+    }
+    return res;
+  };
+
   const logout = () => {
     authService.logout();
     setCurrentUser(null);
@@ -107,6 +116,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         startRegister,
         verifyOTP,
         resendOTP,
+        updateProfile,
         logout,
         refreshUser,
       }}

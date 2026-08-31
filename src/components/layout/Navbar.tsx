@@ -83,7 +83,25 @@ export const Navbar: React.FC = () => {
             className="flex items-center gap-2.5 pl-2 pr-3 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition-colors group"
           >
             <div className="relative">
-              <div className="w-7 h-7 rounded-lg bg-gradient-to-tr from-brand-500 to-cyan-400 flex items-center justify-center font-bold text-xs text-white uppercase">
+              {currentUser.photoUrl ? (
+                <img
+                  src={currentUser.photoUrl}
+                  alt={currentUser.name}
+                  className="w-7 h-7 rounded-lg object-cover border border-cyan-500/30"
+                  onError={(e) => {
+                    // Fallback to initial if photo fails to load
+                    (e.currentTarget as HTMLElement).style.display = 'none';
+                    if (e.currentTarget.nextElementSibling) {
+                      (e.currentTarget.nextElementSibling as HTMLElement).style.display = 'flex';
+                    }
+                  }}
+                />
+              ) : null}
+              <div 
+                className={`w-7 h-7 rounded-lg bg-gradient-to-tr from-brand-500 to-cyan-400 items-center justify-center font-bold text-xs text-white uppercase ${
+                  currentUser.photoUrl ? 'hidden' : 'flex'
+                }`}
+              >
                 {currentUser.name.charAt(0)}
               </div>
               <span className="absolute -bottom-0.5 -right-0.5 w-2 h-2 rounded-full bg-emerald-400 border-2 border-slate-900" />

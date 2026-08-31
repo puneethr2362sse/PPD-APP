@@ -16,7 +16,8 @@ import {
   ShieldAlert,
   Clock,
   ExternalLink,
-  CheckCircle2
+  CheckCircle2,
+  Sparkles
 } from 'lucide-react';
 
 export const ResultPage: React.FC = () => {
@@ -47,14 +48,16 @@ export const ResultPage: React.FC = () => {
     );
   }
 
-  const isReal = result.score === 100 && result.verdict === 'REAL';
+  const isTrue = result.verdict === 'TRUE' || result.verdict === 'REAL';
+  const isFalse = result.verdict === 'FALSE' || result.verdict === 'FAKE';
+  const isUnverified = result.verdict === 'UNVERIFIED';
 
   const handleCopyReport = () => {
-    const reportText = `[VerifyAI Verification Report]
+    const reportText = `[VerifyAI Real-Time Verification Report]
 Type: ${result.type}
-Verdict: ${result.verdict} (${result.score}/100)
+Verdict: ${result.verdictLabel || result.verdict} (${result.score}/100)
 Scanned: ${result.formattedDate}
-Preview: ${result.preview}
+${result.directAnswer ? `Direct Answer: ${result.directAnswer}\n` : ''}Preview: ${result.preview}
 Explanation: ${result.explanation}
 Confidence: ${result.confidence}%`;
 
@@ -67,19 +70,28 @@ Confidence: ${result.confidence}%`;
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-6">
       {/* Top navigation actions */}
-      <div className="flex items-center justify-between">
-        <button
-          onClick={() => navigate('/home')}
-          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white text-xs font-semibold transition-colors"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          <span>Dashboard</span>
-        </button>
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => navigate('/home')}
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white text-xs font-semibold transition-colors cursor-pointer"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            <span>Dashboard</span>
+          </button>
+
+          {result.isLiveWebVerified && (
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 text-xs font-mono font-bold shadow-[0_0_12px_rgba(6,182,212,0.25)]">
+              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
+              <span>Live Web Verified</span>
+            </div>
+          )}
+        </div>
 
         <div className="flex items-center gap-2">
           <button
             onClick={handleCopyReport}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white text-xs font-semibold transition-colors"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white text-xs font-semibold transition-colors cursor-pointer"
           >
             {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Share2 className="w-4 h-4 text-cyan-400" />}
             <span>{copied ? 'Copied!' : 'Share Report'}</span>
@@ -107,15 +119,30 @@ Confidence: ${result.confidence}%`;
             animated={true}
           />
 
+          {/* Direct Answer Card for Questions */}
+          {result.directAnswer && (
+            <div className="glass-card rounded-3xl p-5 border border-cyan-500/40 bg-gradient-to-br from-cyan-950/40 via-slate-900 to-slate-900 shadow-[0_0_20px_rgba(6,182,212,0.15)] space-y-2">
+              <div className="flex items-center gap-1.5 text-xs font-mono font-bold text-cyan-300 uppercase tracking-wider">
+                <Sparkles className="w-4 h-4 text-cyan-400 animate-pulse" />
+                <span>Direct Answer</span>
+              </div>
+              <p className="text-sm font-semibold text-white leading-relaxed">
+                {result.directAnswer}
+              </p>
+            </div>
+          )}
+
           {/* Explanation Box */}
           <div className="glass-card rounded-3xl p-6 border border-slate-800 space-y-3">
             <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase text-slate-400 tracking-wider">
-              {isReal ? (
+              {isTrue ? (
                 <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              ) : (
+              ) : isFalse ? (
                 <ShieldAlert className="w-4 h-4 text-rose-400" />
+              ) : (
+                <CheckCircle2 className="w-4 h-4 text-amber-400" />
               )}
-              <span>Forensic Reasoning & Verdict</span>
+              <span>Live Evidence & Fact-Check Verdict</span>
             </div>
 
             <p className="text-sm text-slate-200 leading-relaxed">
@@ -128,7 +155,7 @@ Confidence: ${result.confidence}%`;
                 {result.formattedDate}
               </span>
               <span className="text-cyan-400 font-semibold">
-                AI Confidence: {result.confidence}%
+                Evidence Confidence: {result.confidence}%
               </span>
             </div>
           </div>
@@ -141,7 +168,7 @@ Confidence: ${result.confidence}%`;
               ) : (
                 <FileText className="w-4 h-4 text-cyan-400" />
               )}
-              <span>Analyzed {result.type} Payload</span>
+              <span>Inspected Claim Payload</span>
             </div>
 
             {result.type === 'IMAGE' && result.imageUrl ? (
@@ -157,7 +184,7 @@ Confidence: ${result.confidence}%`;
               </div>
             ) : (
               <div className="p-4 rounded-2xl bg-slate-950/80 border border-slate-800 text-xs text-slate-300 leading-relaxed font-sans max-h-48 overflow-y-auto">
-                {result.fullContent || result.preview}
+                {result.originalClaim || result.fullContent || result.claim || result.preview}
               </div>
             )}
           </div>
@@ -178,24 +205,54 @@ Confidence: ${result.confidence}%`;
             <ForensicSignals signals={result.signals} />
           </div>
 
-          {/* Corroborating Sources (if Real) */}
+          {/* Real-Time Corroborating / Evidentiary Sources */}
           {result.sources && result.sources.length > 0 && (
-            <div className="glass-card rounded-3xl p-6 border border-emerald-500/20 space-y-3">
-              <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase text-emerald-400">
-                <CheckCircle2 className="w-4 h-4" />
-                <span>Corroborated Primary Sources</span>
+            <div className={`glass-card rounded-3xl p-6 border space-y-3 ${
+              isTrue ? 'border-emerald-500/30 bg-emerald-950/10' : isFalse ? 'border-rose-500/30 bg-rose-950/10' : 'border-amber-500/30 bg-amber-950/10'
+            }`}>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase text-slate-300">
+                  <CheckCircle2 className={`w-4 h-4 ${isTrue ? 'text-emerald-400' : isFalse ? 'text-rose-400' : 'text-amber-400'}`} />
+                  <span>Verified News & Reference Sources ({result.sources.length})</span>
+                </div>
+                <span className="text-[10px] font-mono text-cyan-400">Live Search Grounded</span>
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-2.5">
                 {result.sources.map((src, i) => (
                   <div
                     key={i}
-                    className="p-3 rounded-xl bg-slate-900/70 border border-slate-800 flex items-center justify-between"
+                    className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition-colors space-y-1"
                   >
-                    <span className="text-xs font-medium text-slate-200">{src.name}</span>
-                    <span className="text-xs font-mono font-bold text-emerald-400">
-                      {src.reliability}% Reliability
-                    </span>
+                    <div className="flex items-center justify-between gap-2">
+                      {src.url ? (
+                        <a
+                          href={src.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs font-semibold text-cyan-300 hover:text-cyan-200 flex items-center gap-1.5 transition-colors group"
+                        >
+                          <span className="group-hover:underline">{src.name}</span>
+                          <ExternalLink className="w-3 h-3 opacity-70 group-hover:opacity-100" />
+                        </a>
+                      ) : (
+                        <span className="text-xs font-semibold text-slate-200">{src.name}</span>
+                      )}
+
+                      {src.reliability ? (
+                        <span className={`text-[11px] font-mono font-bold ${
+                          src.reliability >= 90 ? 'text-emerald-400' : 'text-amber-400'
+                        }`}>
+                          {src.reliability}% Reliability
+                        </span>
+                      ) : null}
+                    </div>
+
+                    {src.snippet && (
+                      <p className="text-[11px] text-slate-400 line-clamp-2 leading-relaxed">
+                        {src.snippet}
+                      </p>
+                    )}
                   </div>
                 ))}
               </div>

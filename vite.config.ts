@@ -7,6 +7,9 @@ export default defineConfig({
   server: {
     port: 5173,
     host: true,
+    watch: {
+      ignored: ['**/*.zip', '**/data/**', '**/*.log', '**/.git/**'],
+    },
     proxy: {
       '/api': {
         target: 'http://localhost:5000',

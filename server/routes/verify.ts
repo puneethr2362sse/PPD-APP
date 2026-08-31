@@ -1,5 +1,6 @@
 import { Router, Request, Response } from 'express';
 import { firestoreDB } from '../firebaseConfig.js';
+import { realtimeVerifier } from '../services/realtimeVerifier.js';
 
 export const verifyRouter = Router();
 
@@ -9,123 +10,63 @@ function formatScanTimestamp(date: Date = new Date()): string {
   return `Today, ${timeStr}`;
 }
 
-// Known fake text triggers
-const FAKE_PATTERNS = [
-  /miracle cure/i,
-  /secret they don't want you to know/i,
-  /government is hiding/i,
-  /share before it gets deleted/i,
-  /shocking truth/i,
-  /100% cure for cancer/i,
-  /5g.*virus/i,
-  /microchip.*vaccine/i,
-  /asteroid hitting earth tomorrow/i,
-  /free \$10,000 giveaway.*click/i,
-  /aliens landed.*white house/i,
-  /drinking bleach/i,
-  /scientists baffled.*ancient trick/i,
-  /celebrity.*arrested.*hidden video/i,
-  /forward to 10 friends/i,
-  /urgent warning from un/i,
-];
-
-const REAL_PATTERNS = [
-  /nasa|james webb|astronomy/i,
-  /world health organization|who published|peer-reviewed/i,
-  /reuters|associated press|bbc news|bloomberg/i,
-  /central bank|federal reserve|interest rate/i,
-  /nobel prize|clinical trial phase/i,
-  /published in nature|the lancet/i,
-];
-
-// 1. TEXT VERIFICATION ENDPOINT
+// 1. TEXT VERIFICATION ENDPOINT (Real-time Web Search & Gemini Grounding)
 verifyRouter.post('/text', async (req: Request, res: Response): Promise<void> => {
-  const { text, email } = req.body;
+  const { text, claim, email } = req.body;
+  const rawText = text || claim;
 
-  if (!text || !text.trim()) {
+  if (!rawText || !rawText.trim()) {
     res.status(400).json({ success: false, error: 'Text content is required for verification.' });
     return;
   }
 
   const cleanEmail = email ? email.trim().toLowerCase() : 'demo@example.com';
-  const cleanText = text.trim();
+  const cleanText = rawText.trim();
 
-  // Async neural simulation delay
-  await new Promise(resolve => setTimeout(resolve, 800));
+  try {
+    // Perform real-time live web evidence gathering and Gemini evaluation
+    const analysis = await realtimeVerifier.verifyClaim(cleanText);
 
-  const isExplicitFake = FAKE_PATTERNS.some(p => p.test(cleanText));
-  const isExplicitReal = REAL_PATTERNS.some(p => p.test(cleanText));
+    const preview = cleanText.length > 90 ? cleanText.substring(0, 87) + '...' : cleanText;
 
-  let isReal = true;
-  if (isExplicitFake) {
-    isReal = false;
-  } else if (isExplicitReal) {
-    isReal = true;
-  } else {
-    const exclamationCount = (cleanText.match(/!/g) || []).length;
-    const upperCaseWords = (cleanText.match(/\b[A-Z]{3,}\b/g) || []).length;
-    const hasExtremeAdjectives = /unbelievable|miraculous|banned|forbidden|magic|guaranteed/i.test(cleanText);
+    const scanRecord = {
+      id: 'scan_' + Date.now().toString(36) + Math.random().toString(36).substring(2, 6),
+      userEmail: cleanEmail,
+      type: 'TEXT' as const,
+      timestamp: new Date().toISOString(),
+      formattedDate: formatScanTimestamp(new Date()),
+      score: analysis.score,
+      verdict: analysis.verdict,
+      verdictLabel: analysis.verdictLabel,
+      claim: cleanText,
+      originalClaim: cleanText,
+      preview,
+      fullContent: cleanText,
+      explanation: analysis.explanation,
+      reasoning: analysis.reasoning,
+      confidence: analysis.confidence,
+      directAnswer: analysis.directAnswer,
+      queryType: analysis.queryType,
+      isLiveWebVerified: analysis.isLiveWebVerified,
+      searchTimestamp: analysis.searchTimestamp,
+      signals: analysis.signals,
+      sources: analysis.sources,
+    };
 
-    if (exclamationCount > 2 || upperCaseWords > 2 || hasExtremeAdjectives) {
-      isReal = false;
-    } else {
-      isReal = true;
-    }
+    // Commit scan directly to Firestore
+    firestoreDB.addScan(scanRecord as any);
+
+    res.json({
+      success: true,
+      result: scanRecord,
+    });
+  } catch (err: any) {
+    console.error('[Verify Route] Text verification error:', err);
+    res.status(503).json({
+      success: false,
+      error: 'Live verification is currently unavailable. Please try again.',
+    });
   }
-
-  const score: 0 | 100 = isReal ? 100 : 0;
-  const verdict = isReal ? 'REAL' : 'FAKE';
-
-  const signals = isReal
-    ? [
-        { name: 'Cross-Source Corroboration', status: 'passed', score: 99, detail: 'Claim matches trusted mainstream journalistic wire services & research repositories.' },
-        { name: 'Linguistic Neutrality', status: 'passed', score: 97, detail: 'Objective syntax with zero sensationalist or inflammatory markers.' },
-        { name: 'Fact-Check Registry Match', status: 'passed', score: 100, detail: 'Corroborated by verified International Fact-Checking Network (IFCN) databases.' },
-        { name: 'Authoritative Attribution', status: 'passed', score: 95, detail: 'Quotes and statistics trace back to official published whitepapers.' },
-      ]
-    : [
-        { name: 'Linguistic Sensationalism', status: 'failed', score: 12, detail: 'High concentration of clickbait triggers, emotional manipulation, and unverified claims.' },
-        { name: 'Fact-Check Database Match', status: 'failed', score: 0, detail: 'Directly flagged as debunked disinformation by international fact-checking coalitions.' },
-        { name: 'Source Attribution Integrity', status: 'failed', score: 8, detail: 'No credible primary institutional or scientific sources cited.' },
-        { name: 'Viral Pattern Footprint', status: 'warning', score: 25, detail: 'Spreading via copy-paste viral chain messaging patterns.' },
-      ];
-
-  const preview = cleanText.length > 90 ? cleanText.substring(0, 87) + '...' : cleanText;
-  const explanation = isReal
-    ? 'Verified authentic. Content matches primary scientific bulletins, vetted news wires, and exhibits structured, evidence-backed statements without clickbait manipulation.'
-    : 'Fabricated or misleading claim. Multiple disinformation markers detected, including debunked viral rumors, absence of verifiable sources, and manipulated emotional appeals.';
-
-  const sources = isReal
-    ? [
-        { name: 'Reuters Wire Service', reliability: 98 },
-        { name: 'Associated Press Global Desk', reliability: 97 },
-        { name: 'Nature & Academic Consensus', reliability: 99 },
-      ]
-    : undefined;
-
-  const scanRecord = {
-    id: 'scan_' + Date.now().toString(36) + Math.random().toString(36).substring(2, 6),
-    userEmail: cleanEmail,
-    type: 'TEXT',
-    timestamp: new Date().toISOString(),
-    formattedDate: formatScanTimestamp(new Date()),
-    score,
-    verdict,
-    preview,
-    fullContent: cleanText,
-    explanation,
-    confidence: isReal ? 98.6 : 97.4,
-    signals,
-    sources,
-  };
-
-  // Commit scan directly to Firestore
-  firestoreDB.addScan(scanRecord);
-
-  res.json({
-    success: true,
-    result: scanRecord,
-  });
 });
 
 // 2. IMAGE VERIFICATION ENDPOINT

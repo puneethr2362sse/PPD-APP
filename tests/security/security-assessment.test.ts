@@ -1,7 +1,19 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { firestoreDB } from '../../server/firebaseConfig';
 
 describe('Security & Vulnerability Assessment Test Suite', () => {
+  beforeEach(() => {
+    firestoreDB.setUser('usr_puneeth_demo', {
+      id: 'usr_puneeth_demo',
+      userId: 'puneeth123',
+      name: 'Puneeth',
+      email: 'puneeth@example.com',
+      phone: '+1 (555) 019-2834',
+      createdAt: new Date().toISOString(),
+      lastLoginAt: new Date().toISOString(),
+    });
+  });
+
   // 1. Passwordless Security & Zero-Password Model (15 tests)
   describe('Zero-Password Security Architecture', () => {
     it('1.1. should guarantee zero password fields in user database schemas', () => {

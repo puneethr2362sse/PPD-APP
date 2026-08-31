@@ -28,9 +28,9 @@ function getInitialSeedData(): FirestoreCollections {
     users: {
       'usr_puneeth_demo': {
         id: 'usr_puneeth_demo',
+        userId: 'puneeth123',
         name: 'Puneeth',
         email: 'puneeth@example.com',
-        password: 'puneeth123',
         phone: '+1 (555) 019-2834',
         createdAt: new Date(Date.now() - 86400000 * 5).toISOString(),
         lastLoginAt: new Date().toISOString(),
@@ -177,6 +177,15 @@ class FirestoreDatabase {
   findUserByEmail(email: string): any | undefined {
     const clean = email.trim().toLowerCase();
     return this.getUsers().find(u => u.email.toLowerCase() === clean);
+  }
+
+  findUserByUserId(userId: string): any | undefined {
+    if (!userId) return undefined;
+    const clean = userId.trim().toLowerCase();
+    return this.getUsers().find(u => 
+      (u.userId && u.userId.trim().toLowerCase() === clean) ||
+      (u.id && u.id.trim().toLowerCase() === clean)
+    );
   }
 
   findUserById(id: string): any | undefined {

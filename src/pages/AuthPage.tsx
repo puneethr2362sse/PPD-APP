@@ -14,7 +14,8 @@ import {
   ShieldCheck, 
   Sparkles,
   RefreshCw,
-  CheckCircle2
+  CheckCircle2,
+  AtSign
 } from 'lucide-react';
 
 export const AuthPage: React.FC = () => {
@@ -22,6 +23,7 @@ export const AuthPage: React.FC = () => {
   
   // Registration fields
   const [name, setName] = useState('');
+  const [userId, setUserId] = useState('');
   const [registerEmail, setRegisterEmail] = useState('');
   const [registerPassword, setRegisterPassword] = useState('');
   const [phone, setPhone] = useState('');
@@ -76,8 +78,8 @@ export const AuthPage: React.FC = () => {
     }
   };
 
-  // Handle Google Sign In
-  const handleGoogleSignIn = async () => {
+  // Trigger Real Google OAuth Authentication
+  const handleGoogleClick = async () => {
     setErrorMessage('');
     setGoogleLoading(true);
 
@@ -85,13 +87,18 @@ export const AuthPage: React.FC = () => {
       const result = await loginWithGoogle();
       setGoogleLoading(false);
 
+      if (result.cancelled) {
+        // User closed or cancelled the Google popup — do not authenticate
+        return;
+      }
+
       if (!result.success) {
-        setErrorMessage(result.error || 'Google sign-in failed.');
+        setErrorMessage(result.error || 'Google authentication was not completed.');
         showToast(result.error || 'Google sign-in failed', 'error');
         return;
       }
 
-      showToast(`Signed in with Google as ${result.user?.name || 'User'}!`, 'success');
+      showToast(`Signed in with Google as ${result.user?.name || 'Google User'}!`, 'success');
       const destination = (location.state as any)?.from?.pathname || '/home';
       navigate(destination, { replace: true });
     } catch (err: any) {
@@ -109,6 +116,10 @@ export const AuthPage: React.FC = () => {
       setErrorMessage('Please enter your full name.');
       return;
     }
+    if (!userId.trim()) {
+      setErrorMessage('Please enter a User ID.');
+      return;
+    }
     if (!registerEmail.trim()) {
       setErrorMessage('Please enter a valid email address.');
       return;
@@ -120,7 +131,7 @@ export const AuthPage: React.FC = () => {
 
     setLoading(true);
     try {
-      const result = await startRegister(name, registerEmail, registerPassword, phone);
+      const result = await startRegister(name, userId, registerEmail, registerPassword, phone);
       setLoading(false);
 
       if (!result.success) {
@@ -207,14 +218,14 @@ export const AuthPage: React.FC = () => {
               {/* Google Sign In Button */}
               <button
                 type="button"
-                onClick={handleGoogleSignIn}
+                onClick={handleGoogleClick}
                 disabled={googleLoading || loading}
-                className="w-full py-3 px-4 rounded-xl bg-white hover:bg-slate-100 text-slate-900 text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-3 border border-slate-200 hover:scale-[1.01] active:scale-[0.99]"
+                className="w-full py-3 px-4 rounded-xl bg-white hover:bg-slate-100 text-slate-900 text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-3 border border-slate-200 hover:scale-[1.01] active:scale-[0.99] cursor-pointer"
               >
                 {googleLoading ? (
                   <>
                     <RefreshCw className="w-4 h-4 animate-spin text-slate-700" />
-                    <span>Signing in with Google...</span>
+                    <span>Connecting to Google OAuth...</span>
                   </>
                 ) : (
                   <>
@@ -296,7 +307,7 @@ export const AuthPage: React.FC = () => {
                 <button
                   type="submit"
                   disabled={loading || googleLoading}
-                  className="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-600 via-cyan-500 to-brand-500 text-white text-sm font-bold shadow-glow-cyan hover:shadow-glow-brand hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 mt-2"
+                  className="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-600 via-cyan-500 to-brand-500 text-white text-sm font-bold shadow-glow-cyan hover:shadow-glow-brand hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 mt-2 cursor-pointer"
                 >
                   {loading ? (
                     <>
@@ -320,14 +331,14 @@ export const AuthPage: React.FC = () => {
               {/* Google Sign Up Button */}
               <button
                 type="button"
-                onClick={handleGoogleSignIn}
+                onClick={handleGoogleClick}
                 disabled={googleLoading || loading}
-                className="w-full py-3 px-4 rounded-xl bg-white hover:bg-slate-100 text-slate-900 text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-3 border border-slate-200 hover:scale-[1.01] active:scale-[0.99]"
+                className="w-full py-3 px-4 rounded-xl bg-white hover:bg-slate-100 text-slate-900 text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-3 border border-slate-200 hover:scale-[1.01] active:scale-[0.99] cursor-pointer"
               >
                 {googleLoading ? (
                   <>
                     <RefreshCw className="w-4 h-4 animate-spin text-slate-700" />
-                    <span>Signing up with Google...</span>
+                    <span>Connecting to Google OAuth...</span>
                   </>
                 ) : (
                   <>
@@ -375,8 +386,25 @@ export const AuthPage: React.FC = () => {
                       required
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      placeholder="e.g. Puneeth"
+                      placeholder="e.g. Puneeth R"
                       className="w-full bg-slate-900/80 border border-slate-700/80 rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/20 transition-all"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-medium text-slate-300 mb-1.5 font-mono">
+                    User ID <span className="text-cyan-400">*</span>
+                  </label>
+                  <div className="relative">
+                    <AtSign className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                    <input
+                      type="text"
+                      required
+                      value={userId}
+                      onChange={(e) => setUserId(e.target.value.toLowerCase().trim())}
+                      placeholder="e.g. puneeth123"
+                      className="w-full bg-slate-900/80 border border-slate-700/80 rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/20 transition-all font-mono"
                     />
                   </div>
                 </div>
@@ -447,7 +475,7 @@ export const AuthPage: React.FC = () => {
                 <button
                   type="submit"
                   disabled={loading || googleLoading}
-                  className="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-600 via-cyan-500 to-brand-500 text-white text-sm font-bold shadow-glow-cyan hover:shadow-glow-brand hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 mt-2"
+                  className="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-600 via-cyan-500 to-brand-500 text-white text-sm font-bold shadow-glow-cyan hover:shadow-glow-brand hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 mt-2 cursor-pointer"
                 >
                   {loading ? (
                     <>

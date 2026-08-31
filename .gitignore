@@ -29,3 +29,12 @@ mobile/.expo/
 *.sw?
 
 .vercel
+
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Archives
+*.zip

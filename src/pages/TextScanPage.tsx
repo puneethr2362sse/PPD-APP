@@ -75,9 +75,9 @@ export const TextScanPage: React.FC = () => {
       
       // Navigate to detailed result page
       navigate(`/result`, { state: { result } });
-    } catch (err) {
+    } catch (err: any) {
       setIsScanning(false);
-      showToast('Verification failed. Please try again.', 'error');
+      showToast(err.message || 'Live verification is currently unavailable. Please try again.', 'error');
     }
   };
 
@@ -160,7 +160,7 @@ export const TextScanPage: React.FC = () => {
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
               <div className="text-xs text-slate-400 flex items-center gap-1.5">
                 <Info className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                <span>Neural model will score strictly 0/100 (FAKE) or 100/100 (REAL).</span>
+                <span>Real-time search & Gemini grounding evaluates evidence into TRUE, FALSE, or UNVERIFIED.</span>
               </div>
 
               <button

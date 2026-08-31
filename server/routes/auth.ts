@@ -8,12 +8,18 @@ function generate4DigitOTP(): string {
   return Math.floor(1000 + Math.random() * 9000).toString();
 }
 
-// 1. REGISTER (First-time registration: collects Name, Email, Password, Phone & sends 4-digit OTP)
+// 1. REGISTER (First-time registration: collects Name, User ID, Email, Password, Phone & sends 4-digit OTP)
 authRouter.post('/register', (req: Request, res: Response): void => {
-  const { name, email, password, phone } = req.body;
+  const { name, userId, email, password, phone } = req.body;
 
   if (!name || !name.trim()) {
     res.status(400).json({ success: false, error: 'Full name is required.' });
+    return;
+  }
+
+  const cleanUserId = userId ? userId.trim() : '';
+  if (!cleanUserId) {
+    res.status(400).json({ success: false, error: 'User ID is required. Please choose a User ID.' });
     return;
   }
 
@@ -29,7 +35,17 @@ authRouter.post('/register', (req: Request, res: Response): void => {
     return;
   }
 
-  // Check if already registered
+  // Check if User ID is already taken by another account
+  const existingByUserId = firestoreDB.findUserByUserId(cleanUserId);
+  if (existingByUserId) {
+    res.status(409).json({ 
+      success: false, 
+      error: `The User ID "${cleanUserId}" is already taken. Please choose a different User ID.` 
+    });
+    return;
+  }
+
+  // Check if email is already registered
   const existingUser = firestoreDB.findUserByEmail(cleanEmail);
   if (existingUser) {
     res.status(409).json({ 
@@ -46,6 +62,7 @@ authRouter.post('/register', (req: Request, res: Response): void => {
     expiresAt: Date.now() + 10 * 60 * 1000, // 10 mins
     purpose: 'register',
     tempName: name.trim(),
+    tempUserId: cleanUserId,
     tempPassword: password,
     tempPhone: phone?.trim() || undefined,
   };
@@ -61,7 +78,7 @@ authRouter.post('/register', (req: Request, res: Response): void => {
 
 // 2. LOGIN (Primary: Email + Password direct login without OTP every time)
 authRouter.post('/login', (req: Request, res: Response): void => {
-  const { email, password } = req.body;
+  const { email, password, firebaseUid } = req.body;
   const cleanEmail = email ? email.trim().toLowerCase() : '';
 
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -97,9 +114,14 @@ authRouter.post('/login', (req: Request, res: Response): void => {
 
   // Update last login
   user.lastLoginAt = new Date().toISOString();
-  firestoreDB.setUser(user.id, user);
+  if (firebaseUid && user.id !== firebaseUid) {
+    user.id = firebaseUid;
+    firestoreDB.setUser(firebaseUid, user);
+  } else {
+    firestoreDB.setUser(user.id, user);
+  }
 
-  // Return authenticated session immediately without requiring OTP on regular login
+  // Return authenticated session immediately with exact saved userId
   res.json({
     success: true,
     message: 'Login successful.',
@@ -118,20 +140,30 @@ authRouter.post('/google', (req: Request, res: Response): void => {
 
   if (!user) {
     // Automatically create new user account with Google credentials
-    const userId = 'usr_g_' + Math.random().toString(36).substring(2, 9);
+    const uid = 'uid_g_' + Math.random().toString(36).substring(2, 9);
+    const defaultUserId = cleanEmail.split('@')[0].replace(/[^a-zA-Z0-9_]/g, '') || ('user_' + Math.random().toString(36).substring(2, 6));
     user = {
-      id: userId,
+      id: uid,
+      userId: defaultUserId,
       name: cleanName,
       email: cleanEmail,
       photoUrl: photoUrl || undefined,
       authProvider: 'google',
+      customDisplayName: false,
       createdAt: new Date().toISOString(),
       lastLoginAt: new Date().toISOString(),
     };
-    firestoreDB.setUser(userId, user);
+    firestoreDB.setUser(uid, user);
   } else {
     user.lastLoginAt = new Date().toISOString();
-    if (photoUrl) user.photoUrl = photoUrl;
+    // Do NOT overwrite customized display name with Google account name on subsequent logins
+    if (!user.name || (!user.customDisplayName && cleanName && !user.name)) {
+      user.name = cleanName;
+    }
+    // Update Google photo only if user hasn't set a custom photo
+    if (photoUrl && !user.customPhoto) {
+      user.photoUrl = photoUrl;
+    }
     firestoreDB.setUser(user.id, user);
   }
 
@@ -143,7 +175,7 @@ authRouter.post('/google', (req: Request, res: Response): void => {
   });
 });
 
-// 3. LOGIN VIA OTP (Alternative / Fallback)
+// 4. LOGIN VIA OTP (Alternative / Fallback)
 authRouter.post('/login-otp', (req: Request, res: Response): void => {
   const { email } = req.body;
   const cleanEmail = email ? email.trim().toLowerCase() : '';
@@ -174,9 +206,9 @@ authRouter.post('/login-otp', (req: Request, res: Response): void => {
   });
 });
 
-// 4. VERIFY OTP (Used on initial registration to confirm email and activate password account)
+// 5. VERIFY OTP (Used on initial registration to confirm email and activate password account)
 authRouter.post('/verify-otp', (req: Request, res: Response): void => {
-  const { email, code } = req.body;
+  const { email, code, firebaseUid, userId } = req.body;
   const cleanEmail = email ? email.trim().toLowerCase() : '';
   const cleanCode = code ? code.trim() : '';
 
@@ -200,17 +232,18 @@ authRouter.post('/verify-otp', (req: Request, res: Response): void => {
   let user: any;
 
   if (pending.purpose === 'register') {
-    const userId = 'usr_' + Math.random().toString(36).substring(2, 9);
+    const internalUid = firebaseUid || ('uid_' + Math.random().toString(36).substring(2, 12));
+    const chosenUserId = userId?.trim() || pending.tempUserId || cleanEmail.split('@')[0];
     user = {
-      id: userId,
+      id: internalUid, // Authenticated user's Firebase UID internally
+      userId: chosenUserId, // The user-selected User ID
       name: pending.tempName || 'Puneeth',
       email: pending.email,
-      password: pending.tempPassword || 'puneeth123',
       phone: pending.tempPhone,
       createdAt: new Date().toISOString(),
       lastLoginAt: new Date().toISOString(),
     };
-    firestoreDB.setUser(userId, user);
+    firestoreDB.setUser(internalUid, user);
   } else {
     user = firestoreDB.findUserByEmail(cleanEmail);
     if (!user) {
@@ -231,7 +264,7 @@ authRouter.post('/verify-otp', (req: Request, res: Response): void => {
   });
 });
 
-// 5. RESEND OTP
+// 6. RESEND OTP
 authRouter.post('/resend-otp', (req: Request, res: Response): void => {
   const { email } = req.body;
   const cleanEmail = email ? email.trim().toLowerCase() : '';
@@ -259,7 +292,23 @@ authRouter.post('/resend-otp', (req: Request, res: Response): void => {
   });
 });
 
-// 6. GET ME
+// 7. CHECK USER ID AVAILABILITY
+authRouter.get('/check-userid', (req: Request, res: Response): void => {
+  const userId = req.query.userId as string;
+  if (!userId || !userId.trim()) {
+    res.status(400).json({ success: false, error: 'userId parameter required.' });
+    return;
+  }
+
+  const existing = firestoreDB.findUserByUserId(userId.trim());
+  res.json({
+    success: true,
+    available: !existing,
+    userId: userId.trim()
+  });
+});
+
+// 8. GET ME
 authRouter.get('/me', (req: Request, res: Response): void => {
   const email = req.query.email as string;
   if (!email) {
@@ -275,3 +324,52 @@ authRouter.get('/me', (req: Request, res: Response): void => {
 
   res.json({ success: true, user });
 });
+
+// 9. UPDATE USER PROFILE (Allows editing Display Name, Phone, and optional Photo)
+authRouter.put('/profile', (req: Request, res: Response): void => {
+  const { email, name, phone, photoUrl } = req.body;
+  const cleanEmail = email ? email.trim().toLowerCase() : '';
+
+  if (!cleanEmail) {
+    res.status(400).json({ success: false, error: 'User email is required.' });
+    return;
+  }
+
+  const user = firestoreDB.findUserByEmail(cleanEmail);
+  if (!user) {
+    res.status(404).json({ success: false, error: 'User not found in Firestore.' });
+    return;
+  }
+
+  if (name !== undefined) {
+    const cleanName = name.trim();
+    if (!cleanName) {
+      res.status(400).json({ success: false, error: 'Display Name cannot be empty.' });
+      return;
+    }
+    user.name = cleanName;
+    user.customDisplayName = true;
+  }
+
+  if (phone !== undefined) {
+    user.phone = phone.trim() || undefined;
+  }
+
+  if (photoUrl !== undefined) {
+    user.photoUrl = photoUrl.trim() || undefined;
+    if (photoUrl.trim()) {
+      user.customPhoto = true;
+    }
+  }
+
+  user.lastLoginAt = new Date().toISOString();
+  firestoreDB.setUser(user.id, user);
+
+  res.json({
+    success: true,
+    message: 'Profile updated successfully.',
+    user
+  });
+});
+
+

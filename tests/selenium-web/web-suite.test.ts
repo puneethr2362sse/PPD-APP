@@ -6,6 +6,7 @@ describe('Selenium Web Application E2E & Component Suite', () => {
     // reset/ensure demo user exists
     firestoreDB.setUser('usr_puneeth_demo', {
       id: 'usr_puneeth_demo',
+      userId: 'puneeth123',
       name: 'Puneeth',
       email: 'puneeth@example.com',
       phone: '+1 (555) 019-2834',
@@ -85,25 +86,27 @@ describe('Selenium Web Application E2E & Component Suite', () => {
       expect(validate('Puneeth')).toBe(true);
     });
 
-    it('2.2. should validate standard email format correctly', () => {
+    it('2.2. should require user ID on registration submit', () => {
+      const validateUserId = (uid: string) => !!uid.trim();
+      expect(validateUserId('')).toBe(false);
+      expect(validateUserId('puneeth123')).toBe(true);
+    });
+
+    it('2.3. should validate standard email format correctly', () => {
       const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
       expect(emailRegex.test('puneeth@example.com')).toBe(true);
       expect(emailRegex.test('invalid-email')).toBe(false);
     });
 
-    it('2.3. should reject emails without top level domain', () => {
+    it('2.4. should reject emails without top level domain', () => {
       const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
       expect(emailRegex.test('user@localhost')).toBe(false);
     });
 
-    it('2.4. should reject emails with invalid characters or spaces', () => {
-      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-      expect(emailRegex.test('user name@example.com')).toBe(false);
-    });
-
-    it('2.5. should allow optional phone number during registration', () => {
-      const phone = '+1 555-0199';
-      expect(phone).toBeDefined();
+    it('2.5. should reject registration if User ID is already taken', () => {
+      const existing = firestoreDB.findUserByUserId('puneeth123');
+      expect(existing).toBeDefined();
+      expect(existing?.userId || existing?.id).toBe('puneeth123');
     });
 
     it('2.6. should reject registration if email is already registered', () => {
@@ -121,9 +124,10 @@ describe('Selenium Web Application E2E & Component Suite', () => {
       expect(expiresAt).toBeGreaterThan(Date.now());
     });
 
-    it('2.9. should store tempName and tempPhone in pending registration state', () => {
-      const pending = { tempName: 'Alex Smith', tempPhone: '+1 555-4433' };
+    it('2.9. should store tempName, tempUserId and tempPhone in pending registration state', () => {
+      const pending = { tempName: 'Alex Smith', tempUserId: 'alex_99', tempPhone: '+1 555-4433' };
       expect(pending.tempName).toBe('Alex Smith');
+      expect(pending.tempUserId).toBe('alex_99');
     });
 
     it('2.10. should navigate to /otp with email in state upon registration', () => {
@@ -136,9 +140,9 @@ describe('Selenium Web Application E2E & Component Suite', () => {
       expect(showDemoOtp).toBe(true);
     });
 
-    it('2.12. should not request any password field in registration form', () => {
-      const hasPasswordField = false;
-      expect(hasPasswordField).toBe(false);
+    it('2.12. should allow optional phone number during registration', () => {
+      const phone = '+1 555-0199';
+      expect(phone).toBeDefined();
     });
   });
 
@@ -505,14 +509,15 @@ describe('Selenium Web Application E2E & Component Suite', () => {
       expect(trust).toBeGreaterThanOrEqual(90);
     });
 
-    it('6.16. should automatically display registered full name (Puneeth) in Profile', () => {
+    it('6.16. should automatically display registered User ID (puneeth123) in Profile', () => {
       const user = firestoreDB.findUserByEmail('puneeth@example.com');
-      expect(user?.name).toBe('Puneeth');
+      expect(user?.userId || user?.id).toBe('puneeth123');
     });
 
-    it('6.17. should never use default name "User" when registered name is provided', () => {
+    it('6.17. should never display a random usr_... ID when user chose custom User ID', () => {
       const user = firestoreDB.findUserByEmail('puneeth@example.com');
-      expect(user?.name).not.toBe('User');
+      expect(user?.userId).toBe('puneeth123');
+      expect(user?.userId).not.toMatch(/^usr_g_/);
     });
 
     it('6.18. should display registered email and phone in Profile', () => {

@@ -2,38 +2,17 @@ import { VerificationResult } from '../types';
 import { apiClient } from './apiClient';
 
 export const verificationService = {
-  // Analyze Text via Backend API & Firestore
+  // Analyze Text via Backend API & Live Internet Grounding
   async verifyText(text: string, userEmail: string): Promise<VerificationResult> {
-    try {
-      const res = await apiClient.post('/verify/text', {
-        text: text.trim(),
-        email: userEmail.trim().toLowerCase(),
-      });
+    const res = await apiClient.post('/verify/text', {
+      text: text.trim(),
+      email: userEmail.trim().toLowerCase(),
+    });
 
-      if (res.success && res.result) {
-        return res.result;
-      }
-      throw new Error(res.error || 'Text verification failed.');
-    } catch (err: any) {
-      console.warn('API error, using local fallback:', err);
-      // Fallback
-      return {
-        id: 'scan_' + Date.now().toString(36),
-        userEmail,
-        type: 'TEXT',
-        timestamp: new Date().toISOString(),
-        formattedDate: `Today, ${new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true })}`,
-        score: 100,
-        verdict: 'REAL',
-        preview: text.length > 90 ? text.substring(0, 87) + '...' : text,
-        fullContent: text,
-        explanation: 'Verified authentic claim with cross-corroborated institutional registries.',
-        confidence: 98.4,
-        signals: [
-          { name: 'Cross-Source Corroboration', status: 'passed', score: 100, detail: 'Validated across verified global sources.' }
-        ]
-      };
+    if (res.success && res.result) {
+      return res.result;
     }
+    throw new Error(res.error || 'Live verification is currently unavailable. Please try again.');
   },
 
   // Analyze Image via Backend API & Firestore
