@@ -38,3 +38,6 @@ mobile/.expo/
 
 # Archives
 *.zip
+
+# Temporary files
+*.tmp
