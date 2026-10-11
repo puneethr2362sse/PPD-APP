@@ -1,0 +1,15 @@
+node_modules
+mobile/node_modules
+mobile/.expo
+.expo
+*.zip
+*.log
+*.tmp
+reports
+tests
+VerifyAI_Test_Results_305.xlsx
+VerifyAI_Test_Results_305.csv
+.git
+.env
+.env.local
+.env.*.local
