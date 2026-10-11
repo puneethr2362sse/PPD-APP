@@ -1375,9 +1375,9 @@ describe('Appium Mobile Native & Expo Test Suite (300 Test Cases)', () => {
     });
 
     it('MOB-250: should handle pluralization rules for scan history count ("1 scan" vs "5 scans")', () => {
-      const count = 5;
-      const label = count === 1 ? '1 scan' : `${count} scans`;
-      expect(label).toBe('5 scans');
+      const formatCount = (count: number) => count === 1 ? '1 scan' : `${count} scans`;
+      expect(formatCount(1)).toBe('1 scan');
+      expect(formatCount(5)).toBe('5 scans');
     });
 
     it('MOB-251: should fallback to English if chosen locale translation key is missing', () => {

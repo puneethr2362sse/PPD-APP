@@ -141,7 +141,7 @@ jobs:
         run: npm ci || npm install
 
       - name: Run Security Assessment Suite (75 Tests)
-        run: npx vitest run tests/security/security-assessment.test.ts
+        run: npx vitest run tests/security/security-suite.test.ts
 
       - name: Generate Security Artifacts
         run: node scripts/generate-artifacts.js
