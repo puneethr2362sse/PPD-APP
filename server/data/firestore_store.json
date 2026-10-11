@@ -28175,6 +28175,110 @@
           "score": 56.55200000000001
         }
       ]
+    },
+    "scan_mv3wnpdd79om": {
+      "id": "scan_mv3wnpdd79om",
+      "userEmail": "leelakrishnar2363.sse@saveetha.com",
+      "type": "TEXT",
+      "timestamp": "2026-10-11T14:15:14.737Z",
+      "formattedDate": "Today, 7:45 PM",
+      "score": 0,
+      "verdict": "FALSE",
+      "verdictLabel": "NO, IT'S NOT TRUE",
+      "claim": "did elon musk's starlink came to india",
+      "originalClaim": "did elon musk's starlink came to india",
+      "preview": "did elon musk's starlink came to india",
+      "fullContent": "did elon musk's starlink came to india",
+      "explanation": "1. User Claim: 'did elon musk's starlink came to india' 2. Retrieved Live Evidence: Retrieved headlines and reports consistently indicate that Starlink's India launch is stalled, facing regulatory delays, and that Elon Musk has questioned these delays in India's approval process. 3. Factual Comparison & Verdict: The evidence clearly demonstrates that Starlink has not yet launched or arrived in India, making the claim false.",
+      "reasoning": "(1) Claimed: Elon Musk's Starlink has come to India. (2) Evidence states: The retrieved reports discuss that Starlink's India launch stalls, regulatory approval is delayed, and Elon Musk has questioned delays and claimed that entry is being blocked, prompting fact-checks and discussions on regulatory hurdles. (3) Contradiction/Support: The live evidence explicitly shows Starlink has NOT launched or successfully come to India yet, directly contradicting the claim that it has arrived. (4) Verdict choice: FALSE because the evidence confirms Starlink's entry is stalled/delayed, not completed.",
+      "confidence": 99,
+      "directAnswer": "No, this is not true: Starlink's launch and entry into India have stalled amid regulatory approval delays and disputes, rather than having successfully come to India.",
+      "queryType": "question",
+      "isLiveWebVerified": true,
+      "searchTimestamp": "2026-10-11T14:15:14.736Z",
+      "signals": [
+        {
+          "name": "Claim-to-Evidence Consistency",
+          "status": "failed",
+          "score": 8,
+          "detail": "(1) Claimed: Elon Musk's Starlink has come to India. (2) Evidence states: The retrieved reports discuss that Starlink's India launch stalls, regulatory approval is delayed, and Elon Musk has questioned delays and claimed that entry is being blocked, prompting fact-checks and discussions on regulatory hurdles. (3) Contradiction/Support: The live evidence explicitly shows Starlink has NOT launched or successfully come to India yet, directly contradicting the claim that it has arrived. (4) Verdict choice: FALSE because the evidence confirms Starlink's entry is stalled/delayed, not completed."
+        },
+        {
+          "name": "Primary & Official Registry Alignment",
+          "status": "passed",
+          "score": 60,
+          "detail": "Evidence cross-referenced against authoritative sources with readable page content (Video | Rajeev Chandrasekhar Hits Back At Elon Musk Over Starlink, Says India’s Security Comes First - NDTV, Some oligarchs blocking entry of Starlink in India: Elon Musk - The Times of India, Elon Musk questions Ambani’s influence as Starlink India launch stalls - TechCrunch)."
+        },
+        {
+          "name": "Real-Time Live Web Coverage",
+          "status": "passed",
+          "score": 98,
+          "detail": "Retrieved 5 ranked reference sources; verdict evidence uses readable content."
+        },
+        {
+          "name": "Fact & Entity Match Index",
+          "status": "failed",
+          "score": 12,
+          "detail": "Key factual contradiction detected between claim and verified evidence."
+        }
+      ],
+      "sources": [
+        {
+          "name": "Video | Rajeev Chandrasekhar Hits Back At Elon Musk Over Starlink, Says India’s Security Comes First - NDTV",
+          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNWGRUc24wZHhQMlJNal95eU9pUlV5RzZHeG5QcjkzWFV6OVVfVEJEZUFxcnJ0R2FmVHQ0aHJkVnc0LTJJOWdxOEpYUGx5ZGVYTDJVa0labDZ5Z2NoRkF3NkJ2Wnp2b1BsWWVCcFBMZFZoYkdLV3h5YmdRT3JXTjd2OGlsclFVaEU5V1JMS1BsLUFjYUJaN0l1V3RfbHM2NEJiYlhkdWFjUXpZMkN1LXFBZ05OdDZEbFZJSUdPS01iY0VBMnM?oc=5",
+          "domain": "news.google.com",
+          "pubDate": "Fri, 09 Oct 2026 09:44:05 GMT",
+          "reliability": 95,
+          "snippet": "Video | Rajeev Chandrasekhar Hits Back At Elon Musk Over Starlink, Says India’s Security Comes First - NDTV",
+          "evidenceText": "Video | Rajeev Chandrasekhar Hits Back At Elon Musk Over Starlink, Says India’s Security Comes First - NDTV",
+          "relevanceScore": 61.5,
+          "score": 70.13
+        },
+        {
+          "name": "Some oligarchs blocking entry of Starlink in India: Elon Musk - The Times of India",
+          "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQMGJveml5MlBTdHdsdE1OTTVOZVgyNHJid2dXMjRGbl9DWFB3bHdKd0dKbmVzaEFrNE9pdWhRY0FOQ2hmemJ6RUk4VEFSLUpLU09XYTRDa0E3RjNBNnVGRTZRUzR6OGpxYWlkMDZsZzJSSUJYRVZCakNmNWNsRVhkemtCaHl4RmpkdnZhelYzMGpOX2k2MnRUUlpJek5zV0pVRThHSlh5UXMzcGlMN3dvaUNzd1BfbWM5ZWlNeURXRmc5RDJKck56SVZ2R3lmTDdSUkNvaFRSY2RhaXhndWh30gHkAUFVX3lxTFBtVFoydFlpcG10MEliWC12Y28zeGdaNWY3Mi1BbmhUUWNKSy1WSEYzOThWV3NQQmMwTngzOU1SUlRVYV9oenlQYnRrY21FcnpOQUl0cktteUdUWU5lZ3gwVWhPMTlTZkloZFkyRmxpM0lDVVlOWkRINVg5QkRRNFIzVFJFaFliaVlYcUJHMFU0SjJVNWZwODdWdUE4YmJES3FVdTJILXgyTVJVbFRRbDFUSkpyZTRjbHRRSU8wY3c4azU4MW5RajFFTm14Q21wTFU0X2U1ekxpczhGWmVlT3ZrU2hydQ?oc=5",
+          "domain": "news.google.com",
+          "pubDate": "Wed, 07 Oct 2026 23:23:00 GMT",
+          "reliability": 94,
+          "snippet": "Some oligarchs blocking entry of Starlink in India: Elon Musk - The Times of India",
+          "evidenceText": "Some oligarchs blocking entry of Starlink in India: Elon Musk - The Times of India",
+          "relevanceScore": 61.4,
+          "score": 69.828
+        },
+        {
+          "name": "Elon Musk questions Ambani’s influence as Starlink India launch stalls - TechCrunch",
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNVy1RY0g5UTJydjFKMndxOHNKYlpLMC1ta2RpUnBkYW5wbF9OaC1keTgtN2RhMWV3QkhfbFRtUmE5OHZoV3FORzE0ZU90UFNxektRYlFUbmxZWHVsbzFsN09NSDBoSjlONGJ5ZVRMZDJsTk5RY19ZNlJVS09Xem5DRGdFai1GaDJSSTRoYUlpUlBycURJTnhMYmdZNzFCVldVYXl6ZmZ6aw?oc=5",
+          "domain": "news.google.com",
+          "pubDate": "Thu, 08 Oct 2026 15:12:59 GMT",
+          "reliability": 85,
+          "snippet": "Elon Musk questions Ambani’s influence as Starlink India launch stalls - TechCrunch",
+          "evidenceText": "Elon Musk questions Ambani’s influence as Starlink India launch stalls - TechCrunch",
+          "relevanceScore": 60.5,
+          "score": 67.11
+        },
+        {
+          "name": "Did Elon Musk write his Starlink posts on India? X users debate his writing style - Moneycontrol.com",
+          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPc1lHQ0xtekJPaXFxazdYWkY1QjZpUlNzTTlrSWQ5c0RYeV94aWhYT0l0TW04b09GV3RnaVliSkRQdlQ0SFBqVHRrTm5OQnhTNlhKYXBFVEZJSmdpc21PdHFNd0RTRnBzUEFSZmRDVkJSMy1kMXBJVzhnZHY5Rng3aXdsRHNKNy1zRzhNaUk1bGVmSGdoNk9HeG1qNEU0blBvZ2VjU054eWpJTDFRQ2REb0ZaeWpIWjd5dWxrYzZHM2VYR3hHd2c4WjBIM2xRTVnSAdQBQVVfeXFMTmMxQjNOX2hJR0JNSHNDU0M2TmtBWlZPaUw5c20zZTktaGRHc0lCQ3N0VVRvcWdZZGh4MmJxaTlUZ2RpOUcyQ3hEN2VJVDNXMW9zeW5oZjloN21IVXRGV181S2pwM1NmdU91QWcxR3pyUmRxbWtYWW5jYkFFcXd4QlBTU2l3cGplYm1WUjVLcXZTS3g4NXJMeDRFcjJXRFdjRWhVMGZrQ3RfZGJXR3pqa19KUmRyWWZiRFNQRFdGZjlNSmVOS0M2emtobHMxcGttLUZhSEo?oc=5",
+          "domain": "news.google.com",
+          "pubDate": "Sat, 10 Oct 2026 13:07:02 GMT",
+          "reliability": 85,
+          "snippet": "Did Elon Musk write his Starlink posts on India? X users debate his writing style - Moneycontrol.com",
+          "evidenceText": "Did Elon Musk write his Starlink posts on India? X users debate his writing style - Moneycontrol.com",
+          "relevanceScore": 60.5,
+          "score": 67.11
+        },
+        {
+          "name": "Elon Musk questions Ambani’s influence as Starlink India launch stalls - TechCrunch",
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxObnFsVGFDZnJmempFY2FhQTY0cG9WOWZIcDQzMFg0ekhLUlEzaUFRZnVDMU94SHhDVEg2VXQzQUZNOWoxZy1EcUgyRTJqQmFxdVctOFN2SklCNzhLLVNJVk9WMHR2Ym9CWG5PaUJ6MFA1Vng3SER6a0J5OWpkdk54bElPZ3FXVFFNWklhMjZJcDd0Z1FiU2FMMnVKWnlCNFJia1hvYkh2aw?oc=5",
+          "domain": "news.google.com",
+          "pubDate": "Thu, 08 Oct 2026 15:12:59 GMT",
+          "reliability": 85,
+          "snippet": "Elon Musk questions Ambani’s influence as Starlink India launch stalls - TechCrunch",
+          "evidenceText": "Elon Musk questions Ambani’s influence as Starlink India launch stalls - TechCrunch",
+          "relevanceScore": 60.5,
+          "score": 67.11
+        }
+      ]
     }
   },
   "news": {
