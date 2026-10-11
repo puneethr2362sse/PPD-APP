@@ -4301,722 +4301,722 @@
       "id": "usr_rapid_login_test",
       "name": "Rapid User",
       "email": "rapid@example.com",
-      "createdAt": "2026-08-31T09:27:54.664Z",
-      "lastLoginAt": "2026-08-31T09:27:54.664Z"
+      "createdAt": "2026-10-11T13:10:21.662Z",
+      "lastLoginAt": "2026-10-11T13:10:21.662Z"
     },
     "usr_race_test_1": {
       "id": "usr_race_test_1",
       "name": "Race Winner",
       "email": "race1@example.com",
-      "createdAt": "2026-08-31T09:27:56.027Z",
-      "lastLoginAt": "2026-08-31T09:27:56.027Z"
+      "createdAt": "2026-10-11T13:10:22.943Z",
+      "lastLoginAt": "2026-10-11T13:10:22.943Z"
     },
     "usr_footprint_0": {
       "id": "usr_footprint_0",
       "name": "Footprint_0",
       "email": "footprint_0@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_1": {
       "id": "usr_footprint_1",
       "name": "Footprint_1",
       "email": "footprint_1@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_2": {
       "id": "usr_footprint_2",
       "name": "Footprint_2",
       "email": "footprint_2@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_3": {
       "id": "usr_footprint_3",
       "name": "Footprint_3",
       "email": "footprint_3@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_4": {
       "id": "usr_footprint_4",
       "name": "Footprint_4",
       "email": "footprint_4@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_5": {
       "id": "usr_footprint_5",
       "name": "Footprint_5",
       "email": "footprint_5@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_6": {
       "id": "usr_footprint_6",
       "name": "Footprint_6",
       "email": "footprint_6@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_7": {
       "id": "usr_footprint_7",
       "name": "Footprint_7",
       "email": "footprint_7@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_8": {
       "id": "usr_footprint_8",
       "name": "Footprint_8",
       "email": "footprint_8@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_9": {
       "id": "usr_footprint_9",
       "name": "Footprint_9",
       "email": "footprint_9@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_10": {
       "id": "usr_footprint_10",
       "name": "Footprint_10",
       "email": "footprint_10@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_11": {
       "id": "usr_footprint_11",
       "name": "Footprint_11",
       "email": "footprint_11@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_12": {
       "id": "usr_footprint_12",
       "name": "Footprint_12",
       "email": "footprint_12@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_13": {
       "id": "usr_footprint_13",
       "name": "Footprint_13",
       "email": "footprint_13@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_14": {
       "id": "usr_footprint_14",
       "name": "Footprint_14",
       "email": "footprint_14@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_15": {
       "id": "usr_footprint_15",
       "name": "Footprint_15",
       "email": "footprint_15@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_16": {
       "id": "usr_footprint_16",
       "name": "Footprint_16",
       "email": "footprint_16@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_17": {
       "id": "usr_footprint_17",
       "name": "Footprint_17",
       "email": "footprint_17@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_18": {
       "id": "usr_footprint_18",
       "name": "Footprint_18",
       "email": "footprint_18@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_19": {
       "id": "usr_footprint_19",
       "name": "Footprint_19",
       "email": "footprint_19@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_20": {
       "id": "usr_footprint_20",
       "name": "Footprint_20",
       "email": "footprint_20@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_21": {
       "id": "usr_footprint_21",
       "name": "Footprint_21",
       "email": "footprint_21@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_22": {
       "id": "usr_footprint_22",
       "name": "Footprint_22",
       "email": "footprint_22@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_23": {
       "id": "usr_footprint_23",
       "name": "Footprint_23",
       "email": "footprint_23@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_24": {
       "id": "usr_footprint_24",
       "name": "Footprint_24",
       "email": "footprint_24@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_25": {
       "id": "usr_footprint_25",
       "name": "Footprint_25",
       "email": "footprint_25@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_26": {
       "id": "usr_footprint_26",
       "name": "Footprint_26",
       "email": "footprint_26@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_27": {
       "id": "usr_footprint_27",
       "name": "Footprint_27",
       "email": "footprint_27@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_28": {
       "id": "usr_footprint_28",
       "name": "Footprint_28",
       "email": "footprint_28@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_29": {
       "id": "usr_footprint_29",
       "name": "Footprint_29",
       "email": "footprint_29@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_30": {
       "id": "usr_footprint_30",
       "name": "Footprint_30",
       "email": "footprint_30@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_31": {
       "id": "usr_footprint_31",
       "name": "Footprint_31",
       "email": "footprint_31@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_32": {
       "id": "usr_footprint_32",
       "name": "Footprint_32",
       "email": "footprint_32@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_33": {
       "id": "usr_footprint_33",
       "name": "Footprint_33",
       "email": "footprint_33@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_34": {
       "id": "usr_footprint_34",
       "name": "Footprint_34",
       "email": "footprint_34@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_35": {
       "id": "usr_footprint_35",
       "name": "Footprint_35",
       "email": "footprint_35@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_36": {
       "id": "usr_footprint_36",
       "name": "Footprint_36",
       "email": "footprint_36@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_37": {
       "id": "usr_footprint_37",
       "name": "Footprint_37",
       "email": "footprint_37@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_38": {
       "id": "usr_footprint_38",
       "name": "Footprint_38",
       "email": "footprint_38@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_39": {
       "id": "usr_footprint_39",
       "name": "Footprint_39",
       "email": "footprint_39@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_40": {
       "id": "usr_footprint_40",
       "name": "Footprint_40",
       "email": "footprint_40@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_41": {
       "id": "usr_footprint_41",
       "name": "Footprint_41",
       "email": "footprint_41@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_42": {
       "id": "usr_footprint_42",
       "name": "Footprint_42",
       "email": "footprint_42@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_43": {
       "id": "usr_footprint_43",
       "name": "Footprint_43",
       "email": "footprint_43@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_44": {
       "id": "usr_footprint_44",
       "name": "Footprint_44",
       "email": "footprint_44@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_45": {
       "id": "usr_footprint_45",
       "name": "Footprint_45",
       "email": "footprint_45@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_46": {
       "id": "usr_footprint_46",
       "name": "Footprint_46",
       "email": "footprint_46@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_47": {
       "id": "usr_footprint_47",
       "name": "Footprint_47",
       "email": "footprint_47@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_48": {
       "id": "usr_footprint_48",
       "name": "Footprint_48",
       "email": "footprint_48@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_49": {
       "id": "usr_footprint_49",
       "name": "Footprint_49",
       "email": "footprint_49@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_50": {
       "id": "usr_footprint_50",
       "name": "Footprint_50",
       "email": "footprint_50@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_51": {
       "id": "usr_footprint_51",
       "name": "Footprint_51",
       "email": "footprint_51@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_52": {
       "id": "usr_footprint_52",
       "name": "Footprint_52",
       "email": "footprint_52@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_53": {
       "id": "usr_footprint_53",
       "name": "Footprint_53",
       "email": "footprint_53@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_54": {
       "id": "usr_footprint_54",
       "name": "Footprint_54",
       "email": "footprint_54@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_55": {
       "id": "usr_footprint_55",
       "name": "Footprint_55",
       "email": "footprint_55@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_56": {
       "id": "usr_footprint_56",
       "name": "Footprint_56",
       "email": "footprint_56@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_57": {
       "id": "usr_footprint_57",
       "name": "Footprint_57",
       "email": "footprint_57@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_58": {
       "id": "usr_footprint_58",
       "name": "Footprint_58",
       "email": "footprint_58@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_59": {
       "id": "usr_footprint_59",
       "name": "Footprint_59",
       "email": "footprint_59@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_60": {
       "id": "usr_footprint_60",
       "name": "Footprint_60",
       "email": "footprint_60@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_61": {
       "id": "usr_footprint_61",
       "name": "Footprint_61",
       "email": "footprint_61@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_62": {
       "id": "usr_footprint_62",
       "name": "Footprint_62",
       "email": "footprint_62@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_63": {
       "id": "usr_footprint_63",
       "name": "Footprint_63",
       "email": "footprint_63@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_64": {
       "id": "usr_footprint_64",
       "name": "Footprint_64",
       "email": "footprint_64@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_65": {
       "id": "usr_footprint_65",
       "name": "Footprint_65",
       "email": "footprint_65@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_66": {
       "id": "usr_footprint_66",
       "name": "Footprint_66",
       "email": "footprint_66@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_67": {
       "id": "usr_footprint_67",
       "name": "Footprint_67",
       "email": "footprint_67@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_68": {
       "id": "usr_footprint_68",
       "name": "Footprint_68",
       "email": "footprint_68@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_69": {
       "id": "usr_footprint_69",
       "name": "Footprint_69",
       "email": "footprint_69@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_70": {
       "id": "usr_footprint_70",
       "name": "Footprint_70",
       "email": "footprint_70@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_71": {
       "id": "usr_footprint_71",
       "name": "Footprint_71",
       "email": "footprint_71@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_72": {
       "id": "usr_footprint_72",
       "name": "Footprint_72",
       "email": "footprint_72@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_73": {
       "id": "usr_footprint_73",
       "name": "Footprint_73",
       "email": "footprint_73@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_74": {
       "id": "usr_footprint_74",
       "name": "Footprint_74",
       "email": "footprint_74@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_75": {
       "id": "usr_footprint_75",
       "name": "Footprint_75",
       "email": "footprint_75@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_76": {
       "id": "usr_footprint_76",
       "name": "Footprint_76",
       "email": "footprint_76@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_77": {
       "id": "usr_footprint_77",
       "name": "Footprint_77",
       "email": "footprint_77@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_78": {
       "id": "usr_footprint_78",
       "name": "Footprint_78",
       "email": "footprint_78@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_79": {
       "id": "usr_footprint_79",
       "name": "Footprint_79",
       "email": "footprint_79@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_80": {
       "id": "usr_footprint_80",
       "name": "Footprint_80",
       "email": "footprint_80@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_81": {
       "id": "usr_footprint_81",
       "name": "Footprint_81",
       "email": "footprint_81@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_82": {
       "id": "usr_footprint_82",
       "name": "Footprint_82",
       "email": "footprint_82@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_83": {
       "id": "usr_footprint_83",
       "name": "Footprint_83",
       "email": "footprint_83@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_84": {
       "id": "usr_footprint_84",
       "name": "Footprint_84",
       "email": "footprint_84@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_85": {
       "id": "usr_footprint_85",
       "name": "Footprint_85",
       "email": "footprint_85@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_86": {
       "id": "usr_footprint_86",
       "name": "Footprint_86",
       "email": "footprint_86@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_87": {
       "id": "usr_footprint_87",
       "name": "Footprint_87",
       "email": "footprint_87@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_88": {
       "id": "usr_footprint_88",
       "name": "Footprint_88",
       "email": "footprint_88@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_89": {
       "id": "usr_footprint_89",
       "name": "Footprint_89",
       "email": "footprint_89@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_90": {
       "id": "usr_footprint_90",
       "name": "Footprint_90",
       "email": "footprint_90@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_91": {
       "id": "usr_footprint_91",
       "name": "Footprint_91",
       "email": "footprint_91@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_92": {
       "id": "usr_footprint_92",
       "name": "Footprint_92",
       "email": "footprint_92@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_93": {
       "id": "usr_footprint_93",
       "name": "Footprint_93",
       "email": "footprint_93@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_94": {
       "id": "usr_footprint_94",
       "name": "Footprint_94",
       "email": "footprint_94@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_95": {
       "id": "usr_footprint_95",
       "name": "Footprint_95",
       "email": "footprint_95@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_96": {
       "id": "usr_footprint_96",
       "name": "Footprint_96",
       "email": "footprint_96@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_97": {
       "id": "usr_footprint_97",
       "name": "Footprint_97",
       "email": "footprint_97@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_98": {
       "id": "usr_footprint_98",
       "name": "Footprint_98",
       "email": "footprint_98@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_footprint_99": {
       "id": "usr_footprint_99",
       "name": "Footprint_99",
       "email": "footprint_99@example.com",
-      "createdAt": "2026-08-31T09:27:56.048Z",
-      "lastLoginAt": "2026-08-31T09:27:56.048Z"
+      "createdAt": "2026-10-11T13:10:22.970Z",
+      "lastLoginAt": "2026-10-11T13:10:22.970Z"
     },
     "usr_atomic_stats": {
       "id": "usr_atomic_stats",
       "name": "Atomic User",
       "email": "atomic@example.com",
-      "createdAt": "2026-08-31T09:28:01.363Z",
-      "lastLoginAt": "2026-08-31T09:28:02.710Z"
+      "createdAt": "2026-10-11T13:10:28.555Z",
+      "lastLoginAt": "2026-10-11T13:10:29.663Z"
     },
     "usr_concur_name": {
       "id": "usr_concur_name",
@@ -6082,6 +6082,356 @@
       "email": "load_user_49_reg@example.com",
       "createdAt": "2026-08-31T09:27:49.822Z",
       "lastLoginAt": "2026-08-31T09:27:49.822Z"
+    },
+    "usr_load_9wzcb1": {
+      "id": "usr_load_9wzcb1",
+      "name": "User_0",
+      "email": "load_user_0_reg@example.com",
+      "createdAt": "2026-10-11T13:10:14.065Z",
+      "lastLoginAt": "2026-10-11T13:10:14.066Z"
+    },
+    "usr_load_fx3ylo": {
+      "id": "usr_load_fx3ylo",
+      "name": "User_1",
+      "email": "load_user_1_reg@example.com",
+      "createdAt": "2026-10-11T13:10:14.094Z",
+      "lastLoginAt": "2026-10-11T13:10:14.094Z"
+    },
+    "usr_load_uaq5xi": {
+      "id": "usr_load_uaq5xi",
+      "name": "User_2",
+      "email": "load_user_2_reg@example.com",
+      "createdAt": "2026-10-11T13:10:14.124Z",
+      "lastLoginAt": "2026-10-11T13:10:14.124Z"
+    },
+    "usr_load_l3j51g": {
+      "id": "usr_load_l3j51g",
+      "name": "User_3",
+      "email": "load_user_3_reg@example.com",
+      "createdAt": "2026-10-11T13:10:14.157Z",
+      "lastLoginAt": "2026-10-11T13:10:14.157Z"
+    },
+    "usr_load_gt3ybh": {
+      "id": "usr_load_gt3ybh",
+      "name": "User_4",
+      "email": "load_user_4_reg@example.com",
+      "createdAt": "2026-10-11T13:10:14.190Z",
+      "lastLoginAt": "2026-10-11T13:10:14.190Z"
+    },
+    "usr_load_sl1fpk": {
+      "id": "usr_load_sl1fpk",
+      "name": "User_5",
+      "email": "load_user_5_reg@example.com",
+      "createdAt": "2026-10-11T13:10:14.221Z",
+      "lastLoginAt": "2026-10-11T13:10:14.221Z"
+    },
+    "usr_load_z2wscp": {
+      "id": "usr_load_z2wscp",
+      "name": "User_6",
+      "email": "load_user_6_reg@example.com",
+      "createdAt": "2026-10-11T13:10:14.259Z",
+      "lastLoginAt": "2026-10-11T13:10:14.259Z"
+    },
+    "usr_load_h12u01": {
+      "id": "usr_load_h12u01",
+      "name": "User_7",
+      "email": "load_user_7_reg@example.com",
+      "createdAt": "2026-10-11T13:10:14.289Z",
+      "lastLoginAt": "2026-10-11T13:10:14.289Z"
+    },
+    "usr_load_e6lctt": {
+      "id": "usr_load_e6lctt",
+      "name": "User_8",
+      "email": "load_user_8_reg@example.com",
+      "createdAt": "2026-10-11T13:10:14.322Z",
+      "lastLoginAt": "2026-10-11T13:10:14.322Z"
+    },
+    "usr_load_plvsqx": {
+      "id": "usr_load_plvsqx",
+      "name": "User_9",
+      "email": "load_user_9_reg@example.com",
+      "createdAt": "2026-10-11T13:10:14.352Z",
+      "lastLoginAt": "2026-10-11T13:10:14.352Z"
+    },
+    "usr_load_a4r7y3": {
+      "id": "usr_load_a4r7y3",
+      "name": "User_10",
+      "email": "load_user_10_reg@example.com",
+      "createdAt": "2026-10-11T13:10:14.380Z",
+      "lastLoginAt": "2026-10-11T13:10:14.380Z"
+    },
+    "usr_load_id0s7y": {
+      "id": "usr_load_id0s7y",
+      "name": "User_11",
+      "email": "load_user_11_reg@example.com",
+      "createdAt": "2026-10-11T13:10:14.409Z",
+      "lastLoginAt": "2026-10-11T13:10:14.409Z"
+    },
+    "usr_load_ccdb3m": {
+      "id": "usr_load_ccdb3m",
+      "name": "User_12",
+      "email": "load_user_12_reg@example.com",
+      "createdAt": "2026-10-11T13:10:14.438Z",
+      "lastLoginAt": "2026-10-11T13:10:14.438Z"
+    },
+    "usr_load_z6sgwr": {
+      "id": "usr_load_z6sgwr",
+      "name": "User_13",
+      "email": "load_user_13_reg@example.com",
+      "createdAt": "2026-10-11T13:10:14.465Z",
+      "lastLoginAt": "2026-10-11T13:10:14.465Z"
+    },
+    "usr_load_fgk168": {
+      "id": "usr_load_fgk168",
+      "name": "User_14",
+      "email": "load_user_14_reg@example.com",
+      "createdAt": "2026-10-11T13:10:14.495Z",
+      "lastLoginAt": "2026-10-11T13:10:14.495Z"
+    },
+    "usr_load_pmz27s": {
+      "id": "usr_load_pmz27s",
+      "name": "User_15",
+      "email": "load_user_15_reg@example.com",
+      "createdAt": "2026-10-11T13:10:14.525Z",
+      "lastLoginAt": "2026-10-11T13:10:14.525Z"
+    },
+    "usr_load_jin4sa": {
+      "id": "usr_load_jin4sa",
+      "name": "User_16",
+      "email": "load_user_16_reg@example.com",
+      "createdAt": "2026-10-11T13:10:14.560Z",
+      "lastLoginAt": "2026-10-11T13:10:14.560Z"
+    },
+    "usr_load_zxjw0j": {
+      "id": "usr_load_zxjw0j",
+      "name": "User_17",
+      "email": "load_user_17_reg@example.com",
+      "createdAt": "2026-10-11T13:10:14.592Z",
+      "lastLoginAt": "2026-10-11T13:10:14.592Z"
+    },
+    "usr_load_vk7n8o": {
+      "id": "usr_load_vk7n8o",
+      "name": "User_18",
+      "email": "load_user_18_reg@example.com",
+      "createdAt": "2026-10-11T13:10:14.624Z",
+      "lastLoginAt": "2026-10-11T13:10:14.624Z"
+    },
+    "usr_load_3kcfsw": {
+      "id": "usr_load_3kcfsw",
+      "name": "User_19",
+      "email": "load_user_19_reg@example.com",
+      "createdAt": "2026-10-11T13:10:14.655Z",
+      "lastLoginAt": "2026-10-11T13:10:14.655Z"
+    },
+    "usr_load_ckh17o": {
+      "id": "usr_load_ckh17o",
+      "name": "User_20",
+      "email": "load_user_20_reg@example.com",
+      "createdAt": "2026-10-11T13:10:14.688Z",
+      "lastLoginAt": "2026-10-11T13:10:14.688Z"
+    },
+    "usr_load_lp2lr5": {
+      "id": "usr_load_lp2lr5",
+      "name": "User_21",
+      "email": "load_user_21_reg@example.com",
+      "createdAt": "2026-10-11T13:10:14.722Z",
+      "lastLoginAt": "2026-10-11T13:10:14.722Z"
+    },
+    "usr_load_i5lsso": {
+      "id": "usr_load_i5lsso",
+      "name": "User_22",
+      "email": "load_user_22_reg@example.com",
+      "createdAt": "2026-10-11T13:10:14.755Z",
+      "lastLoginAt": "2026-10-11T13:10:14.755Z"
+    },
+    "usr_load_31a7rp": {
+      "id": "usr_load_31a7rp",
+      "name": "User_23",
+      "email": "load_user_23_reg@example.com",
+      "createdAt": "2026-10-11T13:10:14.787Z",
+      "lastLoginAt": "2026-10-11T13:10:14.787Z"
+    },
+    "usr_load_8tr0bt": {
+      "id": "usr_load_8tr0bt",
+      "name": "User_24",
+      "email": "load_user_24_reg@example.com",
+      "createdAt": "2026-10-11T13:10:14.822Z",
+      "lastLoginAt": "2026-10-11T13:10:14.822Z"
+    },
+    "usr_load_fvhza6": {
+      "id": "usr_load_fvhza6",
+      "name": "User_25",
+      "email": "load_user_25_reg@example.com",
+      "createdAt": "2026-10-11T13:10:14.855Z",
+      "lastLoginAt": "2026-10-11T13:10:14.855Z"
+    },
+    "usr_load_g1tj8w": {
+      "id": "usr_load_g1tj8w",
+      "name": "User_26",
+      "email": "load_user_26_reg@example.com",
+      "createdAt": "2026-10-11T13:10:14.890Z",
+      "lastLoginAt": "2026-10-11T13:10:14.890Z"
+    },
+    "usr_load_sotcvf": {
+      "id": "usr_load_sotcvf",
+      "name": "User_27",
+      "email": "load_user_27_reg@example.com",
+      "createdAt": "2026-10-11T13:10:14.922Z",
+      "lastLoginAt": "2026-10-11T13:10:14.922Z"
+    },
+    "usr_load_9vn762": {
+      "id": "usr_load_9vn762",
+      "name": "User_28",
+      "email": "load_user_28_reg@example.com",
+      "createdAt": "2026-10-11T13:10:14.953Z",
+      "lastLoginAt": "2026-10-11T13:10:14.953Z"
+    },
+    "usr_load_s1p4ip": {
+      "id": "usr_load_s1p4ip",
+      "name": "User_29",
+      "email": "load_user_29_reg@example.com",
+      "createdAt": "2026-10-11T13:10:14.984Z",
+      "lastLoginAt": "2026-10-11T13:10:14.984Z"
+    },
+    "usr_load_14cbyw": {
+      "id": "usr_load_14cbyw",
+      "name": "User_30",
+      "email": "load_user_30_reg@example.com",
+      "createdAt": "2026-10-11T13:10:15.016Z",
+      "lastLoginAt": "2026-10-11T13:10:15.016Z"
+    },
+    "usr_load_j82tre": {
+      "id": "usr_load_j82tre",
+      "name": "User_31",
+      "email": "load_user_31_reg@example.com",
+      "createdAt": "2026-10-11T13:10:15.046Z",
+      "lastLoginAt": "2026-10-11T13:10:15.047Z"
+    },
+    "usr_load_80w42o": {
+      "id": "usr_load_80w42o",
+      "name": "User_32",
+      "email": "load_user_32_reg@example.com",
+      "createdAt": "2026-10-11T13:10:15.077Z",
+      "lastLoginAt": "2026-10-11T13:10:15.077Z"
+    },
+    "usr_load_rsg1m0": {
+      "id": "usr_load_rsg1m0",
+      "name": "User_33",
+      "email": "load_user_33_reg@example.com",
+      "createdAt": "2026-10-11T13:10:15.141Z",
+      "lastLoginAt": "2026-10-11T13:10:15.141Z"
+    },
+    "usr_load_gas4pk": {
+      "id": "usr_load_gas4pk",
+      "name": "User_34",
+      "email": "load_user_34_reg@example.com",
+      "createdAt": "2026-10-11T13:10:15.181Z",
+      "lastLoginAt": "2026-10-11T13:10:15.181Z"
+    },
+    "usr_load_azccby": {
+      "id": "usr_load_azccby",
+      "name": "User_35",
+      "email": "load_user_35_reg@example.com",
+      "createdAt": "2026-10-11T13:10:15.220Z",
+      "lastLoginAt": "2026-10-11T13:10:15.220Z"
+    },
+    "usr_load_7ov5od": {
+      "id": "usr_load_7ov5od",
+      "name": "User_36",
+      "email": "load_user_36_reg@example.com",
+      "createdAt": "2026-10-11T13:10:15.253Z",
+      "lastLoginAt": "2026-10-11T13:10:15.253Z"
+    },
+    "usr_load_8szqv6": {
+      "id": "usr_load_8szqv6",
+      "name": "User_37",
+      "email": "load_user_37_reg@example.com",
+      "createdAt": "2026-10-11T13:10:15.284Z",
+      "lastLoginAt": "2026-10-11T13:10:15.284Z"
+    },
+    "usr_load_zyytut": {
+      "id": "usr_load_zyytut",
+      "name": "User_38",
+      "email": "load_user_38_reg@example.com",
+      "createdAt": "2026-10-11T13:10:15.318Z",
+      "lastLoginAt": "2026-10-11T13:10:15.318Z"
+    },
+    "usr_load_l6qj65": {
+      "id": "usr_load_l6qj65",
+      "name": "User_39",
+      "email": "load_user_39_reg@example.com",
+      "createdAt": "2026-10-11T13:10:15.355Z",
+      "lastLoginAt": "2026-10-11T13:10:15.355Z"
+    },
+    "usr_load_7yq7tm": {
+      "id": "usr_load_7yq7tm",
+      "name": "User_40",
+      "email": "load_user_40_reg@example.com",
+      "createdAt": "2026-10-11T13:10:15.387Z",
+      "lastLoginAt": "2026-10-11T13:10:15.387Z"
+    },
+    "usr_load_ojytqf": {
+      "id": "usr_load_ojytqf",
+      "name": "User_41",
+      "email": "load_user_41_reg@example.com",
+      "createdAt": "2026-10-11T13:10:15.420Z",
+      "lastLoginAt": "2026-10-11T13:10:15.420Z"
+    },
+    "usr_load_l5gxq2": {
+      "id": "usr_load_l5gxq2",
+      "name": "User_42",
+      "email": "load_user_42_reg@example.com",
+      "createdAt": "2026-10-11T13:10:15.453Z",
+      "lastLoginAt": "2026-10-11T13:10:15.453Z"
+    },
+    "usr_load_4ssr7x": {
+      "id": "usr_load_4ssr7x",
+      "name": "User_43",
+      "email": "load_user_43_reg@example.com",
+      "createdAt": "2026-10-11T13:10:15.487Z",
+      "lastLoginAt": "2026-10-11T13:10:15.487Z"
+    },
+    "usr_load_zdvpcu": {
+      "id": "usr_load_zdvpcu",
+      "name": "User_44",
+      "email": "load_user_44_reg@example.com",
+      "createdAt": "2026-10-11T13:10:15.520Z",
+      "lastLoginAt": "2026-10-11T13:10:15.520Z"
+    },
+    "usr_load_8lx4px": {
+      "id": "usr_load_8lx4px",
+      "name": "User_45",
+      "email": "load_user_45_reg@example.com",
+      "createdAt": "2026-10-11T13:10:15.554Z",
+      "lastLoginAt": "2026-10-11T13:10:15.554Z"
+    },
+    "usr_load_er6sl8": {
+      "id": "usr_load_er6sl8",
+      "name": "User_46",
+      "email": "load_user_46_reg@example.com",
+      "createdAt": "2026-10-11T13:10:15.587Z",
+      "lastLoginAt": "2026-10-11T13:10:15.587Z"
+    },
+    "usr_load_7euzc9": {
+      "id": "usr_load_7euzc9",
+      "name": "User_47",
+      "email": "load_user_47_reg@example.com",
+      "createdAt": "2026-10-11T13:10:15.619Z",
+      "lastLoginAt": "2026-10-11T13:10:15.619Z"
+    },
+    "usr_load_r2b9dt": {
+      "id": "usr_load_r2b9dt",
+      "name": "User_48",
+      "email": "load_user_48_reg@example.com",
+      "createdAt": "2026-10-11T13:10:15.648Z",
+      "lastLoginAt": "2026-10-11T13:10:15.648Z"
+    },
+    "usr_load_rsntf5": {
+      "id": "usr_load_rsntf5",
+      "name": "User_49",
+      "email": "load_user_49_reg@example.com",
+      "createdAt": "2026-10-11T13:10:15.677Z",
+      "lastLoginAt": "2026-10-11T13:10:15.677Z"
     }
   },
   "otps": {
@@ -6715,907 +7065,907 @@
     "otp_test_0_verify@example.com": {
       "email": "otp_test_0_verify@example.com",
       "code": "1000",
-      "expiresAt": 1788169069858,
+      "expiresAt": 1791724815713,
       "purpose": "login"
     },
     "otp_test_1_verify@example.com": {
       "email": "otp_test_1_verify@example.com",
       "code": "1001",
-      "expiresAt": 1788169069905,
+      "expiresAt": 1791724815742,
       "purpose": "login"
     },
     "otp_test_2_verify@example.com": {
       "email": "otp_test_2_verify@example.com",
       "code": "1002",
-      "expiresAt": 1788169069935,
+      "expiresAt": 1791724815773,
       "purpose": "login"
     },
     "otp_test_3_verify@example.com": {
       "email": "otp_test_3_verify@example.com",
       "code": "1003",
-      "expiresAt": 1788169069963,
+      "expiresAt": 1791724815804,
       "purpose": "login"
     },
     "otp_test_4_verify@example.com": {
       "email": "otp_test_4_verify@example.com",
       "code": "1004",
-      "expiresAt": 1788169069991,
+      "expiresAt": 1791724815831,
       "purpose": "login"
     },
     "otp_test_5_verify@example.com": {
       "email": "otp_test_5_verify@example.com",
       "code": "1005",
-      "expiresAt": 1788169070020,
+      "expiresAt": 1791724815861,
       "purpose": "login"
     },
     "otp_test_6_verify@example.com": {
       "email": "otp_test_6_verify@example.com",
       "code": "1006",
-      "expiresAt": 1788169070083,
+      "expiresAt": 1791724815891,
       "purpose": "login"
     },
     "otp_test_7_verify@example.com": {
       "email": "otp_test_7_verify@example.com",
       "code": "1007",
-      "expiresAt": 1788169070116,
+      "expiresAt": 1791724815924,
       "purpose": "login"
     },
     "otp_test_8_verify@example.com": {
       "email": "otp_test_8_verify@example.com",
       "code": "1008",
-      "expiresAt": 1788169070150,
+      "expiresAt": 1791724815957,
       "purpose": "login"
     },
     "otp_test_9_verify@example.com": {
       "email": "otp_test_9_verify@example.com",
       "code": "1009",
-      "expiresAt": 1788169070182,
+      "expiresAt": 1791724815995,
       "purpose": "login"
     },
     "otp_test_10_verify@example.com": {
       "email": "otp_test_10_verify@example.com",
       "code": "1010",
-      "expiresAt": 1788169070211,
+      "expiresAt": 1791724816030,
       "purpose": "login"
     },
     "otp_test_11_verify@example.com": {
       "email": "otp_test_11_verify@example.com",
       "code": "1011",
-      "expiresAt": 1788169070240,
+      "expiresAt": 1791724816063,
       "purpose": "login"
     },
     "otp_test_12_verify@example.com": {
       "email": "otp_test_12_verify@example.com",
       "code": "1012",
-      "expiresAt": 1788169070272,
+      "expiresAt": 1791724816096,
       "purpose": "login"
     },
     "otp_test_13_verify@example.com": {
       "email": "otp_test_13_verify@example.com",
       "code": "1013",
-      "expiresAt": 1788169070301,
+      "expiresAt": 1791724816130,
       "purpose": "login"
     },
     "otp_test_14_verify@example.com": {
       "email": "otp_test_14_verify@example.com",
       "code": "1014",
-      "expiresAt": 1788169070329,
+      "expiresAt": 1791724816161,
       "purpose": "login"
     },
     "otp_test_15_verify@example.com": {
       "email": "otp_test_15_verify@example.com",
       "code": "1015",
-      "expiresAt": 1788169070367,
+      "expiresAt": 1791724816191,
       "purpose": "login"
     },
     "otp_test_16_verify@example.com": {
       "email": "otp_test_16_verify@example.com",
       "code": "1016",
-      "expiresAt": 1788169070408,
+      "expiresAt": 1791724816222,
       "purpose": "login"
     },
     "otp_test_17_verify@example.com": {
       "email": "otp_test_17_verify@example.com",
       "code": "1017",
-      "expiresAt": 1788169070438,
+      "expiresAt": 1791724816257,
       "purpose": "login"
     },
     "otp_test_18_verify@example.com": {
       "email": "otp_test_18_verify@example.com",
       "code": "1018",
-      "expiresAt": 1788169070476,
+      "expiresAt": 1791724816290,
       "purpose": "login"
     },
     "otp_test_19_verify@example.com": {
       "email": "otp_test_19_verify@example.com",
       "code": "1019",
-      "expiresAt": 1788169070506,
+      "expiresAt": 1791724816325,
       "purpose": "login"
     },
     "otp_test_20_verify@example.com": {
       "email": "otp_test_20_verify@example.com",
       "code": "1020",
-      "expiresAt": 1788169070570,
+      "expiresAt": 1791724816358,
       "purpose": "login"
     },
     "otp_test_21_verify@example.com": {
       "email": "otp_test_21_verify@example.com",
       "code": "1021",
-      "expiresAt": 1788169070610,
+      "expiresAt": 1791724816391,
       "purpose": "login"
     },
     "otp_test_22_verify@example.com": {
       "email": "otp_test_22_verify@example.com",
       "code": "1022",
-      "expiresAt": 1788169070639,
+      "expiresAt": 1791724816423,
       "purpose": "login"
     },
     "otp_test_23_verify@example.com": {
       "email": "otp_test_23_verify@example.com",
       "code": "1023",
-      "expiresAt": 1788169070674,
+      "expiresAt": 1791724816457,
       "purpose": "login"
     },
     "otp_test_24_verify@example.com": {
       "email": "otp_test_24_verify@example.com",
       "code": "1024",
-      "expiresAt": 1788169070702,
+      "expiresAt": 1791724816488,
       "purpose": "login"
     },
     "otp_test_25_verify@example.com": {
       "email": "otp_test_25_verify@example.com",
       "code": "1025",
-      "expiresAt": 1788169070731,
+      "expiresAt": 1791724816519,
       "purpose": "login"
     },
     "otp_test_26_verify@example.com": {
       "email": "otp_test_26_verify@example.com",
       "code": "1026",
-      "expiresAt": 1788169070765,
+      "expiresAt": 1791724816551,
       "purpose": "login"
     },
     "otp_test_27_verify@example.com": {
       "email": "otp_test_27_verify@example.com",
       "code": "1027",
-      "expiresAt": 1788169070793,
+      "expiresAt": 1791724816582,
       "purpose": "login"
     },
     "otp_test_28_verify@example.com": {
       "email": "otp_test_28_verify@example.com",
       "code": "1028",
-      "expiresAt": 1788169070823,
+      "expiresAt": 1791724816613,
       "purpose": "login"
     },
     "otp_test_29_verify@example.com": {
       "email": "otp_test_29_verify@example.com",
       "code": "1029",
-      "expiresAt": 1788169070854,
+      "expiresAt": 1791724816643,
       "purpose": "login"
     },
     "otp_test_30_verify@example.com": {
       "email": "otp_test_30_verify@example.com",
       "code": "1030",
-      "expiresAt": 1788169070881,
+      "expiresAt": 1791724816673,
       "purpose": "login"
     },
     "otp_test_31_verify@example.com": {
       "email": "otp_test_31_verify@example.com",
       "code": "1031",
-      "expiresAt": 1788169070907,
+      "expiresAt": 1791724816704,
       "purpose": "login"
     },
     "otp_test_32_verify@example.com": {
       "email": "otp_test_32_verify@example.com",
       "code": "1032",
-      "expiresAt": 1788169070935,
+      "expiresAt": 1791724816737,
       "purpose": "login"
     },
     "otp_test_33_verify@example.com": {
       "email": "otp_test_33_verify@example.com",
       "code": "1033",
-      "expiresAt": 1788169070962,
+      "expiresAt": 1791724816770,
       "purpose": "login"
     },
     "otp_test_34_verify@example.com": {
       "email": "otp_test_34_verify@example.com",
       "code": "1034",
-      "expiresAt": 1788169070990,
+      "expiresAt": 1791724816799,
       "purpose": "login"
     },
     "otp_test_35_verify@example.com": {
       "email": "otp_test_35_verify@example.com",
       "code": "1035",
-      "expiresAt": 1788169071018,
+      "expiresAt": 1791724816830,
       "purpose": "login"
     },
     "otp_test_36_verify@example.com": {
       "email": "otp_test_36_verify@example.com",
       "code": "1036",
-      "expiresAt": 1788169071070,
+      "expiresAt": 1791724816861,
       "purpose": "login"
     },
     "otp_test_37_verify@example.com": {
       "email": "otp_test_37_verify@example.com",
       "code": "1037",
-      "expiresAt": 1788169071098,
+      "expiresAt": 1791724816893,
       "purpose": "login"
     },
     "otp_test_38_verify@example.com": {
       "email": "otp_test_38_verify@example.com",
       "code": "1038",
-      "expiresAt": 1788169071125,
+      "expiresAt": 1791724816924,
       "purpose": "login"
     },
     "otp_test_39_verify@example.com": {
       "email": "otp_test_39_verify@example.com",
       "code": "1039",
-      "expiresAt": 1788169071150,
+      "expiresAt": 1791724816956,
       "purpose": "login"
     },
     "otp_test_40_verify@example.com": {
       "email": "otp_test_40_verify@example.com",
       "code": "1040",
-      "expiresAt": 1788169071176,
+      "expiresAt": 1791724816986,
       "purpose": "login"
     },
     "otp_test_41_verify@example.com": {
       "email": "otp_test_41_verify@example.com",
       "code": "1041",
-      "expiresAt": 1788169071203,
+      "expiresAt": 1791724817017,
       "purpose": "login"
     },
     "otp_test_42_verify@example.com": {
       "email": "otp_test_42_verify@example.com",
       "code": "1042",
-      "expiresAt": 1788169071230,
+      "expiresAt": 1791724817047,
       "purpose": "login"
     },
     "otp_test_43_verify@example.com": {
       "email": "otp_test_43_verify@example.com",
       "code": "1043",
-      "expiresAt": 1788169071256,
+      "expiresAt": 1791724817079,
       "purpose": "login"
     },
     "otp_test_44_verify@example.com": {
       "email": "otp_test_44_verify@example.com",
       "code": "1044",
-      "expiresAt": 1788169071282,
+      "expiresAt": 1791724817110,
       "purpose": "login"
     },
     "otp_test_45_verify@example.com": {
       "email": "otp_test_45_verify@example.com",
       "code": "1045",
-      "expiresAt": 1788169071308,
+      "expiresAt": 1791724817140,
       "purpose": "login"
     },
     "otp_test_46_verify@example.com": {
       "email": "otp_test_46_verify@example.com",
       "code": "1046",
-      "expiresAt": 1788169071334,
+      "expiresAt": 1791724817172,
       "purpose": "login"
     },
     "otp_test_47_verify@example.com": {
       "email": "otp_test_47_verify@example.com",
       "code": "1047",
-      "expiresAt": 1788169071362,
+      "expiresAt": 1791724817203,
       "purpose": "login"
     },
     "otp_test_48_verify@example.com": {
       "email": "otp_test_48_verify@example.com",
       "code": "1048",
-      "expiresAt": 1788169071388,
+      "expiresAt": 1791724817237,
       "purpose": "login"
     },
     "otp_test_49_verify@example.com": {
       "email": "otp_test_49_verify@example.com",
       "code": "1049",
-      "expiresAt": 1788169071415,
+      "expiresAt": 1791724817267,
       "purpose": "login"
     },
     "otp_test_50_verify@example.com": {
       "email": "otp_test_50_verify@example.com",
       "code": "1050",
-      "expiresAt": 1788169071439,
+      "expiresAt": 1791724817297,
       "purpose": "login"
     },
     "otp_test_51_verify@example.com": {
       "email": "otp_test_51_verify@example.com",
       "code": "1051",
-      "expiresAt": 1788169071466,
+      "expiresAt": 1791724817328,
       "purpose": "login"
     },
     "otp_test_52_verify@example.com": {
       "email": "otp_test_52_verify@example.com",
       "code": "1052",
-      "expiresAt": 1788169071493,
+      "expiresAt": 1791724817359,
       "purpose": "login"
     },
     "otp_test_53_verify@example.com": {
       "email": "otp_test_53_verify@example.com",
       "code": "1053",
-      "expiresAt": 1788169071539,
+      "expiresAt": 1791724817391,
       "purpose": "login"
     },
     "otp_test_54_verify@example.com": {
       "email": "otp_test_54_verify@example.com",
       "code": "1054",
-      "expiresAt": 1788169071558,
+      "expiresAt": 1791724817423,
       "purpose": "login"
     },
     "otp_test_55_verify@example.com": {
       "email": "otp_test_55_verify@example.com",
       "code": "1055",
-      "expiresAt": 1788169071577,
+      "expiresAt": 1791724817454,
       "purpose": "login"
     },
     "otp_test_56_verify@example.com": {
       "email": "otp_test_56_verify@example.com",
       "code": "1056",
-      "expiresAt": 1788169071597,
+      "expiresAt": 1791724817484,
       "purpose": "login"
     },
     "otp_test_57_verify@example.com": {
       "email": "otp_test_57_verify@example.com",
       "code": "1057",
-      "expiresAt": 1788169071620,
+      "expiresAt": 1791724817514,
       "purpose": "login"
     },
     "otp_test_58_verify@example.com": {
       "email": "otp_test_58_verify@example.com",
       "code": "1058",
-      "expiresAt": 1788169071642,
+      "expiresAt": 1791724817546,
       "purpose": "login"
     },
     "otp_test_59_verify@example.com": {
       "email": "otp_test_59_verify@example.com",
       "code": "1059",
-      "expiresAt": 1788169071662,
+      "expiresAt": 1791724817576,
       "purpose": "login"
     },
     "otp_test_60_verify@example.com": {
       "email": "otp_test_60_verify@example.com",
       "code": "1060",
-      "expiresAt": 1788169071681,
+      "expiresAt": 1791724817605,
       "purpose": "login"
     },
     "otp_test_61_verify@example.com": {
       "email": "otp_test_61_verify@example.com",
       "code": "1061",
-      "expiresAt": 1788169071699,
+      "expiresAt": 1791724817635,
       "purpose": "login"
     },
     "otp_test_62_verify@example.com": {
       "email": "otp_test_62_verify@example.com",
       "code": "1062",
-      "expiresAt": 1788169071719,
+      "expiresAt": 1791724817663,
       "purpose": "login"
     },
     "otp_test_63_verify@example.com": {
       "email": "otp_test_63_verify@example.com",
       "code": "1063",
-      "expiresAt": 1788169071740,
+      "expiresAt": 1791724817684,
       "purpose": "login"
     },
     "otp_test_64_verify@example.com": {
       "email": "otp_test_64_verify@example.com",
       "code": "1064",
-      "expiresAt": 1788169071761,
+      "expiresAt": 1791724817705,
       "purpose": "login"
     },
     "otp_test_65_verify@example.com": {
       "email": "otp_test_65_verify@example.com",
       "code": "1065",
-      "expiresAt": 1788169071780,
+      "expiresAt": 1791724817729,
       "purpose": "login"
     },
     "otp_test_66_verify@example.com": {
       "email": "otp_test_66_verify@example.com",
       "code": "1066",
-      "expiresAt": 1788169071800,
+      "expiresAt": 1791724817764,
       "purpose": "login"
     },
     "otp_test_67_verify@example.com": {
       "email": "otp_test_67_verify@example.com",
       "code": "1067",
-      "expiresAt": 1788169071820,
+      "expiresAt": 1791724817792,
       "purpose": "login"
     },
     "otp_test_68_verify@example.com": {
       "email": "otp_test_68_verify@example.com",
       "code": "1068",
-      "expiresAt": 1788169071841,
+      "expiresAt": 1791724817818,
       "purpose": "login"
     },
     "otp_test_69_verify@example.com": {
       "email": "otp_test_69_verify@example.com",
       "code": "1069",
-      "expiresAt": 1788169071864,
+      "expiresAt": 1791724817841,
       "purpose": "login"
     },
     "otp_test_70_verify@example.com": {
       "email": "otp_test_70_verify@example.com",
       "code": "1070",
-      "expiresAt": 1788169071882,
+      "expiresAt": 1791724817865,
       "purpose": "login"
     },
     "otp_test_71_verify@example.com": {
       "email": "otp_test_71_verify@example.com",
       "code": "1071",
-      "expiresAt": 1788169071902,
+      "expiresAt": 1791724817889,
       "purpose": "login"
     },
     "otp_test_72_verify@example.com": {
       "email": "otp_test_72_verify@example.com",
       "code": "1072",
-      "expiresAt": 1788169071922,
+      "expiresAt": 1791724817911,
       "purpose": "login"
     },
     "otp_test_73_verify@example.com": {
       "email": "otp_test_73_verify@example.com",
       "code": "1073",
-      "expiresAt": 1788169071940,
+      "expiresAt": 1791724817935,
       "purpose": "login"
     },
     "otp_test_74_verify@example.com": {
       "email": "otp_test_74_verify@example.com",
       "code": "1074",
-      "expiresAt": 1788169071958,
+      "expiresAt": 1791724817959,
       "purpose": "login"
     },
     "otp_test_75_verify@example.com": {
       "email": "otp_test_75_verify@example.com",
       "code": "1075",
-      "expiresAt": 1788169071978,
+      "expiresAt": 1791724817981,
       "purpose": "login"
     },
     "otp_test_76_verify@example.com": {
       "email": "otp_test_76_verify@example.com",
       "code": "1076",
-      "expiresAt": 1788169071999,
+      "expiresAt": 1791724818001,
       "purpose": "login"
     },
     "otp_test_77_verify@example.com": {
       "email": "otp_test_77_verify@example.com",
       "code": "1077",
-      "expiresAt": 1788169072020,
+      "expiresAt": 1791724818045,
       "purpose": "login"
     },
     "otp_test_78_verify@example.com": {
       "email": "otp_test_78_verify@example.com",
       "code": "1078",
-      "expiresAt": 1788169072046,
+      "expiresAt": 1791724818070,
       "purpose": "login"
     },
     "otp_test_79_verify@example.com": {
       "email": "otp_test_79_verify@example.com",
       "code": "1079",
-      "expiresAt": 1788169072066,
+      "expiresAt": 1791724818089,
       "purpose": "login"
     },
     "otp_test_80_verify@example.com": {
       "email": "otp_test_80_verify@example.com",
       "code": "1080",
-      "expiresAt": 1788169072086,
+      "expiresAt": 1791724818111,
       "purpose": "login"
     },
     "otp_test_81_verify@example.com": {
       "email": "otp_test_81_verify@example.com",
       "code": "1081",
-      "expiresAt": 1788169072107,
+      "expiresAt": 1791724818130,
       "purpose": "login"
     },
     "otp_test_82_verify@example.com": {
       "email": "otp_test_82_verify@example.com",
       "code": "1082",
-      "expiresAt": 1788169072124,
+      "expiresAt": 1791724818154,
       "purpose": "login"
     },
     "otp_test_83_verify@example.com": {
       "email": "otp_test_83_verify@example.com",
       "code": "1083",
-      "expiresAt": 1788169072144,
+      "expiresAt": 1791724818176,
       "purpose": "login"
     },
     "otp_test_84_verify@example.com": {
       "email": "otp_test_84_verify@example.com",
       "code": "1084",
-      "expiresAt": 1788169072164,
+      "expiresAt": 1791724818199,
       "purpose": "login"
     },
     "otp_test_85_verify@example.com": {
       "email": "otp_test_85_verify@example.com",
       "code": "1085",
-      "expiresAt": 1788169072182,
+      "expiresAt": 1791724818224,
       "purpose": "login"
     },
     "otp_test_86_verify@example.com": {
       "email": "otp_test_86_verify@example.com",
       "code": "1086",
-      "expiresAt": 1788169072200,
+      "expiresAt": 1791724818254,
       "purpose": "login"
     },
     "otp_test_87_verify@example.com": {
       "email": "otp_test_87_verify@example.com",
       "code": "1087",
-      "expiresAt": 1788169072221,
+      "expiresAt": 1791724818288,
       "purpose": "login"
     },
     "otp_test_88_verify@example.com": {
       "email": "otp_test_88_verify@example.com",
       "code": "1088",
-      "expiresAt": 1788169072241,
+      "expiresAt": 1791724818320,
       "purpose": "login"
     },
     "otp_test_89_verify@example.com": {
       "email": "otp_test_89_verify@example.com",
       "code": "1089",
-      "expiresAt": 1788169072262,
+      "expiresAt": 1791724818348,
       "purpose": "login"
     },
     "otp_test_90_verify@example.com": {
       "email": "otp_test_90_verify@example.com",
       "code": "1090",
-      "expiresAt": 1788169072288,
+      "expiresAt": 1791724818379,
       "purpose": "login"
     },
     "otp_test_91_verify@example.com": {
       "email": "otp_test_91_verify@example.com",
       "code": "1091",
-      "expiresAt": 1788169072309,
+      "expiresAt": 1791724818402,
       "purpose": "login"
     },
     "otp_test_92_verify@example.com": {
       "email": "otp_test_92_verify@example.com",
       "code": "1092",
-      "expiresAt": 1788169072329,
+      "expiresAt": 1791724818428,
       "purpose": "login"
     },
     "otp_test_93_verify@example.com": {
       "email": "otp_test_93_verify@example.com",
       "code": "1093",
-      "expiresAt": 1788169072357,
+      "expiresAt": 1791724818454,
       "purpose": "login"
     },
     "otp_test_94_verify@example.com": {
       "email": "otp_test_94_verify@example.com",
       "code": "1094",
-      "expiresAt": 1788169072378,
+      "expiresAt": 1791724818480,
       "purpose": "login"
     },
     "otp_test_95_verify@example.com": {
       "email": "otp_test_95_verify@example.com",
       "code": "1095",
-      "expiresAt": 1788169072397,
+      "expiresAt": 1791724818502,
       "purpose": "login"
     },
     "otp_test_96_verify@example.com": {
       "email": "otp_test_96_verify@example.com",
       "code": "1096",
-      "expiresAt": 1788169072419,
+      "expiresAt": 1791724818524,
       "purpose": "login"
     },
     "otp_test_97_verify@example.com": {
       "email": "otp_test_97_verify@example.com",
       "code": "1097",
-      "expiresAt": 1788169072439,
+      "expiresAt": 1791724818550,
       "purpose": "login"
     },
     "otp_test_98_verify@example.com": {
       "email": "otp_test_98_verify@example.com",
       "code": "1098",
-      "expiresAt": 1788169072462,
+      "expiresAt": 1791724818572,
       "purpose": "login"
     },
     "otp_test_99_verify@example.com": {
       "email": "otp_test_99_verify@example.com",
       "code": "1099",
-      "expiresAt": 1788169072481,
+      "expiresAt": 1791724818594,
       "purpose": "login"
     },
     "bench_user_0@example.com": {
       "email": "bench_user_0@example.com",
       "code": "5555",
-      "expiresAt": 1788168774762,
+      "expiresAt": 1791724521770,
       "purpose": "login"
     },
     "bench_user_1@example.com": {
       "email": "bench_user_1@example.com",
       "code": "5555",
-      "expiresAt": 1788168774781,
+      "expiresAt": 1791724521793,
       "purpose": "login"
     },
     "bench_user_2@example.com": {
       "email": "bench_user_2@example.com",
       "code": "5555",
-      "expiresAt": 1788168774803,
+      "expiresAt": 1791724521816,
       "purpose": "login"
     },
     "bench_user_3@example.com": {
       "email": "bench_user_3@example.com",
       "code": "5555",
-      "expiresAt": 1788168774826,
+      "expiresAt": 1791724521840,
       "purpose": "login"
     },
     "bench_user_4@example.com": {
       "email": "bench_user_4@example.com",
       "code": "5555",
-      "expiresAt": 1788168774853,
+      "expiresAt": 1791724521872,
       "purpose": "login"
     },
     "bench_user_5@example.com": {
       "email": "bench_user_5@example.com",
       "code": "5555",
-      "expiresAt": 1788168774880,
+      "expiresAt": 1791724521899,
       "purpose": "login"
     },
     "bench_user_6@example.com": {
       "email": "bench_user_6@example.com",
       "code": "5555",
-      "expiresAt": 1788168774903,
+      "expiresAt": 1791724521927,
       "purpose": "login"
     },
     "bench_user_7@example.com": {
       "email": "bench_user_7@example.com",
       "code": "5555",
-      "expiresAt": 1788168774924,
+      "expiresAt": 1791724521954,
       "purpose": "login"
     },
     "bench_user_8@example.com": {
       "email": "bench_user_8@example.com",
       "code": "5555",
-      "expiresAt": 1788168774946,
+      "expiresAt": 1791724521978,
       "purpose": "login"
     },
     "bench_user_9@example.com": {
       "email": "bench_user_9@example.com",
       "code": "5555",
-      "expiresAt": 1788168774968,
+      "expiresAt": 1791724522001,
       "purpose": "login"
     },
     "bench_user_10@example.com": {
       "email": "bench_user_10@example.com",
       "code": "5555",
-      "expiresAt": 1788168774992,
+      "expiresAt": 1791724522025,
       "purpose": "login"
     },
     "bench_user_11@example.com": {
       "email": "bench_user_11@example.com",
       "code": "5555",
-      "expiresAt": 1788168775018,
+      "expiresAt": 1791724522045,
       "purpose": "login"
     },
     "bench_user_12@example.com": {
       "email": "bench_user_12@example.com",
       "code": "5555",
-      "expiresAt": 1788168775037,
+      "expiresAt": 1791724522065,
       "purpose": "login"
     },
     "bench_user_13@example.com": {
       "email": "bench_user_13@example.com",
       "code": "5555",
-      "expiresAt": 1788168775056,
+      "expiresAt": 1791724522104,
       "purpose": "login"
     },
     "bench_user_14@example.com": {
       "email": "bench_user_14@example.com",
       "code": "5555",
-      "expiresAt": 1788168775077,
+      "expiresAt": 1791724522127,
       "purpose": "login"
     },
     "bench_user_15@example.com": {
       "email": "bench_user_15@example.com",
       "code": "5555",
-      "expiresAt": 1788168775097,
+      "expiresAt": 1791724522149,
       "purpose": "login"
     },
     "bench_user_16@example.com": {
       "email": "bench_user_16@example.com",
       "code": "5555",
-      "expiresAt": 1788168775121,
+      "expiresAt": 1791724522170,
       "purpose": "login"
     },
     "bench_user_17@example.com": {
       "email": "bench_user_17@example.com",
       "code": "5555",
-      "expiresAt": 1788168775140,
+      "expiresAt": 1791724522193,
       "purpose": "login"
     },
     "bench_user_18@example.com": {
       "email": "bench_user_18@example.com",
       "code": "5555",
-      "expiresAt": 1788168775172,
+      "expiresAt": 1791724522215,
       "purpose": "login"
     },
     "bench_user_19@example.com": {
       "email": "bench_user_19@example.com",
       "code": "5555",
-      "expiresAt": 1788168775193,
+      "expiresAt": 1791724522238,
       "purpose": "login"
     },
     "bench_user_20@example.com": {
       "email": "bench_user_20@example.com",
       "code": "5555",
-      "expiresAt": 1788168775213,
+      "expiresAt": 1791724522261,
       "purpose": "login"
     },
     "bench_user_21@example.com": {
       "email": "bench_user_21@example.com",
       "code": "5555",
-      "expiresAt": 1788168775232,
+      "expiresAt": 1791724522286,
       "purpose": "login"
     },
     "bench_user_22@example.com": {
       "email": "bench_user_22@example.com",
       "code": "5555",
-      "expiresAt": 1788168775254,
+      "expiresAt": 1791724522311,
       "purpose": "login"
     },
     "bench_user_23@example.com": {
       "email": "bench_user_23@example.com",
       "code": "5555",
-      "expiresAt": 1788168775278,
+      "expiresAt": 1791724522334,
       "purpose": "login"
     },
     "bench_user_24@example.com": {
       "email": "bench_user_24@example.com",
       "code": "5555",
-      "expiresAt": 1788168775300,
+      "expiresAt": 1791724522360,
       "purpose": "login"
     },
     "bench_user_25@example.com": {
       "email": "bench_user_25@example.com",
       "code": "5555",
-      "expiresAt": 1788168775326,
+      "expiresAt": 1791724522379,
       "purpose": "login"
     },
     "bench_user_26@example.com": {
       "email": "bench_user_26@example.com",
       "code": "5555",
-      "expiresAt": 1788168775347,
+      "expiresAt": 1791724522400,
       "purpose": "login"
     },
     "bench_user_27@example.com": {
       "email": "bench_user_27@example.com",
       "code": "5555",
-      "expiresAt": 1788168775372,
+      "expiresAt": 1791724522422,
       "purpose": "login"
     },
     "bench_user_28@example.com": {
       "email": "bench_user_28@example.com",
       "code": "5555",
-      "expiresAt": 1788168775400,
+      "expiresAt": 1791724522441,
       "purpose": "login"
     },
     "bench_user_29@example.com": {
       "email": "bench_user_29@example.com",
       "code": "5555",
-      "expiresAt": 1788168775426,
+      "expiresAt": 1791724522461,
       "purpose": "login"
     },
     "bench_user_30@example.com": {
       "email": "bench_user_30@example.com",
       "code": "5555",
-      "expiresAt": 1788168775448,
+      "expiresAt": 1791724522482,
       "purpose": "login"
     },
     "bench_user_31@example.com": {
       "email": "bench_user_31@example.com",
       "code": "5555",
-      "expiresAt": 1788168775471,
+      "expiresAt": 1791724522502,
       "purpose": "login"
     },
     "bench_user_32@example.com": {
       "email": "bench_user_32@example.com",
       "code": "5555",
-      "expiresAt": 1788168775496,
+      "expiresAt": 1791724522521,
       "purpose": "login"
     },
     "bench_user_33@example.com": {
       "email": "bench_user_33@example.com",
       "code": "5555",
-      "expiresAt": 1788168775517,
+      "expiresAt": 1791724522543,
       "purpose": "login"
     },
     "bench_user_34@example.com": {
       "email": "bench_user_34@example.com",
       "code": "5555",
-      "expiresAt": 1788168775549,
+      "expiresAt": 1791724522562,
       "purpose": "login"
     },
     "bench_user_35@example.com": {
       "email": "bench_user_35@example.com",
       "code": "5555",
-      "expiresAt": 1788168775573,
+      "expiresAt": 1791724522582,
       "purpose": "login"
     },
     "bench_user_36@example.com": {
       "email": "bench_user_36@example.com",
       "code": "5555",
-      "expiresAt": 1788168775652,
+      "expiresAt": 1791724522605,
       "purpose": "login"
     },
     "bench_user_37@example.com": {
       "email": "bench_user_37@example.com",
       "code": "5555",
-      "expiresAt": 1788168775683,
+      "expiresAt": 1791724522630,
       "purpose": "login"
     },
     "bench_user_38@example.com": {
       "email": "bench_user_38@example.com",
       "code": "5555",
-      "expiresAt": 1788168775717,
+      "expiresAt": 1791724522651,
       "purpose": "login"
     },
     "bench_user_39@example.com": {
       "email": "bench_user_39@example.com",
       "code": "5555",
-      "expiresAt": 1788168775746,
+      "expiresAt": 1791724522674,
       "purpose": "login"
     },
     "bench_user_40@example.com": {
       "email": "bench_user_40@example.com",
       "code": "5555",
-      "expiresAt": 1788168775773,
+      "expiresAt": 1791724522693,
       "purpose": "login"
     },
     "bench_user_41@example.com": {
       "email": "bench_user_41@example.com",
       "code": "5555",
-      "expiresAt": 1788168775802,
+      "expiresAt": 1791724522712,
       "purpose": "login"
     },
     "bench_user_42@example.com": {
       "email": "bench_user_42@example.com",
       "code": "5555",
-      "expiresAt": 1788168775829,
+      "expiresAt": 1791724522734,
       "purpose": "login"
     },
     "bench_user_43@example.com": {
       "email": "bench_user_43@example.com",
       "code": "5555",
-      "expiresAt": 1788168775855,
+      "expiresAt": 1791724522753,
       "purpose": "login"
     },
     "bench_user_44@example.com": {
       "email": "bench_user_44@example.com",
       "code": "5555",
-      "expiresAt": 1788168775879,
+      "expiresAt": 1791724522773,
       "purpose": "login"
     },
     "bench_user_45@example.com": {
       "email": "bench_user_45@example.com",
       "code": "5555",
-      "expiresAt": 1788168775904,
+      "expiresAt": 1791724522794,
       "purpose": "login"
     },
     "bench_user_46@example.com": {
       "email": "bench_user_46@example.com",
       "code": "5555",
-      "expiresAt": 1788168775923,
+      "expiresAt": 1791724522815,
       "purpose": "login"
     },
     "bench_user_47@example.com": {
       "email": "bench_user_47@example.com",
       "code": "5555",
-      "expiresAt": 1788168775945,
+      "expiresAt": 1791724522836,
       "purpose": "login"
     },
     "bench_user_48@example.com": {
       "email": "bench_user_48@example.com",
       "code": "5555",
-      "expiresAt": 1788168775965,
+      "expiresAt": 1791724522860,
       "purpose": "login"
     },
     "bench_user_49@example.com": {
       "email": "bench_user_49@example.com",
       "code": "5555",
-      "expiresAt": 1788168775988,
+      "expiresAt": 1791724522890,
       "purpose": "login"
     },
     "overwrite_otp@example.com": {
       "email": "overwrite_otp@example.com",
       "code": "2222",
-      "expiresAt": 1788168538763,
+      "expiresAt": 1791724285674,
       "purpose": "login"
     }
   },
@@ -26126,6 +26476,1104 @@
       "verdict": "REAL",
       "confidenceScore": 90,
       "timestamp": "2026-08-31T09:27:58.856Z"
+    },
+    "scan_bulk_0_1791724225785": {
+      "id": "scan_bulk_0_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 0",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_1_1791724225785": {
+      "id": "scan_bulk_1_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 1",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_2_1791724225785": {
+      "id": "scan_bulk_2_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 2",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_3_1791724225785": {
+      "id": "scan_bulk_3_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 3",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_4_1791724225785": {
+      "id": "scan_bulk_4_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 4",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_5_1791724225785": {
+      "id": "scan_bulk_5_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 5",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_6_1791724225785": {
+      "id": "scan_bulk_6_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 6",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_7_1791724225785": {
+      "id": "scan_bulk_7_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 7",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_8_1791724225785": {
+      "id": "scan_bulk_8_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 8",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_9_1791724225785": {
+      "id": "scan_bulk_9_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 9",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_10_1791724225785": {
+      "id": "scan_bulk_10_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 10",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_11_1791724225785": {
+      "id": "scan_bulk_11_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 11",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_12_1791724225785": {
+      "id": "scan_bulk_12_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 12",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_13_1791724225785": {
+      "id": "scan_bulk_13_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 13",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_14_1791724225785": {
+      "id": "scan_bulk_14_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 14",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_15_1791724225785": {
+      "id": "scan_bulk_15_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 15",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_16_1791724225785": {
+      "id": "scan_bulk_16_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 16",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_17_1791724225785": {
+      "id": "scan_bulk_17_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 17",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_18_1791724225785": {
+      "id": "scan_bulk_18_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 18",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_19_1791724225785": {
+      "id": "scan_bulk_19_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 19",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_20_1791724225785": {
+      "id": "scan_bulk_20_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 20",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_21_1791724225785": {
+      "id": "scan_bulk_21_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 21",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_22_1791724225785": {
+      "id": "scan_bulk_22_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 22",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_23_1791724225785": {
+      "id": "scan_bulk_23_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 23",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_24_1791724225785": {
+      "id": "scan_bulk_24_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 24",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_25_1791724225785": {
+      "id": "scan_bulk_25_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 25",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_26_1791724225785": {
+      "id": "scan_bulk_26_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 26",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_27_1791724225785": {
+      "id": "scan_bulk_27_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 27",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_28_1791724225785": {
+      "id": "scan_bulk_28_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 28",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_29_1791724225785": {
+      "id": "scan_bulk_29_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 29",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_30_1791724225785": {
+      "id": "scan_bulk_30_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 30",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_31_1791724225785": {
+      "id": "scan_bulk_31_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 31",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_32_1791724225785": {
+      "id": "scan_bulk_32_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 32",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_33_1791724225785": {
+      "id": "scan_bulk_33_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 33",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_34_1791724225785": {
+      "id": "scan_bulk_34_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 34",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_35_1791724225785": {
+      "id": "scan_bulk_35_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 35",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_36_1791724225785": {
+      "id": "scan_bulk_36_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 36",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_37_1791724225785": {
+      "id": "scan_bulk_37_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 37",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_38_1791724225785": {
+      "id": "scan_bulk_38_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 38",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_39_1791724225785": {
+      "id": "scan_bulk_39_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 39",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_40_1791724225785": {
+      "id": "scan_bulk_40_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 40",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_41_1791724225785": {
+      "id": "scan_bulk_41_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 41",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_42_1791724225785": {
+      "id": "scan_bulk_42_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 42",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_43_1791724225785": {
+      "id": "scan_bulk_43_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 43",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_44_1791724225785": {
+      "id": "scan_bulk_44_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 44",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_45_1791724225785": {
+      "id": "scan_bulk_45_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 45",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_46_1791724225785": {
+      "id": "scan_bulk_46_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 46",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_47_1791724225785": {
+      "id": "scan_bulk_47_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 47",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_48_1791724225785": {
+      "id": "scan_bulk_48_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 48",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_49_1791724225785": {
+      "id": "scan_bulk_49_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 49",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_50_1791724225785": {
+      "id": "scan_bulk_50_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 50",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_51_1791724225785": {
+      "id": "scan_bulk_51_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 51",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_52_1791724225785": {
+      "id": "scan_bulk_52_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 52",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_53_1791724225785": {
+      "id": "scan_bulk_53_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 53",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_54_1791724225785": {
+      "id": "scan_bulk_54_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 54",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_55_1791724225785": {
+      "id": "scan_bulk_55_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 55",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_56_1791724225785": {
+      "id": "scan_bulk_56_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 56",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_57_1791724225785": {
+      "id": "scan_bulk_57_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 57",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_58_1791724225785": {
+      "id": "scan_bulk_58_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 58",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_59_1791724225785": {
+      "id": "scan_bulk_59_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 59",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_60_1791724225785": {
+      "id": "scan_bulk_60_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 60",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_61_1791724225785": {
+      "id": "scan_bulk_61_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 61",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_62_1791724225785": {
+      "id": "scan_bulk_62_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 62",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_63_1791724225785": {
+      "id": "scan_bulk_63_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 63",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_64_1791724225785": {
+      "id": "scan_bulk_64_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 64",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_65_1791724225785": {
+      "id": "scan_bulk_65_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 65",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_66_1791724225785": {
+      "id": "scan_bulk_66_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 66",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_67_1791724225785": {
+      "id": "scan_bulk_67_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 67",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_68_1791724225785": {
+      "id": "scan_bulk_68_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 68",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_69_1791724225785": {
+      "id": "scan_bulk_69_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 69",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_70_1791724225785": {
+      "id": "scan_bulk_70_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 70",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_71_1791724225785": {
+      "id": "scan_bulk_71_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 71",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_72_1791724225785": {
+      "id": "scan_bulk_72_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 72",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_73_1791724225785": {
+      "id": "scan_bulk_73_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 73",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_74_1791724225785": {
+      "id": "scan_bulk_74_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 74",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_75_1791724225785": {
+      "id": "scan_bulk_75_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 75",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_76_1791724225785": {
+      "id": "scan_bulk_76_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 76",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_77_1791724225785": {
+      "id": "scan_bulk_77_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 77",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_78_1791724225785": {
+      "id": "scan_bulk_78_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 78",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_79_1791724225785": {
+      "id": "scan_bulk_79_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 79",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_80_1791724225785": {
+      "id": "scan_bulk_80_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 80",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_81_1791724225785": {
+      "id": "scan_bulk_81_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 81",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_82_1791724225785": {
+      "id": "scan_bulk_82_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 82",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_83_1791724225785": {
+      "id": "scan_bulk_83_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 83",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_84_1791724225785": {
+      "id": "scan_bulk_84_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 84",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_85_1791724225785": {
+      "id": "scan_bulk_85_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 85",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_86_1791724225785": {
+      "id": "scan_bulk_86_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 86",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_87_1791724225785": {
+      "id": "scan_bulk_87_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 87",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_88_1791724225785": {
+      "id": "scan_bulk_88_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 88",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_89_1791724225785": {
+      "id": "scan_bulk_89_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 89",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_90_1791724225785": {
+      "id": "scan_bulk_90_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 90",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_91_1791724225785": {
+      "id": "scan_bulk_91_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 91",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_92_1791724225785": {
+      "id": "scan_bulk_92_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 92",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_93_1791724225785": {
+      "id": "scan_bulk_93_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 93",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_94_1791724225785": {
+      "id": "scan_bulk_94_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 94",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_95_1791724225785": {
+      "id": "scan_bulk_95_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 95",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_96_1791724225785": {
+      "id": "scan_bulk_96_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 96",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_97_1791724225785": {
+      "id": "scan_bulk_97_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 97",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_98_1791724225785": {
+      "id": "scan_bulk_98_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 98",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_bulk_99_1791724225785": {
+      "id": "scan_bulk_99_1791724225785",
+      "userEmail": "load_batch_tester@example.com",
+      "claim": "Bulk Claim Test 99",
+      "verdict": "REAL",
+      "confidenceScore": 90,
+      "timestamp": "2026-10-11T13:10:25.785Z"
+    },
+    "scan_mv3v1rt3cn8l": {
+      "id": "scan_mv3v1rt3cn8l",
+      "userEmail": "leelakrishnar2363.sse@saveetha.com",
+      "type": "TEXT",
+      "timestamp": "2026-10-11T13:30:11.847Z",
+      "formattedDate": "Today, 7:00 PM",
+      "score": 0,
+      "verdict": "FALSE",
+      "verdictLabel": "NO, IT'S NOT TRUE",
+      "claim": "jr ntr dead",
+      "originalClaim": "jr ntr dead",
+      "preview": "jr ntr dead",
+      "fullContent": "jr ntr dead",
+      "explanation": "1. User Claim: The user asserts that Jr NTR is dead. 2. Retrieved Live Evidence: Wikipedia sources and news reports indicate that N. T. Rama Rao Jr. (Jr NTR) was born in 1983 and is alive, recently undergoing shoulder surgery and physiotherapy. Mentions of \"NTR dead\" in archives refer to the elder N. T. Rama Rao who passed away in 1996, and recent news articles show Jr NTR expressing condolences for the death of actor Nana Patekar. 3. Factual Comparison & Verdict: The live evidence completely contradicts the assertion that Jr NTR is dead. Therefore, the verdict is FALSE.",
+      "reasoning": "(1) Claimed: Jr NTR is dead. (2) Evidence states: Wikipedia and news reports confirm that the actor N. T. Rama Rao Jr. (Jr NTR) was born on May 20, 1983, and is currently active as an actor undergoing physiotherapy after shoulder surgery. Other search results about a death (\"NTR dead\") refer to his grandfather, N. T. Rama Rao (NTR), who died in 1996, or recent news of Jr NTR offering condolences on the death of Nana Patekar. (3) Contradiction/Support: The claim that Jr NTR is dead directly contradicts current biographical and health reports showing he is alive and recovering from surgery. (4) Verdict choice: FALSE.",
+      "confidence": 99,
+      "directAnswer": "No, this is not true: Actor Jr NTR (N. T. Rama Rao Jr.) is alive, and recently underwent shoulder surgery requiring rest and physiotherapy, while reports of his condolence messages pertain to the passing of veteran actor Nana Patekar.",
+      "queryType": "claim",
+      "isLiveWebVerified": true,
+      "searchTimestamp": "2026-10-11T13:30:11.846Z",
+      "signals": [
+        {
+          "name": "Claim-to-Evidence Consistency",
+          "status": "failed",
+          "score": 8,
+          "detail": "(1) Claimed: Jr NTR is dead. (2) Evidence states: Wikipedia and news reports confirm that the actor N. T. Rama Rao Jr. (Jr NTR) was born on May 20, 1983, and is currently active as an actor undergoing physiotherapy after shoulder surgery. Other search results about a death (\"NTR dead\") refer to his grandfather, N. T. Rama Rao (NTR), who died in 1996, or recent news of Jr NTR offering condolences on the death of Nana Patekar. (3) Contradiction/Support: The claim that Jr NTR is dead directly contradicts current biographical and health reports showing he is alive and recovering from surgery. (4) Verdict choice: FALSE."
+        },
+        {
+          "name": "Primary & Official Registry Alignment",
+          "status": "passed",
+          "score": 96,
+          "detail": "Evidence cross-referenced against authoritative sources with readable page content (Jr NTR, Prabhu Deva condole Nana Patekar's demise; hail his remarkable ..., Jr NTR, Prabhu Deva condole Nana Patekar's demise; hail his remarkable ..., NTR dead day video - YouTube)."
+        },
+        {
+          "name": "Real-Time Live Web Coverage",
+          "status": "passed",
+          "score": 98,
+          "detail": "Retrieved 5 ranked reference sources; verdict evidence uses readable content."
+        },
+        {
+          "name": "Fact & Entity Match Index",
+          "status": "failed",
+          "score": 12,
+          "detail": "Key factual contradiction detected between claim and verified evidence."
+        }
+      ],
+      "sources": [
+        {
+          "name": "Jr NTR, Prabhu Deva condole Nana Patekar's demise; hail his remarkable ...",
+          "url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/jr-ntr-prabhu-deva-condole-nana-patekars-demise-hail-his-remarkable-talent/articleshow/134779977.cms",
+          "domain": "timesofindia.indiatimes.com",
+          "reliability": 95,
+          "snippet": "Several celebrities from South India including actors Jr NTR and Prabhu Deva joined joined scores of people from across the country in paying rich tributes to veteran actor Nana Patekar, whose ...",
+          "evidenceText": "Jr NTR, Prabhu Deva condole Nana Patekar's demise; hail his remarkable talent! | Hindi Movie News - The Times of India Sign In TOI TOI cinema news movie reviews movie listings box office videos showtimes blogs hindi english tamil telugu malayalam kannada bengali punjabi marathi bhojpuri Gujarati News entertainment hindi bollywood Jr NTR, Prabhu Deva condole Nana Patekar's demise; hail his remarkable talent! Trending Nana Patekar Passes Away Nana Patekar Death News Christopher Lee Steve Buscemi Sunny Deol Anushka Sharma Arun Govil Rajpal Yadav Mia Goth Hanuman Ansh Box Office Collection Nana Patekar Passes Away Nana Patekar Death News Christopher Lee Steve Buscemi Sunny Deol Anushka Sharma Arun Govil Rajpal Yadav Mia Goth Hanuman Ansh Box Office Collection Nana Patekar Passes Away Nana Patekar Death News Christopher Lee Steve Buscemi Sunny Deol Anushka Sharma Arun Govil Rajpal Yadav Mia Goth Hanuman Ansh Box Office Collection Jr NTR, Prabhu Deva condole Nana Patekar's demise; hail his remarkable talent! IANS / Oct 08, 2026, 10:16 IST Save Comments Share Aa + Text Size Small Medium Large Print Several celebrities from South India including actors Jr NTR and Prabhu Deva joined joined scores of people from across the country in paying rich tributes to veteran actor Nana Patekar, whose sudden demise in Goa on Thursday left the entire nation shocked. Taking to his social media timelines, Telugu star Jr NTR, in his condolence message, wrote, \"Deeply saddened by the passing of Nana Patekar sir, one of Indian cinema’s finest actors. There was an unmistakable honesty and intensity in every character he portrayed. His performances never felt like acting, but life unfolding on screen. A remarkable artist whose contribution to Indian cinema will be remembered for generations. Heartfelt condolences to his family and loved ones. Om Shanti\" Actor and director Prabhu Deva too was among those who expressed grief. On his X timeline, Prabhu Deva said, \" Deeply saddened by the passing of the legendary actor Nana Patekar Sir. His powerful performances, remarkable talent and immense contribution to Indian cinema will always be remembered. Heartfelt condolences to his family, friends and admirers.\" Earlier in the day, actor Prakash Raj wrote, \"Miss you my dear Nana ji... Will cherish the moments spent...conversations... arguments... the food you cooked...knowledge you shared. Thank you for coming into my life’s journey. RIP #nanapatekar.\" Actress and producer Khushbu Sundar too expressed shock and grief at the demise of the acting stalwart. She wrote, \"This is unbelievably shocking. I am numb. Devastated infact. An actor par excellence. A man with his own mind and beliefs. A simple hearted human. An actor par excellence. Had the privilege and honor to work with him. You will be missed Nana Bhau. #OmShanti #nanapatekar.\" For the unaware, actor Nana Patekar, who was 75-years-old, was found unconscious at his Dona Paula residence in Goa and was rushed to the hospital where doctors declared him brought dead. The acclaimed actor, known for his powerful performances across several Indian languages including Hindi, Marathi and Tamil cinema, leaves behind a remarkable body of work spanning over four decades. Born as Vishwanath Patekar on January 1, 1951, in Maharashtra, Nana Patekar established himself as an actor known for his intensity, dialogue delivery and ability to portray complex and unconventional characters. He made his Hindi film debut with Gaman in 1978 and went on to become one of the most respected performers of his generation. Nana’s breakthrough came with films such as Salaam Bombay! and Parinda. He went on to deliver powerpacked performances in several films including Angaar, Tirangaa, Krantiveer, Agni Sakshi, Khamoshi: The Musical, Yeshwant, Ab Tak Chhappan, Apaharan and Raajneeti. The legendary actor was equally recognised for his work in Marathi cinema and theatre. He also ventured into filmmaking and made his directorial debut with Prahaar: The Final Attack in 1991. In Tamil, Nana Patekar delivered exceptionally powerful performances in Rajinikanth's 'Kaala' (in which he played the antagonist) and director Bharathirajaa's critically acclaimed film 'Bommalaatam'. Poll Vote & Share your view What is your favorite Nana Patekar film? Parinda Salaam Bombay! Krantiveer Raajneeti 3k+ users shared opinion today 5k+ users already voted today 3k+ users shared opinion today Share Opinion Nana Patekar was a recipient of the Padma Shri, awarded to him in 2013 for his contribution to cinema and the arts. During his fine career, he won three National Film Awards and many other prestigious honours. Beyond cinema, the star was known for his association with social causes, particularly his efforts to support farmers and families affected by agrarian distress He maintained a relatively private life away despite being one of the industry's most recognisable faces. Watch Raj Babbar Remembers Smita Patil: ‘Her Short Life Still Hurts Like Unhealed Wound’ Get the latest Bollywood & Entertainment News, and more. Download the TOI app. Give your child the gift of confidence! Claim your exclusive TOI Masterclass spot today! End of Article Follow Us On Social Media Bigg Boss Exclusive - Rhiti Tiwari on Bigg Boss 20, father Manoj Tiwari’s reaction to Salman Khan's WKV bashing and alleged ex-stepfather Ekam Bawa’s claims Mahhi Vij Instagram vanishes: Bigg Boss 20 contestant’s account reportedly disabled Qazi Touqeer Health Scare: Contestant has fever in Bigg Boss 20 house; team shares update ScoutOP Feelings Debate: Bigg Boss 20 chat on Love Gill stirs fans; Kashvi livestream reacts Bigg Boss 20: Mahhi, Qazi mock Aman as Uditi’s sidekick, PR; alliances shift in house Salman Calls Out Moustache Remark: Host rebukes Asif Khan on Bigg Boss 20; says manhood is about character Imam Seeks On-Air Clarification: ex-contestant terms Salman remark defamatory; asks Bigg Boss 20 for correction Salman Backs Aamrapali On Love: Host sides with Dubey on Gill’s ‘respect’ fights; also calls out Scout Bigg Boss 20: Hina and Gauahar share seniors’ throwback; fans remember Sidharth Shukla Bigg Boss 20: Salman Khan says Dus Ka Dum changed his image; urges contestants to be real 1 2 3 4 Tired of too many ads? go ad free now entertainment videos 08:22 Kriti, Tahira & Raghu Ram turn Daughter’s Day into a powerful message on women’s safety 08:22 Kriti, Tahira & Raghu Ram turn Daughter’s Day into a powerful message on women’s safety 06:25 Madonna Dragged Over VMAs Return: ‘DRUNK’ Claims, Lip-Sync Blunder & Outfit Mockery 07:54 President Droupadi Murmu’s Viral Warning to Stars Amid Mundhe’s Action Against SRK, Ajay & Tiger 06:27 Presley Gerber’s FINAL Place Of Recovery Raises RED FLAGS As SHOCKING Details Emerge | WATCH 06:08 Lionel Richie’s SHOCK Hospital Return: AFib Procedure Forces Sudden Tour SHAKE-UP | WATCH 08:22 Presley Gerber’s Doctor Under FIRE? Close Friends Furious Over RISKY Ketamine Prescription | WATCH 04:57 National Film Awards Move to Gujarat; Yami, Dhanush, Kartik, Mammootty & Randeep Honoured 10:25 Andrew Mountbatten-Windsor’s Life On HOLD? Epstein Probe Sparks SHOCKING New Claims 06:46 Presley Gerber Dead At 27: Cindy Crawford’s Son’s Battle With Addiction Laid Bare 07:26 King Charles’ Old ‘GAY’ Rumour ERUPTS AGAIN, Diana’s Brother Reveals EXPLOSIVE Claim | WATCH 08:15 King Charles’ SHOCK Response To Explosive Claims By Lady Diana's Brother | WATCH 09:07 ‘Dolly Parton Was The Greatest’: Trump Hits The Nostalgia Button 1 2 3 4 More Videos Featured In Movies Nana Patekar’s Prahaar speech goes viral; recalls Kargil stint Iconic Nana dialogues: actor dies at 75 after heart attack Ram Gopal Varma shares Nana Patekar’s old video on his cremation plans Nana Patekar passes away: Last rites to be held at actor's farmhouse 'Good movie, wrong audience,' Fans hail Karthi's 'Sardar 2' Nana Patekar once painted zebra crossings for Rs 15: ‘Kisi ke aage hath ni failaya’ Stars mourn Nana Patekar: Hrithik Roshan, Chiranjeevi hail his legacy; recall iconic roles Tukaram Mundhe reveals Nana Patekar's last words to him 8 days before his death When Nana spoke about the traumatic phase when son died at 2: 'Smoked 60 cigarettes' Nana Patekar passes away: Juhi Chawla remembers 'Raju Ban Gaya Gentleman' days Tired of too many ads? go ad free now Daily Puzzles Connect The Perfect Trace Play Now Loop The Loop Puzzle Circuit Play Now Daily Crossword Special puzzle Play Now Explore More Puzzles MORE FROM E TIMES entertainment Latest Movies 2026 Best Bollywood Movies 2026 Hollywood Movie Tamil Movies 2026 Telugu Movies 2026 Malayalam Movies 2026 Latest Kannada Movies Marathi Movies Bengali Movies 2026 Top Rated Movies 2026 Living and entertainment ETimes Travel Destinations Cricbuzz.com TV Lifestyle Newspaper Subscription Food News Times Prime Whats Hot Services CouponDunia TechGig TimesJobs Bollywood News Times Mobile Gadgets Work with Us Colombia Hot on the Web Nana Patekar Death News Nana Patekar Passes Away Shraddha Kapoor Kiara Advani Rajpal Yadav Virat Kohli Gene Hackman Zendaya Drishyam 4 Halle Berry Paul Walker Aamir Khan Drishyam 3 Box Office Collection Brad Pitt Travis Barker Travis Kelce Mel Gibson Jennifer Lopez Dolly Parton Hanuman Ansh Collection Ellen DeGeneres Dionne Warwick The Paradise Movie Review Hanuman Ansh Movie Review Sanjay Dutt Sonu Nigam Raju Kher Baby Names Vietnam Cambodia Tour Horoscope Today India Powerus Agreement Air Force Day Enemy Property Cumulative Matrimonial Conduct Air India Express Refund India-US Shipbuilding Cooperation Nasa Cinnamon Basil Seeds Prince William Earthshot Prize Mongooses To Kill Rats Chang'E-6 Soil Rarest Rattlesnake Breed Captions For Instagram Posts Trending Topics Latest Movies Bollywood Movies Hollywood Movies Tamil Movies 2026 Telugu Movies 2026 Malayalam Movies 2026 Kannada Movies Marathi Movies Bengali Movies 2026 Top Rated Movies 2026 Best Hindi Movies Best English Movies Best Telugu Movies Best Tamil Movies Best Malayalam Movies Best Kannada Movies Best Bengali Movies Upcoming Hindi Movies Best Movies Of All Time Best Hindi Movies of All Time Latest English Movies Latest Malayalam Movies English TV News Tamil TV News Telugu TV News Malayalam TV News Kannada TV News Movie Reviews Bhojpuri Cinema News Gujarati Cinema News Popular Categories Viral News K Pop News Web Series News Anime News Upcoming English Movies Upcoming Tamil Movies Upcoming Telugu Movies Upcoming Malayalam Movies Upcoming Kannada Movies Fashion Tips Travel News Entertainment News Bollywood News Tollywood News Kollywood News Mollywood News Food News Latest Hindi Movies Latest Tamil Movies Parenting Tips Home Remedies Weight Loss Beauty Tips Parenting Tips Hindi Videos Hindi Video Songs Bhojpuri Music Videos Latest Telugu Movies Bhojpuri Music Video Hindi TV News Latest News Nana Patekar dies at 75: Hrithik Roshan calls him an ‘Inspiration’; Chiranjeevi remembers his humanity as they pay tributes to veteran actor Times Prime rolls out Rs 1 lakh reward envelopes across 5,000 Daalchini vending machines Narayani Shastri takes over from Manasi Salvi as the new Bhanu in Saurabh Tewari’s Mahadev & Sons - Exclusive From TOI Archives – ‘I don’t want a Mercedes-Benz on my funeral pyre’: Nana Patekar 'I have not come here for regime change': Dhruv Rathee during CJP protest in Bengaluru Kalyan-Dombivli civic body appoints Shailesh Kulkarni as city engineer, seniority questioned Nana Patekar passes away: How the National Award-winning actor helped 500 farmers’ wives through his social work From Pitru Paksha to Samhain: How Cultures Around the World Honour Ancestors in Autumn Microsoft Surface Laptop Ultra with Nvidia RTX Spark chip now up for pre-order at $2,599 Aishwarya Lekshmi says quitting social media gave her peace: ‘I have lot more peace of mind now’ ‘Boys misbehaving with me’: Mystery shrouds Assam student who went missing from train, found dead in Andhra Kenya’s first Ebola case: How one traveller crossed borders undetecte",
+          "relevanceScore": 47.5,
+          "score": 65.05
+        },
+        {
+          "name": "Jr NTR, Prabhu Deva condole Nana Patekar's demise; hail his remarkable ...",
+          "url": "https://www.orissapost.com/jr-ntr-prabhu-deva-condole-nana-patekars-demise-hail-his-remarkable-talent/",
+          "domain": "orissapost.com",
+          "reliability": 85,
+          "snippet": "Chennai: Several South Indian celebrities, including actors Jr NTR and Prabhu Deva, joined people from across the country in paying rich tributes to veteran actor Nana Patekar, whose sudden demise in Goa Thursday shocked the nation. Taking to his social media timelines, Telugu star Jr NTR, in his condolence message, wrote, \"Deeply saddened by the […]",
+          "evidenceText": "Jr NTR, Prabhu Deva condole Nana Patekar&#039;s demise; hail his remarkable talent! - OrissaPOST --> --> --> Home Trending State Metro National International Business Feature Entertainment Sports More.. Odisha Special Editorial Opinion Careers Sci-Tech Timeout Horoscope Today’s Pic Video Epaper News in Odia Home Trending State Metro National International Business Feature Entertainment Sports More.. Odisha Special Editorial Opinion Careers Sci-Tech Timeout Horoscope Today’s Pic Video Epaper News in Odia No Result View All Result No Result View All Result --> --> --> --> --> --> Jr NTR, Prabhu Deva condole Nana Patekar&#8217;s demise; hail his remarkable talent! by --> IANS October 8, 2026 --> Updated: October 8th, 2026, 12:59 IST in Entertainment , Trending 0 Share on Facebook Share on Twitter Share on WhatsApp Share on Linkedin Chennai: Several South Indian celebrities, including actors Jr NTR and Prabhu Deva , joined people from across the country in paying rich tributes to veteran actor Nana Patekar , whose sudden demise in Goa Thursday shocked the nation. Taking to his social media timelines, Telugu star Jr NTR, in his condolence message, wrote, &#8220;Deeply saddened by the passing of Nana Patekar sir, one of Indian cinema’s finest actors. There was an unmistakable honesty and intensity in every character he portrayed. His performances never felt like acting, but life unfolding on screen. A remarkable artist whose contribution to Indian cinema will be remembered for generations. Heartfelt condolences to his family and loved ones. Om Shanti&#8221; Also Read UN officials, experts call for urgent, science-backed action and systemic solutions to heat crisis 2 hours ago Over 100 detained as CJP protest in Delhi enters second day 3 hours ago Deeply saddened by the passing of Nana Patekar sir, one of Indian cinema’s finest actors. There was an unmistakable honesty and intensity in every character he portrayed. His performances never felt like acting, but life unfolding on screen. A remarkable artist whose contribution to Indian cinema will be remembered for generations. Heartfelt condolences to his family and loved ones. Om Shanti 🙏 — Jr NTR (@tarak9999) October 8, 2026 Actor and director Prabhu Deva too was among those who expressed grief. On his X timeline, Prabhu Deva said, &#8221; Deeply saddened by the passing of the legendary actor Nana Patekar Sir. His powerful performances, remarkable talent and immense contribution to Indian cinema will always be remembered. Heartfelt condolences to his family, friends and admirers.&#8221; Deeply saddened by the passing of the legendary actor Nana Patekar Sir. His powerful performances, remarkable talent and immense contribution to Indian cinema will always be remembered. Heartfelt condolences to his family, friends and admirers. 🙏 https://t.co/Zfk883bctS — Prabhudheva (@PDdancing) October 8, 2026 Earlier in the day, actor Prakash Raj wrote, &#8220;Miss you my dear Nana ji&#8230; Will cherish the moments spent&#8230;conversations&#8230; arguments&#8230; the food you cooked&#8230;knowledge you shared. Thank you for coming into my life’s journey. RIP #nanapatekar. 💔💔💔 miss you my dear Nana ji .. Will cherish the moments spent..conversations.. arguments.. the food you cooked.. knowledge you shared . thank you for coming into my life’s journey. 🙏🏿🙏🏿🙏🏿 RIP #NanaPatekar https://t.co/ijbPzxZk6s — Prakash Raj (@prakashraaj) October 8, 2026 Actress and producer Khushbu Sundar too expressed shock and grief at the demise of the acting stalwart. She wrote, &#8220;This is unbelievably shocking. I am numb. Devastated, in fact. An actor par excellence. A man with his own mind and beliefs. A simple-hearted human. An actor par excellence. Had the privilege and honour to work with him. You will be missed Nana Bhau. #OmShanti #nanapatekar.&#8221; This is unbelievably shocking. I am numb. Devastated infact. An actor par excellence. A man with his own mind and beliefs. A simple hearted human. An actor par excellence. Had the privilege and honor to work with him. You will be miss Nana Bhau. 😭😭😭😭😭 #OmShanti #nanapatekar — KhushbuSundar (@khushsundar) October 8, 2026 For the unaware, actor Nana Patekar, who was 75 years old, was found unconscious at his Dona Paula residence in Goa and was rushed to the hospital where doctors declared him dead. The acclaimed actor, known for his powerful performances across several Indian languages including Hindi, Marathi and Tamil cinema, leaves behind a remarkable body of work spanning over four decades. Born as Vishwanath Patekar January 1, 1951, in Maharashtra, Nana Patekar established himself as an actor known for his intensity, dialogue delivery and ability to portray complex and unconventional characters. He made his Hindi film debut with Gaman in 1978 and went on to become one of the most respected performers of his generation. Nana’s breakthrough came with films such as Salaam Bombay! and Parinda. He went on to deliver power-packed performances in several films including Angaar, Tirangaa, Krantiveer, Agni Sakshi, Khamoshi: The Musical, Yeshwant, Ab Tak Chhappan, Apaharan and Raajneeti Also Read : Hindi film industry mourns Nana Patekar’s death The legendary actor was equally recognised for his work in Marathi cinema and theatre. He also ventured into filmmaking and made his directorial debut with Prahaar: The Final Attack in 1991. In Tamil, Nana Patekar delivered exceptionally powerful performances in Rajinikanth&#8217;s Kaala (in which he played the antagonist) and director Bharathirajaa&#8217;s critically acclaimed film Bommalaatam . Nana Patekar was a recipient of the Padma Shri, awarded to him in 2013 for his contribution to cinema and the arts. During his fine career, he won three National Film Awards and many other prestigious honours. Beyond cinema, the star was known for his association with social causes, particularly his efforts to support farmers and families affected by agrarian distress He maintained a relatively private life despite being one of the industry&#8217;s most recognisable faces. Orissa POST &#8211; Odisha’s No.1 English Daily Tags: Jr. NTR Nana Patekar Prabhu Deva Share Tweet Send Share Suggest A Correction Enter your email to get our daily news in your inbox. Leave this field empty if you're human: --> --> --> --> --> --> --> --> --> --> --> --> --> --> --> --> --> --> CBSE Exam Mate Answers --> --> --> -->Click Here: Plastic Free Odisha #MyPaperBagChallenge Ramakanta Sahoo December 12, 2019 #MyPaperBagChallenge Rajashree Manasa Mohanty December 12, 2019 #MyPaperBagChallenge Akshaya Kumar Dash December 12, 2019 #MyPaperBagChallenge Tabish Maaz December 12, 2019 #MyPaperBagChallenge Faiza Firdous December 12, 2019 #MyPaperBagChallenge Manas Samanta December 12, 2019 #MyPaperBagChallenge Sipra Mishra December 12, 2019 #MyPaperBagChallenge Anasuya Sahoo December 12, 2019 #MyPaperBagChallenge Tapaswini Mallick December 12, 2019 #MyPaperBagChallenge Mandakini Dakua December 12, 2019 #MyPaperBagChallenge Debasis Mohanty December 12, 2019 #MyPaperBagChallenge Adrita Bhattacharya December 12, 2019 #MyPaperBagChallenge Ramakanta Sahoo December 12, 2019 #MyPaperBagChallenge Adyasha Priyadarsani Sendha December 12, 2019 #MyPaperBagChallenge Aman Kumar Barisal December 12, 2019 #MyPaperBagChallenge Spinoj Pattnaik December 12, 2019 #MyPaperBagChallenge Lopali Pattnaik December 12, 2019 #MyPaperBagChallenge Sibarama Khotei December 12, 2019 #MyPaperBagChallenge Nishikant Rout December 12, 2019 #MyPaperBagChallenge Geetanjali Patro December 12, 2019 #MyPaperBagChallenge Aishwarya Ranjan Mohanty December 12, 2019 #MyPaperBagChallenge Sarmistha Nayak December 12, 2019 #MyPaperBagChallenge Parbati Mohanty December 12, 2019 #MyPaperBagChallenge Jhili Jena December 12, 2019 #MyPaperBagChallenge Rajashree Pravati Mohanty December 12, 2019 #MyPaperBagChallenge Ankita Balabantray December 12, 2019 #MyPaperBagChallenge Vandana Singh December 12, 2019 #MyPaperBagChallenge Pratyasharani Ghibela December 12, 2019 #MyPaperBagChallenge Akriti Negi December 12, 2019 #MyPaperBagChallenge Priyabrata Mohanty December 12, 2019 Archives Archives Select Month October 2026 September 2026 August 2026 July 2026 June 2026 May 2026 April 2026 March 2026 February 2026 January 2026 December 2025 November 2025 October 2025 September 2025 August 2025 July 2025 June 2025 May 2025 April 2025 March 2025 February 2025 January 2025 December 2024 November 2024 October 2024 September 2024 August 2024 July 2024 June 2024 May 2024 April 2024 March 2024 February 2024 January 2024 December 2023 November 2023 October 2023 September 2023 August 2023 July 2023 June 2023 May 2023 April 2023 March 2023 February 2023 January 2023 December 2022 November 2022 October 2022 September 2022 August 2022 July 2022 June 2022 May 2022 April 2022 March 2022 February 2022 January 2022 December 2021 November 2021 October 2021 September 2021 August 2021 July 2021 June 2021 May 2021 April 2021 March 2021 February 2021 January 2021 December 2020 November 2020 October 2020 September 2020 August 2020 July 2020 June 2020 May 2020 April 2020 March 2020 February 2020 January 2020 December 2019 November 2019 October 2019 September 2019 August 2019 July 2019 June 2019 May 2019 April 2019 March 2019 February 2019 January 2019 December 2018 November 2018 October 2018 September 2018 August 2018 July 2018 June 2018 May 2018 April 2018 March 2018 February 2018 January 2018 December 2017 November 2017 October 2017 September 2017 August 2017 July 2017 June 2017 May 2017 April 2017 March 2017 February 2017 January 2017 December 2016 November 2016 October 2016 September 2016 August 2016 July 2016 June 2016 May 2016 April 2016 March 2016 February 2016 January 2016 December 2015 November 2015 October 2015 September 2015 August 2015 July 2015 June 2015 May 2015 April 2015 March 2015 February 2015 January 2015 December 2014 November 2014 January 2014 Editorial Democratic Decline October 11, 2026 By Aakar Patel In 5 March 2021, the Press Information Bureau of the Government of India put out a statement... Read more Details The Accountability Test October 10, 2026 By Dilip Cherian For a service that has perfected the art of surviving governments, political regimes, and the occasional scandal,... Read more Details Brazil Battle October 7, 2026 Brazil, the largest South American country with a Leftist government, is poised to come within the orbit of the influence... Read more Details Defending the Indefensible October 6, 2026 The Supreme Court stating on 5 October that it has not approved any modifications to Form 6 being used by... Read more Details Home State Metro National International Business Editorial Opinion Sports About Us Advertise Contact Us Jobs Developed By Ratna Technology © 2025 All rights Reserved by OrissaPOST Odisha Assembly Election Results BJD 51 BJP 78 INC 14 OTHERS 4 Total Seats 147 --> News in Odia Orissa POST Epaper Video Home Trending Metro State Odisha Special National International Sports Business Editorial Entertainment Horoscope Careers Feature Today’s Pic Opinion Sci-Tech About Us Contact Us Jobs © 2025 All rights Reserved by OrissaPOST Your Name (required) Your Email (required) Phone (required) Your Message &#916; News in Odia Orissa POST Epaper Video Home Trending Metro State Odisha Special National International Sports Business Editorial Entertainment Horoscope Careers Feature Today’s Pic Opinion Sci-Tech About Us Contact Us Jobs © 2025 All rights Reserved by OrissaPOST",
+          "relevanceScore": 46.5,
+          "score": 57.03
+        },
+        {
+          "name": "NTR dead day video - YouTube",
+          "url": "https://www.youtube.com/watch?v=Lpwmk_j7qoI",
+          "domain": "youtube.com",
+          "reliability": 85,
+          "snippet": "This video is dedicated to all the people of Andhra pradesh",
+          "evidenceText": "NTR dead day video - YouTube About Press Copyright Contact us Creator Advertise Developers Terms Privacy Policy & Safety How YouTube works Test new features &copy; 2026 Google LLC",
+          "relevanceScore": 46.5,
+          "score": 57.03
+        },
+        {
+          "name": "NTR is dead, but his legacy thrives across political parties",
+          "url": "https://thefederal.com/states/south/andhra-pradesh/poll-battle-its-all-in-the-family-for-ntrs-kith-and-kin",
+          "domain": "thefederal.com",
+          "reliability": 85,
+          "snippet": "What do rivals Telugu Desam Party (TDP), YSR Congress Party (YSRCP) and BJP have in common in Andhra Pradesh? Each of them has at least one member of former chief minister NT Rama Rao (NTR)'s extended family in the poll fray fighting on its behalf. This indicates that NTR's political legacy still finds resonance in the state politics, more than 23 years after his death. A matinee idol in ...",
+          "evidenceText": "What do rivals Telugu Desam Party (TDP), YSR Congress Party (YSRCP) and BJP have in common in Andhra Pradesh? Each of them has at least one member of former chief minister NT Rama Rao (NTR)'s extended family in the poll fray fighting on its behalf. This indicates that NTR's political legacy still finds resonance in the state politics, more than 23 years after his death. A matinee idol in ...",
+          "relevanceScore": 46.5,
+          "score": 57.03
+        },
+        {
+          "name": "N. T. Rama Rao Jr. - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/N._T._Rama_Rao_Jr.",
+          "domain": "en.wikipedia.org",
+          "reliability": 95,
+          "snippet": "Nandamuri Taraka Rama Rao Jr. (born 20 May 1983), popularly known as NTR Jr, is an Indian actor, and television presenter who primarily works in Telugu cinema. [1] He is one of the highest-paid actors in Indian cinema and has been featured in Forbes India ' s Celebrity 100 list since 2012. [2][3] Referred to in the media as the Man of Masses, he has starred in over 30 films. [4] He is a ...",
+          "evidenceText": "Nandamuri Taraka Rama Rao Jr. (born 20 May 1983), popularly known as NTR Jr, is an Indian actor, and television presenter who primarily works in Telugu cinema. [1] He is one of the highest-paid actors in Indian cinema and has been featured in Forbes India ' s Celebrity 100 list since 2012. [2][3] Referred to in the media as the Man of Masses, he has starred in over 30 films. [4] He is a ...",
+          "relevanceScore": 32.5,
+          "score": 56.25
+        }
+      ]
+    },
+    "scan_mv3v4lhf838h": {
+      "id": "scan_mv3v4lhf838h",
+      "userEmail": "leelakrishnar2363.sse@saveetha.com",
+      "type": "TEXT",
+      "timestamp": "2026-10-11T13:32:23.619Z",
+      "formattedDate": "Today, 7:02 PM",
+      "score": 0,
+      "verdict": "FALSE",
+      "verdictLabel": "NO, IT'S NOT TRUE",
+      "claim": "did elon musk's starlink came to india",
+      "originalClaim": "did elon musk's starlink came to india",
+      "preview": "did elon musk's starlink came to india",
+      "fullContent": "did elon musk's starlink came to india",
+      "explanation": "1. User Claim: The user asked if Elon Musk's Starlink has come to India. 2. Retrieved Live Evidence: Multiple sources explicitly confirm that while Starlink has spent five years preparing, built infrastructure, and obtained certain licenses (such as a GMPCS licence), its commercial satellite internet service has not yet launched or commenced operations in India, and it remains stalled awaiting final security clearances and spectrum assignment. 3. Factual Comparison & Verdict: Because the evidence establishes that Starlink has not yet commenced commercial operations or launched in India, the claim is false.",
+      "reasoning": "(1) Claimed: Elon Musk's Starlink came to India (commercial service/launched). (2) Evidence states: Starlink's commercial satellite internet service is yet to launch and commence operations in India, as it is still awaiting final security clearances, foreign direct investment approval, and spectrum assignment. (3) Contradiction/Support: The claim that Starlink has come to India is directly contradicted by reliable reports showing that operations are stalled and commercial services have not yet started. (4) Verdict choice: FALSE.",
+      "confidence": 99,
+      "directAnswer": "No, this is not true: Elon Musk's Starlink commercial satellite internet service has not yet launched or commenced operations in India, as it is still awaiting final security clearances and spectrum assignment.",
+      "queryType": "question",
+      "isLiveWebVerified": true,
+      "searchTimestamp": "2026-10-11T13:32:23.619Z",
+      "signals": [
+        {
+          "name": "Claim-to-Evidence Consistency",
+          "status": "failed",
+          "score": 8,
+          "detail": "(1) Claimed: Elon Musk's Starlink came to India (commercial service/launched). (2) Evidence states: Starlink's commercial satellite internet service is yet to launch and commence operations in India, as it is still awaiting final security clearances, foreign direct investment approval, and spectrum assignment. (3) Contradiction/Support: The claim that Starlink has come to India is directly contradicted by reliable reports showing that operations are stalled and commercial services have not yet started. (4) Verdict choice: FALSE."
+        },
+        {
+          "name": "Primary & Official Registry Alignment",
+          "status": "passed",
+          "score": 96,
+          "detail": "Evidence cross-referenced against authoritative sources with readable page content (Starlink's India entry: Why Musk's satellite internet launch is stalled, Elon Musk asks why Starlink still lacks India licence, gets a reply ..., Why Elon Musk is taking on India's richest man over Starlink)."
+        },
+        {
+          "name": "Real-Time Live Web Coverage",
+          "status": "passed",
+          "score": 98,
+          "detail": "Retrieved 5 ranked reference sources; verdict evidence uses readable content."
+        },
+        {
+          "name": "Fact & Entity Match Index",
+          "status": "failed",
+          "score": 12,
+          "detail": "Key factual contradiction detected between claim and verified evidence."
+        }
+      ],
+      "sources": [
+        {
+          "name": "Starlink's India entry: Why Musk's satellite internet launch is stalled",
+          "url": "https://www.business-standard.com/industry/news/starlink-india-entry-why-elon-musk-satellite-internet-launch-clearance-126100800416_1.html",
+          "domain": "business-standard.com",
+          "reliability": 95,
+          "snippet": "Starlink's first setback came in 2021 Starlink's first attempt to enter India ran into trouble even before it had obtained a licence. In November 2021, the company started pre-selling its satellite internet service in India.",
+          "evidenceText": "Home / Industry / News / Starlink's India entry: Why Musk's satellite internet launch is stalledStarlink's India entry: Why Musk's satellite internet launch is stalledElon Musk's Starlink has spent nearly five years preparing to enter India, securing key licences and building infrastructure, but its commercial satellite internet service is yet to launchStarlink is waiting for some of the final approvals needed to start commercial services. (Photo: Reuters)Rimjhim Singh New Delhi 7 min read Last Updated : Oct 08 2026 | 11:54 AM IST Listen to This ArticleElon Musk-backed Starlink has spent nearly five years preparing to enter the Indian market, but its commercial satellite internet service is yet to commence operations. The SpaceX subsidiary has secured its Global Mobile Personal Communication by Satellite (GMPCS) licence from the Department of Telecommunications (DoT), received authorisation from the Indian National Space Promotion and Authorisation Centre (IN-SPACe), built ground infrastructure and entered partnerships with Reliance Jio and Bharti Airtel. Yet, Starlink is waiting for some of the final approvals needed to start commercial services. These include security clearance and foreign direct investment (FDI) approval, while the government is also working on the final framework for commercial spectrum allocation. At the India Mobile Congress on Wednesday, Starlink Vice-President of Business Operations Lauren Dreyer said the company was ready to begin operations once it received the government’s approval. She said Starlink had built its Indian operations around the country’s security and regulatory requirements. Here are the key hurdles Starlink has faced in India so far.Also Read Households turn wary on prices as consumer confidence slips: RBI surveys IIT Bombay to bring back 2015 exam rules after student's death, protests Govt counters Musk, says satellite clearance process non-discriminatory IndiGo flight to Lucknow suffers nose damage due to lightning, lands safely INDIA bloc MPs to stage bigger protest against CEC Gyanesh Kumar today Starlink’s first setback came in 2021 Starlink’s first attempt to enter India ran into trouble even before it had obtained a licence. In November 2021, the company started pre-selling its satellite internet service in India. The Department of Telecommunications warned customers that Starlink was not authorised to provide satellite-based internet services in the country and asked the company to stop booking or providing the service until it obtained the required licences. ALSO READ: Govt says satellite internet rules fair after Musk's Starlink bias claim The government said Starlink had not obtained the necessary authorisation and advised the public not to subscribe to the service. Starlink subsequently refunded thousands of pre-orders. GMPCS licence came after a long wait Starlink later entered the formal licensing process. Its application for a GMPCS licence was under consideration from November 2022. The DoT issued a letter of intent to Starlink in May 2025 and granted it a GMPCS authorisation in June that year. The licence placed Starlink alongside Jio Satellite Communications and OneWeb India Communications among the companies authorised to offer satellite communication services in India. However, the licence itself was not enough to start commercial services. Starlink also needed authorisation from IN-SPACe, the space-sector regulator, and spectrum to provide satellite broadband services commercially. IN-SPACe cleared Starlink’s Gen-1 constellation in July 2025. The company subsequently received provisional spectrum for trials in September 2025 and began security-related testing. Security clearance remains the biggest hurdle National security requirements have emerged as one of the biggest challenges for Starlink. India requires satellite operators to ensure that traffic generated by Indian users can be monitored and controlled within the country. The licensing conditions include requirements for lawful interception, data localisation and the ability to restrict services in specific areas or to specific users during emergencies. Government officials earlier told Business Standard that Starlink’s global network architecture makes compliance particularly complex because the constellation is not designed around national borders. Starlink’s satellites can communicate with one another through inter-satellite laser links. This allows data to travel between satellites before reaching a ground station. Indian authorities have therefore examined whether such links could allow Indian traffic to bypass domestic gateways. The government has also sought assurances that it can exercise control over Starlink’s network during an emergency or conflict. This concern is partly linked to Starlink’s use in conflict zones, including Ukraine. Business Standard had earlier reported that officials were examining whether India would be able to direct the company to restrict or stop services when required. FDI approval is another pending issue Starlink Satellite Communications is a wholly owned subsidiary of SpaceX, making its ownership structure another area of scrutiny. India allows up to 100 per cent FDI in satellite services. However, foreign investment beyond the automatic route requires government approval, and companies must also comply with ownership-disclosure requirements. In May this year, Starlink’s FDI proposal was still pending, with officials raising questions about the company’s structure. As of October 8, FDI approval remained among the clearances awaited by Starlink. Spectrum allocation and pricing are still being finalised Spectrum has been another important issue in India’s satellite broadband policy. Starlink had backed administrative allocation of satellite spectrum instead of an auction. Reliance Jio, meanwhile, argued that satellite companies should not receive spectrum on terms that put them at an advantage over terrestrial telecom operators. The government eventually adopted the administrative allocation route under the Telecommunications Act, 2023, broadly in line with Starlink’s position. However, the question of how much satellite operators should pay for the spectrum has taken longer to settle. The Department of Telecommunications has backed a spectrum usage charge of 5 per cent of adjusted gross revenue (AGR), with an incentive for operators providing connectivity in remote areas. As of October 8, this 5 per cent charge was still awaiting Union Cabinet approval. Commercial services therefore cannot begin until the broader spectrum framework and assignment process are completed. Starlink has already built infrastructure in India Despite the delays, Starlink has continued preparing for its launch. Dreyer said on Wednesday that the company had established 20 gateway sites with hundreds of antennas in India. She said Starlink had also created India-specific controls to meet the country’s security requirements and keep Indian user data within India. The company had earlier planned gateway sites in cities including Mumbai, Pune and Indore, followed by other locations. Jio and Airtel have become Starlink partners Starlink’s relationship with Indian telecom companies has also changed significantly. In March 2025, Reliance Jio signed an agreement with SpaceX to bring Starlink services to its customers in India, subject to regulatory approvals. Bharti Airtel also entered into a similar agreement with SpaceX. The partnerships are notable because both companies also have interests in the satellite communications market. Jio is developing its own satellite communication capabilities, while Bharti is associated with Eutelsat OneWeb. Aadhaar and state government tie-ups Starlink has also been preparing its customer onboarding system. In August 2025, the Unique Identification Authority of India (UIDAI) onboarded Starlink for Aadhaar authentication, allowing the company to use Aadhaar-based verification for customer KYC. The company has also been engaging with state governments. Gujarat signed a letter of intent with Starlink in February 2026 to explore satellite connectivity in remote, tribal and border areas. Goa had earlier signed an agreement with the company. These arrangements cover possible applications in areas such as schools, health centres, government services, disaster management and remote connectivity. Musk blames ‘oligarchs’ On Wednesday, Musk alleged that “certain oligarchs” were blocking Starlink’s India entry to protect their market position. He did not name any company or individual. Following this, India’s communications ministry on Thursday said it follows a “fair and non-discriminatory” authorisation process for all telecom services, including satellite communications. It said giving preferential clearance to any one operator would not be in line with this regulatory framework. In a statement, the ministry said security checks were part of the approval process and were currently being carried out for all three licensees. After the security assessment is completed, the companies can move to the next stage of spectrum assignment.More From This Section India targets 1 bn 5G users by 2030, aims to lead world in 6G: Scindia Institutional investment in housing dips 39% mn in 9 months: Colliers AI eats into entry-level tech jobs as India's graduates seek work Dashboards, drum jams and delivery convoys kick off India's shopping season Govt says satellite internet rules fair after Musk's Starlink bias claim Topics : Elon Musk Satellite broadband services BS Web ReportsBuzzing :Stock Market LiveStocks to WatchNana Patekar DeathStocks to buyRBI Hikes Repo RateRBI Repo Rate Hike HistoryQ2 results todayRBI MPC Inflation ForecastKalyan Jewellers shares Don't miss the most important news and views of the day. Get them on our Telegram channelFirst Published: Oct 08 2026 | 11:53 AM IST",
+          "relevanceScore": 67.5,
+          "score": 79.45
+        },
+        {
+          "name": "Elon Musk asks why Starlink still lacks India licence, gets a reply ...",
+          "url": "https://www.hindustantimes.com/india-news/elon-musk-asks-why-starlink-still-lacks-india-licence-gets-a-reply-from-rahul-gandhi-101791478668264.html",
+          "domain": "hindustantimes.com",
+          "reliability": 95,
+          "snippet": "Elon Musk asks why Starlink still lacks India licence, gets a reply from Rahul Gandhi SpaceX CEO Musk noted that while Starlink is licensed in 165 countries, it has spent five years complying with ...",
+          "evidenceText": "Elon Musk asks why Starlink still lacks India licence, gets a reply from Rahul GandhiSpaceX CEO Musk noted that while Starlink is licensed in 165 countries, it has spent five years complying with Indian laws and government requirements.Updated on: Oct 9, 2026, 06:13:49 ISTBy HT News DeskPrefer HTon GoogleShare viaCopy link Trillionaire Elon Musk on Thursday asked why Starlink was not issued a licence in India yet despite complying with every law for five years. His post received a response from Congress MP Rahul Gandhi.Musk said that Stralink was licensed in more than 165 countries and had spent five years complying with Indian laws and government requirements. (REUTERS)The exchange came a day after Musk alleged that Starlink was being ‘blocked by certain oligarchs’ in India, an assertion rejected by the government earlier today. In its response, the Centre had said that India's regulatory framework for satellite communication services was “fair and non-discriminatory”.Musk, the SpaceX founder and CEO, doubled down on his claims on Thursday and said Starlink was licensed in more than 165 countries and had spent five years complying with Indian laws and government requirements. “So why still no license?” he asked. “Is Ambani the real boss of India?” he added.Deep DiveWhy has Starlink not started commercial services in India despite receiving a licence?Why does the Indian government say Starlink is not being treated unfairly?Are other satellite companies also awaiting security clearance in India?Powered ByAsk HTLeader of Opposition in the Lok Sabha Rahul Gandhi responded to his X post with a cryptic reference to “the other guy”. Gandhi responded to Musk’s post: “Welcome to India, Elon. Wait till you discover the other guy.”Musk later thanked Gandhi for his response. \"Thank you, Rahul. This is indeed troubling,\" Musk said in response to Gandhi's post.The remarks come as Musk-owned Starlink awaits regulatory nod to begin commercial operations in India. The company has received a Global Mobile Personal Communications by Satellite (GMPCS) licence from the government but is awaiting security clearance and spectrum assignment before it can begin commercial services.What the govt saidRejecting Musk's claims, the ministry of communications termed it as “baseless and misconceived”.“A post is being circulated in social media regarding the fairness of India’s regulatory framework for satellite communication services and suggesting that it is being applied in a discriminatory manner. The Government has put in place a fair and non-discriminatory authorisation framework for all telecommunication services, including satellite communication services,” it said.The ministry said telecom licences had been granted to three companies offering GMPCS services using non-geosynchronous satellite orbits -- Starlink, Eutelsat OneWeb, backed by Bharti Airtel, and Jio Satellite Communications.Under the terms of their licences, all three are required to demonstrate compliance with security conditions aimed at ensuring the safety of users and their data, the ministry said.“Security assessment as part of this process is currently under way in respect of all the three licensees,” it said, adding that the companies were at “broadly the same regulatory stage”.The government’s statement did not name Musk or Ambani and did not directly address Musk’s allegation involving the Reliance Industries chairman.Musk’s latest post followed his allegation on Wednesday that Starlink was being blocked by “certain oligarchs” seeking to maintain their “monopolistic chokehold on the Indian people”.“You can guess who they are … This is a crime against the people of India!” Musk said, responding to a post calling for Starlink to be allowed to begin commercial operations in India.At the India Mobile Congress on Wednesday, Starlink vice-president Lauren Dreyer said the company had built its India operations around the country’s security requirements and had established 20 gateway sites comprising hundreds of antennas.“We are ready to serve in India, once India is ready,” she said.Starlink has also partnered with Bharti Airtel to explore bringing its services to Indian consumers and businesses, as well as connecting communities, schools and health centres in rural areas.ABOUT THE AUTHORHT News DeskFollow the latest breaking news, major developments and agenda-setting stories from India and around the world with the newsdesk at Hindustan Times. Operating round the clock, the desk brings together experienced editors, reporters and correspondents to deliver fast, accurate and contextual reporting across subjects that influence public policy, governance, business, society and international affairs. The HT News Desk covers politics, elections, government policies, the economy, business and markets, science and technology, the environment, law and order, infrastructure, education, climate issues and geopolitics, while closely tracking developments across states, institutions and global capitals. The team also leads coverage of major breaking news events, policy announcements, court proceedings, natural disasters, public emergencies and significant international developments. Reports published by the newsdesk are based on information gathered from reporters on the ground, official statements, government agencies, court records, regulatory filings, recognised institutions and other authoritative sources. Stories undergo editorial scrutiny and verification processes to ensure accuracy, fairness and relevance, and are updated as events evolve and additional information becomes available. Whether covering a key political decision in New Delhi, an economic policy shift affecting millions, a landmark court ruling or a major global event, the HT News Desk aims to provide readers with reliable, fact-based journalism that delivers not only the latest developments but also the context and analysis needed to understand their wider implications.Read MoreElon MuskSpacexRahul GandhiGet real-time updates on Tamil Nadu Election Results, By-Election Results , breaking headlines, and top India News, breaking headlines, and real-time updates from across the nation. Stay informed on politics, government policies, crime, Today Weather, and major developments on Hindustan TimesHome/India News/Elon Musk Asks Why Starlink Still Lacks India Licence, Gets A Reply From Rahul GandhiSee Less",
+          "relevanceScore": 67.5,
+          "score": 79.45
+        },
+        {
+          "name": "Why Elon Musk is taking on India's richest man over Starlink",
+          "url": "https://www.bbc.com/news/articles/cvglw9ryjrylo",
+          "domain": "bbc.com",
+          "reliability": 95,
+          "snippet": "The remark came a day after Musk accused unnamed powerful business interests of trying to block Starlink's entry into India. He then singled out Ambani, whose Reliance conglomerate owns Jio, India ...",
+          "evidenceText": "Why Elon Musk is taking on India's richest man over Starlink2 days ago Share Save Add as preferred on GoogleNikita YadavBBC News, DelhiGetty / ReutersElon Musk (right) has accused the Ambanis of blocking Starlink's entry into India Elon Musk has questioned whether billionaire Mukesh Ambani is the \"real boss of India\" as his satellite internet company Starlink struggles to secure final approval to launch in the country.The remark came a day after Musk accused unnamed powerful business interests of trying to block Starlink's entry into India. He then singled out Ambani, whose Reliance conglomerate owns Jio, India's biggest mobile network operator.India has rejected Musk's allegations, saying its satellite communications rules are fair and non-discriminatory.Ambani and Reliance Group have not responded to Musk's remarks. The BBC has reached out to them for commentThe row comes as competition grows in India's satellite internet market, with Reliance Jio and Bharti Airtel also preparing to launch services.The rivalry is complicated by the fact that Starlink has also partnered with Ambani's Reliance Jio and Bharti Airtel. In March 2025, both companies signed agreements with SpaceX to distribute Starlink equipment and services in India, subject to government approval. The companies also said they could explore sharing network infrastructure. The BBC has also reached out to Bharti Airtel for comment. Musk first made the allegations on Wednesday, accusing \"certain oligarchs\" of maintaining a \"monopolistic chokehold\" on Indian consumers.\"You can guess who they are,\" he wrote on X, adding that blocking Starlink was \"a crime against the people of India\".On Thursday, India's Ministry of Communications responded, saying that three operators - Starlink, Eutelsat OneWeb and Jio Satellite Communications - were at broadly the same stage of the approval process, with all three awaiting security clearances and spectrum allocation before they can launch commercial services.\"The suggestion that the framework or its application is unfair or discriminatory is baseless and misconceived,\" the ministry said, without naming Musk directly.Musk continued to question the delay, saying Starlink was already licensed in more than 165 countries.\"Starlink is licensed in over 165 countries and has spent five years complying with every single law and requirement of the government of India, so why still no license? Is Ambani the real boss of India?\" he wrote on X on Thursday.Starlink, owned by Musk's SpaceX, uses satellites in low Earth orbit to provide internet access, particularly in remote areas where mobile networks and broadband cables are difficult or expensive to install.The company has been trying to enter India since 2021 and has secured key licences. But it still needs final security clearances and spectrum allocation before it can begin commercial services.Bloomberg via Getty ImagesMukesh Ambani, who owns Reliance, is the richest man in Asia Wednesday's row unfolded as senior executives from Starlink, Reliance Jio and Bharti Airtel gathered at the India Mobile Congress in Delhi, where all three companies discussed their plans for satellite internet services.Speaking at the event, Akash Ambani, chairman of Reliance Jio Infocomm and Mukesh Ambani's son, said the company was developing its own satellite communications technology and working towards regulatory approvals.Asked by a reporter about Musk's allegations, Akash declined to comment and only said, \"We want to be heads down and deliver value to our Indian consumers.\" Bharti Airtel chairman Sunil Bharti Mittal said his company's satellite venture was also awaiting government approvals.SpaceX executive Lauren Dreyer, who oversees Starlink's business operations, said the company had spent years working with Indian regulators and had built security controls into its network to meet the country's requirements.Security has been a key concern surrounding Starlink's entry into India. In 2024, Indian authorities said they had recovered Starlink equipment during a drug-smuggling investigation in the remote Andaman and Nicobar Islands and an army operation in the northeastern state of Manipur.Musk said at that time that Starlink's service had never been active in India, arguing that the equipment recovered by authorities could not have been using its satellite network.Questions also remain over how affordable the service would be for Indian consumers, particularly those in rural areas.India is one of the world's largest internet markets but access remains uneven, particularly in remote areas where mobile networks and broadband cables are difficult or expensive to build.Musk has argued that Starlink could help bridge this gap. \"Starlink in India would enable high-speed, affordable internet connectivity for those who can't afford current prices or who don't have a connection at all!\" he wrote on X on Wednesday. The company has yet to announce prices for India, but some experts say its plans elsewhere suggest the service could be beyond the reach of many Indian households.In the US, Starlink's residential plans start at $55 a month, although prices and equipment costs vary by plan and location.SpaceXElon MuskAsiaIndiaInternet",
+          "relevanceScore": 67.5,
+          "score": 79.45
+        },
+        {
+          "name": "Elon Musk blames Starlink hurdles in India on 'monopolistic chokeholds ...",
+          "url": "https://www.hindustantimes.com/india-news/elon-musk-blames-starlink-roadblocks-in-india-on-monopolistic-chokeholds-101791392998055.html",
+          "domain": "hindustantimes.com",
+          "reliability": 95,
+          "snippet": "Also Read | Elon Musk pitches Starlink for rural India amidst stalled launch Musk's post came on the same day that Lauren Dreyer, vice-president of Starlink Business Operations at SpaceX, said ...",
+          "evidenceText": "Elon Musk blames Starlink hurdles in India on ‘monopolistic chokeholds’Musk said Starlink is being blocked by “certain oligarchs” in India seeking to maintain a “monopolistic chokehold” on people.Updated on: Oct 8, 2026, 06:27:10 ISTBy Sejal SharmaPrefer HTon GoogleShare viaCopy link SpaceX founder and CEO Elon Musk on Wednesday alleged that Starlink was being “blocked by certain oligarchs” in India to protect their “monopolistic chokehold” over the country, as the satellite internet company continues to await final clearances to begin commercial services.Musk alleged Starlink is being “blocked by certain oligarchs” in India to protect their “monopolistic chokehold” as clearances remain pending. (REUTERS)Responding to a post arguing that India needs Starlink to bridge connectivity gaps in underserved areas, Musk said: “Unfortunately, we are being blocked by certain oligarchs in order to maintain their monopolistic chokehold on the Indian people. You can guess who they are … This is a crime against the people of India!”Deep DiveWhat are the main hurdles that Starlink faces in launching services in India?Why does India require security clearances for satellite internet services like Starlink?How has Starlink adapted its operations to meet Indian security requirements?Powered ByAsk HTA mail to the Department of Telecommunications (DoT) did not elicit a response till the time of going to press.Also Read | Starlink built India setup to meet security norms, says SpaceX executive; awaits nodStarlink, owned by Musk’s SpaceX, provides broadband internet using a constellation of low-Earth orbit satellites, allowing connectivity in areas where mobile networks can be difficult to reach. Starlink has received a government licence to provide satellite communication services in India, along with Eutelsat OneWeb and Jio Satellite Communications. However, the companies still require spectrum allocation and security clearances before commercial services can begin. Starlink is also awaiting other regulatory approvals, including foreign investment-related clearances.Starlink has partnered with Bharti Airtel in India. In March 2025, Airtel announced an agreement with SpaceX to explore bringing Starlink services to its customers, including the possibility of selling Starlink equipment through Airtel stores and offering the service to business customers. The two companies also agreed to explore using Starlink to connect communities, schools and health centres in rural areas, and using Airtel’s ground network infrastructure to support Starlink’s operations.Also Read | Elon Musk pitches Starlink for rural India amidst stalled launchMusk’s post came on the same day that Lauren Dreyer, vice-president of Starlink Business Operations at SpaceX, said at the India Mobile Congress in New Delhi that the company had built its India operations around the country’s security requirements.“We’ve built our Starlink operations specifically for India in recognition of Indian security requirements and other regulations, establishing controls at every layer for India and keeping India user data within India,” she said. Dreyer said Starlink had already established 20 gateway sites comprising hundreds of antennas and was ready to begin operations.“We are ready to serve in India, once India is ready,” she said, adding that Starlink had been working with Indian regulators, operators and industry for the past five years. She also said the company could help address the “last mile” connectivity challenge, with people able to “connect within minutes, and not years”.ABOUT THE AUTHORSejal SharmaI am a technology policy reporter with the National Political Bureau at Hindustan Times, based in New Delhi. I cover digital policy and the intersection of technology and society, focusing mainly on what's happening in India. My beat often involves tracking platform regulation, privacy, internet curbs, and the real-world impact of digital rules, among other things. Can usually be found reading government notifications so that you don't have to. I cover three key ministries: Ministry of Electronics and Information Technology (MeitY), Ministry of Communications, and the Ministry of Information and Broadcasting (I&B). I am originally from New Delhi and a graduate of the Asian College of Journalism, Chennai. Over the past nine years, I have worked across television, digital and print media with The Secretariat, CNN-News18, Tiranga TV, Interesting Engineering, and now Hindustan Times. Although I am not on X, I can be reached at sejal.sharma@hindustantimes.com for tips, a chat or book recommendations. I respond fast, usually within a couple of hours. Outside of work, I enjoy playing badminton and driving my car. I am a firm believer that every trip — work or leisure — deserves a fridge magnet.Read MoreSatellite CommunicationBroadband InternetElon MuskGet the latest India News, breaking headlines, and real-time updates from across the nation. Stay informed on politics, government policies, crime, weather, and CEC Gyanesh Kumar row Live.Home/India News/Elon Musk Blames Starlink Hurdles In India On ‘monopolistic Chokeholds’See Less",
+          "relevanceScore": 67.5,
+          "score": 79.45
+        },
+        {
+          "name": "'Absolutely false,' Musk hits back at Starlink 'militants' claims | Key ...",
+          "url": "https://www.livemint.com/companies/news/absolutely-false-musk-hits-back-at-starlink-militants-claims-key-things-he-has-said-about-india-operations-11791437691373.html",
+          "domain": "livemint.com",
+          "reliability": 95,
+          "snippet": "SpaceX CEO Elon Musk on Wednesday said that Starlink's satellite beams are turned off over India, rejecting claims that the satellite internet service was used by \"militants\". His remarks came ...",
+          "evidenceText": "SpaceX CEO Elon Musk on Wednesday said that Starlink's satellite beams are turned off over India, rejecting claims that the satellite internet service was used by \"militants\". His remarks came ...",
+          "relevanceScore": 67.5,
+          "score": 79.45
+        }
+      ]
+    },
+    "scan_mv3vca4bwlpl": {
+      "id": "scan_mv3vca4bwlpl",
+      "userEmail": "leelakrishnar2363.sse@saveetha.com",
+      "type": "TEXT",
+      "timestamp": "2026-10-11T13:38:22.139Z",
+      "formattedDate": "Today, 7:08 PM",
+      "score": 100,
+      "verdict": "TRUE",
+      "verdictLabel": "YES, IT'S TRUE",
+      "claim": "cm of tamil nadu is vijay",
+      "originalClaim": "cm of tamil nadu is vijay",
+      "preview": "cm of tamil nadu is vijay",
+      "fullContent": "cm of tamil nadu is vijay",
+      "explanation": "1. User Claim: The user asserts that Vijay is the Chief Minister of Tamil Nadu. 2. Retrieved Live Evidence: Multiple sources (including Wikipedia, Britannica, BBC, and news reports) confirm that C. Joseph Vijay was sworn in as the Chief Minister of Tamil Nadu on May 10, 2026, and is currently serving in that role. 3. Factual Comparison & Verdict: The retrieved live evidence explicitly supports the user's claim without any contradiction.",
+      "reasoning": "(1) Claimed: The Chief Minister of Tamil Nadu is Vijay. (2) Evidence states: C. Joseph Vijay is currently serving as the 9th Chief Minister of Tamil Nadu, having been sworn in on May 10, 2026. (3) Support: Multiple reliable sources explicitly confirm that Vijay is the Chief Minister of Tamil Nadu. (4) Verdict choice: TRUE, because all components of the claim are directly supported by the evidence.",
+      "confidence": 99,
+      "directAnswer": "Yes, this is true: C. Joseph Vijay is currently serving as the Chief Minister of Tamil Nadu since May 10, 2026.",
+      "queryType": "claim",
+      "isLiveWebVerified": true,
+      "searchTimestamp": "2026-10-11T13:38:22.138Z",
+      "signals": [
+        {
+          "name": "Claim-to-Evidence Consistency",
+          "status": "passed",
+          "score": 95,
+          "detail": "Corroborated by verified sources (C. Joseph Vijay - Wikipedia, C. Joseph Vijay ministry - Wikipedia, Vijay | Chief Minister, 2026 Tamil Nadu Election Results, Movies ...)."
+        },
+        {
+          "name": "Primary & Official Registry Alignment",
+          "status": "passed",
+          "score": 96,
+          "detail": "Evidence cross-referenced against authoritative sources with readable page content (C. Joseph Vijay - Wikipedia, C. Joseph Vijay ministry - Wikipedia, Vijay | Chief Minister, 2026 Tamil Nadu Election Results, Movies ...)."
+        },
+        {
+          "name": "Real-Time Live Web Coverage",
+          "status": "passed",
+          "score": 98,
+          "detail": "Retrieved 5 ranked reference sources; verdict evidence uses readable content."
+        },
+        {
+          "name": "Fact & Entity Match Index",
+          "status": "passed",
+          "score": 95,
+          "detail": "All essential factual components confirmed by live search evidence."
+        }
+      ],
+      "sources": [
+        {
+          "name": "C. Joseph Vijay - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/C._Joseph_Vijay",
+          "domain": "en.wikipedia.org",
+          "reliability": 95,
+          "snippet": "Chandrasekaran Joseph Vijay (born 22 June 1974) is an Indian politician and former actor who is currently serving as the 9th chief minister of Tamil Nadu since 10 May 2026. He is the founder and president of the political party Tamilaga Vettri Kazhagam (TVK). Prior to entering politics, he was a leading actor in Tamil cinema and among the highest-paid actors in India, having won numerous ...",
+          "evidenceText": "Chandrasekaran Joseph Vijay (born 22 June 1974) is an Indian politician and former actor who is currently serving as the 9th chief minister of Tamil Nadu since 10 May 2026. He is the founder and president of the political party Tamilaga Vettri Kazhagam (TVK). Prior to entering politics, he was a leading actor in Tamil cinema and among the highest-paid actors in India, having won numerous ...",
+          "relevanceScore": 47.5,
+          "score": 67.05
+        },
+        {
+          "name": "C. Joseph Vijay ministry - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/C._Joseph_Vijay_ministry",
+          "domain": "en.wikipedia.org",
+          "reliability": 95,
+          "snippet": "C. Joseph Vijay ministry is the Council of Ministers headed by C. Joseph Vijay, who was sworn in as the 22nd Chief Minister of Tamil Nadu on 10 May 2026 after the 17th Tamil Nadu Assembly was constituted after the 2026 Tamil Nadu Legislative Assembly election. [2][3]",
+          "evidenceText": "C. Joseph Vijay ministry is the Council of Ministers headed by C. Joseph Vijay, who was sworn in as the 22nd Chief Minister of Tamil Nadu on 10 May 2026 after the 17th Tamil Nadu Assembly was constituted after the 2026 Tamil Nadu Legislative Assembly election. [2][3]",
+          "relevanceScore": 47.5,
+          "score": 67.05
+        },
+        {
+          "name": "Vijay | Chief Minister, 2026 Tamil Nadu Election Results, Movies ...",
+          "url": "https://www.britannica.com/biography/Vijay-actor",
+          "domain": "britannica.com",
+          "reliability": 95,
+          "snippet": "Vijay is an Indian actor and politician who was sworn in as the chief minister of Tamil Nadu in May 2026. He is popularly referred to as Thalapathy (\"Leader\") by fans.",
+          "evidenceText": "Vijay is an Indian actor and politician who was sworn in as the chief minister of Tamil Nadu in May 2026. He is popularly referred to as Thalapathy (\"Leader\") by fans.",
+          "relevanceScore": 47.5,
+          "score": 65.05
+        },
+        {
+          "name": "Vijay, Tamil Nadu election results 2026: How a film star won in the ...",
+          "url": "https://www.bbc.com/news/articles/c8xwjx54zggo",
+          "domain": "bbc.com",
+          "reliability": 95,
+          "snippet": "Film star Vijay has defied naysayers to almost sweep Tamil Nadu polls, marking a break in the political order.",
+          "evidenceText": "A 'fun' superstar stuns rivals and reshapes politics in an Indian state5 May 2026 Share Save Add as preferred on GoogleSudha G TilakDelhiAFP via Getty ImagesPictures of Vijay being sold outside a counting station in Tamil Nadu on MondayFilm star-turned-politician C Joseph Vijay is on the cusp of history in Tamil Nadu state. On Monday, his political party Tamilaga Vettri Kazhagam (TVK) defied all naysayers to almost sweep the state election, marking a break in the established political order.Vijay's spectacular rise is being compared with that of matinee idol MG Ramachandran, who broke away from the established Dravida Munnetra Kazhagam (DMK) to form his own party and become chief minister in 1977.But even as Vijay's victory has delighted fans and supporters, he has hurdles to cross to reach the top post. To form a government in the 234-member Tamil Nadu assembly, a party needs 118 seats. Vijay's Tamilaga Vettri Kazhagam (TVK) has won 108 - leaving him 10 seats short of a majority.That means over the next few days, Vijay will need to change from crowd-puller to coalition-builder, negotiating with smaller parties and independent legislators to cross the threshold and stake a claim to power. Even then, his performance marks a striking political moment in a state that has, for decades, chosen between two established regional parties - the DMK and its rival the All India Anna Dravida Munnetra Kazhagam (AIADMK). For some, the explanation lies as much in persona as in politics.\"Vijay carries a different kind of verve,\" says social scientist Shiv Visvanathan. \"He offers a sense of fun, confidence and an aura of competence rooted in individuality and that gives him a different kind of power.\"In the weeks since voting took place, Vijay has been carefully crafting his public image - not on screen, but by visiting prominent temples and churches.Images of these visits have flooded TV screens and mobile phones. In a state where modern politics was shaped by rationalist thought and the Self-Respect Movement - which envisioned a society where marginalised castes would have equal rights - the visible turn to faith feels deliberate.The Indian superstar taking a shot at political greatnessTamil Nadu has long been attuned to political theatrics, where cinema and power often blur into one continuum. From Ramachandran to his successor J Jayalalithaa, film stars have entered politics and gone on to lead the state. Vijay steps into that lineage, but at a different political moment.Analysts say he is entering a landscape still dominated by the DMK and the AIADMK - a duopoly that mostly appears stable on paper, yet shows signs of fatigue on the ground. That, they argue, is opening space for new political experiments - and for figures like Vijay to test how far star power can translate into durable political authority.\"Vijay's timing as a politician is immaculate,\" says Visvanathan. \"He arrives at a moment when established leaders are seen as jaded. He represents youth - and a new interplay of memory and messaging in how voters imagine their leaders.\"AFP via Getty ImagesTVK members blow a whistle, their party symbol, and hold a cut-out of Vijay as they celebrate the resultsVijay's road to political triumph has not been that smooth. He suffered a serious setback last year after dozens of people were killed in a crush at his party's rally. But despite criticism over his immediate reaction, voters seem to have forgiven him.His film Jana Nayagan (People's Leader), which was set to be released in January, was meant to be Vijay's final outing on screen after he announced he was moving to full-time politics. But the film ran into trouble with India's film classification board, with makers even moving court to get it released. It's still not clear when Jana Nayagan will hit cinemas.Vijay formally launched his TVK party only in 2024. Yet his political decisions stretch back much longer. As early as 2009, he began reorganising fan clubs into the Vijay Makkal Iyakkam (Vijay's People Movement) - a welfare network that worked at the neighbourhood level, offering relief, education support and local assistance.By 2011, it was already testing its political reach by backing an AIADMK alliance, checking whether fandom could translate into votes. Over the next decade, Vijay's film events took on an increasingly political tone as he spoke to younger audiences about exam stress, unemployment and corruption, and later criticised the controversial Citizenship Amendment Act in 2019. When he eventually stepped away from acting after nearly 70 films to enter politics full-time, the message was clear: this was not an extension of stardom, but its deliberate conversion into political capital.Tamil Nadu's voters have long understood the language of charisma. What makes Vijay distinct is the scale and spread of the base he is attempting to build.TVKVijay has acted in nearly 70 films and is hugely popular in Tamil NaduThe shift towards Vijay is most pronounced among younger voters and women, according to pollster Pradeep Gupta of Axis My India.Voters aged 18-39 - roughly 42% of Tamil Nadu's electorate - show particularly strong support, especially first-time voters. Women, too, appear to have moved towards his party in significant numbers, with support cutting across caste lines, including among the state's Scheduled Castes (SCs) and Other Backward Classes (OBCs).Political strategist Prashant Kishor puts it more simply: \"He's the new hope for Tamil Nadu.\"For now, that appeal is defined less by detailed policy and more by the promise of change.AFP via Getty ImagesVijay's TVK defeated the powerful incumbent DMK, led by MK Stalin (left in the poster)TM Krishna, prominent Indian vocalist, author and social activist, says: \"Elections are about stirring imagination. This is not a verdict against Dravidian politics. It is something else. Vijay offers a new imagination.\"In Tamil Nadu, Dravidian politics - led by the DMK and AIADMK - which is rooted in social justice and welfare, has dominated for decades. It has also delivered: the state recorded 11.2% growth in 2024-25, with solid manufacturing gains and some of India's strongest social indicators.Yet performance has not dulled the appetite for change. Stability, analysts say, can breed its own restlessness - particularly among younger voters less invested in legacy narratives and more drawn to renewal.That helps explain the contrast with other superstars like Rajinikanth who also dabbled with politics but stopped short. Even Kamal Hassan, who launched a political party, has not been able to create an impact on the ground.AFP via Getty ImagesThe surge towards Vijay is most visible among younger voters and womenVijay has cast India's governing Bharatiya Janata Party (BJP) as his ideological adversary, and the incumbent DMK as his immediate political rival - a positioning that reflects Tamil Nadu's long resistance to the BJP's expansion, rooted in language politics and a strong regional identity, as well as a promise of freshness.But not everyone is convinced. Author and analyst Nilakantan RS points to the thinness of TVK's policies. \"There is an absence of any original position on real issues,\" he says. \"Virality has become the currency of his actions.\" He reads Vijay's temple visits and public gestures as calibrated moves aimed at specific audiences - raising the risk of a politics driven more by image than administrative depth.And yet, the pull is rooted in familiarity. Tamil Nadu does not merely admire its film stars - it invests in them, often seeing in them a more immediate and personal form of justice.It remains one of India's most stable and well-performing states. Yet beneath that stability, a younger electorate is increasingly restless.\"This election is to herald change,\" Vijay said while campaigning. His supporters echo that sentiment more bluntly. \"People are tired of both major parties. They want change. They see TVK as that change,\" says party spokesperson Felix Gerald.Tamil NaduNarendra ModiIndia",
+          "relevanceScore": 47.5,
+          "score": 65.05
+        },
+        {
+          "name": "Tamil Nadu CM Vijay hails TVK’s bypoll wins as victory for people, political decorum - The Hindu",
+          "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPblEtYWR0ZThoTzFWRnRnWUg1NkNxempoaHpoNGdtRGVBU2s4M3JpY2luNmszX0RMSFMwRnNBMm9wTEZCSmJFVG55Z3hEclpZSjVmaHU5SkFCbmpPX1RIeVlXUl9WU19SWnNIR05DWUdObEpneVdRNzhXTXdMc2hhclgya09ab3NpX3gxZVVaS2owUHozNmZHTGNpSnM0d0hwSGkzUGMwbU96b3Y0OHpFeG9uRE91OVFBb3pmaUd5V19zQUhoRkVvVTlLclJtVFg2VE5qSEtVblduZVBHUzlrZEZ2Qi1XSEXSAe4BQVVfeXFMUElFVXR4blliVWdYdEo4bTJHejM4cWtPc191SzNxc01pMnVJa05sUzB1UF9QYWN0QjRtcXR5RFhZMEo5Z04wRzlfWS1GUTRtQWRidUM0WHp4MXVlYVljaHdIekNmYkZCNVZTMVFrZXk1ODNOUGJkTG9jak5PZnB3Q1BWYnNuUFV4SHNLQmQxZUJMY3NIVXFBVjROTk5oNnUtZ1BkaERtN3M0QVRsTHlDeHZ0eVdyTllodjdYcXZCSFc4dDExMUk2dnJKUVcxanhTUVJpSjYzSUUtc3VpZ0xLWUJjY0hxZ09KbFlyZXA3Zw?oc=5",
+          "domain": "news.google.com",
+          "pubDate": "Fri, 09 Oct 2026 12:44:33 GMT",
+          "reliability": 94,
+          "snippet": "Tamil Nadu CM Vijay hails TVK’s bypoll wins as victory for people, political decorum - The Hindu",
+          "evidenceText": "Tamil Nadu CM Vijay hails TVK’s bypoll wins as victory for people, political decorum - The Hindu",
+          "relevanceScore": 47.4,
+          "score": 59.748000000000005
+        }
+      ]
     }
   },
   "news": {
