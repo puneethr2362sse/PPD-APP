@@ -4,6 +4,10 @@ import path from 'path';
 import { realtimeVerifier } from '../server/services/realtimeVerifier.js';
 import { imageVerifier } from '../server/services/imageVerifier.js';
 
+if (!process.env.GEMINI_API_KEY && !process.env.GOOGLE_API_KEY) {
+  process.env.GEMINI_API_KEY = 'test-gemini-ci-key';
+}
+
 async function main() {
   console.log('====================================================');
   console.log('🧪 VERIFYAI END-TO-END VERIFICATION TEST HARNESS');

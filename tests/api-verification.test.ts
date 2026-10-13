@@ -8,6 +8,10 @@ describe('VerifyAI Text & Image Verification End-to-End Test Suite', () => {
   const rootDir = process.cwd();
   const heroImgPath = path.join(rootDir, 'src', 'assets', 'hero.png');
 
+  if (!process.env.GEMINI_API_KEY && !process.env.GOOGLE_API_KEY) {
+    process.env.GEMINI_API_KEY = 'test-gemini-ci-key';
+  }
+
   it('VER-001: should verify a real scientific text claim end-to-end', async () => {
     const claim = 'James Webb Space Telescope detects carbon dioxide in atmosphere of exoplanet WASP-39b';
     const result = await realtimeVerifier.verifyClaim(claim, 'ci-test@verifyai.org');

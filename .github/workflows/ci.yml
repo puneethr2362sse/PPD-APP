@@ -95,11 +95,11 @@ jobs:
       - name: Run Text & Image End-to-End Tests (Real Claims & Real 13KB Image)
         run: npx vitest run tests/api-verification.test.ts
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY || 'test-gemini-ci-key' }}
           NODE_ENV: test
 
       - name: Run Real Verification CLI Test Harness
         run: npx tsx scripts/testRealVerification.ts
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY || 'test-gemini-ci-key' }}
           NODE_ENV: test

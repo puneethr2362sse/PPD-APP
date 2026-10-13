@@ -139,7 +139,8 @@ export const imageVerifier = {
 
     const apiKey = (process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY || '').trim();
     if (!apiKey) {
-      console.warn('[ImageVerifier] No GEMINI_API_KEY or GOOGLE_API_KEY configured in server environment. Proceeding with forensic container audit fallback.');
+      console.warn('[ImageVerifier] No GEMINI_API_KEY or GOOGLE_API_KEY configured in server environment.');
+      throw new Error('GEMINI_API_KEY is not configured on the server. Image verification unavailable.');
     }
 
     console.log(`[ImageVerifier] Analyzing image "${fileName}" (${provenanceInspection.format}, ${provenanceInspection.fileSizeKB} KB)`);
