@@ -68,12 +68,62 @@ jobs:
       - name: Validate Generated Excel Test Report & Baseline Preservation
         run: npx vitest run tests/excel-report-validation.test.ts
 
+      - name: Generate Suite HTML Artifacts
+        run: node scripts/generate-artifacts.js
+
+      - name: Upload Selenium Report Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: selenium-report
+          path: reports/selenium-report/
+          retention-days: 30
+
+      - name: Upload Appium Report Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: appium-report
+          path: reports/appium-report/
+          retention-days: 30
+
+      - name: Upload Load Report Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: load-report
+          path: reports/load-report/
+          retention-days: 30
+
+      - name: Upload Security Report Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-report
+          path: reports/security-report/
+          retention-days: 30
+
+      - name: Upload VerifyAI Test Cases Excel Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: VerifyAI_Test_Cases
+          path: reports/VerifyAI_Test_Cases.xlsx
+          retention-days: 30
+
       - name: Upload Complete 1,500-Test Excel Report Artifact
         uses: actions/upload-artifact@v4
         with:
           name: VerifyAI-Test-Report-1500
           path: reports/VerifyAI_Test_Report.xlsx
           retention-days: 30
+
+      - name: Publish Step Summary with Direct Excel Download Links
+        run: |
+          echo "## 📊 VerifyAI Automated QA Test Execution Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📥 Direct Excel Workbook Downloads (Single-click .xlsx — No ZIP extraction required)" >> $GITHUB_STEP_SUMMARY
+          echo "| Report Name | Direct Download Link (.xlsx) | Mirror / Production Link | Description |" >> $GITHUB_STEP_SUMMARY
+          echo "| :--- | :--- | :--- | :--- |" >> $GITHUB_STEP_SUMMARY
+          echo "| **VerifyAI_Test_Cases.xlsx** | [Direct Download (.xlsx)](https://github.com/puneethr2362sse/PPD-APP/raw/main/reports/VerifyAI_Test_Cases.xlsx) | [Web Direct](https://app-eight-woad-32.vercel.app/VerifyAI_Test_Cases.xlsx) | Complete 1,504-test workbook with separate worksheets for Selenium, Appium, Load, Security, Multimodal AI, and Build |" >> $GITHUB_STEP_SUMMARY
+          echo "| **VerifyAI_Test_Report.xlsx** | [Direct Download (.xlsx)](https://github.com/puneethr2362sse/PPD-APP/raw/main/reports/VerifyAI_Test_Report.xlsx) | [Web Direct](https://app-eight-woad-32.vercel.app/VerifyAI_Test_Report.xlsx) | Full executive test report workbook with summary metrics |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "> 💡 **Note for Reviewers & Professors:** Standard GitHub Actions artifact buttons package files into a .zip. To open directly in Microsoft Excel without extracting ZIP files, use the **Direct Download (.xlsx)** links above." >> $GITHUB_STEP_SUMMARY
 
   api-verification-e2e:
     name: 3. Text & Image API Integration Verification

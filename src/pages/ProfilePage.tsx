@@ -22,8 +22,7 @@ import {
   Phone,
   Mail,
   AtSign,
-  Upload,
-  FileSpreadsheet
+  Upload
 } from 'lucide-react';
 
 // Preset avatar options for quick profile customization
@@ -578,29 +577,6 @@ export const ProfilePage: React.FC = () => {
               Your forensic scans and investigation analytics are securely partitioned under <span className="text-slate-300 font-mono">{email}</span> in Firestore.
             </p>
           </div>
-        </div>
-      </div>
-
-      {/* Automated QA & Compliance Test Report Card */}
-      <div className="glass-card rounded-3xl p-6 border border-slate-800 space-y-4">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div className="space-y-1">
-            <h3 className="font-display text-lg font-bold text-white flex items-center gap-2">
-              <Award className="w-5 h-5 text-amber-400" />
-              <span>Automated Verification QA Audit Report</span>
-            </h3>
-            <p className="text-xs text-slate-400 max-w-xl leading-relaxed">
-              Download the complete 1,500-test execution workbook covering Selenium Web E2E, Appium Mobile Native, High-Concurrency Load, Zero-Trust Security, and Multimodal AI Evidence Verification.
-            </p>
-          </div>
-          <a
-            href="/VerifyAI_Test_Report.xlsx"
-            download="VerifyAI_Test_Report.xlsx"
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-brand-500 hover:from-cyan-400 hover:to-brand-400 text-white font-bold text-xs shadow-glow-cyan transition-all hover:scale-105 active:scale-95 whitespace-nowrap cursor-pointer"
-          >
-            <FileSpreadsheet className="w-4 h-4 text-white" />
-            <span>Download QA Report (.xlsx)</span>
-          </a>
         </div>
       </div>
 

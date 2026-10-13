@@ -10,8 +10,7 @@ import {
   User, 
   LogOut, 
   PlusCircle, 
-  Sparkles,
-  FileSpreadsheet
+  Sparkles
 } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
@@ -69,17 +68,6 @@ export const Navbar: React.FC = () => {
 
         {/* Right: User Profile & Quick Action */}
         <div className="flex items-center gap-3">
-          {/* Download 1,500 Test QA Report CTA (Desktop) */}
-          <a
-            href="/VerifyAI_Test_Report.xlsx"
-            download="VerifyAI_Test_Report.xlsx"
-            title="Download QA Audit Workbook (1,500 Tests .xlsx)"
-            className="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-emerald-500/30 text-emerald-300 hover:text-white hover:border-emerald-400 text-xs font-semibold hover:shadow-[0_0_15px_rgba(16,185,129,0.25)] transition-all"
-          >
-            <FileSpreadsheet className="w-3.5 h-3.5 text-emerald-400" />
-            <span>QA Report</span>
-          </a>
-
           {/* Quick Scan CTA (Desktop) */}
           <Link
             to="/scan/text"
