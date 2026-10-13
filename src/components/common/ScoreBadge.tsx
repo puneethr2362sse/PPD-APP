@@ -17,13 +17,28 @@ export const ScoreBadge: React.FC<ScoreBadgeProps> = ({
 }) => {
   const isTrue = verdict === 'TRUE' || verdict === 'REAL';
   const isFalse = verdict === 'FALSE' || verdict === 'FAKE';
-  const isUnverified = verdict === 'UNVERIFIED';
+  const isPartlyTrue = verdict === 'PARTLY_TRUE';
+  const isMisleading = verdict === 'MISLEADING';
 
   const label = isTrue
-    ? "YES, IT'S TRUE"
+    ? 'TRUE / SUPPORTED'
     : isFalse
-    ? "NO, IT'S NOT TRUE"
-    : "NOT ENOUGH EVIDENCE";
+    ? 'FALSE / CONTRADICTED'
+    : isPartlyTrue
+    ? 'PARTLY TRUE'
+    : isMisleading
+    ? 'MISLEADING / OUT OF CONTEXT'
+    : 'UNVERIFIED / INSUFFICIENT EVIDENCE';
+
+  const colorClass = isTrue
+    ? 'emerald'
+    : isFalse
+    ? 'rose'
+    : isPartlyTrue
+    ? 'amber'
+    : isMisleading
+    ? 'orange'
+    : 'slate';
 
   if (size === 'sm') {
     return (
@@ -33,7 +48,11 @@ export const ScoreBadge: React.FC<ScoreBadgeProps> = ({
             ? 'bg-emerald-950/60 border-emerald-500/40 text-emerald-300 shadow-[0_0_12px_rgba(16,185,129,0.2)]'
             : isFalse
             ? 'bg-rose-950/60 border-rose-500/40 text-rose-300 shadow-[0_0_12px_rgba(244,63,94,0.2)]'
-            : 'bg-amber-950/60 border-amber-500/40 text-amber-300 shadow-[0_0_12px_rgba(245,158,11,0.2)]'
+            : isPartlyTrue
+            ? 'bg-amber-950/60 border-amber-500/40 text-amber-300 shadow-[0_0_12px_rgba(245,158,11,0.2)]'
+            : isMisleading
+            ? 'bg-orange-950/60 border-orange-500/40 text-orange-300 shadow-[0_0_12px_rgba(249,115,22,0.2)]'
+            : 'bg-slate-900 border-slate-700 text-slate-300'
         }`}
       >
         {isTrue ? (
@@ -46,9 +65,19 @@ export const ScoreBadge: React.FC<ScoreBadgeProps> = ({
             <X className="w-3.5 h-3.5 text-rose-400" strokeWidth={3} />
             <span>{score}/100 FALSE</span>
           </>
+        ) : isPartlyTrue ? (
+          <>
+            <AlertCircle className="w-3.5 h-3.5 text-amber-400" strokeWidth={3} />
+            <span>{score}/100 PARTLY TRUE</span>
+          </>
+        ) : isMisleading ? (
+          <>
+            <AlertCircle className="w-3.5 h-3.5 text-orange-400" strokeWidth={3} />
+            <span>{score}/100 MISLEADING</span>
+          </>
         ) : (
           <>
-            <HelpCircle className="w-3.5 h-3.5 text-amber-400" strokeWidth={3} />
+            <HelpCircle className="w-3.5 h-3.5 text-slate-400" strokeWidth={3} />
             <span>{score}/100 UNVERIFIED</span>
           </>
         )}
@@ -64,7 +93,11 @@ export const ScoreBadge: React.FC<ScoreBadgeProps> = ({
             ? 'bg-emerald-950/50 border-emerald-500/30 text-emerald-200 shadow-glow-real'
             : isFalse
             ? 'bg-rose-950/50 border-rose-500/30 text-rose-200 shadow-glow-fake'
-            : 'bg-amber-950/50 border-amber-500/30 text-amber-200 shadow-[0_0_15px_rgba(245,158,11,0.2)]'
+            : isPartlyTrue
+            ? 'bg-amber-950/50 border-amber-500/30 text-amber-200'
+            : isMisleading
+            ? 'bg-orange-950/50 border-orange-500/30 text-orange-200'
+            : 'bg-slate-900 border-slate-700 text-slate-200'
         }`}
       >
         <div
@@ -73,7 +106,11 @@ export const ScoreBadge: React.FC<ScoreBadgeProps> = ({
               ? 'bg-emerald-500/20 text-emerald-400' 
               : isFalse 
               ? 'bg-rose-500/20 text-rose-400' 
-              : 'bg-amber-500/20 text-amber-400'
+              : isPartlyTrue
+              ? 'bg-amber-500/20 text-amber-400'
+              : isMisleading
+              ? 'bg-orange-500/20 text-orange-400'
+              : 'bg-slate-800 text-slate-400'
           }`}
         >
           {isTrue ? (
@@ -90,7 +127,7 @@ export const ScoreBadge: React.FC<ScoreBadgeProps> = ({
           </div>
           <div
             className={`text-xs font-bold uppercase tracking-wider ${
-              isTrue ? 'text-emerald-400' : isFalse ? 'text-rose-400' : 'text-amber-400'
+              isTrue ? 'text-emerald-400' : isFalse ? 'text-rose-400' : isPartlyTrue ? 'text-amber-400' : isMisleading ? 'text-orange-400' : 'text-slate-400'
             }`}
           >
             {label}
@@ -108,13 +145,17 @@ export const ScoreBadge: React.FC<ScoreBadgeProps> = ({
           ? 'bg-gradient-to-b from-emerald-950/70 via-slate-900/90 to-slate-950 border-emerald-500/40 shadow-glow-real'
           : isFalse
           ? 'bg-gradient-to-b from-rose-950/70 via-slate-900/90 to-slate-950 border-rose-500/40 shadow-glow-fake'
-          : 'bg-gradient-to-b from-amber-950/70 via-slate-900/90 to-slate-950 border-amber-500/40 shadow-[0_0_30px_rgba(245,158,11,0.25)]'
+          : isPartlyTrue
+          ? 'bg-gradient-to-b from-amber-950/70 via-slate-900/90 to-slate-950 border-amber-500/40 shadow-[0_0_30px_rgba(245,158,11,0.25)]'
+          : isMisleading
+          ? 'bg-gradient-to-b from-orange-950/70 via-slate-900/90 to-slate-950 border-orange-500/40 shadow-[0_0_30px_rgba(249,115,22,0.25)]'
+          : 'bg-gradient-to-b from-slate-900/80 via-slate-900/90 to-slate-950 border-slate-700 shadow-[0_0_30px_rgba(100,116,139,0.2)]'
       }`}
     >
       {/* Background ambient glow */}
       <div
         className={`absolute -top-24 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full blur-3xl pointer-events-none opacity-40 ${
-          isTrue ? 'bg-emerald-500' : isFalse ? 'bg-rose-500' : 'bg-amber-500'
+          isTrue ? 'bg-emerald-500' : isFalse ? 'bg-rose-500' : isPartlyTrue ? 'bg-amber-500' : isMisleading ? 'bg-orange-500' : 'bg-slate-600'
         }`}
       />
 
@@ -125,42 +166,34 @@ export const ScoreBadge: React.FC<ScoreBadgeProps> = ({
               ? 'bg-emerald-500/20 border-emerald-400/40 text-emerald-300 shadow-[0_0_30px_rgba(16,185,129,0.4)]'
               : isFalse
               ? 'bg-rose-500/20 border-rose-400/40 text-rose-300 shadow-[0_0_30px_rgba(244,63,94,0.4)]'
-              : 'bg-amber-500/20 border-amber-400/40 text-amber-300 shadow-[0_0_30px_rgba(245,158,11,0.4)]'
+              : isPartlyTrue
+              ? 'bg-amber-500/20 border-amber-400/40 text-amber-300 shadow-[0_0_30px_rgba(245,158,11,0.4)]'
+              : isMisleading
+              ? 'bg-orange-500/20 border-orange-400/40 text-orange-300 shadow-[0_0_30px_rgba(249,115,22,0.4)]'
+              : 'bg-slate-800 border-slate-600 text-slate-300 shadow-[0_0_30px_rgba(100,116,139,0.4)]'
           } ${animated ? 'animate-bounce' : ''}`}
         >
           {isTrue ? (
             <ShieldCheck className="w-10 h-10 text-emerald-400" strokeWidth={2.5} />
           ) : isFalse ? (
             <ShieldAlert className="w-10 h-10 text-rose-400" strokeWidth={2.5} />
+          ) : isPartlyTrue || isMisleading ? (
+            <AlertCircle className={`w-10 h-10 ${isPartlyTrue ? 'text-amber-400' : 'text-orange-400'}`} strokeWidth={2.5} />
           ) : (
-            <HelpCircle className="w-10 h-10 text-amber-400" strokeWidth={2.5} />
+            <HelpCircle className="w-10 h-10 text-slate-400" strokeWidth={2.5} />
           )}
         </div>
 
-        <div className="font-mono text-5xl sm:text-6xl font-black tracking-tight mb-2">
-          {isTrue ? (
-            <span className="text-emerald-400 drop-shadow-[0_0_20px_rgba(16,185,129,0.6)]">{score}/100</span>
-          ) : isFalse ? (
-            <span className="text-rose-400 drop-shadow-[0_0_20px_rgba(244,63,94,0.6)]">{score}/100</span>
-          ) : (
-            <span className="text-amber-400 drop-shadow-[0_0_20px_rgba(245,158,11,0.6)]">{score}/100</span>
-          )}
+        <div className="text-xs sm:text-sm font-mono uppercase tracking-widest text-slate-400 mb-1">
+          VERDICT
         </div>
 
         <div
           className={`font-display text-2xl sm:text-3xl font-extrabold uppercase tracking-wider mb-2 ${
-            isTrue ? 'text-emerald-300' : isFalse ? 'text-rose-300' : 'text-amber-300'
+            isTrue ? 'text-emerald-300' : isFalse ? 'text-rose-300' : isPartlyTrue ? 'text-amber-300' : isMisleading ? 'text-orange-300' : 'text-slate-300'
           }`}
         >
           {label}
-        </div>
-
-        <div className="text-xs sm:text-sm text-slate-300 max-w-md font-medium">
-          {isTrue
-            ? 'Real-time evidence confirms claim authenticity across verified sources.'
-            : isFalse
-            ? 'Real-time evidence contradicts or debunks this claim.'
-            : 'Insufficient verified evidence found to conclusively confirm or deny this claim.'}
         </div>
       </div>
     </div>

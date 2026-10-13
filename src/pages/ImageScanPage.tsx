@@ -12,9 +12,7 @@ import {
   Trash2, 
   Sparkles, 
   Search, 
-  ShieldCheck, 
   FileImage,
-  AlertCircle
 } from 'lucide-react';
 
 export const SAMPLE_IMAGES = [
@@ -54,7 +52,95 @@ export const ImageScanPage: React.FC = () => {
   const [isScanning, setIsScanning] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  // Helper to ensure mobile & high-resolution photos never exceed Vercel Serverless payload limits (4.5 MB)
+  const prepareImageForScan = (file: Blob, fileName: string): Promise<{
+    name: string;
+    dataUrl: string;
+    size: number;
+    width: number;
+    height: number;
+  }> => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onerror = () => reject(new Error('Failed to read image data'));
+      reader.onload = () => {
+        const originalDataUrl = reader.result as string;
+        const img = new Image();
+        img.onerror = () => reject(new Error('Failed to load image preview'));
+        img.onload = () => {
+          let width = img.width;
+          let height = img.height;
+          const maxDimension = 1600;
+
+          // If file is already small (<= 1.5MB) and dimensions within 1600px, use original directly
+          if (file.size <= 1.5 * 1024 * 1024 && width <= maxDimension && height <= maxDimension) {
+            resolve({
+              name: fileName,
+              dataUrl: originalDataUrl,
+              size: file.size,
+              width,
+              height,
+            });
+            return;
+          }
+
+          // Downscale proportionally to fit within 1600x1600 preserving aspect ratio
+          if (width > maxDimension || height > maxDimension) {
+            if (width > height) {
+              height = Math.round((height * maxDimension) / width);
+              width = maxDimension;
+            } else {
+              width = Math.round((width * maxDimension) / height);
+              height = maxDimension;
+            }
+          }
+
+          try {
+            const canvas = document.createElement('canvas');
+            canvas.width = width;
+            canvas.height = height;
+            const ctx = canvas.getContext('2d');
+            if (!ctx) {
+              resolve({
+                name: fileName,
+                dataUrl: originalDataUrl,
+                size: file.size,
+                width: img.width,
+                height: img.height,
+              });
+              return;
+            }
+
+            ctx.drawImage(img, 0, 0, width, height);
+            // High quality JPEG export at 0.85 ensures crisp OCR & forensics while keeping payload < 800 KB
+            const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.85);
+            const approxSize = Math.round((compressedDataUrl.length * 3) / 4);
+
+            resolve({
+              name: fileName.replace(/\.[^/.]+$/, '') + '.jpg',
+              dataUrl: compressedDataUrl,
+              size: approxSize,
+              width,
+              height,
+            });
+          } catch {
+            // Safety fallback to original image if canvas throws
+            resolve({
+              name: fileName,
+              dataUrl: originalDataUrl,
+              size: file.size,
+              width: img.width,
+              height: img.height,
+            });
+          }
+        };
+        img.src = originalDataUrl;
+      };
+      reader.readAsDataURL(file);
+    });
+  };
+
+  const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
 
@@ -63,26 +149,16 @@ export const ImageScanPage: React.FC = () => {
       return;
     }
 
-    const reader = new FileReader();
-    reader.onload = () => {
-      const dataUrl = reader.result as string;
-      const img = new Image();
-      img.onload = () => {
-        setSelectedImage({
-          name: file.name,
-          dataUrl,
-          size: file.size,
-          width: img.width,
-          height: img.height,
-        });
-        showToast('Image loaded successfully!', 'success');
-      };
-      img.src = dataUrl;
-    };
-    reader.readAsDataURL(file);
+    try {
+      const processed = await prepareImageForScan(file, file.name);
+      setSelectedImage(processed);
+      showToast('Image loaded successfully!', 'success');
+    } catch {
+      showToast('Failed to load image. Please try another file.', 'error');
+    }
   };
 
-  const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
+  const handleDrop = async (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     setIsDragging(false);
 
@@ -94,36 +170,30 @@ export const ImageScanPage: React.FC = () => {
       return;
     }
 
-    const reader = new FileReader();
-    reader.onload = () => {
-      const dataUrl = reader.result as string;
-      const img = new Image();
-      img.onload = () => {
-        setSelectedImage({
-          name: file.name,
-          dataUrl,
-          size: file.size,
-          width: img.width,
-          height: img.height,
-        });
-        showToast('Image dropped successfully!', 'success');
-      };
-      img.src = dataUrl;
-    };
-    reader.readAsDataURL(file);
+    try {
+      const processed = await prepareImageForScan(file, file.name);
+      setSelectedImage(processed);
+      showToast('Image dropped successfully!', 'success');
+    } catch {
+      showToast('Failed to load image. Please try another file.', 'error');
+    }
   };
 
-  const handleSelectSample = (sample: typeof SAMPLE_IMAGES[0]) => {
-    setSelectedImage({
-      name: sample.name,
-      dataUrl: sample.url,
-      size: 1024 * 450,
-      width: 1200,
-      height: 800,
-      isSampleFake: sample.type === 'FAKE',
-      isSampleReal: sample.type === 'REAL',
-    });
-    showToast(`Loaded "${sample.label}"!`, 'info');
+  const handleSelectSample = async (sample: typeof SAMPLE_IMAGES[0]) => {
+    try {
+      showToast(`Loading "${sample.label}" image...`, 'info');
+      const res = await fetch(sample.url);
+      const blob = await res.blob();
+      const processed = await prepareImageForScan(blob, sample.name);
+      setSelectedImage({
+        ...processed,
+        isSampleFake: sample.type === 'FAKE',
+        isSampleReal: sample.type === 'REAL',
+      });
+      showToast(`Loaded "${sample.label}"! Click Verify to run real vision analysis.`, 'success');
+    } catch {
+      showToast('Could not load sample image. Please choose an image from your device.', 'error');
+    }
   };
 
   const handleClear = () => {
@@ -148,15 +218,15 @@ export const ImageScanPage: React.FC = () => {
 
     try {
       const result = await verificationService.verifyImage(selectedImage, currentUser.email);
-      // Auto-save to user history
+      // Auto-save genuine completed scan to user history
       addScan(result);
       setIsScanning(false);
 
       // Navigate to detailed result page
       navigate(`/result`, { state: { result } });
-    } catch (err) {
+    } catch (err: any) {
       setIsScanning(false);
-      showToast('Image scan failed. Please try again.', 'error');
+      showToast(err.message || 'Image scan failed. Please try again.', 'error');
     }
   };
 

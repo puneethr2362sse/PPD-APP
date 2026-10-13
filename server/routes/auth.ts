@@ -325,9 +325,9 @@ authRouter.get('/me', (req: Request, res: Response): void => {
   res.json({ success: true, user });
 });
 
-// 9. UPDATE USER PROFILE (Allows editing Display Name, Phone, and optional Photo)
+// 9. UPDATE USER PROFILE (Allows editing Display Name, User ID handle, Phone, and optional Photo)
 authRouter.put('/profile', (req: Request, res: Response): void => {
-  const { email, name, phone, photoUrl } = req.body;
+  const { email, name, phone, photoUrl, userId } = req.body;
   const cleanEmail = email ? email.trim().toLowerCase() : '';
 
   if (!cleanEmail) {
@@ -349,6 +349,35 @@ authRouter.put('/profile', (req: Request, res: Response): void => {
     }
     user.name = cleanName;
     user.customDisplayName = true;
+  }
+
+  // Handle editable User ID (handle)
+  if (userId !== undefined) {
+    const cleanUserId = userId.trim();
+    if (!cleanUserId) {
+      res.status(400).json({ success: false, error: 'User ID (handle) cannot be empty.' });
+      return;
+    }
+    // Validation: 3-30 chars, alphanumeric, underscores, hyphens
+    if (!/^[a-zA-Z0-9_-]{3,30}$/.test(cleanUserId)) {
+      res.status(400).json({
+        success: false,
+        error: 'User ID must be 3-30 characters long and contain only letters, numbers, underscores, or hyphens.'
+      });
+      return;
+    }
+    // Enforce handle uniqueness safely
+    if (!user.userId || user.userId.toLowerCase() !== cleanUserId.toLowerCase()) {
+      const existing = firestoreDB.findUserByUserId(cleanUserId);
+      if (existing && existing.id !== user.id && existing.email?.toLowerCase() !== cleanEmail) {
+        res.status(400).json({
+          success: false,
+          error: `The User ID "@${cleanUserId}" is already taken. Please choose another.`
+        });
+        return;
+      }
+      user.userId = cleanUserId;
+    }
   }
 
   if (phone !== undefined) {

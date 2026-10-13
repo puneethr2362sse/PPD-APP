@@ -107,26 +107,6 @@ export const AuthPage: React.FC = () => {
     }
   };
 
-  // Quick Demo Access handler
-  const handleDemoLogin = async () => {
-    setErrorMessage('');
-    setLoading(true);
-    try {
-      const result = await loginWithPassword('puneeth@example.com', 'puneeth123');
-      setLoading(false);
-      if (result.success) {
-        showToast('Welcome to VerifyAI (Demo Access)!', 'success');
-        const destination = (location.state as any)?.from?.pathname || '/home';
-        navigate(destination, { replace: true });
-      } else {
-        setErrorMessage(result.error || 'Demo login failed.');
-      }
-    } catch (err: any) {
-      setLoading(false);
-      setErrorMessage(err.message || 'Demo login error occurred.');
-    }
-  };
-
   // Handle Registration (triggers 4-digit OTP for first-time email activation)
   const handleRegisterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -226,26 +206,9 @@ export const AuthPage: React.FC = () => {
 
           {/* Error Alert */}
           {errorMessage && (
-            <div className="mb-4 p-3.5 rounded-xl bg-rose-950/60 border border-rose-500/30 text-rose-300 text-xs flex flex-col gap-2.5">
-              <div className="flex items-start gap-2.5">
-                <span className="shrink-0 text-rose-400 font-bold">!</span>
-                <span className="leading-relaxed">{errorMessage}</span>
-              </div>
-              {errorMessage.includes('not authorized') && (
-                <div className="pt-2 border-t border-rose-500/20 flex flex-col gap-2">
-                  <button
-                    type="button"
-                    onClick={handleDemoLogin}
-                    className="w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-cyan-500 to-brand-500 hover:from-cyan-400 hover:to-brand-400 text-slate-950 font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md cursor-pointer"
-                  >
-                    <Sparkles className="w-3.5 h-3.5 text-slate-950" />
-                    <span>⚡ Instant 1-Click Access (Bypass OAuth)</span>
-                  </button>
-                  <p className="text-[11px] text-slate-400 leading-normal">
-                    Tip: Add <code className="text-cyan-300 px-1 py-0.5 bg-black/50 rounded">{window.location.hostname}</code> to Firebase Console → Authentication → Settings → Authorized domains to enable Google OAuth on this domain.
-                  </p>
-                </div>
-              )}
+            <div className="mb-4 p-3.5 rounded-xl bg-rose-950/60 border border-rose-500/30 text-rose-300 text-xs flex items-start gap-2.5">
+              <span className="shrink-0 text-rose-400 font-bold">!</span>
+              <span className="leading-relaxed">{errorMessage}</span>
             </div>
           )}
 
@@ -290,17 +253,6 @@ export const AuthPage: React.FC = () => {
                 )}
               </button>
 
-              {/* Instant One-Click Demo Login Button */}
-              <button
-                type="button"
-                onClick={handleDemoLogin}
-                disabled={loading || googleLoading}
-                className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-cyan-950/60 via-slate-900 to-brand-950/40 hover:from-cyan-900/60 hover:to-brand-900/50 text-cyan-300 hover:text-cyan-200 text-xs sm:text-sm font-semibold border border-cyan-500/30 hover:border-cyan-400/60 shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
-              >
-                <Sparkles className="w-4 h-4 text-cyan-400" />
-                <span>⚡ Instant One-Click Demo Access (Puneeth)</span>
-              </button>
-
               {/* Divider */}
               <div className="relative flex items-center justify-center my-3">
                 <div className="border-t border-white/10 w-full" />
@@ -312,21 +264,9 @@ export const AuthPage: React.FC = () => {
 
               <form onSubmit={handleLoginSubmit} className="space-y-4">
                 <div>
-                  <div className="flex items-center justify-between mb-1.5">
-                    <label className="text-xs font-medium text-slate-300 font-mono">
-                      Email Address
-                    </label>
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setLoginEmail('puneeth@example.com');
-                        setLoginPassword('puneeth123');
-                      }}
-                      className="text-[11px] text-cyan-400 hover:text-cyan-300 font-mono underline decoration-cyan-500/40 cursor-pointer"
-                    >
-                      Auto-fill demo
-                    </button>
-                  </div>
+                  <label className="block text-xs font-medium text-slate-300 mb-1.5 font-mono">
+                    Email Address
+                  </label>
                   <div className="relative">
                     <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
                     <input

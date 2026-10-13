@@ -7,6 +7,7 @@ interface UserStats {
   totalScans: number;
   realCount: number;
   fakeCount: number;
+  unverifiedCount: number;
   trustRating: number;
 }
 
@@ -28,7 +29,8 @@ export const HistoryProvider: React.FC<{ children: React.ReactNode }> = ({ child
     totalScans: 0,
     realCount: 0,
     fakeCount: 0,
-    trustRating: 98,
+    unverifiedCount: 0,
+    trustRating: 0,
   });
 
   const userEmail = currentUser?.email || '';
@@ -36,12 +38,22 @@ export const HistoryProvider: React.FC<{ children: React.ReactNode }> = ({ child
   const refreshHistory = useCallback(async () => {
     if (!userEmail) {
       setHistory([]);
-      setStats({ totalScans: 0, realCount: 0, fakeCount: 0, trustRating: 98 });
+      setStats({ totalScans: 0, realCount: 0, fakeCount: 0, unverifiedCount: 0, trustRating: 0 });
       return;
     }
     try {
-      const records = await historyService.getHistory(userEmail);
-      setHistory(records);
+      const serverRecords = await historyService.getHistory(userEmail);
+      // Merge server records with existing local state by unique ID to prevent dropping fresh scans
+      setHistory(prev => {
+        const idMap = new Map<string, VerificationResult>();
+        serverRecords.forEach(item => idMap.set(item.id, item));
+        prev.forEach(item => {
+          if (!idMap.has(item.id)) idMap.set(item.id, item);
+        });
+        const merged = Array.from(idMap.values());
+        merged.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
+        return merged;
+      });
 
       const serverStats = await historyService.getUserStats(userEmail);
       setStats(serverStats);
@@ -55,25 +67,61 @@ export const HistoryProvider: React.FC<{ children: React.ReactNode }> = ({ child
   }, [refreshHistory]);
 
   const addScan = (record: VerificationResult) => {
-    setHistory(prev => [record, ...prev]);
+    // Avoid duplicate additions
+    setHistory(prev => {
+      if (prev.some(item => item.id === record.id)) return prev;
+      const updated = [record, ...prev];
+      try {
+        if (userEmail) {
+          // Cap stored items at 100 to guard against browser localStorage quota limits
+          localStorage.setItem(`verifyai_hist_${userEmail}`, JSON.stringify(updated.slice(0, 100)));
+        }
+      } catch {}
+      return updated;
+    });
+
+    const isReal = record.verdict === 'REAL' || record.verdict === 'TRUE';
+    const isFake = record.verdict === 'FAKE' || record.verdict === 'FALSE';
+    const isUnverified = record.verdict === 'UNVERIFIED' || (record as any).verdictLabel === 'NOT ENOUGH EVIDENCE';
+
     setStats(prev => {
-      const isReal = record.verdict === 'REAL';
       const newTotal = prev.totalScans + 1;
       const newReal = prev.realCount + (isReal ? 1 : 0);
-      const newFake = prev.fakeCount + (isReal ? 0 : 1);
-      const newTrust = Math.round(90 + (newFake / Math.max(1, newTotal)) * 8);
+      const newFake = prev.fakeCount + (isFake ? 1 : 0);
+      const newUnverified = (prev.unverifiedCount || 0) + (isUnverified ? 1 : 0);
+
+      const recordConf = typeof record.confidence === 'number' && !isNaN(record.confidence)
+        ? record.confidence
+        : (isReal ? 95 : isFake ? 90 : 50);
+      const prevTotalConf = prev.totalScans > 0 ? prev.trustRating * prev.totalScans : 0;
+      const newTrust = Math.round((prevTotalConf + recordConf) / newTotal);
+
       return {
         totalScans: newTotal,
         realCount: newReal,
         fakeCount: newFake,
+        unverifiedCount: newUnverified,
         trustRating: newTrust,
       };
     });
+
+    // Re-sync with backend to guarantee persistent accuracy
+    if (userEmail) {
+      historyService.getUserStats(userEmail).then(serverStats => {
+        if (serverStats) setStats(serverStats);
+      }).catch(() => {});
+    }
   };
 
   const removeScan = async (id: string) => {
     if (!userEmail) return;
-    setHistory(prev => prev.filter(item => item.id !== id));
+    setHistory(prev => {
+      const updated = prev.filter(item => item.id !== id);
+      try {
+        localStorage.setItem(`verifyai_hist_${userEmail}`, JSON.stringify(updated));
+      } catch {}
+      return updated;
+    });
     await historyService.deleteRecord(userEmail, id);
     const updatedStats = await historyService.getUserStats(userEmail);
     setStats(updatedStats);
@@ -82,7 +130,10 @@ export const HistoryProvider: React.FC<{ children: React.ReactNode }> = ({ child
   const clearAll = async () => {
     if (!userEmail) return;
     setHistory([]);
-    setStats({ totalScans: 0, realCount: 0, fakeCount: 0, trustRating: 98 });
+    setStats({ totalScans: 0, realCount: 0, fakeCount: 0, unverifiedCount: 0, trustRating: 0 });
+    try {
+      localStorage.removeItem(`verifyai_hist_${userEmail}`);
+    } catch {}
     await historyService.clearHistory(userEmail);
   };
 

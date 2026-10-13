@@ -12,7 +12,7 @@ interface AuthContextType {
   startRegister: (name: string, userId: string, email: string, password: string, phone?: string) => Promise<{ success: boolean; error?: string; otpState?: OTPState }>;
   verifyOTP: (code: string) => Promise<{ success: boolean; user?: User; error?: string }>;
   resendOTP: () => Promise<{ success: boolean; error?: string; otpState?: OTPState }>;
-  updateProfile: (updates: { name?: string; phone?: string; photoUrl?: string }) => Promise<{ success: boolean; user?: User; error?: string }>;
+  updateProfile: (updates: { name?: string; userId?: string; phone?: string; photoUrl?: string }) => Promise<{ success: boolean; user?: User; error?: string }>;
   logout: () => void;
   refreshUser: () => void;
 }
@@ -90,7 +90,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     return res;
   };
 
-  const updateProfile = async (updates: { name?: string; phone?: string; photoUrl?: string }) => {
+  const updateProfile = async (updates: { name?: string; userId?: string; phone?: string; photoUrl?: string }) => {
     const res = await authService.updateProfile(updates);
     if (res.success && res.user) {
       setCurrentUser(res.user);

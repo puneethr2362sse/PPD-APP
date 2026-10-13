@@ -11,7 +11,7 @@
 
 ## 🌐 Live Production & Deployment Links
 - **Primary Production Domain**: [https://app-eight-woad-32.vercel.app](https://app-eight-woad-32.vercel.app)
-- **Direct Vercel Deployment**: [https://app-w2nutrjnc-puneethr2362sse-1511.vercel.app](https://app-w2nutrjnc-puneethr2362sse-1511.vercel.app)
+- **Direct Vercel Deployment**: [https://app-mndieewpv-puneethr2362sse-1511.vercel.app](https://app-mndieewpv-puneethr2362sse-1511.vercel.app)
 - **GitHub Repository**: [https://github.com/puneethr2362sse/PPD-APP](https://github.com/puneethr2362sse/PPD-APP)
 - **CI/CD Workflow Runs**: [https://github.com/puneethr2362sse/PPD-APP/actions](https://github.com/puneethr2362sse/PPD-APP/actions)
 

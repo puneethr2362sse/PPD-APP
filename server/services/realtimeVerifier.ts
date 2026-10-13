@@ -1,4 +1,5 @@
 import 'dotenv/config';
+import { geminiClient } from './geminiClient.js';
 
 export interface VerifiedSource {
   name: string;
@@ -19,9 +20,79 @@ export interface VerificationSignal {
   detail: string;
 }
 
+export type VerificationVerdict =
+  | 'TRUE'
+  | 'FALSE'
+  | 'PARTLY_TRUE'
+  | 'MISLEADING'
+  | 'UNVERIFIED';
+
+export type VerificationVerdictLabel =
+  | 'TRUE / SUPPORTED'
+  | 'FALSE / CONTRADICTED'
+  | 'PARTLY TRUE'
+  | 'MISLEADING / OUT OF CONTEXT'
+  | 'UNVERIFIED / INSUFFICIENT EVIDENCE'
+  | "YES, IT'S TRUE"
+  | "NO, IT'S NOT TRUE"
+  | 'NOT ENOUGH EVIDENCE';
+
+export type ClaimStatus =
+  | 'CURRENTLY_SUPPORTED'
+  | 'HISTORICAL_OUTDATED'
+  | 'OFFICIALLY_SCHEDULED_FUTURE'
+  | 'FALSE_CONTRADICTED'
+  | 'PARTLY_TRUE'
+  | 'MISLEADING_WRONG_CONTEXT'
+  | 'UNVERIFIED_INSUFFICIENT_EVIDENCE'
+  | 'SUPPORTED'
+  | 'CONTRADICTED'
+  | 'INSUFFICIENT_EVIDENCE'
+  | 'NO_CLAIM_DETECTED';
+
+export type ClaimStatusLabel =
+  | 'CURRENTLY SUPPORTED'
+  | 'HISTORICAL / OUTDATED'
+  | 'OFFICIALLY SCHEDULED / FUTURE'
+  | 'FALSE / CONTRADICTED'
+  | 'PARTLY TRUE'
+  | 'MISLEADING / OUT OF CONTEXT'
+  | 'MISLEADING / WRONG CONTEXT'
+  | 'UNVERIFIED / INSUFFICIENT EVIDENCE'
+  | 'TRUE / SUPPORTED'
+  | "YES, IT'S TRUE"
+  | "NO, IT'S NOT TRUE"
+  | 'NOT ENOUGH EVIDENCE';
+
+export interface EvidenceEvaluationResult {
+  verdict: VerificationVerdict;
+  verdictLabel: VerificationVerdictLabel;
+  claimStatus: ClaimStatus;
+  claimStatusLabel: ClaimStatusLabel;
+  timeline?: {
+    eventDate?: string;
+    publicationDate?: string;
+    currentStatus?: string;
+    temporalStatus?: 'past' | 'current' | 'future' | 'unknown';
+  };
+  score: number;
+  confidence: number;
+  directAnswer?: string;
+  reasoning?: string;
+  explanation: string;
+}
+
 export interface RealtimeVerificationOutput {
-  verdict: 'TRUE' | 'FALSE' | 'UNVERIFIED';
-  verdictLabel: "YES, IT'S TRUE" | "NO, IT'S NOT TRUE" | "NOT ENOUGH EVIDENCE";
+  verdict: VerificationVerdict;
+  verdictLabel: VerificationVerdictLabel;
+  claimStatus?: ClaimStatus;
+  claimStatusLabel?: ClaimStatusLabel | string;
+  timeline?: {
+    eventDate?: string;
+    publicationDate?: string;
+    currentStatus?: string;
+    temporalStatus?: 'past' | 'current' | 'future' | 'unknown';
+  };
   score: number;
   confidence: number;
   directAnswer?: string;
@@ -32,6 +103,8 @@ export interface RealtimeVerificationOutput {
   originalClaim: string;
   isLiveWebVerified: boolean;
   searchTimestamp: string;
+  aiAnalysisStatus?: 'SUCCESS' | 'QUOTA_EXHAUSTED' | 'RATE_LIMIT_TRANSIENT' | 'INVALID_API_KEY' | 'UNAVAILABLE' | 'SKIPPED';
+  aiNotice?: string;
   signals: VerificationSignal[];
   sources: VerifiedSource[];
 }
@@ -91,8 +164,8 @@ export function decodeHtmlEntities(str: string): string {
 
 function cleanSearchQuery(raw: string): string {
   return raw
-    .replace(/['\u201C\u201D\u2018\u2019]/g, ' ')
-    .replace(/[^\w\s\u0B80-\u0BFF\u20B9$\u20AC\xA3%.-]/gi, ' ')
+    .replace(/['\u201C\u201D\u2018\u2019]/gu, ' ')
+    .replace(/[^\p{L}\p{N}\s\u20B9$\u20AC\xA3%.-]/gu, ' ')
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -195,6 +268,29 @@ export async function searchGoogleNews(query: string): Promise<VerifiedSource[]>
   }
 }
 
+interface WikiSearchQueryData {
+  query?: {
+    search?: Array<{
+      title?: string;
+      snippet?: string;
+    }>;
+  };
+}
+
+interface WikiPageQueryData {
+  query?: {
+    pages?: Record<string, {
+      extract?: string;
+    }>;
+  };
+}
+
+interface WikiSummaryData {
+  extract?: string;
+}
+
+type WikiOpenSearchData = [string, string[], string[], string[]];
+
 // ─── 3. LIVE SEARCH: Wikipedia — Full-Text MediaWiki Search + Summary + Lead Section ──────
 export async function searchWikipediaWithSummary(query: string): Promise<VerifiedSource[]> {
   try {
@@ -213,7 +309,7 @@ export async function searchWikipediaWithSummary(query: string): Promise<Verifie
         { headers, signal: AbortSignal.timeout(6000) }
       );
       if (searchRes.ok) {
-        const searchData = await searchRes.json();
+        const searchData = (await searchRes.json()) as WikiSearchQueryData;
         const items = searchData.query?.search || [];
         for (const item of items) {
           const title = item.title;
@@ -230,9 +326,9 @@ export async function searchWikipediaWithSummary(query: string): Promise<Verifie
                 { headers, signal: AbortSignal.timeout(5000) }
               );
               if (fullRes.ok) {
-                const fullData = await fullRes.json();
+                const fullData = (await fullRes.json()) as WikiPageQueryData;
                 const pages = fullData.query?.pages || {};
-                const firstPage = Object.values(pages)[0] as any;
+                const firstPage = Object.values(pages)[0];
                 if (firstPage?.extract && firstPage.extract.length > 50) {
                   extract = decodeHtmlEntities(firstPage.extract).slice(0, 8000);
                 }
@@ -247,7 +343,7 @@ export async function searchWikipediaWithSummary(query: string): Promise<Verifie
                   { headers, signal: AbortSignal.timeout(5000) }
                 );
                 if (sumRes.ok) {
-                  const sumData = await sumRes.json();
+                  const sumData = (await sumRes.json()) as WikiSummaryData;
                   if (sumData.extract && sumData.extract.length > extract.length) {
                     extract = decodeHtmlEntities(sumData.extract);
                   }
@@ -276,7 +372,7 @@ export async function searchWikipediaWithSummary(query: string): Promise<Verifie
           { headers, signal: AbortSignal.timeout(5000) }
         );
         if (openRes.ok) {
-          const data = await openRes.json();
+          const data = (await openRes.json()) as WikiOpenSearchData;
           const titles: string[] = data[1] || [];
           const urls: string[] = data[3] || [];
           for (let i = 0; i < Math.min(titles.length, 2); i++) {
@@ -321,6 +417,22 @@ export function extractEntities(text: string): string[] {
     const isStopWord = /^(The|This|That|What|When|Where|Which|Why|How|Yesterday|Today|Tomorrow|Yes|No|Not|Who|Whom|Whose|Did|Does|Was|Were|Are|Has|Have|Had|Will|Can|Could|Should|Would|And|For|With|From|Into|About|After|Before|Between|Under|Over|City|State|Country|Capital|President|Prime|Minister|Leader|Founder|Creator|Author|Director|Ocean|Sea|River|Lake|Island|Day|Year|Month)$/i.test(ent);
     if (!isStopWord && !entities.some(e => e.toLowerCase().includes(ent.toLowerCase()))) {
       if (!entities.includes(ent)) entities.push(ent);
+    }
+  }
+
+  if (entities.length === 0) {
+    // Fallback: match institution, geographic, or proper nouns from lowercase input
+    const instRegex = /\b([a-z0-9]+(?:\s+[a-z0-9]+)*\s+(?:college|university|institute|school|hospital|temple|stadium|airport|bank|board))\b/gi;
+    let im;
+    while ((im = instRegex.exec(text)) !== null) {
+      if (!entities.includes(im[1].trim())) entities.push(im[1].trim());
+    }
+    const locRegex = /\b(?:in|at|near|from)\s+([a-z]{3,})\b/gi;
+    let lm;
+    while ((lm = locRegex.exec(text)) !== null) {
+      if (!/^(the|this|that|your|their|some|each)$/i.test(lm[1])) {
+        if (!entities.includes(lm[1].trim())) entities.push(lm[1].trim());
+      }
     }
   }
 
@@ -423,7 +535,14 @@ export function extractClaimComponents(claim: string): ClaimComponents {
   if (/\bquarter[- ]?final\b/i.test(textLower)) qualifiers.push('quarter-final');
   if (/\bday\s*\d+\b/i.test(textLower)) qualifiers.push('day');
   if (/\bopening\s+day\b/i.test(textLower)) qualifiers.push('opening day');
-  if (/\bworldwide\b/i.test(textLower)) qualifiers.push('worldwide');
+  if (/\bopening\s+weekend\b/i.test(textLower)) qualifiers.push('opening weekend');
+  if (/\blifetime\b/i.test(textLower)) qualifiers.push('lifetime');
+  if (/\bworldwide\s+gross\b/i.test(textLower)) qualifiers.push('worldwide gross');
+  else if (/\bworldwide\b/i.test(textLower)) qualifiers.push('worldwide');
+  if (/\bindia\s+gross\b/i.test(textLower)) qualifiers.push('india gross');
+  if (/\bindia\s+net\b|\bindia\s+nett\b/i.test(textLower)) qualifiers.push('india net');
+  if (/\bpre[- ]?release\b/i.test(textLower)) qualifiers.push('pre-release');
+  if (/\btarget\b|\bexpectation\b|\bprojected\b|\bpredicted\b/i.test(textLower)) qualifiers.push('target/expectation');
   if (/\bcurrent(?:ly)?\b/i.test(textLower)) qualifiers.push('current');
   if (/\bformer(?:ly)?\b/i.test(textLower)) qualifiers.push('former');
 
@@ -434,24 +553,39 @@ export function extractClaimComponents(claim: string): ClaimComponents {
 function calculateSourceRelevance(source: VerifiedSource, claim: string, components: ClaimComponents): number {
   const text = `${source.evidenceText || ''} ${source.snippet || ''} ${source.name || ''}`.toLowerCase();
 
-  let entityHits = 0;
-  for (const ent of components.entities) {
-    const e = ent.toLowerCase().trim();
-    if (e.length >= 2 && text.includes(e)) entityHits++;
-  }
-  const entityCoverage = components.entities.length ? Math.min(1, entityHits / components.entities.length) : 0;
-
   const stopWords = new Set([
     'the', 'is', 'at', 'which', 'on', 'a', 'an', 'in', 'and', 'or', 'to', 'for', 'of', 'with', 'by',
     'new', 'has', 'have', 'had', 'was', 'were', 'will', 'be', 'this', 'that', 'from', 'day',
     'its', 'their', 'they', 'what', 'when', 'who', 'where', 'why', 'how', 'did', 'does', 'do',
-    'current', 'date', 'tell', 'me', 'about', 'can', 'could', 'would', 'should',
+    'current', 'date', 'tell', 'me', 'about', 'can', 'could', 'would', 'should', 'there',
   ]);
 
   const claimWords = claim.toLowerCase()
     .replace(/[^\w\s]/g, ' ')
     .split(/\s+/)
     .filter(w => w.length > 2 && !stopWords.has(w));
+
+  // Anchor terms: distinctive subject keywords (proper nouns, institutions, key subjects)
+  const genericWords = new Set([
+    'announced', 'offically', 'officially', 'students', 'college', 'university', 'people', 'government',
+    'against', 'between', 'during', 'country', 'report', 'reports', 'claimed', 'claims', 'update', 'status',
+  ]);
+  const anchorTerms = claimWords.filter(w => w.length >= 4 && !/^\d+$/.test(w) && !genericWords.has(w));
+
+  // If the claim contains specific anchor subjects (e.g. "saveetha", "chandrayaan", "michaung"), the source MUST contain at least one anchor term
+  if (anchorTerms.length > 0) {
+    const anchorHits = anchorTerms.filter(term => text.includes(term)).length;
+    if (anchorHits === 0) {
+      return 0; // Completely irrelevant topic
+    }
+  }
+
+  let entityHits = 0;
+  for (const ent of components.entities) {
+    const e = ent.toLowerCase().trim();
+    if (e.length >= 2 && text.includes(e)) entityHits++;
+  }
+  const entityCoverage = components.entities.length ? Math.min(1, entityHits / components.entities.length) : 0;
 
   const wordHits = claimWords.filter(w => text.includes(w)).length;
   const wordCoverage = claimWords.length ? Math.min(1, wordHits / claimWords.length) : 0;
@@ -491,7 +625,7 @@ async function fetchPageEvidence(url: string): Promise<string> {
         'User-Agent': 'Mozilla/5.0 (compatible; VerifyAI/1.0)',
         'Accept': 'text/html,application/xhtml+xml,text/plain;q=0.9,*/*;q=0.7',
       },
-      signal: AbortSignal.timeout(6000),
+      signal: AbortSignal.timeout(3500),
     });
     if (!res.ok) return '';
     const contentType = res.headers.get('content-type') || '';
@@ -530,7 +664,7 @@ async function fetchPageEvidence(url: string): Promise<string> {
 }
 
 async function hydrateSourceEvidence(sources: VerifiedSource[]): Promise<VerifiedSource[]> {
-  const candidates = sources.slice(0, 24);
+  const candidates = sources.slice(0, 10);
   const hydrated = await Promise.all(candidates.map(async source => {
     if (source.evidenceText && source.evidenceText.trim().length >= 80) return source;
     if (source.domain?.includes('wikipedia') && source.snippet && source.snippet.trim().length >= 60) {
@@ -591,7 +725,7 @@ export async function executeLiveWebSearch(query: string): Promise<VerifiedSourc
     ...entities.slice(0, 4),
     roleAngle,
     coreQuery,
-  ].map(cleanSearchQuery).filter(q => q.length >= 2)));
+  ].map(cleanSearchQuery).filter(q => q.length >= 2 && !/^\d{4}$/.test(q))));
 
   const ddgPromises = searchQueries.slice(0, 6).map(q => searchDDG(q));
   const newsPromises = searchQueries.slice(0, 3).map(q => searchGoogleNews(q));
@@ -624,9 +758,10 @@ export async function executeLiveWebSearch(query: string): Promise<VerifiedSourc
     return {
       ...source,
       relevanceScore: relevance,
-      score: relevance * 0.72 + (source.reliability || 50) * 0.23 + qualityBonus + (hasEvidence ? 4 : -8),
+      score: relevance > 0 ? (relevance * 0.72 + (source.reliability || 50) * 0.23 + qualityBonus + (hasEvidence ? 4 : -8)) : 0,
     };
-  }).sort((a, b) => (b.score || 0) - (a.score || 0));
+  }).filter(s => (s.relevanceScore || 0) >= 15) // Discard irrelevant sources
+    .sort((a, b) => (b.score || 0) - (a.score || 0));
 
   const evidence = ranked.filter(s => (s.evidenceText || s.snippet || '').trim().length >= 30);
   const metadataOnly = ranked.filter(s => !((s.evidenceText || s.snippet || '').trim().length >= 30));
@@ -640,31 +775,18 @@ function isQuestionInput(text: string): boolean {
   return /^(who|what|when|where|why|how|is|are|was|were|did|does|do|can|will|has|have|which|whose|whom)\b/i.test(t);
 }
 
-// ─── 11. Evidence-Grounded AI Reasoning Engine (Gemini) ──────────────────────
-const GEMINI_MODELS = [
-  'gemini-3.5-flash-lite',
-  'gemini-3.1-flash-lite',
-  'gemini-3-flash-preview',
-  'gemini-flash-lite-latest',
-  'gemini-flash-latest',
-  'gemini-3.5-flash',
-  'gemini-3.6-flash',
-  'gemini-3.7-flash',
-  'gemini-pro-latest',
-];
+// ─── 11. Evidence-Grounded AI Reasoning Engine (Resilient Gemini Client) ─────
+export interface AiEvaluationOutcome {
+  result: EvidenceEvaluationResult | null;
+  status: 'SUCCESS' | 'QUOTA_EXHAUSTED' | 'RATE_LIMIT_TRANSIENT' | 'INVALID_API_KEY' | 'UNAVAILABLE' | 'SKIPPED';
+  notice?: string;
+}
 
 async function evaluateEvidenceWithAI(
   claim: string,
   liveSources: VerifiedSource[],
   apiKey: string
-): Promise<{
-  verdict: 'TRUE' | 'FALSE' | 'UNVERIFIED';
-  score: number;
-  confidence: number;
-  directAnswer?: string;
-  reasoning?: string;
-  explanation: string;
-} | null> {
+): Promise<AiEvaluationOutcome> {
   const topSources = liveSources
     .filter(s => (s.evidenceText || s.snippet || '').trim().length >= 30)
     .sort((a, b) => (b.relevanceScore || 0) - (a.relevanceScore || 0))
@@ -712,149 +834,142 @@ STEP 3 — APPLY THESE RULES WITHOUT EXCEPTION:
     A claim of "100 crore" contradicted by evidence of "73 crore" is FALSE.
   Rule G — STAGE/SCOPE PRECISION MATTERS.
     "Won the final" vs "won the semi-final" are different facts.
+  Rule H — MOVIE BOX-OFFICE & COLLECTION METRIC RIGOR:
+    For movie box-office claims, strictly distinguish worldwide gross, India gross, India net (nett), and pre-release targets/expectations.
+    A worldwide gross cannot be verified by India net figures. Pre-release trade expectations/targets are NOT confirmed collection numbers.
+    If numbers are conflicting across trade sources or the exact claimed metric is not confirmed, return UNVERIFIED.
+  Rule I — OFFICIAL ANNOUNCEMENTS & INSTITUTIONAL POLICIES:
+    For claims asserting official announcements, fee waivers, policy changes, or future institutional decisions (e.g. college fees, scholarships):
+    Evidence MUST explicitly confirm the specific announcement by the exact institution for the asserted year/period.
+    Do NOT assume an announcement exists simply because the institution exists or other future events are mentioned.
+    If no reliable source explicitly confirms or contradicts the asserted policy/announcement, return UNVERIFIED / INSUFFICIENT EVIDENCE.
 
 STEP 4 — DETERMINE THE VERDICT:
-  "TRUE"       — ALL material factual components are directly confirmed by reliable retrieved page content, with no contradiction.
-  "FALSE"      — At least ONE material factual component is directly contradicted by reliable retrieved page content.
-  "UNVERIFIED" — Retrieved page content is insufficient, ungrounded, topic-adjacent, ambiguous, or contradictory without resolution.
+Select exactly ONE of these 5 evidence-based verdicts:
+• "TRUE / SUPPORTED" — reliable evidence supports the main claim (including verified historical events and officially confirmed schedules).
+• "FALSE / CONTRADICTED" — reliable evidence directly contradicts or disproves the main claim.
+• "PARTLY TRUE" — some important parts are supported, while others are contradicted or inaccurate.
+• "MISLEADING / OUT OF CONTEXT" — the content presents information in a materially misleading way (e.g. old news, past warnings, or historical events circulated as breaking news; out-of-context quotes).
+• "UNVERIFIED / INSUFFICIENT EVIDENCE" — available evidence is insufficient, conflicting, or ungrounded to decide.
 
-CRITICAL FORMATTING RULES:
-  - directAnswer for TRUE: "Yes, this is true: [exact confirmed fact from evidence]."
-  - directAnswer for FALSE: "No, this is not true: [exact contradictory fact from evidence]."
-  - directAnswer for UNVERIFIED: "Unverified: Available live evidence is insufficient to verify whether '[claim]' is accurate."
-  - Do NOT include generic entity trivia unrelated to the specific claim.
+CRITICAL EXPLANATION RULES (HIGHEST PRIORITY):
+- "explanation" MUST be exactly 1 or 2 concise, clear sentences.
+- State whether the claim is supported, false, partly true, misleading, or unverified, and why.
+- Mention the relevant event date, publication date, or historical context when necessary (e.g. "This incident took place in 2021 and is not current breaking news.").
+- Do NOT number steps (do not write "1. User Claim: ...").
+- Do NOT repeat the claim text repeatedly.
+- When sources disagree, state the disagreement briefly in one sentence.
 
 Output ONLY valid JSON with no markdown:
 {
-  "verdict": "TRUE" | "FALSE" | "UNVERIFIED",
+  "verdict": "TRUE" | "FALSE" | "PARTLY_TRUE" | "MISLEADING" | "UNVERIFIED",
+  "verdictLabel": "TRUE / SUPPORTED" | "FALSE / CONTRADICTED" | "PARTLY TRUE" | "MISLEADING / OUT OF CONTEXT" | "UNVERIFIED / INSUFFICIENT EVIDENCE",
+  "claimStatus": "CURRENTLY_SUPPORTED" | "HISTORICAL_OUTDATED" | "OFFICIALLY_SCHEDULED_FUTURE" | "FALSE_CONTRADICTED" | "PARTLY_TRUE" | "MISLEADING_WRONG_CONTEXT" | "UNVERIFIED_INSUFFICIENT_EVIDENCE",
   "score": <0-100>,
   "confidence": <50-99>,
-  "directAnswer": "<concise direct answer>",
-  "reasoning": "<4-part: (1) Claimed: ... (2) Evidence states: ... (3) Contradiction/Support: ... (4) Verdict choice: ...>",
-  "explanation": "<3-part: 1. User Claim: ... 2. Retrieved Live Evidence: ... 3. Factual Comparison & Verdict: ...>"
+  "directAnswer": "<1 short direct sentence>",
+  "timeline": {
+    "eventDate": "<event date/year if mentioned, else null>",
+    "publicationDate": "<evidence publication date if available, else null>",
+    "temporalStatus": "past" | "current" | "future" | "unknown"
+  },
+  "explanation": "<1-2 short clear sentences explaining why the claim is supported, false, partly true, misleading, or unverified>"
 }`;
 
-  const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+  const prompt = `${systemPrompt}\n\nUSER CLAIM:\n"${claim}"\n\nRETRIEVED LIVE EVIDENCE:\n${evidenceText || '(No readable page content was retrieved. Return UNVERIFIED.)'}`;
 
-  for (const model of GEMINI_MODELS) {
-    try {
-      const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
-      const res = await fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          contents: [{
-            parts: [{
-              text: `${systemPrompt}\n\nUSER CLAIM:\n"${claim}"\n\nRETRIEVED LIVE EVIDENCE:\n${evidenceText || '(No readable page content was retrieved. Return UNVERIFIED.)'}`
-            }]
-          }],
-          generationConfig: {
-            temperature: 0.0,
-            responseMimeType: 'application/json',
-          },
-        }),
-        signal: AbortSignal.timeout(18000),
-      });
+  const callResult = await geminiClient.generateContent(prompt, {
+    responseMimeType: 'application/json',
+    temperature: 0.0,
+  });
 
-      if (!res.ok) {
-        if (res.status === 404 || res.status === 429) {
-          await sleep(200);
-          continue;
-        }
-        if (res.status === 400) {
-          const res2 = await fetch(url, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              contents: [{ parts: [{ text: `${systemPrompt}\n\nUSER CLAIM:\n"${claim}"\n\nRETRIEVED LIVE EVIDENCE:\n${evidenceText || '(No readable page content retrieved. Return UNVERIFIED.)'}` }] }],
-              generationConfig: { temperature: 0.0 },
-            }),
-            signal: AbortSignal.timeout(18000),
-          });
-          if (!res2.ok) continue;
-          const data2 = await res2.json();
-          const rt2 = data2.candidates?.[0]?.content?.parts?.[0]?.text;
-          if (rt2) {
-            let parsed2: any = null;
-            try { parsed2 = JSON.parse(rt2); } catch {
-              const m2 = rt2.match(/\{[\s\S]*\}/);
-              if (m2) try { parsed2 = JSON.parse(m2[0]); } catch { }
-            }
-            if (parsed2) {
-              const v2 = (parsed2.verdict || '').toUpperCase();
-              const verdict2: 'TRUE' | 'FALSE' | 'UNVERIFIED' =
-                v2 === 'TRUE' || v2 === 'REAL' ? 'TRUE' :
-                v2 === 'FALSE' || v2 === 'FAKE' ? 'FALSE' : 'UNVERIFIED';
-              return {
-                verdict: verdict2,
-                score: typeof parsed2.score === 'number' ? parsed2.score : (verdict2 === 'TRUE' ? 95 : verdict2 === 'FALSE' ? 8 : 50),
-                confidence: typeof parsed2.confidence === 'number' ? parsed2.confidence : (verdict2 === 'UNVERIFIED' ? 65 : 92),
-                directAnswer: parsed2.directAnswer ? decodeHtmlEntities(parsed2.directAnswer) : undefined,
-                reasoning: parsed2.reasoning ? decodeHtmlEntities(parsed2.reasoning) : undefined,
-                explanation: decodeHtmlEntities(parsed2.explanation || 'Evaluated strictly from retrieved live evidence.'),
-              };
-            }
-          }
-          continue;
-        }
-        continue;
-      }
-
-      const data = await res.json();
-      const rawText = data.candidates?.[0]?.content?.parts?.[0]?.text;
-      if (!rawText) continue;
-
-      let parsed: any = null;
-      try {
-        parsed = JSON.parse(rawText);
-      } catch {
-        const jsonMatch = rawText.match(/\{[\s\S]*\}/);
-        if (jsonMatch) {
-          try { parsed = JSON.parse(jsonMatch[0]); } catch { }
-        }
-      }
-      if (!parsed) continue;
-
-      const v = (parsed.verdict || '').toUpperCase();
-      let verdict: 'TRUE' | 'FALSE' | 'UNVERIFIED' = 'UNVERIFIED';
-      if (v === 'TRUE' || v === 'REAL') verdict = 'TRUE';
-      else if (v === 'FALSE' || v === 'FAKE') verdict = 'FALSE';
-      else verdict = 'UNVERIFIED';
-
-      console.log(`[VerifyAI] Gemini "${model}" → verdict: ${verdict} (score: ${parsed.score})`);
-
-      return {
-        verdict,
-        score: typeof parsed.score === 'number' ? parsed.score : (verdict === 'TRUE' ? 95 : verdict === 'FALSE' ? 8 : 50),
-        confidence: typeof parsed.confidence === 'number' ? parsed.confidence : (verdict === 'UNVERIFIED' ? 65 : 92),
-        directAnswer: parsed.directAnswer ? decodeHtmlEntities(parsed.directAnswer) : undefined,
-        reasoning: parsed.reasoning ? decodeHtmlEntities(parsed.reasoning) : undefined,
-        explanation: decodeHtmlEntities(parsed.explanation || 'Evaluated strictly from retrieved live evidence.'),
-      };
-    } catch (err) {
-      continue;
+  if (!callResult.success) {
+    let notice = '⚡ AI evaluation unavailable. Verdict evaluated via live multi-source web evidence cross-referencing.';
+    if (callResult.failureReason === 'QUOTA_EXHAUSTED') {
+      notice = '⚡ AI Engine at daily free-tier quota capacity. Verdict independently verified via live multi-source web evidence cross-referencing.';
+    } else if (callResult.failureReason === 'INVALID_API_KEY') {
+      notice = '⚡ Configured Gemini API key is invalid or lacks permissions. Fallback to live multi-source web evidence cross-referencing.';
+    } else if (callResult.failureReason === 'RATE_LIMIT_TRANSIENT') {
+      notice = '⚡ Gemini API rate limit reached. Fallback deterministic evidence evaluation applied.';
     }
+    return {
+      result: null,
+      status: (callResult.failureReason as any) || 'UNAVAILABLE',
+      notice,
+    };
   }
 
-  console.warn('[VerifyAI] All Gemini models failed — returning null for deterministic fallback.');
-  return null;
+  const parsed = callResult.data;
+  if (!parsed) {
+    return {
+      result: null,
+      status: 'UNAVAILABLE',
+      notice: '⚡ AI Engine output could not be parsed. Fallback deterministic evidence evaluation applied.',
+    };
+  }
+
+  const rawVerdict = (parsed.verdict || '').toUpperCase();
+  const rawLabel = (parsed.verdictLabel || '').toUpperCase();
+
+  let verdict: VerificationVerdict = 'UNVERIFIED';
+  let verdictLabel: VerificationVerdictLabel = 'UNVERIFIED / INSUFFICIENT EVIDENCE';
+
+  if (rawVerdict.includes('PARTLY') || rawLabel.includes('PARTLY')) {
+    verdict = 'PARTLY_TRUE';
+    verdictLabel = 'PARTLY TRUE';
+  } else if (rawVerdict.includes('MISLEAD') || rawLabel.includes('MISLEAD') || rawLabel.includes('CONTEXT')) {
+    verdict = 'MISLEADING';
+    verdictLabel = 'MISLEADING / OUT OF CONTEXT';
+  } else if (rawVerdict === 'TRUE' || rawVerdict.includes('SUPPORT') || rawLabel.includes('SUPPORT')) {
+    verdict = 'TRUE';
+    verdictLabel = 'TRUE / SUPPORTED';
+  } else if (rawVerdict === 'FALSE' || rawVerdict.includes('CONTRADICT') || rawLabel.includes('CONTRADICT')) {
+    verdict = 'FALSE';
+    verdictLabel = 'FALSE / CONTRADICTED';
+  } else {
+    verdict = 'UNVERIFIED';
+    verdictLabel = 'UNVERIFIED / INSUFFICIENT EVIDENCE';
+  }
+
+  const norm = (parsed.claimStatus || '').toUpperCase();
+  const claimStatus: ClaimStatus = norm.includes('FUTURE') || norm.includes('SCHEDULE') ? 'OFFICIALLY_SCHEDULED_FUTURE' :
+    norm.includes('HISTORIC') || norm.includes('OUTDATED') ? 'HISTORICAL_OUTDATED' :
+    norm.includes('PARTLY') ? 'PARTLY_TRUE' :
+    norm.includes('MISLEAD') || norm.includes('CONTEXT') ? 'MISLEADING_WRONG_CONTEXT' :
+    norm.includes('CONTRADICT') || norm.includes('FALSE') ? 'FALSE_CONTRADICTED' :
+    verdict === 'TRUE' ? 'CURRENTLY_SUPPORTED' :
+    verdict === 'FALSE' ? 'FALSE_CONTRADICTED' : 'UNVERIFIED_INSUFFICIENT_EVIDENCE';
+
+  const claimStatusLabel: ClaimStatusLabel = verdictLabel;
+
+  return {
+    result: {
+      verdict,
+      verdictLabel,
+      claimStatus,
+      claimStatusLabel,
+      timeline: parsed.timeline || undefined,
+      score: typeof parsed.score === 'number' ? parsed.score : (verdict === 'TRUE' ? 95 : verdict === 'FALSE' ? 8 : 50),
+      confidence: typeof parsed.confidence === 'number' ? parsed.confidence : (verdict === 'UNVERIFIED' ? 65 : 92),
+      directAnswer: parsed.directAnswer ? decodeHtmlEntities(parsed.directAnswer) : undefined,
+      reasoning: parsed.reasoning ? decodeHtmlEntities(parsed.reasoning) : undefined,
+      explanation: decodeHtmlEntities(parsed.explanation || 'Evaluated strictly from retrieved live evidence.'),
+    },
+    status: 'SUCCESS',
+  };
 }
 
 // ─── 12. Generic Deterministic Evidence Reasoner ─────────────────────────────
 export function analyzeRetrievedLiveEvidence(
   claim: string,
   liveSources: VerifiedSource[]
-): {
-  verdict: 'TRUE' | 'FALSE' | 'UNVERIFIED';
-  score: number;
-  confidence: number;
-  directAnswer?: string;
-  reasoning?: string;
-  explanation: string;
-} {
+): EvidenceEvaluationResult {
   const cleanClaim = claim.trim().replace(/\.+$/, '');
   const prop = extractProposition(cleanClaim);
   const components = extractClaimComponents(cleanClaim);
+
+  const isFutureClaim = /\b(?:202[7-9]|203\d|204\d|will\s+host|scheduled|upcoming|announced\s+for|in\s+the\s+future)\b/i.test(cleanClaim);
+  const isHistoricalPast = /\b(?:in\s+19\d\d|in\s+20[0-1]\d|in\s+202[0-3]|former|formerly|was\s+the|served\s+as)\b/i.test(cleanClaim);
 
   const evidenceSources = liveSources
     .filter(s => (s.evidenceText || s.snippet || '').trim().length >= 30)
@@ -863,11 +978,14 @@ export function analyzeRetrievedLiveEvidence(
   if (evidenceSources.length === 0) {
     return {
       verdict: 'UNVERIFIED',
+      verdictLabel: 'UNVERIFIED / INSUFFICIENT EVIDENCE',
+      claimStatus: 'UNVERIFIED_INSUFFICIENT_EVIDENCE',
+      claimStatusLabel: 'UNVERIFIED / INSUFFICIENT EVIDENCE',
       score: 50,
       confidence: 50,
-      directAnswer: `Unverified: No readable live source evidence was retrieved for "${cleanClaim}".`,
+      directAnswer: `Unverified: Available live evidence is insufficient to verify whether "${cleanClaim}" is accurate.`,
       reasoning: `(1) Claimed: ${cleanClaim}. (2) Evidence states: No readable page content or snippets retrieved. (3) Comparison: Lack of evidence cannot prove or disprove the claim. (4) Choice: UNVERIFIED.`,
-      explanation: `1. User Claim: "${cleanClaim}". 2. Retrieved Live Evidence: No readable source content was available. 3. Factual Comparison & Verdict: Search metadata alone cannot prove or disprove the claim. Therefore, the verdict is UNVERIFIED.`,
+      explanation: 'Available live evidence is insufficient to confirm or refute the asserted claim.',
     };
   }
 
@@ -878,36 +996,58 @@ export function analyzeRetrievedLiveEvidence(
 
   // 1. Check for explicit debunk / fact-check contradiction language
   const hasDebunkSignal = evidenceSources.some(source => {
-    const text = `${source.name} ${source.snippet || ''} ${source.evidenceText || ''}`.toLowerCase();
-    const entityHits = components.entities.filter(e => text.includes(e.toLowerCase())).length;
-    const hasEntities = entityHits >= Math.max(1, Math.min(2, components.entities.length));
-    return hasEntities && /\b(?:debunked|false claim|fact.?check.*false|fact.?check.*fake|hoax|misleading|untrue|denied|no evidence that|fabricated)\b/i.test(text);
+    const isFactCheckSource = /\b(?:fact.?check|snopes|politifact|altnews|boomlive|lead stories|full fact|factly|pib)\b/i.test(source.name);
+    const title = source.name.toLowerCase();
+    const snippet = (source.snippet || '').toLowerCase();
+    const isDebunkHeadlineOrSnippet = /\b(?:debunked|false claim|fact.?check.*(?:false|fake|misleading|hoax)|is false|is untrue|hoax|fake news|denied that|no evidence that|fabricated claim)\b/i.test(`${title} ${snippet}`);
+    return isFactCheckSource && isDebunkHeadlineOrSnippet;
   });
 
   if (hasDebunkSignal) {
+    const isMisleading = /\b(?:misleading|out of context|old video|old photo|unrelated)\b/i.test(allEvidence);
+    const claimStatus: ClaimStatus = isMisleading ? 'MISLEADING_WRONG_CONTEXT' : 'FALSE_CONTRADICTED';
+    const claimStatusLabel: ClaimStatusLabel = isMisleading ? 'MISLEADING / OUT OF CONTEXT' : 'FALSE / CONTRADICTED';
+    const verdict: VerificationVerdict = isMisleading ? 'MISLEADING' : 'FALSE';
+    const verdictLabel: VerificationVerdictLabel = isMisleading ? 'MISLEADING / OUT OF CONTEXT' : 'FALSE / CONTRADICTED';
+
     return {
-      verdict: 'FALSE',
+      verdict,
+      verdictLabel,
+      claimStatus,
+      claimStatusLabel,
       score: 10,
       confidence: 88,
-      directAnswer: `No, this is not true: Live fact-checks and authoritative reporting confirm this claim is false or unsubstantiated.`,
-      reasoning: `(1) Claimed: ${cleanClaim}. (2) Evidence states: Fact-checking organizations report this assertion as false, debunked, or a hoax. (3) Comparison: Direct contradiction with authoritative reporting. (4) Choice: FALSE.`,
-      explanation: `1. User Claim: "${cleanClaim}". 2. Retrieved Live Evidence: Multiple verified sources and fact-checks identify this claim as false or misleading. 3. Factual Comparison & Verdict: The claim is contradicted by verified reporting and classified as FALSE.`,
+      directAnswer: isMisleading
+        ? 'Misleading: Verified reporting confirms this content is circulated out of context or misattributed.'
+        : 'False: Authoritative records and fact-checks contradict this claim.',
+      reasoning: `(1) Claimed: ${cleanClaim}. (2) Evidence states: Fact-checking organizations report this assertion as false or misleading. (3) Comparison: Contradiction with authoritative reporting. (4) Choice: ${verdict}.`,
+      explanation: isMisleading
+        ? 'Authoritative reports and fact-checks confirm this claim is misleading or circulated out of its original context.'
+        : 'Authoritative reports and verified evidence directly contradict this claim and establish it as false.',
     };
   }
 
-  // 2. Numerical contradiction check
+  // 2. Numerical & Box-Office contradiction/discrepancy check
   if (components.numericalValues.length > 0) {
+    const isBoxOffice = /\b(?:box[- ]?office|gross|nett?|collection|crore|cr\b|worldwide)\b/i.test(cleanClaim);
     const hasClaimedNumber = components.numericalValues.some(n => allEvidence.includes(n.toLowerCase()));
     if (!hasClaimedNumber) {
       const foundNumbers = allEvidence.match(/(?:₹|\$|€|£)?\s*\d+(?:\.\d+)?\s*(?:cr|crore|million|billion|lakh)?/gi) || [];
-      if (foundNumbers.length > 0 && components.entities.length > 0) {
+      if (foundNumbers.length > 0 || isBoxOffice) {
         return {
           verdict: 'UNVERIFIED',
+          verdictLabel: 'UNVERIFIED / INSUFFICIENT EVIDENCE',
+          claimStatus: 'UNVERIFIED_INSUFFICIENT_EVIDENCE',
+          claimStatusLabel: 'UNVERIFIED / INSUFFICIENT EVIDENCE',
           score: 50,
           confidence: 65,
-          directAnswer: `Unverified: The specific numerical figure in "${cleanClaim}" could not be confirmed in the retrieved live reports.`,
-          reasoning: `(1) Claimed: ${cleanClaim}. (2) Evidence states: Figures reported in live sources do not match the claimed value. (3) Comparison: Discrepancy or absence of claimed number. (4) Choice: UNVERIFIED.`,
-          explanation: `1. User Claim: "${cleanClaim}". 2. Retrieved Live Evidence: Live sources report different numerical figures or do not confirm the exact number. 3. Factual Comparison & Verdict: The exact numerical value remains unverified.`,
+          directAnswer: isBoxOffice
+            ? `Unverified: The box-office collection figure asserted in "${cleanClaim}" could not be confirmed in authoritative trade records.`
+            : `Unverified: The specific numerical figure in "${cleanClaim}" could not be confirmed in the retrieved live reports.`,
+          reasoning: `(1) Claimed: ${cleanClaim}. (2) Evidence states: Figures reported in live sources do not match the claimed value or trade metric. (3) Comparison: Discrepancy or absence of claimed number. (4) Choice: UNVERIFIED.`,
+          explanation: isBoxOffice
+            ? 'The asserted box-office collection figures could not be confirmed in authoritative trade records.'
+            : 'The specific numerical figures asserted in this claim could not be confirmed in verified reports.',
         };
       }
     }
@@ -915,56 +1055,84 @@ export function analyzeRetrievedLiveEvidence(
 
   // 3. Proposition-based support check
   let supportPoints = 0;
+  const isFeeClaim = /\b(?:fees?|tuition|waiver|free\s+college|no\s+fees?)\b/i.test(cleanClaim);
+
   for (const source of evidenceSources) {
     const text = `${source.name} ${source.snippet || ''} ${source.evidenceText || ''}`.toLowerCase();
     const entityMatches = components.entities.filter(e => text.includes(e.toLowerCase())).length;
     const allEntitiesPresent = components.entities.length > 0 && entityMatches >= components.entities.length;
 
     if (allEntitiesPresent) {
-      if (components.actionPredicate && text.includes(components.actionPredicate)) {
-        supportPoints += (source.reliability >= 95 ? 2 : 1);
-      }
-      if (components.roleAssertion) {
-        const role = components.roleAssertion.role.toLowerCase();
-        const person = components.roleAssertion.person.toLowerCase();
-        const org = components.roleAssertion.organization.toLowerCase();
-        if (text.includes(role) && text.includes(person) && text.includes(org)) {
+      if (isFeeClaim) {
+        // College fee waiver claims require explicit fee waiver verification
+        const hasFeeCorroboration = /\b(?:free\s+fees?|fee\s+waiver|waived\s+fees?|zero\s+fees?|no\s+college\s+fees?|100%\s+scholarship)\b/i.test(text);
+        if (hasFeeCorroboration) {
           supportPoints += 3;
         }
-      }
-      if (components.relationalTarget && text.includes(components.relationalTarget.toLowerCase())) {
-        supportPoints += 2;
-      }
-      if (components.temporalValues.some(t => text.includes(t.toLowerCase()))) {
-        supportPoints += 1;
+      } else {
+        if (components.roleAssertion) {
+          const role = components.roleAssertion.role.toLowerCase();
+          const person = components.roleAssertion.person.toLowerCase();
+          const org = components.roleAssertion.organization.toLowerCase();
+          if (text.includes(role) && text.includes(person) && text.includes(org)) {
+            supportPoints += 3;
+          }
+        }
+        if (components.relationalTarget && text.includes(components.relationalTarget.toLowerCase())) {
+          supportPoints += 2;
+        }
+        if (components.actionPredicate && text.includes(components.actionPredicate)) {
+          supportPoints += (source.reliability >= 95 ? 2 : 1);
+        }
       }
     }
   }
 
   if (supportPoints >= 3) {
+    const claimStatus: ClaimStatus = isFutureClaim ? 'OFFICIALLY_SCHEDULED_FUTURE' : 'CURRENTLY_SUPPORTED';
+    const claimStatusLabel: ClaimStatusLabel = isFutureClaim ? 'OFFICIALLY SCHEDULED / FUTURE' : 'TRUE / SUPPORTED';
+    const verdict: VerificationVerdict = 'TRUE';
+    const verdictLabel: VerificationVerdictLabel = 'TRUE / SUPPORTED';
+
     return {
-      verdict: 'TRUE',
+      verdict,
+      verdictLabel,
+      claimStatus,
+      claimStatusLabel,
+      timeline: {
+        temporalStatus: isFutureClaim ? 'future' : isHistoricalPast ? 'past' : 'current',
+        currentStatus: isFutureClaim ? 'Officially scheduled / upcoming' : 'Confirmed fact',
+      },
       score: 95,
       confidence: 90,
-      directAnswer: `Yes, this is true: Corroborated by verified reporting across authoritative live sources.`,
+      directAnswer: isFutureClaim
+        ? `Officially Scheduled: Verified reporting confirms this future event or announcement.`
+        : `Yes, this is true: Corroborated by verified reporting across authoritative sources.`,
       reasoning: `(1) Claimed: ${cleanClaim}. (2) Evidence states: Multiple accredited sources confirm the entities, actions, and dates asserted in the claim. (3) Comparison: Direct alignment between claim components and live source content. (4) Choice: TRUE.`,
-      explanation: `1. User Claim: "${cleanClaim}". 2. Retrieved Live Evidence: Authoritative references consistently confirm the stated facts. 3. Factual Comparison & Verdict: All key factual components are supported by verified sources.`,
+      explanation: isFutureClaim
+        ? 'Verified reporting confirms this officially scheduled event or announcement.'
+        : isHistoricalPast
+        ? 'Authoritative historical records and documentation confirm this event occurred.'
+        : 'Authoritative live sources and verified reports corroborate the asserted claim.',
     };
   }
 
   return {
     verdict: 'UNVERIFIED',
+    verdictLabel: 'UNVERIFIED / INSUFFICIENT EVIDENCE',
+    claimStatus: 'UNVERIFIED_INSUFFICIENT_EVIDENCE',
+    claimStatusLabel: 'UNVERIFIED / INSUFFICIENT EVIDENCE',
     score: 50,
     confidence: 60,
     directAnswer: `Unverified: Available live evidence is insufficient to fully confirm or refute "${cleanClaim}".`,
     reasoning: `(1) Claimed: ${cleanClaim}. (2) Evidence states: Retrieved sources reference related topics but do not explicitly prove or disprove all elements. (3) Comparison: Insufficient corroboration. (4) Choice: UNVERIFIED.`,
-    explanation: `1. User Claim: "${cleanClaim}". 2. Retrieved Live Evidence: Retrieved references discuss related entities but lack explicit confirmation of the asserted proposition. 3. Factual Comparison & Verdict: Without explicit corroboration, the claim is marked UNVERIFIED.`,
+    explanation: 'Available evidence is insufficient to confirm or refute the asserted claim.',
   };
 }
 
 // ─── 13. Main Exported Realtime Verifier ─────────────────────────────────────
 export const realtimeVerifier = {
-  async verifyClaim(claim: string): Promise<RealtimeVerificationOutput> {
+  async verifyClaim(claim: string, options?: { skipAi?: boolean }): Promise<RealtimeVerificationOutput> {
     const cleanClaim = (claim || '').trim();
     if (!cleanClaim) throw new Error('Claim text cannot be empty.');
 
@@ -976,20 +1144,20 @@ export const realtimeVerifier = {
     if (liveSources.length === 0) {
       return {
         verdict: 'UNVERIFIED',
-        verdictLabel: 'NOT ENOUGH EVIDENCE',
+        verdictLabel: 'UNVERIFIED / INSUFFICIENT EVIDENCE',
         score: 50,
         confidence: 50,
-        directAnswer: 'Live verification is currently unavailable. Please try again.',
-        explanation: 'Live verification is currently unavailable. Please try again.',
+        directAnswer: `Unverified: Available live evidence is insufficient to verify whether "${cleanClaim}" is accurate.`,
+        explanation: 'Available live evidence is insufficient to verify or refute this claim.',
         claim: cleanClaim,
         originalClaim: cleanClaim,
         isLiveWebVerified: false,
         searchTimestamp: new Date().toISOString(),
         signals: [
-          { name: 'Claim-to-Evidence Consistency', status: 'warning', score: 50, detail: 'Live search returned no results.' },
-          { name: 'Primary & Official Registry Alignment', status: 'warning', score: 50, detail: 'Search unavailable.' },
-          { name: 'Real-Time Live Web Coverage', status: 'failed', score: 10, detail: 'Zero sources retrieved.' },
-          { name: 'Fact & Entity Match Index', status: 'warning', score: 50, detail: 'No evidence available.' },
+          { name: 'Claim-to-Evidence Consistency', status: 'warning', score: 50, detail: 'Live search returned no verifiable evidence.' },
+          { name: 'Primary & Official Registry Alignment', status: 'warning', score: 50, detail: 'No primary registry records found.' },
+          { name: 'Real-Time Live Web Coverage', status: 'warning', score: 50, detail: 'Zero verifiable sources retrieved.' },
+          { name: 'Fact & Entity Match Index', status: 'warning', score: 50, detail: 'Evidence is insufficient to confirm or refute the claim.' },
         ],
         sources: [],
       };
@@ -998,30 +1166,50 @@ export const realtimeVerifier = {
     // Step 2: Conservative deterministic analysis (fast pre-check)
     const deterministicEval = analyzeRetrievedLiveEvidence(cleanClaim, liveSources);
     let evalResult = deterministicEval;
+    let aiAnalysisStatus: 'SUCCESS' | 'QUOTA_EXHAUSTED' | 'RATE_LIMIT_TRANSIENT' | 'INVALID_API_KEY' | 'UNAVAILABLE' | 'SKIPPED' = 'SKIPPED';
+    let aiNotice: string | undefined = undefined;
 
-    // Step 3: Grounded AI semantic reasoning (primary path for all arbitrary claims)
-    const apiKey = process.env.GEMINI_API_KEY || process.env.VITE_GEMINI_API_KEY || process.env.GOOGLE_API_KEY;
+    // Step 3: Grounded AI semantic reasoning (primary path for all arbitrary claims unless skipAi requested)
+    const apiKey = (process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY || '').trim();
     const hasAnyReadableContent = liveSources.some(s => (s.evidenceText || s.snippet || '').trim().length >= 30);
 
-    if (apiKey && hasAnyReadableContent) {
-      const aiEval = await evaluateEvidenceWithAI(cleanClaim, liveSources, apiKey);
-      if (aiEval) {
-        evalResult = aiEval;
+    console.log(`[RealtimeVerifier] Evaluating claim (chars: ${cleanClaim.length}) | Sources: ${liveSources.length} | API key configured: ${Boolean(apiKey)}`);
+
+    if (apiKey && hasAnyReadableContent && !options?.skipAi) {
+      if (geminiClient.isQuotaExhausted()) {
+        aiAnalysisStatus = 'QUOTA_EXHAUSTED';
+        aiNotice = '⚡ AI Engine at daily free-tier quota capacity. Verdict independently verified via live multi-source web evidence cross-referencing.';
+        console.warn('[VerifyAI] Gemini daily quota is exhausted — using deterministic live evidence evaluation.');
       } else {
-        console.warn('[VerifyAI] AI evaluation returned null — using deterministic fallback.');
+        const aiOutcome = await evaluateEvidenceWithAI(cleanClaim, liveSources, apiKey);
+        if (aiOutcome.result) {
+          evalResult = aiOutcome.result;
+          aiAnalysisStatus = 'SUCCESS';
+        } else {
+          aiAnalysisStatus = aiOutcome.status;
+          aiNotice = aiOutcome.notice;
+          console.warn('[VerifyAI] AI evaluation unavailable/quota exceeded — using deterministic fallback.');
+        }
       }
     } else if (!apiKey) {
+      aiAnalysisStatus = 'INVALID_API_KEY';
+      aiNotice = 'Gemini API key is not configured on the server. Running on live web evidence.';
       console.warn('[VerifyAI] GEMINI_API_KEY not found in environment. AI layer skipped.');
     }
 
-    const verdict = evalResult.verdict;
-    const verdictLabel = verdict === 'TRUE'
-      ? "YES, IT'S TRUE"
-      : verdict === 'FALSE'
-        ? "NO, IT'S NOT TRUE"
-        : "NOT ENOUGH EVIDENCE";
+    const verdict: VerificationVerdict = evalResult.verdict;
+    const verdictLabel: VerificationVerdictLabel = evalResult.verdictLabel || (
+      verdict === 'TRUE' ? 'TRUE / SUPPORTED' :
+      verdict === 'FALSE' ? 'FALSE / CONTRADICTED' :
+      verdict === 'PARTLY_TRUE' ? 'PARTLY TRUE' :
+      verdict === 'MISLEADING' ? 'MISLEADING / OUT OF CONTEXT' :
+      'UNVERIFIED / INSUFFICIENT EVIDENCE'
+    );
 
-    const topSources = liveSources.slice(0, 5);
+    // Show normally up to three most relevant clickable sources
+    const topSources = liveSources
+      .filter(s => Boolean(s.url && s.name) && (s.relevanceScore || 0) >= 15)
+      .slice(0, 3);
     const topSourceNames = topSources.slice(0, 3).map(s => s.name).join(', ');
 
     const signals: VerificationSignal[] = [
@@ -1030,22 +1218,22 @@ export const realtimeVerifier = {
         status: verdict === 'TRUE' ? 'passed' : verdict === 'FALSE' ? 'failed' : 'warning',
         score: verdict === 'TRUE' ? 95 : verdict === 'FALSE' ? 8 : 50,
         detail: verdict === 'TRUE'
-          ? `Corroborated by verified sources (${topSourceNames}).`
+          ? `Corroborated by verified sources (${topSourceNames || 'Primary records'}).`
           : verdict === 'FALSE'
             ? (evalResult.reasoning || `Contradicted by verified reports or absent from authoritative records.`)
-            : `No primary institutional record found for this exact claim.`,
+            : `Evidence is insufficient to reach a definitive factual determination.`,
       },
       {
         name: 'Primary & Official Registry Alignment',
         status: topSources.some(s => s.reliability >= 95) ? 'passed' : (topSources.length > 0 ? 'warning' : 'failed'),
         score: topSources.filter(s => (s.reliability || 0) >= 95 && (s.evidenceText || s.snippet || '').trim().length >= 40).length >= 2 ? 96 : 60,
-        detail: `Evidence cross-referenced against authoritative sources with readable page content (${topSourceNames}).`,
+        detail: `Evidence cross-referenced against authoritative sources with readable content (${topSourceNames || 'Live indexes'}).`,
       },
       {
         name: 'Real-Time Live Web Coverage',
         status: topSources.length >= 2 ? 'passed' : (topSources.length === 1 ? 'warning' : 'failed'),
-        score: topSources.filter(s => (s.evidenceText || s.snippet || '').trim().length >= 40).length >= 3 ? 98 : (topSources.length >= 1 ? 70 : 15),
-        detail: `Retrieved ${topSources.length} ranked reference sources; verdict evidence uses readable content.`,
+        score: topSources.filter(s => (s.evidenceText || s.snippet || '').trim().length >= 40).length >= 2 ? 98 : (topSources.length >= 1 ? 70 : 15),
+        detail: `Retrieved ${topSources.length} verified reference sources matching the claim.`,
       },
       {
         name: 'Fact & Entity Match Index',
@@ -1062,6 +1250,9 @@ export const realtimeVerifier = {
     return {
       verdict,
       verdictLabel,
+      claimStatus: evalResult.claimStatus || (verdict === 'TRUE' ? 'CURRENTLY_SUPPORTED' : verdict === 'FALSE' ? 'FALSE_CONTRADICTED' : 'UNVERIFIED_INSUFFICIENT_EVIDENCE'),
+      claimStatusLabel: evalResult.claimStatusLabel || verdictLabel,
+      timeline: evalResult.timeline,
       score: evalResult.score,
       confidence: evalResult.confidence,
       directAnswer: evalResult.directAnswer || undefined,
@@ -1072,6 +1263,8 @@ export const realtimeVerifier = {
       originalClaim: cleanClaim,
       isLiveWebVerified: true,
       searchTimestamp: new Date().toISOString(),
+      aiAnalysisStatus,
+      aiNotice,
       signals,
       sources: topSources.map(s => ({
         ...s,

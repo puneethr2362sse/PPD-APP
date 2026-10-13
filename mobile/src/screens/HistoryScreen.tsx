@@ -7,8 +7,9 @@ import {
   StyleSheet, 
   FlatList, 
   Image, 
-  Modal, 
-  Alert 
+  Modal,
+  Alert,
+  ScrollView
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';

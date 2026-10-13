@@ -22,7 +22,8 @@ import {
   Phone,
   Mail,
   AtSign,
-  Upload
+  Upload,
+  FileSpreadsheet
 } from 'lucide-react';
 
 // Preset avatar options for quick profile customization
@@ -42,6 +43,7 @@ export const ProfilePage: React.FC = () => {
   // Edit Mode state
   const [isEditing, setIsEditing] = useState(false);
   const [editName, setEditName] = useState(currentUser?.name || '');
+  const [editUserId, setEditUserId] = useState(currentUser?.userId || currentUser?.id || '');
   const [editPhone, setEditPhone] = useState(currentUser?.phone || '');
   const [editPhotoUrl, setEditPhotoUrl] = useState(currentUser?.photoUrl || '');
   const [isSaving, setIsSaving] = useState(false);
@@ -51,6 +53,7 @@ export const ProfilePage: React.FC = () => {
   useEffect(() => {
     if (currentUser) {
       setEditName(currentUser.name || '');
+      setEditUserId(currentUser.userId || currentUser.id || '');
       setEditPhone(currentUser.phone || '');
       setEditPhotoUrl(currentUser.photoUrl || '');
     }
@@ -64,6 +67,7 @@ export const ProfilePage: React.FC = () => {
 
   const handleStartEdit = () => {
     setEditName(currentUser?.name || '');
+    setEditUserId(currentUser?.userId || currentUser?.id || '');
     setEditPhone(currentUser?.phone || '');
     setEditPhotoUrl(currentUser?.photoUrl || '');
     setEditError('');
@@ -72,6 +76,7 @@ export const ProfilePage: React.FC = () => {
 
   const handleCancelEdit = () => {
     setEditName(currentUser?.name || '');
+    setEditUserId(currentUser?.userId || currentUser?.id || '');
     setEditPhone(currentUser?.phone || '');
     setEditPhotoUrl(currentUser?.photoUrl || '');
     setEditError('');
@@ -82,15 +87,29 @@ export const ProfilePage: React.FC = () => {
     e.preventDefault();
     setEditError('');
 
-    if (!editName.trim()) {
+    const cleanName = editName.trim();
+    const cleanUserId = editUserId.trim();
+
+    if (!cleanName) {
       setEditError('Display Name cannot be empty.');
+      return;
+    }
+
+    if (!cleanUserId) {
+      setEditError('User ID (Handle) cannot be empty.');
+      return;
+    }
+
+    if (!/^[a-zA-Z0-9_-]{3,30}$/.test(cleanUserId)) {
+      setEditError('User ID must be 3-30 characters long and contain only letters, numbers, underscores, or hyphens.');
       return;
     }
 
     setIsSaving(true);
     try {
       const result = await updateProfile({
-        name: editName.trim(),
+        name: cleanName,
+        userId: cleanUserId,
         phone: editPhone.trim() || undefined,
         photoUrl: editPhotoUrl.trim() || undefined,
       });
@@ -102,7 +121,7 @@ export const ProfilePage: React.FC = () => {
         return;
       }
 
-      showToast('Profile updated successfully in Firestore!', 'success');
+      showToast('Profile and username updated successfully in Firestore!', 'success');
       setIsEditing(false);
     } catch (err: any) {
       setIsSaving(false);
@@ -379,23 +398,25 @@ export const ProfilePage: React.FC = () => {
                 </p>
               </div>
 
-              {/* 2. User ID (Read-only / Protected) */}
+              {/* 2. User ID (Editable Handle) */}
               <div>
                 <label className="block text-xs font-bold text-slate-200 mb-1.5 font-mono flex items-center justify-between">
-                  <span>User ID (Handle)</span>
-                  <span className="text-[10px] text-cyan-400 font-normal">Registered Identity</span>
+                  <span>User ID (Handle) <span className="text-cyan-400">*</span></span>
+                  <span className="text-[10px] text-cyan-400 font-normal">Customizable</span>
                 </label>
                 <div className="relative">
-                  <AtSign className="w-4 h-4 text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                  <AtSign className="w-4 h-4 text-cyan-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
                   <input
                     type="text"
-                    disabled
-                    value={userId}
-                    className="w-full bg-slate-950/80 border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-sm text-cyan-300 font-mono cursor-not-allowed opacity-90"
+                    required
+                    value={editUserId}
+                    onChange={(e) => setEditUserId(e.target.value)}
+                    placeholder="e.g. puneeth123"
+                    className="w-full bg-slate-900/90 border border-slate-700/80 rounded-xl pl-10 pr-4 py-2.5 text-sm text-cyan-300 font-mono placeholder:text-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/20 transition-all font-medium"
                   />
                 </div>
                 <p className="mt-1 text-[11px] text-slate-400">
-                  Unique handle linked to your Firebase UID.
+                  Unique handle across investigations (3–30 characters, letters/numbers/_-).
                 </p>
               </div>
 
@@ -557,6 +578,29 @@ export const ProfilePage: React.FC = () => {
               Your forensic scans and investigation analytics are securely partitioned under <span className="text-slate-300 font-mono">{email}</span> in Firestore.
             </p>
           </div>
+        </div>
+      </div>
+
+      {/* Automated QA & Compliance Test Report Card */}
+      <div className="glass-card rounded-3xl p-6 border border-slate-800 space-y-4">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="space-y-1">
+            <h3 className="font-display text-lg font-bold text-white flex items-center gap-2">
+              <Award className="w-5 h-5 text-amber-400" />
+              <span>Automated Verification QA Audit Report</span>
+            </h3>
+            <p className="text-xs text-slate-400 max-w-xl leading-relaxed">
+              Download the complete 1,500-test execution workbook covering Selenium Web E2E, Appium Mobile Native, High-Concurrency Load, Zero-Trust Security, and Multimodal AI Evidence Verification.
+            </p>
+          </div>
+          <a
+            href="/VerifyAI_Test_Report.xlsx"
+            download="VerifyAI_Test_Report.xlsx"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-brand-500 hover:from-cyan-400 hover:to-brand-400 text-white font-bold text-xs shadow-glow-cyan transition-all hover:scale-105 active:scale-95 whitespace-nowrap cursor-pointer"
+          >
+            <FileSpreadsheet className="w-4 h-4 text-white" />
+            <span>Download QA Report (.xlsx)</span>
+          </a>
         </div>
       </div>
 

@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently -k -n \"CLIENT,SERVER\" -c \"cyan,magenta\" \"vite --port 5173 --host\" \"tsx server/index.ts\"",
-    "dev:client": "vite --port 5173 --host",
+    "dev": "concurrently -n \"CLIENT,SERVER\" -c \"cyan,magenta\" \"vite\" \"tsx server/index.ts\"",
+    "dev:client": "vite",
     "server": "tsx server/index.ts",
     "mobile": "npm --prefix mobile run start",
     "share": "npx localtunnel --port 5173",

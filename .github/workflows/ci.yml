@@ -2,9 +2,9 @@ name: VerifyAI CI/CD & Automated Verification Pipeline
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main ]
   pull_request:
-    branches: [ main, master ]
+    branches: [ main ]
   workflow_dispatch:
 
 permissions:
@@ -13,9 +13,8 @@ permissions:
   pull-requests: write
 
 jobs:
-  # Job 1: Setup Node.js & Dependencies
-  setup-node:
-    name: setup-node
+  validate-and-build:
+    name: 1. Validate TypeScript & Production Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -30,147 +29,13 @@ jobs:
       - name: Install dependencies
         run: npm ci || npm install
 
-      - name: Validate TypeScript & ESLint
-        run: npm run build
+      - name: Client TypeScript Check (tsc -b)
+        run: npx tsc -b
 
-  # Job 2: Selenium Web E2E & Component Tests (80 Tests)
-  selenium-tests:
-    name: selenium-tests
-    needs: setup-node
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Server TypeScript Check (tsc -p tsconfig.server.json --noEmit)
+        run: npx tsc -p tsconfig.server.json --noEmit
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install dependencies
-        run: npm ci || npm install
-
-      - name: Run Selenium Web Test Suite (80 Tests)
-        run: npx vitest run tests/selenium-web/web-suite.test.ts
-
-      - name: Generate Selenium Artifacts
-        run: node scripts/generate-artifacts.js
-
-      - name: Upload Selenium Report Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: selenium-report
-          path: reports/selenium-report/
-          retention-days: 30
-
-  # Job 3: Appium Mobile & Expo Native Tests (75 Tests)
-  appium-tests:
-    name: appium-tests
-    needs: setup-node
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install dependencies
-        run: npm ci || npm install
-
-      - name: Run Appium Mobile Test Suite (75 Tests)
-        run: npx vitest run tests/appium-mobile/mobile-suite.test.ts
-
-      - name: Generate Appium Artifacts
-        run: node scripts/generate-artifacts.js
-
-      - name: Upload Appium Report Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: appium-report
-          path: reports/appium-report/
-          retention-days: 30
-
-  # Job 4: Load & Concurrency Performance Tests (75 Tests)
-  load-tests:
-    name: load-tests
-    needs: setup-node
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install dependencies
-        run: npm ci || npm install
-
-      - name: Run High-Concurrency Load Tests (75 Tests)
-        run: npx vitest run tests/load-stress/load-suite.test.ts
-
-      - name: Generate Load Artifacts
-        run: node scripts/generate-artifacts.js
-
-      - name: Upload Load Report Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: load-report
-          path: reports/load-report/
-          retention-days: 30
-
-  # Job 5: Security & Vulnerability Assessment (75 Tests)
-  security-assessment:
-    name: security-assessment
-    needs: setup-node
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install dependencies
-        run: npm ci || npm install
-
-      - name: Run Security Assessment Suite (75 Tests)
-        run: npx vitest run tests/security/security-suite.test.ts
-
-      - name: Generate Security Artifacts
-        run: node scripts/generate-artifacts.js
-
-      - name: Upload Security Report Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: security-report
-          path: reports/security-report/
-          retention-days: 30
-
-  # Job 6: Summary & Live Deployment Link Publish
-  summary:
-    name: summary
-    needs: [selenium-tests, appium-tests, load-tests, security-assessment]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install dependencies
-        run: npm ci || npm install
-
-      - name: Build Web Application
+      - name: Production Web Build
         run: npm run build
 
       - name: Upload Web Build Artifact
@@ -178,35 +43,63 @@ jobs:
         with:
           name: web-build
           path: dist/
+          retention-days: 14
+
+  automated-test-matrix:
+    name: 2. Automated Test Matrix (1,500 Tests & Excel Report)
+    needs: validate-and-build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Execute Full 1,500-Test Matrix & Generate Excel Report
+        run: npm run test:report
+
+      - name: Validate Generated Excel Test Report & Baseline Preservation
+        run: npx vitest run tests/excel-report-validation.test.ts
+
+      - name: Upload Complete 1,500-Test Excel Report Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: VerifyAI-Test-Report-1500
+          path: reports/VerifyAI_Test_Report.xlsx
           retention-days: 30
 
-      - name: Publish GitHub Actions Job Summary
-        run: |
-          cat << 'EOF' >> $GITHUB_STEP_SUMMARY
-          # 🚀 VerifyAI — Deployment & Quality Assurance Summary
+  api-verification-e2e:
+    name: 3. Text & Image API Integration Verification
+    needs: validate-and-build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-          ### 🌐 Live Production Website
-          **Website URL**: [https://app-eight-woad-32.vercel.app](https://app-eight-woad-32.vercel.app)
-          **Alternative URL**: [https://app-w2nutrjnc-puneethr2362sse-1511.vercel.app](https://app-w2nutrjnc-puneethr2362sse-1511.vercel.app)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
 
-          ---
+      - name: Install dependencies
+        run: npm ci || npm install
 
-          ### 📊 Automated Test Execution Matrix (305 Tests)
+      - name: Run Text & Image End-to-End Tests (Real Claims & Real 13KB Image)
+        run: npx vitest run tests/api-verification.test.ts
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          NODE_ENV: test
 
-          | Test Suite | Total Tests | Passed | Failed | Duration | Status |
-          | :--- | :---: | :---: | :---: | :---: | :---: |
-          | **Selenium Web E2E Suite** | 80 | 80 | 0 | ~329ms | ✅ **PASSED** |
-          | **Appium Mobile Native Suite** | 75 | 75 | 0 | ~19ms | ✅ **PASSED** |
-          | **High-Concurrency Load Suite** | 75 | 75 | 0 | ~340ms | ✅ **PASSED** |
-          | **Security Assessment Suite** | 75 | 75 | 0 | ~76ms | ✅ **PASSED** |
-          | **TOTAL** | **305** | **305** | **0** | **~764ms** | 🏆 **100% SUCCESS** |
-
-          ---
-
-          ### 📦 Published Artifacts
-          - 📄 **`selenium-report`**: Web interaction, OTP auto-advance & desktop UI reports.
-          - 📱 **`appium-report`**: Mobile Expo camera, 4-box OTP, and touch gesture reports.
-          - ⚡ **`load-report`**: High-concurrency throughput and edge latency reports.
-          - 🛡️ **`security-report`**: Zero-password architecture & XSS/NoSQLi assessment.
-          - 🌐 **`web-build`**: Production Vite static bundle ready for deployment.
-          EOF
+      - name: Run Real Verification CLI Test Harness
+        run: npx tsx scripts/testRealVerification.ts
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          NODE_ENV: test

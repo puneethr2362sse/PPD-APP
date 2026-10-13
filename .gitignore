@@ -42,3 +42,7 @@ mobile/.expo/
 # Temporary files
 *.tmp
 ~$*
+*.tsbuildinfo
+
+# Local database & test state
+server/data/firestore_store.json

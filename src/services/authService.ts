@@ -321,8 +321,8 @@ export const authService = {
     }
   },
 
-  // Update Profile Information (Display Name, Phone, Photo)
-  async updateProfile(updates: { name?: string; phone?: string; photoUrl?: string }): Promise<{ success: boolean; user?: User; error?: string }> {
+  // Update Profile Information (Display Name, User ID handle, Phone, Photo)
+  async updateProfile(updates: { name?: string; userId?: string; phone?: string; photoUrl?: string }): Promise<{ success: boolean; user?: User; error?: string }> {
     const current = this.getCurrentUser();
     if (!current) {
       return { success: false, error: 'No active session to update.' };
@@ -332,10 +332,15 @@ export const authService = {
       return { success: false, error: 'Display Name cannot be empty.' };
     }
 
+    if (updates.userId !== undefined && !updates.userId.trim()) {
+      return { success: false, error: 'User ID (handle) cannot be empty.' };
+    }
+
     try {
       const res = await apiClient.put('/auth/profile', {
         email: current.email,
         name: updates.name?.trim(),
+        userId: updates.userId?.trim(),
         phone: updates.phone !== undefined ? updates.phone.trim() : undefined,
         photoUrl: updates.photoUrl !== undefined ? updates.photoUrl.trim() : undefined,
       });
@@ -345,6 +350,7 @@ export const authService = {
           ...current,
           ...res.user,
           name: res.user.name || updates.name?.trim() || current.name,
+          userId: res.user.userId || updates.userId?.trim() || current.userId,
           phone: res.user.phone !== undefined ? res.user.phone : updates.phone,
           photoUrl: res.user.photoUrl !== undefined ? res.user.photoUrl : updates.photoUrl,
         };
@@ -353,16 +359,7 @@ export const authService = {
       }
       return { success: false, error: res.error || 'Failed to update profile.' };
     } catch (err: any) {
-      // Fallback local update if offline
-      const updatedLocal: User = {
-        ...current,
-        name: updates.name?.trim() || current.name,
-        phone: updates.phone !== undefined ? (updates.phone.trim() || undefined) : current.phone,
-        photoUrl: updates.photoUrl !== undefined ? (updates.photoUrl.trim() || undefined) : current.photoUrl,
-        lastLoginAt: new Date().toISOString(),
-      };
-      localStorage.setItem(STORAGE_SESSION_KEY, JSON.stringify(updatedLocal));
-      return { success: true, user: updatedLocal };
+      return { success: false, error: err.message || 'Failed to update profile.' };
     }
   },
 

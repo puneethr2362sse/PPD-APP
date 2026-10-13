@@ -31,9 +31,13 @@ interface VitestJsonReport {
 
 interface FormattedTestCase {
   'Test ID': string;
-  'Test Name': string;
+  'Scenario': string;
+  'Expected Result': string;
+  'Actual Result': string;
+  'PASS/FAIL': 'PASS' | 'FAIL' | 'SKIP';
+  'Execution Timestamp': string;
   'Test Suite': string;
-  'Description': string;
+  'Test Name': string;
   'Status': string;
   'Execution Time': string;
   'Error/Failure Message': string;
@@ -42,15 +46,20 @@ interface FormattedTestCase {
 async function runTestsAndGenerateReport() {
   const rootDir = process.cwd();
   const reportsDir = path.join(rootDir, 'reports');
+  const publicDir = path.join(rootDir, 'public');
   const rawResultsPath = path.join(reportsDir, 'raw-test-results.json');
   const excelReportPath = path.join(reportsDir, 'VerifyAI_Test_Report.xlsx');
+  const publicExcelPath = path.join(publicDir, 'VerifyAI_Test_Report.xlsx');
 
   if (!fs.existsSync(reportsDir)) {
     fs.mkdirSync(reportsDir, { recursive: true });
   }
+  if (!fs.existsSync(publicDir)) {
+    fs.mkdirSync(publicDir, { recursive: true });
+  }
 
   console.log('====================================================');
-  console.log('🚀 Running VerifyAI Complete Test Matrix (1200 Tests)');
+  console.log('🚀 Running VerifyAI Complete Test Matrix (1500 Tests)');
   console.log('====================================================');
 
   const startTime = Date.now();
@@ -76,6 +85,7 @@ async function runTestsAndGenerateReport() {
   const loadTests: FormattedTestCase[] = [];
   const securityTests: FormattedTestCase[] = [];
   const seleniumTests: FormattedTestCase[] = [];
+  const evidenceTests: FormattedTestCase[] = [];
 
   for (const fileResult of parsedData.testResults) {
     const normalizedPath = fileResult.name.replace(/\\/g, '/');
@@ -96,6 +106,9 @@ async function runTestsAndGenerateReport() {
       } else if (normalizedPath.includes('/selenium-web/')) {
         suiteCategory = 'Selenium Web Application E2E Suite';
         idPrefix = 'WEB';
+      } else if (normalizedPath.includes('evidence-verification')) {
+        suiteCategory = 'AI Vision & Evidence Verification Test Suite';
+        idPrefix = 'EVD';
       }
 
       // Extract ID from title if formatted like MOB-001, otherwise generate
@@ -117,11 +130,22 @@ async function runTestsAndGenerateReport() {
         ? test.failureMessages.join('\n').substring(0, 500) 
         : 'None';
 
+      const passFail: 'PASS' | 'FAIL' | 'SKIP' = status === 'PASSED' ? 'PASS' : (status === 'SKIPPED' ? 'SKIP' : 'FAIL');
+      const expectedResult = 'Test assertions evaluate successfully with zero unhandled exceptions.';
+      const actualResult = status === 'PASSED'
+        ? `Assertion passed in ${durationStr} with zero errors.`
+        : (failureMsg !== 'None' ? `Failed: ${failureMsg}` : `Finished with status: ${status}`);
+      const executionTimestamp = new Date(parsedData.startTime || startTime).toISOString();
+
       const row: FormattedTestCase = {
         'Test ID': testId,
-        'Test Name': testName,
+        'Scenario': description,
+        'Expected Result': expectedResult,
+        'Actual Result': actualResult,
+        'PASS/FAIL': passFail,
+        'Execution Timestamp': executionTimestamp,
         'Test Suite': suiteCategory,
-        'Description': description,
+        'Test Name': testName,
         'Status': status,
         'Execution Time': durationStr,
         'Error/Failure Message': failureMsg,
@@ -135,6 +159,8 @@ async function runTestsAndGenerateReport() {
         securityTests.push(row);
       } else if (normalizedPath.includes('/selenium-web/')) {
         seleniumTests.push(row);
+      } else if (normalizedPath.includes('evidence-verification')) {
+        evidenceTests.push(row);
       }
     }
   }
@@ -145,6 +171,7 @@ async function runTestsAndGenerateReport() {
   loadTests.sort(sortById);
   securityTests.sort(sortById);
   seleniumTests.sort(sortById);
+  evidenceTests.sort(sortById);
 
   // Calculate suite metrics
   const getMetrics = (list: FormattedTestCase[]) => {
@@ -160,11 +187,12 @@ async function runTestsAndGenerateReport() {
   const loadMetrics = getMetrics(loadTests);
   const securityMetrics = getMetrics(securityTests);
   const seleniumMetrics = getMetrics(seleniumTests);
+  const evidenceMetrics = getMetrics(evidenceTests);
 
-  const totalAll = appiumMetrics.total + loadMetrics.total + securityMetrics.total + seleniumMetrics.total;
-  const totalPassed = appiumMetrics.passed + loadMetrics.passed + securityMetrics.passed + seleniumMetrics.passed;
-  const totalFailed = appiumMetrics.failed + loadMetrics.failed + securityMetrics.failed + seleniumMetrics.failed;
-  const totalSkipped = appiumMetrics.skipped + loadMetrics.skipped + securityMetrics.skipped + seleniumMetrics.skipped;
+  const totalAll = appiumMetrics.total + loadMetrics.total + securityMetrics.total + seleniumMetrics.total + evidenceMetrics.total;
+  const totalPassed = appiumMetrics.passed + loadMetrics.passed + securityMetrics.passed + seleniumMetrics.passed + evidenceMetrics.passed;
+  const totalFailed = appiumMetrics.failed + loadMetrics.failed + securityMetrics.failed + seleniumMetrics.failed + evidenceMetrics.failed;
+  const totalSkipped = appiumMetrics.skipped + loadMetrics.skipped + securityMetrics.skipped + seleniumMetrics.skipped + evidenceMetrics.skipped;
   const overallPassPct = totalAll > 0 ? ((totalPassed / totalAll) * 100).toFixed(2) + '%' : '0.00%';
   const totalDurationSec = ((Date.now() - startTime) / 1000).toFixed(2);
 
@@ -180,9 +208,10 @@ async function runTestsAndGenerateReport() {
     { 'VerifyAI Test Automation Executive Summary': '2. Load Stress Tests', 'Value / Metric': `${loadMetrics.total} Tests (Passed: ${loadMetrics.passed}, Failed: ${loadMetrics.failed}, Skipped: ${loadMetrics.skipped}) - ${loadMetrics.passPct}` },
     { 'VerifyAI Test Automation Executive Summary': '3. Security Tests', 'Value / Metric': `${securityMetrics.total} Tests (Passed: ${securityMetrics.passed}, Failed: ${securityMetrics.failed}, Skipped: ${securityMetrics.skipped}) - ${securityMetrics.passPct}` },
     { 'VerifyAI Test Automation Executive Summary': '4. Selenium Web Tests', 'Value / Metric': `${seleniumMetrics.total} Tests (Passed: ${seleniumMetrics.passed}, Failed: ${seleniumMetrics.failed}, Skipped: ${seleniumMetrics.skipped}) - ${seleniumMetrics.passPct}` },
+    { 'VerifyAI Test Automation Executive Summary': '5. AI Evidence Verification Tests', 'Value / Metric': `${evidenceMetrics.total} Tests (Passed: ${evidenceMetrics.passed}, Failed: ${evidenceMetrics.failed}, Skipped: ${evidenceMetrics.skipped}) - ${evidenceMetrics.passPct}` },
     { 'VerifyAI Test Automation Executive Summary': '', 'Value / Metric': '' },
     { 'VerifyAI Test Automation Executive Summary': 'OVERALL TEST TOTALS', 'Value / Metric': 'METRIC SUMMARY' },
-    { 'VerifyAI Test Automation Executive Summary': 'TOTAL DISCOVERED TEST CASES', 'Value / Metric': `${totalAll} / 1200` },
+    { 'VerifyAI Test Automation Executive Summary': 'TOTAL DISCOVERED TEST CASES', 'Value / Metric': `${totalAll} / 1500` },
     { 'VerifyAI Test Automation Executive Summary': 'TOTAL PASSED', 'Value / Metric': totalPassed },
     { 'VerifyAI Test Automation Executive Summary': 'TOTAL FAILED', 'Value / Metric': totalFailed },
     { 'VerifyAI Test Automation Executive Summary': 'TOTAL SKIPPED', 'Value / Metric': totalSkipped },
@@ -201,12 +230,16 @@ async function runTestsAndGenerateReport() {
     const sheet = XLSX.utils.json_to_sheet(tests);
     sheet['!cols'] = [
       { wch: 12 }, // Test ID
-      { wch: 60 }, // Test Name
-      { wch: 40 }, // Test Suite
-      { wch: 70 }, // Description
+      { wch: 65 }, // Scenario
+      { wch: 45 }, // Expected Result
+      { wch: 45 }, // Actual Result
+      { wch: 12 }, // PASS/FAIL
+      { wch: 25 }, // Execution Timestamp
+      { wch: 35 }, // Test Suite
+      { wch: 50 }, // Test Name
       { wch: 12 }, // Status
       { wch: 16 }, // Execution Time
-      { wch: 40 }, // Error Message
+      { wch: 40 }, // Error/Failure Message
     ];
     XLSX.utils.book_append_sheet(workbook, sheet, sheetName);
   };
@@ -215,9 +248,11 @@ async function runTestsAndGenerateReport() {
   addTestSheet('Load Stress Tests', loadTests);
   addTestSheet('Security Tests', securityTests);
   addTestSheet('Selenium Web Tests', seleniumTests);
+  addTestSheet('Evidence Verification Tests', evidenceTests);
 
-  // Write Excel file
+  // Write Excel file to both reports/ and public/ directories
   XLSX.writeFile(workbook, excelReportPath);
+  XLSX.writeFile(workbook, publicExcelPath);
 
   // Clean up raw JSON file
   if (fs.existsSync(rawResultsPath)) {
@@ -227,18 +262,20 @@ async function runTestsAndGenerateReport() {
   console.log('\n====================================================');
   console.log('📊 VERIFYAI TEST EXECUTION REPORT SUMMARY');
   console.log('====================================================');
-  console.log(`📱 Appium Mobile Tests : ${appiumMetrics.passed}/${appiumMetrics.total} (Passed: ${appiumMetrics.passed}, Failed: ${appiumMetrics.failed}, Skipped: ${appiumMetrics.skipped})`);
-  console.log(`⚡ Load Stress Tests   : ${loadMetrics.passed}/${loadMetrics.total} (Passed: ${loadMetrics.passed}, Failed: ${loadMetrics.failed}, Skipped: ${loadMetrics.skipped})`);
-  console.log(`🛡️ Security Tests      : ${securityMetrics.passed}/${securityMetrics.total} (Passed: ${securityMetrics.passed}, Failed: ${securityMetrics.failed}, Skipped: ${securityMetrics.skipped})`);
-  console.log(`🌐 Selenium Web Tests  : ${seleniumMetrics.passed}/${seleniumMetrics.total} (Passed: ${seleniumMetrics.passed}, Failed: ${seleniumMetrics.failed}, Skipped: ${seleniumMetrics.skipped})`);
+  console.log(`📱 Appium Mobile Tests      : ${appiumMetrics.passed}/${appiumMetrics.total} (Passed: ${appiumMetrics.passed}, Failed: ${appiumMetrics.failed}, Skipped: ${appiumMetrics.skipped})`);
+  console.log(`⚡ Load Stress Tests        : ${loadMetrics.passed}/${loadMetrics.total} (Passed: ${loadMetrics.passed}, Failed: ${loadMetrics.failed}, Skipped: ${loadMetrics.skipped})`);
+  console.log(`🛡️ Security Tests           : ${securityMetrics.passed}/${securityMetrics.total} (Passed: ${securityMetrics.passed}, Failed: ${securityMetrics.failed}, Skipped: ${securityMetrics.skipped})`);
+  console.log(`🌐 Selenium Web Tests       : ${seleniumMetrics.passed}/${seleniumMetrics.total} (Passed: ${seleniumMetrics.passed}, Failed: ${seleniumMetrics.failed}, Skipped: ${seleniumMetrics.skipped})`);
+  console.log(`🔍 Evidence AI Tests        : ${evidenceMetrics.passed}/${evidenceMetrics.total} (Passed: ${evidenceMetrics.passed}, Failed: ${evidenceMetrics.failed}, Skipped: ${evidenceMetrics.skipped})`);
   console.log('----------------------------------------------------');
-  console.log(`🎯 TOTAL TEST CASES    : ${totalPassed}/${totalAll} (Target: 1200/1200)`);
-  console.log(`📈 Overall Pass Rate   : ${overallPassPct}`);
-  console.log(`📁 Excel Report File   : ${excelReportPath}`);
+  console.log(`🎯 TOTAL TEST CASES         : ${totalPassed}/${totalAll} (Target: 1500/1500)`);
+  console.log(`📈 Overall Pass Rate        : ${overallPassPct}`);
+  console.log(`📁 Reports Directory File   : ${excelReportPath}`);
+  console.log(`🌐 Public Website Download  : ${publicExcelPath}`);
   console.log('====================================================\n');
 
-  if (totalAll !== 1200) {
-    console.error(`⚠️ Warning: Expected exactly 1200 tests, found ${totalAll}`);
+  if (totalAll !== 1500) {
+    console.error(`⚠️ Warning: Expected exactly 1500 tests, found ${totalAll}`);
   }
 
   if (totalFailed > 0) {

@@ -182,7 +182,39 @@ class FirestoreDatabase {
     return seed;
   }
 
-  private persist(dataToPersist: FirestoreCollections = this.data) {
+  private isDirty = false;
+  private persistTimer: NodeJS.Timeout | null = null;
+
+  public flush() {
+    if (this.persistTimer) {
+      clearTimeout(this.persistTimer);
+      this.persistTimer = null;
+    }
+    if (this.isDirty) {
+      this.saveToDisk();
+    }
+  }
+
+  private persist(dataToPersist?: FirestoreCollections) {
+    if (dataToPersist) {
+      this.saveToDisk(dataToPersist);
+      return;
+    }
+    this.isDirty = true;
+    if (this.persistTimer) return;
+    this.persistTimer = setTimeout(() => {
+      this.persistTimer = null;
+      if (this.isDirty) {
+        this.saveToDisk();
+      }
+    }, 20);
+    if (this.persistTimer && typeof this.persistTimer.unref === 'function') {
+      this.persistTimer.unref();
+    }
+  }
+
+  private saveToDisk(dataToPersist: FirestoreCollections = this.data) {
+    this.isDirty = false;
     try {
       const jsonStr = JSON.stringify(dataToPersist, null, 2);
       const tempPath = `${FIRESTORE_STORE_PATH}.${Date.now()}.${Math.random().toString(36).slice(2, 6)}.tmp`;

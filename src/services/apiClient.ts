@@ -1,4 +1,21 @@
-const API_BASE = '/api';
+const API_BASE = (import.meta.env.VITE_API_BASE_URL || '/api').replace(/\/$/, '');
+
+async function parseErrorMessage(res: Response, fallback: string): Promise<string> {
+  try {
+    const text = await res.text();
+    try {
+      const json = JSON.parse(text);
+      return json.error || json.message || fallback;
+    } catch {
+      if (text && text.length < 200 && !text.includes('<!DOCTYPE') && !text.includes('<html')) {
+        return text.trim();
+      }
+    }
+  } catch {
+    // ignore
+  }
+  return fallback;
+}
 
 export const apiClient = {
   async get<T = any>(endpoint: string, params?: Record<string, string>): Promise<T> {
@@ -8,10 +25,19 @@ export const apiClient = {
       url += `?${searchParams.toString()}`;
     }
 
-    const res = await fetch(url);
+    const headers: Record<string, string> = {};
+    if (params?.refresh || params?._t) {
+      headers['Cache-Control'] = 'no-cache, no-store, must-revalidate';
+      headers['Pragma'] = 'no-cache';
+    }
+
+    const res = await fetch(url, {
+      headers,
+      cache: (params?.refresh || params?._t) ? 'no-store' : 'default',
+    });
     if (!res.ok) {
-      const err = await res.json().catch(() => ({ error: 'Network request failed' }));
-      throw new Error(err.error || `HTTP ${res.status}`);
+      const errorMsg = await parseErrorMessage(res, `HTTP ${res.status}`);
+      throw new Error(errorMsg);
     }
     return res.json();
   },
@@ -26,8 +52,8 @@ export const apiClient = {
     });
 
     if (!res.ok) {
-      const err = await res.json().catch(() => ({ error: 'Request failed' }));
-      throw new Error(err.error || `HTTP ${res.status}`);
+      const errorMsg = await parseErrorMessage(res, `HTTP ${res.status}`);
+      throw new Error(errorMsg);
     }
     return res.json();
   },
@@ -42,8 +68,8 @@ export const apiClient = {
     });
 
     if (!res.ok) {
-      const err = await res.json().catch(() => ({ error: 'Request failed' }));
-      throw new Error(err.error || `HTTP ${res.status}`);
+      const errorMsg = await parseErrorMessage(res, `HTTP ${res.status}`);
+      throw new Error(errorMsg);
     }
     return res.json();
   },
@@ -60,8 +86,8 @@ export const apiClient = {
     });
 
     if (!res.ok) {
-      const err = await res.json().catch(() => ({ error: 'Delete failed' }));
-      throw new Error(err.error || `HTTP ${res.status}`);
+      const errorMsg = await parseErrorMessage(res, `HTTP ${res.status}`);
+      throw new Error(errorMsg);
     }
     return res.json();
   }

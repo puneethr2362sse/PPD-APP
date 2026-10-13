@@ -32,7 +32,30 @@ app.get('/api/health', (req, res) => {
 });
 
 // Start listening
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`⚡ [VerifyAI] Express API Backend running on http://localhost:${PORT}`);
   console.log(`🔥 [VerifyAI] Connected to Firebase / Firestore Database Layer`);
+});
+
+server.on('error', (err: any) => {
+  if (err.code === 'EADDRINUSE') {
+    console.error(`\n❌ [VerifyAI Backend Error] Port ${PORT} is already in use by another process.`);
+    console.error(`   To find the process using port ${PORT}, run:`);
+    console.error(`   Get-NetTCPConnection -LocalPort ${PORT} -State Listen | Select-Object OwningProcess\n`);
+  } else {
+    console.error(`\n❌ [VerifyAI Backend Error] Server failed to start:`, err.message || err);
+  }
+});
+
+// Process-level error resilience (prevents external socket drops from crashing server)
+process.on('uncaughtException', (err: any) => {
+  if (err?.code === 'UND_ERR_SOCKET' || err?.message?.includes('other side closed') || err?.code === 'ECONNRESET' || err?.code === 'ETIMEDOUT') {
+    console.warn('[VerifyAI Server] Transient external socket drop safely handled:', err.message || err.code);
+    return;
+  }
+  console.error('[VerifyAI Server] Uncaught Exception:', err);
+});
+
+process.on('unhandledRejection', (reason: any) => {
+  console.warn('[VerifyAI Server] Unhandled Promise Rejection safely handled:', reason?.message || reason);
 });
