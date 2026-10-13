@@ -106,4 +106,66 @@ describe('VerifyAI Excel Test Cases & Reports Validation Suite', () => {
     const verdictSummary = values.find(v => v.includes('OVERALL VERDICT'));
     expect(verdictSummary).toBeDefined();
   });
+
+  it('EXC-007: should validate individual suite workbooks exist, parse cleanly, and have Suite Summary and Test Cases sheets', () => {
+    const SUITE_WORKBOOKS = [
+      { file: 'selenium-report.xlsx', minTests: 300 },
+      { file: 'appium-report.xlsx', minTests: 300 },
+      { file: 'load-report.xlsx', minTests: 300 },
+      { file: 'security-report.xlsx', minTests: 300 },
+      { file: 'web-build-report.xlsx', minTests: 4 },
+    ];
+
+    for (const item of SUITE_WORKBOOKS) {
+      const suitePath = path.join(rootDir, 'reports', item.file);
+      expect(fs.existsSync(suitePath), `reports/${item.file} must exist`).toBe(true);
+
+      const stats = fs.statSync(suitePath);
+      expect(stats.size, `reports/${item.file} must be non-empty`).toBeGreaterThan(1000);
+
+      const wb = XLSX.readFile(suitePath);
+      expect(wb.SheetNames, `${item.file} must contain Suite Summary sheet`).toContain('Suite Summary');
+      expect(wb.SheetNames, `${item.file} must contain Test Cases sheet`).toContain('Test Cases');
+
+      const testSheet = wb.Sheets['Test Cases'];
+      const rows: Record<string, any>[] = XLSX.utils.sheet_to_json(testSheet);
+      expect(rows.length, `${item.file} must have at least ${item.minTests} test cases`).toBeGreaterThanOrEqual(item.minTests);
+      expect(rows[0]['Test ID']).toBeTruthy();
+      expect(rows[0]['Scenario']).toBeTruthy();
+      expect(rows[0]['Actual Result']).toBeTruthy();
+    }
+  });
+
+  it('EXC-008: should validate all five existing artifact folders contain their respective .xlsx workbooks', () => {
+    const ARTIFACT_MAPPINGS = [
+      { dir: 'selenium-report', file: 'selenium-report.xlsx' },
+      { dir: 'appium-report', file: 'appium-report.xlsx' },
+      { dir: 'load-report', file: 'load-report.xlsx' },
+      { dir: 'security-report', file: 'security-report.xlsx' },
+    ];
+
+    for (const mapping of ARTIFACT_MAPPINGS) {
+      const artifactFilePath = path.join(rootDir, 'reports', mapping.dir, mapping.file);
+      expect(fs.existsSync(artifactFilePath), `${mapping.dir}/${mapping.file} must exist inside artifact folder`).toBe(true);
+      const wb = XLSX.readFile(artifactFilePath);
+      expect(wb.SheetNames).toContain('Test Cases');
+    }
+  });
+
+  it('EXC-009: should validate public reports directory has all .xlsx workbooks ready for web downloads', () => {
+    const FILES = [
+      'selenium-report.xlsx',
+      'appium-report.xlsx',
+      'load-report.xlsx',
+      'security-report.xlsx',
+      'web-build-report.xlsx',
+    ];
+
+    for (const f of FILES) {
+      const pubPath = path.join(rootDir, 'public', 'reports', f);
+      expect(fs.existsSync(pubPath), `public/reports/${f} must exist for direct web downloads`).toBe(true);
+      const wb = XLSX.readFile(pubPath);
+      expect(wb.SheetNames.length).toBeGreaterThan(0);
+    }
+  });
 });

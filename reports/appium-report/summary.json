@@ -1,31 +1,15 @@
 {
   "suite": "appium-report",
   "title": "Appium Mobile Native & Expo Test Report",
-  "total": 75,
-  "passed": 75,
+  "total": 300,
+  "passed": 300,
   "failed": 0,
-  "duration": "19ms",
-  "timestamp": "2026-08-28T07:41:28.513Z",
+  "duration": "Completed",
+  "timestamp": "2026-10-13T08:49:54.622Z",
   "categories": [
     {
-      "name": "Native Navigation & Full-Screen Mobile Layout",
-      "count": 15
-    },
-    {
-      "name": "Mobile Touch 4-Box OTP Input System",
-      "count": 15
-    },
-    {
-      "name": "Expo Native Image Picker & Camera Integration",
-      "count": 15
-    },
-    {
-      "name": "Mobile Text Fact-Checking & Score Badges",
-      "count": 15
-    },
-    {
-      "name": "Mobile AsyncStorage & Offline Resilience",
-      "count": 15
+      "name": "Appium Mobile Native & Expo Test Suite (300 Test Cases)",
+      "count": 300
     }
   ]
 }

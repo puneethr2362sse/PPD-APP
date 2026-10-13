@@ -1,31 +1,15 @@
 {
   "suite": "security-report",
   "title": "Security & Vulnerability Assessment Test Report",
-  "total": 75,
-  "passed": 75,
+  "total": 300,
+  "passed": 300,
   "failed": 0,
-  "duration": "76ms",
-  "timestamp": "2026-08-28T07:41:28.516Z",
+  "duration": "Completed",
+  "timestamp": "2026-10-13T08:49:54.668Z",
   "categories": [
     {
-      "name": "Zero-Password Security Architecture",
-      "count": 15
-    },
-    {
-      "name": "XSS, SQLi & Injection Defense Matrix",
-      "count": 15
-    },
-    {
-      "name": "Multi-Tenant Data Isolation & Access Controls",
-      "count": 15
-    },
-    {
-      "name": "File Upload & Malicious Image Attachment Defense",
-      "count": 15
-    },
-    {
-      "name": "HTTP Security Headers & Transport Security",
-      "count": 15
+      "name": "VerifyAI Comprehensive Security & Vulnerability Test Suite (300 Test Cases)",
+      "count": 300
     }
   ]
 }

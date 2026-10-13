@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   checks: write
   pull-requests: write
 
@@ -37,6 +37,9 @@ jobs:
 
       - name: Production Web Build
         run: npm run build
+
+      - name: Generate Web Build Excel Report
+        run: npx tsx scripts/generateBuildReport.ts
 
       - name: Upload Web Build Artifact
         uses: actions/upload-artifact@v4
@@ -68,7 +71,7 @@ jobs:
       - name: Validate Generated Excel Test Report & Baseline Preservation
         run: npx vitest run tests/excel-report-validation.test.ts
 
-      - name: Generate Suite HTML Artifacts
+      - name: Generate Suite HTML & Excel Artifacts
         run: node scripts/generate-artifacts.js
 
       - name: Upload Selenium Report Artifact
@@ -113,15 +116,36 @@ jobs:
           path: reports/VerifyAI_Test_Report.xlsx
           retention-days: 30
 
+      - name: Publish Direct Excel Workbooks to GitHub Release
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release delete latest-reports --yes || true
+          gh release create latest-reports \
+            reports/selenium-report.xlsx \
+            reports/appium-report.xlsx \
+            reports/load-report.xlsx \
+            reports/security-report.xlsx \
+            reports/web-build-report.xlsx \
+            reports/VerifyAI_Test_Cases.xlsx \
+            reports/VerifyAI_Test_Report.xlsx \
+            --title "VerifyAI Test Execution Excel Workbooks" \
+            --notes "Direct single-click Excel (.xlsx) downloads for all automated test reports." || true
+
       - name: Publish Step Summary with Direct Excel Download Links
         run: |
           echo "## 📊 VerifyAI Automated QA Test Execution Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### 📥 Direct Excel Workbook Downloads (Single-click .xlsx — No ZIP extraction required)" >> $GITHUB_STEP_SUMMARY
-          echo "| Report Name | Direct Download Link (.xlsx) | Mirror / Production Link | Description |" >> $GITHUB_STEP_SUMMARY
+          echo "| Suite / Artifact Category | Direct Download (.xlsx) | Mirror / Live Web Download | Scope & Content |" >> $GITHUB_STEP_SUMMARY
           echo "| :--- | :--- | :--- | :--- |" >> $GITHUB_STEP_SUMMARY
-          echo "| **VerifyAI_Test_Cases.xlsx** | [Direct Download (.xlsx)](https://github.com/puneethr2362sse/PPD-APP/raw/main/reports/VerifyAI_Test_Cases.xlsx) | [Web Direct](https://app-eight-woad-32.vercel.app/VerifyAI_Test_Cases.xlsx) | Complete 1,504-test workbook with separate worksheets for Selenium, Appium, Load, Security, Multimodal AI, and Build |" >> $GITHUB_STEP_SUMMARY
-          echo "| **VerifyAI_Test_Report.xlsx** | [Direct Download (.xlsx)](https://github.com/puneethr2362sse/PPD-APP/raw/main/reports/VerifyAI_Test_Report.xlsx) | [Web Direct](https://app-eight-woad-32.vercel.app/VerifyAI_Test_Report.xlsx) | Full executive test report workbook with summary metrics |" >> $GITHUB_STEP_SUMMARY
+          echo "| **1. Selenium Web Tests** | [Direct .xlsx](https://github.com/puneethr2362sse/PPD-APP/raw/main/reports/selenium-report.xlsx) | [Web .xlsx](https://app-eight-woad-32.vercel.app/reports/selenium-report.xlsx) | 300 Selenium Web E2E & Component test cases |" >> $GITHUB_STEP_SUMMARY
+          echo "| **2. Appium Mobile Tests** | [Direct .xlsx](https://github.com/puneethr2362sse/PPD-APP/raw/main/reports/appium-report.xlsx) | [Web .xlsx](https://app-eight-woad-32.vercel.app/reports/appium-report.xlsx) | 300 Appium Native & Mobile Navigation cases |" >> $GITHUB_STEP_SUMMARY
+          echo "| **3. Load Stress Tests** | [Direct .xlsx](https://github.com/puneethr2362sse/PPD-APP/raw/main/reports/load-report.xlsx) | [Web .xlsx](https://app-eight-woad-32.vercel.app/reports/load-report.xlsx) | 300 High-concurrency throughput benchmarks |" >> $GITHUB_STEP_SUMMARY
+          echo "| **4. Security Assessment** | [Direct .xlsx](https://github.com/puneethr2362sse/PPD-APP/raw/main/reports/security-report.xlsx) | [Web .xlsx](https://app-eight-woad-32.vercel.app/reports/security-report.xlsx) | 300 Zero-trust defense & vulnerability cases |" >> $GITHUB_STEP_SUMMARY
+          echo "| **5. Web Build Validation** | [Direct .xlsx](https://github.com/puneethr2362sse/PPD-APP/raw/main/reports/web-build-report.xlsx) | [Web .xlsx](https://app-eight-woad-32.vercel.app/reports/web-build-report.xlsx) | Client/Server typecheck & secret scan checks |" >> $GITHUB_STEP_SUMMARY
+          echo "| **⭐ Complete Master Workbook** | [VerifyAI_Test_Cases.xlsx](https://github.com/puneethr2362sse/PPD-APP/raw/main/reports/VerifyAI_Test_Cases.xlsx) | [Web .xlsx](https://app-eight-woad-32.vercel.app/VerifyAI_Test_Cases.xlsx) | Complete 1,504-test workbook with separate worksheets |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "> 💡 **Note for Reviewers & Professors:** Standard GitHub Actions artifact buttons package files into a .zip. To open directly in Microsoft Excel without extracting ZIP files, use the **Direct Download (.xlsx)** links above." >> $GITHUB_STEP_SUMMARY
 
