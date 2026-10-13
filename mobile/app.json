@@ -36,7 +36,8 @@
         {
           "photosPermission": "Allow VerifyAI to access your photos for image verification."
         }
-      ]
+      ],
+      "expo-font"
     ],
     "extra": {
       "eas": {
