@@ -24,9 +24,10 @@
       },
       "package": "com.verifyai.app",
       "permissions": [
-        "CAMERA",
-        "READ_EXTERNAL_STORAGE",
-        "WRITE_EXTERNAL_STORAGE"
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.RECORD_AUDIO"
       ]
     },
     "plugins": [
@@ -36,6 +37,12 @@
           "photosPermission": "Allow VerifyAI to access your photos for image verification."
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "f6a58a5e-368d-4c7f-9498-60e2a5690a4d"
+      }
+    },
+    "owner": "krishna8979"
   }
 }

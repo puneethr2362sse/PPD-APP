@@ -1,10 +1,7 @@
 import { Platform } from 'react-native';
 
-// Dynamically use local Wi-Fi IP for real phones, localhost for iOS simulator, 10.0.2.2 for Android emulator
-const DEFAULT_HOST = '192.168.1.9';
-const PORT = '5000';
-
-const API_BASE_URL = `http://${DEFAULT_HOST}:${PORT}/api`;
+// Deployed Production Backend
+const API_BASE_URL = 'https://app-eight-woad-32.vercel.app/api';
 
 export const api = {
   async get<T = any>(endpoint: string, params?: Record<string, string>): Promise<T> {
